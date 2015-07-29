@@ -7,12 +7,12 @@ Snap Backup is a utility for individual computer users who need a simple and con
 
 #### Download
 If you want to use Snap Backup to protect your files, go to the download page to get the installer:
-www.snapbackup.org/download
+snapbackup.org/download
 
 #### Translate
 If you want to translate Snap Backup into a new language, check out the translation web page, join the translator mailing list, and then follow the translator contributor steps.
 
-   * Translation Web Page:  www.snapbackup.org/translate
+   * Translation Web Page:  snapbackup.org/translate
    * Translators Mailing List:  [groups.google.com/group/snapbackup-translate](https://groups.google.com/group/snapbackup-translate)
    * Translator Contributor Steps: [Translator Steps](https://github.com/snap-backup/snapbackup/wiki/Translator-Steps)
 
