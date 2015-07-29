@@ -48,6 +48,7 @@ for file in screen-@*.html; do
    done
 mv -v feedback-thanks.html   feedback/thanks.html
 mv -v translate-preview.html translate/preview.html
+mv -v graphics/bookmark.ico  favicon.ico
 echo
 
 # List files
