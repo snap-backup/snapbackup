@@ -1,0 +1,78 @@
+/* Live in Style -- Snap Backup */
+/* colors: Teal (#008080), Pale Green (#98FB98), Yellow (#FFFF00) */
+
+/* Base */
+body    { background-image: url("graphics/arches.png"); background-repeat: no-repeat; color: teal; margin: 0px; }
+a       { border-color: teal; }
+a:hover { background-color: teal; outline-color: teal; }
+sup     { font-size: 70%; }
+
+/* Layout */
+.stress   { font-weight: bold; font-style: italic; color: teal; }
+.sidebar { float: right; clear: right; text-align: center; font-size: 80%; background-color: #f0f0f0; padding: 15px; margin: 15px 0px 15px 20px; }
+img.screen { border: 3px solid teal; margin: 10px 0px; }
+
+.thumb-box     { text-align: center; background-color: teal; padding: 10px; border: 1px solid silver; }
+.thumb-box div { color: palegreen; font-size: 70%; }
+.thumb-box a   { color: whitesmoke; font-size: 70%; }
+
+/* Document */
+.main   { display: inline-block; width: 600px; margin: 20px; }
+.steps  { font-size: 90%; border: 1px solid silver; padding: 2px; margin: 3px 0px 0px 30px; }
+h1         { margin: 60px 0px 10px 80px; }
+h3         { margin-top: 10px; }
+.footer { clear: both; width: 400px; text-align: center; color: gray; font-size: 70%; font-family: sans-serif; border-top: 1px solid silver; padding: 10px; margin: 60px auto; }
+
+#news   { float: left; font-size: 80%; border: dashed 1px teal; width: 170px; padding: 7px 7px 7px 10px; margin: 10px 15px 5px 0px; }
+#news .news-header { font-size: 100%; font-weight: bold; text-align: center; color: teal; border: solid teal 1px; background-color: yellow; padding: 1px; margin-bottom: 9px; }
+#news .date { display: inline-block; font-style: italic; color: white; background-color: darkgray; padding: 2px 9px 1px 10px; }
+#news p { margin: 3px 0px 15px 0px; }
+
+.reveal-action       { color: teal; }
+.reveal-action:hover { background-color: teal; border-color: teal; }
+
+/* Section boxes */
+.box-top    { font-weight: bold; font-size: 110%; border: solid teal 1px; text-align: center;
+                 background: darkgray; padding: 3px; }
+.box-middle { border-left: solid teal 1px; border-right: solid teal 1px; text-align: center; padding: 5px; }
+.box-bottom { border: solid teal 1px; text-align: center; padding: 5px; }
+
+.nav { float: left; background-color: darkgray; text-transform: uppercase; font-weight: bold; font-size: 75%; padding: 20px 10px 20px 0px; margin-top: 250px; }
+ul#nav-bar {
+   display: table;
+   float: left;
+   list-style-type: none;
+   padding: 0px;
+   margin-top: 220px;
+   }
+ul#nav-bar li {
+   background-image: -webkit-linear-gradient(top, silver, teal);
+   background-image:    -moz-linear-gradient(top, silver, teal);
+   background-image:     -ms-linear-gradient(top, silver, teal);
+   background-image:      -o-linear-gradient(top, silver, teal);
+   background-image:         linear-gradient(top, silver, teal);
+   border-bottom: 1px solid dimgray;
+   border-right: 1px solid dimgray;
+   background-color: teal; /* IE6...IE9 */
+   }
+ul#nav-bar li:first-child {
+   border-top: 1px solid dimgray;
+   }
+ul#nav-bar li a {
+   display: block;
+   text-decoration: none;
+   outline: none;
+   font-size: 120%;
+   color: white;
+   padding: 15px 20px; /* button size */
+   }
+ul#nav-bar li.current a, ul#nav-bar li a:hover {
+   background-color: rgba(255, 255, 255, 0.3);
+   }
+
+/* 3rd party */
+.google-group { background-color: white; border: 1px solid gray; padding: 5px; }
+.google-group img { height: 30px; }
+
+.perfect { border-color: teal; }
+.perfect h1 { background-color: teal; color: yellow; }
