@@ -1,0 +1,101 @@
+<!--#set var="pageTitle" value="Feedback"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+Welcome to the Snap Backup feedback page.&nbsp;  Use this on-line form to
+   submit comments, feature requests, and bug reports for Snap Backup.<br><br>
+Note that the list of current feature requests and bug reports is available on
+   <a href="http://code.google.com/p/snapbackup/issues/list" class=external-site>Google
+   Code</a>.&nbsp;  Also if you have a question, it might be already be
+   addressed on the
+   <a href="../faq">Frequently Asked Questions (FAQ)</a> page.<br><br>
+
+<div class=google-group>
+   <p><img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif"
+      alt="Google Groups"></p>
+   <p><b>Subscribe to the Snap Backup Announcements Mailing List</b></p>
+   <form action="http://groups.google.com/group/snapbackup/boxsubscribe">
+      <label>
+         Email:
+         <input type=text name=email>
+      </lable>
+      <button type=submit name=sub>Subscribe</button>
+   </form>
+   <div class=push-right>
+      <a href="http://groups.google.com/group/snapbackup">Visit this group</a>
+   </div>
+</div>
+
+<br>
+All fields are optional.<br><br>
+
+<form method=post action="feedback.php">
+<table class=perfect>
+   <tr><th>Feedback Topic:</th><td>
+      <select name="Type">
+         <option value=Bug>Bug Report</option>
+         <option value=Usability>Usability Suggestions</option>
+         <option value=Feature>New Feature Request</option>
+         <option value=Feedback selected>Product Feedback</option>
+         <option value=Translate>Translation</option>
+         <option value=WebMaster>Comment about Web Site</option>
+         <option value=Other>Other</option>
+         </select></td></tr>
+   <tr><th>Snap Backup Version:</th><td>
+      <select name="Version">
+         <option value=""></option>
+         <option value=5.6>5.6</option>
+         <option value=5.5>5.5</option>
+         <option value=5.4>5.4</option>
+         <option value=5.3>5.3</option>
+         <option value=5.2>5.2</option>
+         <option value=5.1>5.1</option>
+         <option value=5.0>5.0</option>
+         <option value=4.5>4.5</option>
+         <option value=4.4>4.4</option>
+         <option value=4.3>4.3</option>
+         <option value=4.2>4.2</option>
+         <option value=4.1>4.1</option>
+         <option value=4.0>4.0</option>
+         <option value=Other>Other</option>
+         </select></td></tr>
+   <tr><th>Your System:</th><td>
+      <select name="OS">
+         <option value=""></option>
+         <option value=MacOSX>Mac OS X</option>
+         <option value=Windows>Windows</option>
+         <option value=Linux>Linux</option>
+         <option value=Unix>Unix</option>
+         <option value=Other>Other</option>
+         </select></td></tr>
+   <tr><th style="vertical-align: top"><br>Description:</th><td>
+      <textarea name=Description rows=4 cols=25 Wrap=virtual></textarea>
+      </td></tr>
+   <tr><th>System Information:<br>
+      <span style="font-size: 75%; font-weight: normal">
+         (If submitting a Bug Report, please copy and paste the
+         "System Information" text from the Snap Backup About box
+         into this field)
+         </span></th><td>
+      <textarea name=SysInfo rows=4 cols=25 wrap=virtual></textarea>
+      </td></tr>
+   <tr><th>Your Name:</th><td>
+      <input type=text name=Name size=25></td></tr>
+   <tr><th>Your E-Mail Address*:</th><td>
+      <input type=text name=E-Mail size=30></td></tr>
+   <tr><td colspan=2 style="border-bottom: dotted teal 1px; padding: 3px"></td>
+   <tr><th></td><td style="text-align: right; padding-top: 10px">
+      <button type=submit>Submit Feedback</button></td></tr>
+   <tr><td colspan=2><p style="font-size: 75%; margin: 5px 0px">
+      *Your e-mail address is not a required field and will
+      <b>never</b> be sold or released to a third party.&nbsp;  Your e-mail
+      address may be used for communication regarding your feedback
+      submission.</p>
+      <span>Powered by
+      <a href="http://centerkey.com/php/" class=external-site>PERFECT</a></span>
+      </td></tr>
+   </table>
+</form>
+
+
+<!--#include file="~end.fhtml"-->

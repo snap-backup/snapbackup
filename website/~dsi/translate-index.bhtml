@@ -1,0 +1,104 @@
+<!--#set var="pageTitle" value="Language Translation"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+<p>Snap Backup is an internationalized application &mdash; meaning that it is ready
+   to be localized into different languages.&nbsp;  However, translators
+   are needed to convert the words from English into various other
+   languages.&nbsp;  If you want to help out, the process is
+   straightforward.</p>
+<h2>Make Snap Backup Work in Your Language</h2>
+<ol>
+   <li>
+      <h3>Familiarize Yourself with Snap Backup</h3>
+      <p><a href="../download">Download</a> Snap Backup and use it a few times
+         so you understand the basic operations.</p>
+      <div class=sidebar>
+         <p class=alignment-center>
+            Properties file available in:<br>
+            <!--#include file="~languages.fhtml"-->
+         </p>
+         <p>Sometimes special characters<br>get mangled by the web server<br>
+            or your web browser, so here is<br>a zip of the files:<br>
+            <a href="../download/SnapBackup.properties.zip">SnapBackup.properties.zip
+               <img src="../graphics/icon-zip.png"></a>
+         </p>
+      </div>
+   </li>
+   <li>
+      <h3>Examine the Properties File</h3>
+      <p>View the "<a href="../download/SnapBackup_en.properties.txt"
+         class=external-site>Snap Backup properties file</a>" so you can see
+         how Snap Backup stores the text displayed in the user
+         interface.&nbsp;  For example, the text for the "Exit" button in Snap
+         Backup is defined with the following line:
+      </p>
+      <p class=indent><code>ButtonExit=Exit</code></p>
+      <p>For the Portuguese version, the line would need to be changed to:</p>
+      <p class=indent><code>ButtonExit=Sair</code></p>
+      <p>The Chinese (Simplified) version would be:</p>
+      <p class=indent><code>ButtonExit=退出</code></p>
+      <p>The Farsi version would be:</p>
+      <p class=indent><code>ButtonExit=ﻯﺩﺎﻋ ﻯﻭﺭﺭﺩ</code></p>
+      <p>The Greek version would be:</p>
+      <p class=indent><code>ButtonExit=Έξοδος</code></p>
+      <p>The Korean version would be:</p>
+      <p class=indent><code>ButtonExit=출구</code></p>
+      <p>And the Hindi version would be:</p>
+      <p class=indent><code>ButtonExit=निर्गम</code></p>
+      <p>The actual text displayed on the screen for the "Exit" button depends on
+      the language chosen by the user.</p>
+   </li>
+   <li>
+      <h3>Offer to Help</h3>
+      <p>If you decide you want to translate the Snap Backup properties file into
+         your favorite language, tell us using the on-line
+         <a href="../feedback/">feedback</a> form.
+      </p>
+
+<div class=google-group>
+   <p><img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif"
+      alt="Google Groups"></p>
+   <p><b>Subscribe to the Snap Backup Translators Mailing List</b></p>
+   <form action="http://groups.google.com/group/snapbackup-translate/boxsubscribe">
+      <label>
+         Email:
+         <input type=text name=email>
+      </lable>
+      <button type=submit name=sub>Subscribe</button>
+   </form>
+   <div class=push-right>
+      <a href="http://groups.google.com/group/snapbackup-translate">Visit this group</a>
+   </div>
+</div>
+
+      <p>Be sure to join the Google group to get on the mailing list.</p>
+   </li>
+   <li>
+      <h3>Become Famous</h3>
+      Well, we can't make you a rock star, but we will definitely give you
+      <a href="../about/">credit</a> in the Snap Backup "About" box for your
+      translation work.&nbsp;  Snap Backup is downloaded at a rate of about
+      40,000 times a year.
+      <br><br>
+   </li>
+</ol>
+
+<h2>Notes About Translating</h2>
+<p>It is best to edit and save your property file in
+   <a href="http://www.unicode.org/standard/WhatIsUnicode.html"
+      class=external-site>Unicode (UTF-8 encoding)</a>.</p>
+<p>A line in the properties file beginning with the character "#" is a
+   comment.</p>
+<p>The default fast key (mnemonic) for menu items and buttons is the first
+   character of the displayed text.&nbsp;  To designate a different character as
+   the fast key, insert an "&amp;" just before the character desired to be the fast
+   key.</p>
+<p>The property "OptionalLocalizedApplicationTitle" is provided in case the name
+   "Snap Backup" needs to be localized for clarity.</p>
+<p>Because e-mail sometimes mutilates international characters, you may need to
+   zip up your translated properties file before submitting it.&nbsp;  Or you can
+   check the properties file directly into the
+   <a href="http://code.google.com/p/snapbackup/wiki/TranslatorSteps">project repository</a>.</p>
+
+<!--#include file="~end.fhtml"-->

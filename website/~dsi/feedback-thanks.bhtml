@@ -1,0 +1,9 @@
+<!--#set var="pageTitle" value="Thanks"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+<div style="height: 100px;"></div>
+<h2>Your message has been sent.&nbsp;  Thanks.</h2>
+<div style="height: 400px;"></div>
+
+<!--#include file="~end.fhtml"-->

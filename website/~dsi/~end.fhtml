@@ -1,0 +1,22 @@
+<!-- Footer -->
+<div class=footer>
+   <a rel=license href="http://creativecommons.org/licenses/by-sa/3.0/us/"
+      title="Content on the Snap Backup web site is licensed under the Creative Commons Attribution-Share Alike 3.0 United States License."
+      class=external-site><img alt="Creative Commons License"
+      src="http://creativecommons.org/images/public/somerights20.png"></a><br>
+   <a class=plain href="http://snapbackup.org/">snapbackup.org</a><br>
+   Snap Backup<sup>&reg;</sup> is a registered trademark of
+   <a class=plain href="http://centerkey.com/">Center Key<br>
+   Java is a registered trademark of Oracle<br>
+   Other registered trademarks are the property of their respective owners<br>
+</div>
+</div>
+
+<!-- Conclusion -->
+<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/dna.js/latest/dna.min.js"></script>
+<script src="http://centerkey.com/js/library.js"></script>
+<script src="<!--#echo var="prefix"-->app.js"></script>
+<!--  DSI Generated: <!--#echo var="LAST_MODIFIED"--> (http://centerkey.com/dsi)  -->
+</body>
+</html>

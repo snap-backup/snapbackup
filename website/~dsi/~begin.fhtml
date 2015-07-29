@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- - - - - - - - - - -->
+<!--  Snap Backup      -->
+<!--  From Center Key  -->
+<!-- - - - - - - - - - -->
+<html>
+<head>
+<meta charset=utf-8>
+<!--#set var="prefix" value="../"-->
+<!--#if file="$DOCUMENT_NAME=index.bhtml"-->
+<!--#set var="prefix" value="./"-->
+<meta name=verify-v1                content="UqmQvTNMUnr4M4T2H6wyzaf3fsN7aJ1B1/B9Ij//BZI=">
+<meta name=google-site-verification content="ud5xLLtUoThVgnKndF7or9eGz1j77lyXiz__So5GMXc">
+<title>Snap Backup &bull; <!--#echo var="pageTitle"--> &bull; Open Source (free)</title>
+<link rel=next href="/download/">
+<!--#elif file="$DOCUMENT_NAME=translation.bhtml"-->
+<!--#set var="prefix" value="./"-->
+<!--#elif file="$DOCUMENT_NAME=title.bhtml"-->
+<!--#set var="prefix" value="./"-->
+<!--#elif file="$DOCUMENT_NAME=file-not-found.bhtml"-->
+<!--#set var="prefix" value="http://snapbackup.org/"-->
+<!--#endif -->
+<link rel=icon       href="<!--#echo var="prefix"-->graphics/bookmark.png">
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel=stylesheet href="https://cdn.jsdelivr.net/dna.js/latest/dna.css">
+<link rel=stylesheet href="http://centerkey.com/css/reset.css">
+<link rel=stylesheet href="<!--#echo var="prefix"-->style.css">
+</head>
+<body>
+
+<ul id=nav-bar>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->">Home</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=screen-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#elif file="$DOCUMENT_NAME=screen-@mac.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#elif file="$DOCUMENT_NAME=screen-@ubuntu.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#elif file="$DOCUMENT_NAME=screen-@win.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#elif file="$DOCUMENT_NAME=screen-@vista.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#elif file="$DOCUMENT_NAME=screen-@metal.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->screen/">Preview</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=download-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->download/">Download</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=feedback-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->feedback/">Feedback</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=faq-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->faq/">Answers</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=translate-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->translate/">Translate</a></li>
+   <!--#set var="currentClass" value=""-->
+   <!--#if file="$DOCUMENT_NAME=about-index.bhtml"-->
+   <!--#set var="currentClass" value="class=current"-->
+   <!--#endif -->
+   <li <!--#echo var="currentClass"-->><a href="<!--#echo var="prefix"-->about/">About</a></li>
+</ul>
+
+<div class=main>
+<h1 class=distinct>Snap Backup</h1>
+<a href="http://snapbackup.org/"><img class=push-right
+   src="<!--#echo var="prefix"-->graphics/snap-backup-icon.png" alt="Icon"></a>

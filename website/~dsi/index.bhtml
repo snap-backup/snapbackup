@@ -1,0 +1,112 @@
+<!--#set var="pageTitle" value="The One-Click Backup Utility"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+<p>
+   Snap Backup<sup>&reg;</sup> is <i>The One-Click Backup Utility</i> that makes
+   it simple to protect your important work.&nbsp;  Snap Backup is for individual
+   computer users who need a simple and convenient way to backup their
+   valuable files, and it's free (open source).
+</p>
+<h2>Protecting Your Data Should be Easy</h2>
+<p class=push-right><a href="download/"><img src="graphics/download-now.png"
+      alt="Download"></a>
+</p>
+<p>
+   How much work would you lose if your hard drive crashed right now or you lost
+   your laptop?
+</p>
+
+<!--  Download & screen shot icons  -->
+<div class=sidebar>
+   <p>
+      <b>Available in:</b><br>
+      <!--#include file="~languages.fhtml"-->
+   </p>
+   <div class=thumb-box>
+      <div>The One-Click Backup Utility</div>
+      <a href="screen"><img src="graphics/snap-backup-thumb.png" alt="Screen"><br>
+      View Details</a>
+   </div>
+</div>
+
+Snap Backup:<strong><ul>
+   <li>One Click to Perform a Backup</li>
+   <li>Configurable Settings</li>
+   <li>Runs on Mac OS X, Linux, Solaris, and Windows</li>
+   <li>Supports Multiple Languages
+   <li>It's Free <span class=small>(No adware, trial versions, or other
+      annoying stuff)</span></li>
+   </ul></strong>
+
+<div class=space-below>
+   The first time you run Snap Backup, you configure where
+   your data files reside and where to create backup files.&nbsp;  Snap Backup
+   will also copy your backup to an archive location, such as a USB flash drive
+   (memory stick), external hard drive, or
+
+   <!--  News  -->
+   <div id=news>
+      <div class=news-header>News</div>
+      <!--#include file="~news.fhtml"-->
+   </div>
+
+   <a href="http://techdem.centerkey.com/2012/03/snap-backup-dropbox-free-cloud-backup.html"
+   class=external-site>cloud backup</a>.&nbsp;
+   Snap Backup automatically puts the current date in the backup file name,
+   alleviating you from the tedious task of renaming your backup
+   file every time you backup.&nbsp;  The backup file is a single compressed
+   file that can be read by zip programs such as gzip, 7-Zip, The Unarchiver,
+   and Mac's built-in Archive Utility.
+</div>
+
+<h2>Take Control</h2>
+<p>
+   System administrators have backup procedures for their company servers,
+   databases, and network files.&nbsp;  Individual computer users, on the other
+   hand, are usually left to fend for themselves.&nbsp;  Snap Backup is the
+   simple answer for individual users, in the corporation or at home, who want
+   to protect their valuable data.
+</p>
+
+<a href="http://www.java.com/" class=external-site><img class=push-right
+   src="graphics/logo-java.png" style="width: 150px;" alt="Java"></a>
+<h2>For Everyone</h2>
+<p>
+   Snap Backup is written in Java and designed to run on any computer with
+   Java.&nbsp;  Snap Backup is an
+   <a href="http://code.google.com/p/snapbackup/" class=external-site>open source</a>
+   software project and is internationalized (meaning we
+   just need to translate the words to support new languages).&nbsp;  Please
+   see the <a href="translate">translation</a> page if you
+   want to help translate Snap Backup into your favorite language.
+</p>
+
+<h2>Comments</h2>
+<!-- PERFECT Form -->
+<form class=perfect method=post>
+   <h1>Send Us a Message</h1>
+   <label><span>Message:</span>
+      <textarea name=message rows=2 cols=20></textarea></label>
+   <label><span>Name:</span>
+      <input name=name size=10></label>
+   <label><span>E-Mail:</span>
+      <input name=email size=15></label>
+   <p><button type=submit>Submit</button></p>
+   <p class=note>Powered by
+      <a href="http://centerkey.com/php/" class=external-site>PERFECT</a></p>
+</form>
+<p>
+   All the fields are optional.&nbsp;  However, if you want a response, make sure
+   to provide your e-mail address.
+</p>
+
+<div class=push-right>
+   <div id=social-buttons class=plain></div>
+</div>
+<h2 class=space-below-2x>Random</h2>
+<div class=align-right>
+<!--#include file="~comments.fhtml"-->
+</div>
+
+<!--#include file="~end.fhtml"-->

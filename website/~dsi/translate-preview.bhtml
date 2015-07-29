@@ -1,0 +1,22 @@
+<!--#set var="pageTitle" value="Language Translation Preview"-->
+<!--#include file="~begin.fhtml"-->
+
+<main>
+   <h1>Snap Backup</h1>
+   <h2>Language Translation Test File</h2>
+   Translators can download and use this test version of Snap Backup to verify
+   the lastest properties files.<br>
+   <br>
+   Download Test Version of Snap Backup:<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <a href="snapbackup.jar" title="Download Snap Backup">snapbackup.jar</a><br>
+   <br>
+   Download the <code>snapbackup.jar</code> file.&nbsp;  Then double-click the
+   file to run Snap Backup.
+   <br><br>
+   <a href="http://code.google.com/p/snapbackup/wiki/TranslatorSteps"
+      title="Back to Translator Instructions"><img
+      src="../graphics/snap-backup-icon.png" class=stage-r></a>
+</main>
+
+<!--#include file="~end.fhtml"-->

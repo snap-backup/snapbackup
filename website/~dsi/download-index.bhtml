@@ -1,0 +1,146 @@
+<!--#set var="pageTitle" value="Download"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--#set var="versionNum"  value="5.6"-->
+<!--#set var="updated"     value="April 23, 2011"-->
+<!--#set var="jarSize"     value="256KB"-->
+<!--#set var="macInstall" value="248KB"-->
+<!--#set var="winInstall" value="260KB"-->
+
+<p>Welcome to the Snap Backup download page.&nbsp;  Snap Backup is
+   <i>The One-Click Backup Utility</i> for safeguarding your important
+   computer files.&nbsp;  Snap Backup is free and runs on just
+   about any computer &mdash; Mac OS X, GNU/Linux, Unix, and
+   Windows.
+</p>
+<p>Follow the steps below to install Snap Backup on your computer.
+</p>
+<h2>Install Instructions <span class=for-macs-only>for Mac OS X</span>
+   &mdash; Version <!--#echo var="versionNum"--></h2>
+<div class=indent>
+
+   <!--  Step #1  -->
+	<div class=sidebar style="width: 40%;">
+	   If you already have Java 6 or later, you do not need to install Java again (but it
+	   won't hurt).
+	</div>
+   <h3>1) Get Java</h3>
+      <p>Download and install the latest version of Java by clicking on the
+         button below.
+      </p>
+      <p><a href="http://www.java.com/" class=external-site><img class=indent
+            src="../graphics/logo-get-java.png" alt="Java"
+          style="width: 100px;"></a>
+      </p>
+
+   <!--  Step #2  -->
+   <h3>2) Download Snap Backup Install File</h3>
+      <p class=for-non-macs>
+         From the tables below, download the install file appropriate for
+         your computer and follow the instructions provided.
+      </p>
+
+      <!--  Mac  -->
+      <div class=box-top>Mac OS X</div>
+      <div class=box-middle>
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"
+            title="Download Snap Backup for Mac OS X">
+            SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip</a>
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"
+            title="Download Snap Backup for Mac OS X"><img
+            src="../graphics/os-icon-mac.png" style="vertical-align: -3px" alt="Mac"></a>
+         (<!--#echo var="macInstall"-->)<br>
+         <small>Updated: <!--#echo var="updated"--></small>
+         </div>
+      <div class=box-bottom>
+         To run the installer, <i>&lt;control-click&gt;</i> on the
+         "SnapBackupInstaller.pkg" file and choose  "Open".&nbsp; Once the installation
+         is complete, drag the "Snap Backup" icon from the <i>Applications</i> folder to
+         the <i>Dock</i> for easy
+         access.
+      </div>
+
+   <br>
+   <p class=for-macs-only>For other operating systems: <a href="./?view=all">All Downloads</a></p>
+
+   <div class=for-non-macs>
+
+      <!--  Windows  -->
+      <div class=box-top>Microsoft Windows XP/Vista/7</div>
+      <div class=box-middle>
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe"
+            title="Download Snap Backup for Windows">
+            SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe</a>
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe"
+            title="Download Snap Backup for Windows"><img
+               src="../graphics/os-icon-win.png" style="vertical-align: -3px"
+               alt="Windows"></a>
+            (<!--#echo var="winInstall"-->)<br>
+            <small>Updated: <!--#echo var="updated"--></small>
+         </div>
+      <div class=box-bottom>
+            Save the install file to a location such as your <i>Desktop</i> and
+            then double-click the file to start the installation.<br>
+         </div><br>
+
+      <!--  Generic JAR  -->
+      <div class=box-top>Generic Executable JAR File
+         <span style="font-size: 70%; text-transform: uppercase">
+         (All Java Platforms)</span>
+      </div>
+      <div class=box-middle>
+         <a href="snapbackup.jar" title="Download Snap Backup Executable JAR">
+            snapbackup.jar</a>
+         <a href="snapbackup.jar" title="Download Snap Backup Executable JAR">
+            <img src="../graphics/os-icon-java.png" style="vertical-align: -3px"
+               alt="Java"></a>
+         (<!--#echo var="jarSize"-->)<br>
+         <a href="ReadMe.txt" title="License and Instructions">ReadMe.txt</a>
+         &nbsp; &nbsp;
+         <a href="../graphics/snap-backup-icon.png">Optional Icon File</a>
+         (<a href="../graphics/snap-backup-icon-32.png">small</a>)<br>
+         <small>Updated: <!--#echo var="updated"--></small>
+      </div>
+      <div class=box-bottom>
+         First, save the JAR file and ReadMe file to a convenient location,
+         such as "/Applications/SnapBackup".&nbsp;  Then run the JAR file.&nbsp;  On some
+         systems with Java installed you can just double click the JAR file
+         and Snap Backup will automatically run.&nbsp;  On other systems, you may
+         need to enter the following command:
+            <p><code>java -jar snapbackup.jar</code></p>
+         Consult your Java documentation for the exact steps to launch an
+         executable JAR on your system.&nbsp;
+         Note: In some browsers you many need to use "Save Link As..." when
+         downloading JAR and text files.
+   	</div><br>
+   </div>
+
+   <!--  Step #3  -->
+	<div class=sidebar>
+		<b>Languages Included:</b><br>
+		<!--#include file="~languages.fhtml"-->
+		<br>
+		When you first run Snap<br>Backup, click the flag for<br>the language you desire.
+	</div>
+   <h3>3) Snap Backup Setup</h3>
+      <p>Run Snap Backup and consult the <a href="SnapBackupUserGuide.html"
+         class=external-site>User Guide</a> (Select "User Guide" from the "Help"
+         menu) for information on configuring and saving your backup settings.
+      </p>
+      <div class=for-macs-only>
+         Check Out:
+         <p class=indent><a
+            href="http://techdem.centerkey.com/2009/04/save-mac-data-with-snap-backup.html"
+            class=external-site>Save Mac Data</a>
+         </p>
+      </div>
+      Your
+      <a href="../feedback">feedback</a> will be
+      helpful in improving future versions of Snap Backup.&nbsp;  Please let
+      us know if there are additional languages or platforms you would
+      personally like to see supported.<br>
+      <br class=leapfrog>
+
+   </div>
+
+<!--#include file="~end.fhtml"-->

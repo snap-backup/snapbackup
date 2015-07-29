@@ -1,0 +1,96 @@
+<!--#set var="pageTitle" value="About"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+<p>Snap Backup is open source and the code is available under the GNU General
+Public License.&nbsp;  The project is hosted on Google Code.
+</p>
+Project Home:
+<p class=indent>
+   <a href="http://code.google.com/p/snapbackup/"
+      title="code.google.com">http://code.google.com/p/snapbackup/</a>
+</p>
+Contributor Instructions:
+<p class=indent>
+   <a href="http://code.google.com/p/snapbackup/wiki/ContributorStepsMac"
+      title="code.google.com">Mac OS X</a><br>
+   <a href="http://code.google.com/p/snapbackup/wiki/ContributorStepsUbuntu"
+      title="code.google.com">Ubuntu</a><br>
+   <a href="http://code.google.com/p/snapbackup/wiki/ContributorStepsWindows"
+      title="code.google.com">Microsoft Windows</a><br>
+</p>
+Vice Presidents of Umlauts and Other Wild Characters:
+<p class=indent>
+   <a href="http://www.janxes.it/jsp/societa/Giorgio.jsp"    >Giorgio Ponza</a><br>
+   <a href="http://www.bi-on.de/pascal/"                     >Pascál Bihler</a><br>
+   <a href="http://homepage.mac.com/carlosmalt/"             >Carlos Maltzahn</a><br>
+   <a href="http://www.esperanto.net/"                       >Suzanne Bolduc</a><br>
+   <a href="http://www.macfan.nl/"                           >Oscar Laurens Schrover</a><br>
+   <a href="http://www2.uah.es/biomodel/"                    >Angel Herráez</a><br>
+   <a href="http://en.wikipedia.org/wiki/Portuguese_language">Antonio de Rezende, Jr.</a><br>
+   <a href="http://en.wikipedia.org/wiki/Slovene_language"   >Sašo Topolovec</a><br>
+   <a href="http://en.wikipedia.org/wiki/Indonesian_language">Andy Saksono</a><br>
+   <a href="http://dragut8912.hi5.com"                       >Dany</a><br>
+   <a href="http://vahidin.wordpress.com/"                   >Vahidin Qerimi</a><br>
+</p>
+<div class="push-right align-right">
+   <!--#set var="flare_separator" value="<br><br>"-->
+   <!--#include file="~flare.fhtml"-->
+</div>
+Chief Usability Officer:
+<p class=indent>
+   <a href="http://centerkey.com/dem/" title="pilafian.com">Dem Pilafian</a><br>
+</p>
+<p class=indent><a href="http://centerkey.com/"><img src="../graphics/center-key.png"
+   alt="Center Key"></a>
+</p>
+<p class=indent>
+   Center Key<br>
+   Box 21<br>
+   San Carlos, CA&nbsp; 94070&nbsp; USA
+</p>
+<p class=indent>
+   <a href="../title.html"><i>The One-Click Backup Utility</i></a>
+</p>
+Technologies:
+<p class=indent>
+   <a href="http://www.java.net/">
+      Java</a><br>
+   <a href="http://centerkey.com/java/browser/">
+      Bare Bones Browser Launch</a><br>
+   <a href="http://centerkey.com/mac/java/">
+      Mac Java!</a><br>
+   <a href="http://nsis.sourceforge.net/">
+      Nullsoft Scriptable Install System</a><br>
+   <a href="http://centerkey.com/dsi/">
+      DSI (Design-Side Includes)</a><br>
+   </p>
+History:
+<p class=indent>
+The first version of Snap Backup was released in
+<a href="http://web.archive.org/web/*/http://snapbackup.com"
+class=external-site>1999</a>.&nbsp;  It was written in Visual Basic, which made it
+ill-suited for distribution over the web.&nbsp;  In 2003 Snap Backup was ported to
+Java and internationalized.&nbsp;  Support for Italian, German, Esperanto, and Russian
+was added in 2005.
+</p>
+
+Word of Mouth:
+<p class=indent>
+Snap Backup is a free product with no ads and no marketing budget.&nbsp;  If
+you find Snap Backup useful, please let others know.&nbsp;  Any promotion
+is greatly appreciated.
+</p>
+
+License:
+<p class=indent>
+Snap Backup is free for all to use.&nbsp;  To the maximum extent allowed by law,
+there are no warranties whatsoever included with this software.&nbsp;  Before
+relying on any backup files, be sure to check their validity and verify
+that the correct files were indeed backed up.&nbsp;  The source code for Snap
+Backup is available under the
+<a href="http://www.gnu.org/licenses/gpl.html"
+   class=external-site>GNU General Public License</a>.
+</p>
+
+<!--#include file="~end.fhtml"-->

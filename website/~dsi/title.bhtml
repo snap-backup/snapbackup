@@ -1,0 +1,40 @@
+<!--#set var="pageTitle" value="The One-Click Backup Utility"-->
+<!--#include file="~begin.fhtml"-->
+
+<!--  Body  -->
+<b>Title:</b>
+   Snap Backup<br><br>
+<b>Phrase:</b>
+   The One-Click Backup Utility<br><br>
+<b>Category:</b>
+   Personal Backup Utility<br><br>
+<b>Description:</b>
+   Backup utility for individual computer users who need a simple
+   and convenient way to backup their valuable files.&nbsp;  Available in
+   <!--#include file="~languages.fhtml"-->
+   <br><br>
+<b>Price:</b>
+   <a href="http://snapbackup.org/">Free</a><br><br>
+<b>Home Page:</b>
+   <div class=indent>http://snapbackup.org</div><br>
+<b>Download Page:</b>
+   <div class=indent>http://snapbackup.org/download</div><br>
+<b>EU Site:</b>
+   <div class=indent><a href="http://snapbackup.eu/">http://snapbackup.eu</a></div><br>
+<b>Subjects:</b>
+   backup utility free computer software java apple mac linux unix windows
+   download tool zip compress compression freeware snapbackup<br>
+<b>Icons:</b>
+   <a href="graphics/snap-backup-icon-16.png"><img src="graphics/snap-backup-icon-16.png"></a>
+   &nbsp;
+   <a href="graphics/snap-backup-icon-32.png"><img src="graphics/snap-backup-icon-32.png"></a>
+   &nbsp;
+   <a href="graphics/snap-backup-icon-48.png"><img src="graphics/snap-backup-icon-48.png"></a>
+   &nbsp;
+   <a href="graphics/snap-backup-icon-64.png"><img src="graphics/snap-backup-icon-64.png"></a>
+   &nbsp;
+   <a href="graphics/snap-backup-icon-92.png"><img src="graphics/snap-backup-icon-92.png"></a>
+<br>
+
+
+<!--#include file="~end.fhtml"-->
