@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="snapbackup">
+      <xs:complexType>
+         <xs:all>
+            <xs:element name="systeminformation" minOccurs="1" maxOccurs="1" type="xs:string" />
+            <xs:element name="usersettings"      minOccurs="1" maxOccurs="1" />
+         </xs:all>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="usersettings">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="setting" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="setting">
+      <xs:complexType mixed="true">
+         <xs:attribute name="key" type="xs:string" use="required" />
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
