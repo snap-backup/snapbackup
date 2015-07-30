@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" ?>
+<!-- - - - - - - - - - -->
+<!--  Snap Backup      -->
+<!--  Ant Build File   -->
+<!-- - - - - - - - - - -->
+
+<!-- Be sure the version number is up to date in:
+        org/snapbackup/settings/SystemAttributes.java -->
+
+<project>
+
+   <property name="Home"        location=".." />
+   <property name="JavaSource"  location="${Home}/src/java" />
+   <property name="Resources"   location="${Home}/src/resources" />
+   <property name="Installer"   location="${Home}/src/installer" />
+   <property name="BuildFolder" location="${Home}/build" />
+   <property name="JavaClasses" location="${Home}/build/classes" />
+   <property name="HtmlFolder"  location="${Home}/build/classes/org/snapbackup/ui/userguide/html" />
+   <property name="WebFolder"   location="${Home}/build/web" />
+   <property name="MacApp"      location="${Home}/build/Snap Backup.app/Contents" />
+
+   <target name="build">
+
+      <!--  Get Snap Backup Version  -->
+      <loadfile srcfile="${JavaSource}/org/snapbackup/settings/SystemAttributes.java" property="version">
+         <filterchain>
+            <linecontains><contains value="appVersion =" /></linecontains>
+            <replaceregex pattern="^.*\&quot;(.*)\&quot;.*$" replace="\1" />
+         </filterchain>
+      </loadfile>
+      <echo message="Version: ${version}" />
+
+      <!--  Create Class Files  -->
+      <delete dir="${BuildFolder}" />
+      <mkdir  dir="${JavaClasses}" />
+      <javac
+         srcdir="${JavaSource}"
+         destdir="${JavaClasses}"
+         source="7"
+         target="7"
+         debug="on"
+         includeAntRuntime="false">
+         <!--
+         bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
+         [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
+         -->
+         <compilerarg value="-Xlint:all,-serial"  />
+      </javac>
+
+      <!--  Prepare Resources  -->
+      <native2ascii encoding="UTF8" src="${Resources}/properties" dest="${JavaClasses}" />
+      <copy file="${JavaClasses}/SnapBackup.properties"
+         tofile="${JavaClasses}/SnapBackup_en.properties" />
+      <copy todir="${JavaClasses}/org/snapbackup/ui/images">
+         <fileset dir="${Resources}/graphics/application" />
+      </copy>
+      <copy file="${Resources}/SnapBackupUserGuide.html" todir="${HtmlFolder}" />
+      <copy file="${Resources}/SnapBackupSettings.xsd" todir="${JavaClasses}/org/snapbackup/business" />
+
+      <!--  Workaround for: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127 -->
+      <!--  Part 1 of 2 -->
+      <copy file="${JavaClasses}/SnapBackup_id.properties"
+         tofile="${JavaClasses}/SnapBackup_in.properties" />
+
+      <!--  Create Executable JAR File -->
+      <jar destfile="${JavaClasses}/../snapbackup.jar" basedir="${JavaClasses}">
+         <fileset dir="." includes="*.class" />
+         <manifest>
+            <attribute name="Main-Class" value="org.snapbackup.Main" />
+            <attribute name="SplashScreen-Image" value="org/snapbackup/ui/images/splash.png" />
+         </manifest>
+      </jar>
+
+      <!--  Sign Executable JAR File -->
+      <property environment="env" />
+      <condition property="doaction">
+         <isset property="env.SnapBackupJksPass" />
+      </condition>
+      <antcall target="action" />
+
+      <!--  Generate/Copy Files for Web Site  -->
+      <copy file="${Resources}/SnapBackupUserGuide.html" todir="${WebFolder}" />
+      <copy file="${Resources}/ReadMe.txt" todir="${WebFolder}" />
+      <copy todir="${WebFolder}">
+         <fileset dir="${Resources}/properties" includes="SnapBackup*.properties" />
+         <globmapper from="*" to="*.txt" />
+      </copy>
+      <move file="${WebFolder}/SnapBackup.properties.txt"
+         tofile="${WebFolder}/SnapBackup_en.properties.txt" />
+      <zip destfile="${WebFolder}/SnapBackup.properties.zip" basedir="${WebFolder}"
+         includes="SnapBackup_*.properties.txt" />
+
+      <!--  Create Mac OS X Application  -->
+      <copy todir="${BuildFolder}">
+         <fileset dir="${Installer}/mac/application-bundle" />
+      </copy>
+      <replace file="${MacApp}/Info.plist" token="{snap-backup-version}" value="${version}" />
+      <chmod file="${MacApp}/MacOS/JavaApplicationStub" perm="ugo+x" />
+      <copy file="${Installer}/mac/snap-backup.icns"            todir="${MacApp}/Resources" />
+      <copy file="${BuildFolder}/snapbackup.jar"                todir="${MacApp}/Resources/Java" />
+      <copy file="${Resources}/graphics/application/splash.png" todir="${MacApp}/Resources/Java" />
+
+      <!--  Create Windows Installer  -->
+      <condition property="is.windows"><os family="windows" /></condition>
+      <copy todir="${BuildFolder}">
+         <fileset dir="${Installer}/windows" />
+      </copy>
+      <exec dir="${BuildFolder}" executable="\Program Files\NSIS\makensis.exe" osfamily="windows">
+         <arg value="/V2"  />
+         <arg value="snap-backup.nsi"  />
+      </exec>
+      <delete file="${BuildFolder}/snap-backup.nsi" />
+      <delete file="${BuildFolder}/SnapBackupIcon16.ico" />
+      <delete file="${BuildFolder}/SnapBackupIcon32.ico" />
+      <delete file="${BuildFolder}/SnapBackupLicense.txt" />
+      <delete file="${BuildFolder}/Uninstall.txt" />
+
+   </target>
+
+   <!--  Sign Executable JAR File -->
+   <target name="action" if="doaction">
+      <!-- Create Keystore:
+         $ cd src/resources
+         $ keytool -genkey -alias snapbackup.org -validity 10000 -keyalg RSA -dname "CN=Dem
+            Pilafian, OU=Product Management, O=Center Key Software, L=San Carlos, ST=California,
+            C=US" -keystore snapbackup.jks
+      -->
+      <signjar
+         jar="${JavaClasses}/../snapbackup.jar" storepass="${env.SnapBackupJksPass}"
+         alias="snapbackup.org" keystore="${Resources}/snapbackup.jks" />
+   </target>
+
+</project>

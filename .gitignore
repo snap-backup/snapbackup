@@ -1,11 +1,5 @@
 # Snap Backup
 
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
+/build
 /website/~dsi/dsi.jar
 /website/httpdocs

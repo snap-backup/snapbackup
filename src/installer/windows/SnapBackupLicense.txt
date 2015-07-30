@@ -1,0 +1,1 @@
+Snap Backup is open source and free for all to use.  To the maximum extent allowed by law, there are no warranties whatsoever included with this software.  Before relying on any backup files, be sure to check their validity and verify that the correct files were indeed backed up.  The source code for Snap Backup is available under the GNU General Public License.
