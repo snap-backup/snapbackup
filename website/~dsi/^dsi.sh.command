@@ -34,7 +34,7 @@ echo "Target:"
 echo $target
 mv -v *.html $target
 cd ..
-cp -v *.css *.js $target
+cp -v *.html *.css *.js $target
 cp -R graphics app $target
 cd $target
 for file in *-index.html; do
