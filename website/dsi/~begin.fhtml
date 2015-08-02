@@ -11,15 +11,17 @@
 <!--#set var="prefix" value="./"-->
 <meta name=verify-v1                content="UqmQvTNMUnr4M4T2H6wyzaf3fsN7aJ1B1/B9Ij//BZI=">
 <meta name=google-site-verification content="ud5xLLtUoThVgnKndF7or9eGz1j77lyXiz__So5GMXc">
-<title>Snap Backup &bull; <!--#echo var="pageTitle"--> &bull; Open Source (free)</title>
-<link rel=next href="/download/">
 <!--#elif file="$DOCUMENT_NAME=translation.bhtml"-->
 <!--#set var="prefix" value="./"-->
 <!--#elif file="$DOCUMENT_NAME=title.bhtml"-->
 <!--#set var="prefix" value="./"-->
 <!--#elif file="$DOCUMENT_NAME=file-not-found.bhtml"-->
 <!--#set var="prefix" value="http://snapbackup.org/"-->
+<!--#elif file="$DOCUMENT_NAME=placeholder.bhtml"-->
+<!--#set var="prefix" value="http://snapbackup.org/"-->
 <!--#endif -->
+<title>Snap Backup &bull; <!--#echo var="pageTitle"--> &bull; Open Source (free)</title>
+<link rel=next href="/download/">
 <link rel=icon       href="<!--#echo var="prefix"-->graphics/bookmark.png">
 <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel=stylesheet href="https://cdn.jsdelivr.net/dna.js/latest/dna.css">

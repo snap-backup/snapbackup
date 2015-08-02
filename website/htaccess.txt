@@ -1,0 +1,20 @@
+# Snap Backup
+# HTAccess File
+
+AddType text/plain .txt
+#DirectoryIndex index.html index.php
+ErrorDocument 404 /file-not-found.html
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.org$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.org/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.eu$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.eu/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.com$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.com/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.net$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.net/ [redirect=301,last]

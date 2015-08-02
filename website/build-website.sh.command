@@ -34,6 +34,8 @@ mv -v dsi/*.html        $websiteFolder/httpdocs
 cp -v *.html *.css *.js $websiteFolder/httpdocs
 cp -R graphics app      $websiteFolder/httpdocs
 cd $websiteFolder/httpdocs
+cp placeholder.html www.snapbackup.com-index.html
+cp placeholder.html www.snapbackup.net-index.html
 for file in *-index.html; do
    folder=$(echo $file | sed "s/-.*//")
    mkdir $folder
@@ -56,6 +58,7 @@ url="$target/index.html"
 updateWebServer() {
    echo $webServerFolder
    cp -R * $webServerFolder
+   cp -v $websiteFolder/htaccess.txt $webServerFolder/.htaccess
    url=$webServerUrl
    }
 [ -d $webServerFolder ] && updateWebServer
