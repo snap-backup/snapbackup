@@ -11,10 +11,10 @@ webServerUrl=http://localhost/snapbackup.org
 echo
 echo "Snap Backup Website"
 echo "###################"
-cd $(dirname $0)
-pwd
+websiteFolder=$(dirname $0)
 
 # Build HTML files (run DSI templating)
+cd $websiteFolder/dsi
 cp screen-index.bhtml screen-@mac.bhtml
 cp screen-index.bhtml screen-@ubuntu.bhtml
 cp screen-index.bhtml screen-@win.bhtml
@@ -26,17 +26,14 @@ rm screen-@*.bhtml
 echo
 
 # Put web files into "httpdocs" folder
-targetFolder=../httpdocs
-rm -rf $targetFolder
-mkdir $targetFolder
-target=$(cd $targetFolder; pwd)
+cd $websiteFolder
 echo "Target:"
-echo $target
-mv -v *.html $target
-cd ..
-cp -v *.html *.css *.js $target
-cp -R graphics app $target
-cd $target
+rm -rf $websiteFolder/httpdocs
+mkdir  $websiteFolder/httpdocs
+mv -v dsi/*.html        $websiteFolder/httpdocs
+cp -v *.html *.css *.js $websiteFolder/httpdocs
+cp -R graphics app      $websiteFolder/httpdocs
+cd $websiteFolder/httpdocs
 for file in *-index.html; do
    folder=$(echo $file | sed "s/-.*//")
    mkdir $folder
@@ -52,8 +49,8 @@ mv -v graphics/bookmark.ico  favicon.ico
 echo
 
 # List files
+cd $websiteFolder/httpdocs
 echo "Website:"
-cd $target
 pwd
 url="$target/index.html"
 updateWebServer() {
@@ -62,5 +59,5 @@ updateWebServer() {
    url=$webServerUrl
    }
 [ -d $webServerFolder ] && updateWebServer
-echo "Opening -> $url"
+echo "Opening --> $url"
 open $url

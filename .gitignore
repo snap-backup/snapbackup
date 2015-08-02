@@ -1,5 +1,6 @@
 # Snap Backup
 
-/build
-/website/~dsi/dsi.jar
-/website/httpdocs
+# Generated and downloaded files
+/build/
+/website/dsi/dsi.jar
+/website/httpdocs/
