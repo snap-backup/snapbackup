@@ -173,8 +173,7 @@ settings will automatically be preserved.</p>
 <h2>Is Snap Backup really free?</h2>
 <p>Yes.&nbsp;  Snap Backup is free as in beer and as well as free as in free
 speech.&nbsp; Because Snap Backup is an open source project, you can
-look at the <a href="http://code.google.com/p/snapbackup/"
-class=external-site>source code</a>.</p>
+look at the <a href="https://github.com/snap-backup/snapbackup">source code</a>.</p>
 
 </p>
 <!--#set var="flare_separator" value="&nbsp;&nbsp;"-->

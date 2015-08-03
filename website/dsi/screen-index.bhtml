@@ -16,30 +16,30 @@
 <!--  Body  -->
 Here's what Snap Backup looks like.<br><br>
 Screens: &nbsp;
-   <a href="mac.html"><img    src="../graphics/os-icon-mac.png"    title="Mac"    alt="Mac"></a> &nbsp; &nbsp;
-   <a href="ubuntu.html"><img src="../graphics/os-icon-ubuntu.png" title="Ubuntu" alt="Ubuntu"></a> &nbsp; &nbsp;
-   <a href="win.html"><img    src="../graphics/os-icon-win.png"    title="XP"     alt="XP"></a> &nbsp; &nbsp;
-   <a href="vista.html"><img  src="../graphics/os-icon-vista.png"  title="Vista"  alt="Vista"></a> &nbsp; &nbsp;
-   <a href="metal.html"><img  src="../graphics/os-icon-java.png"   title="Metal"  alt="Metal"></a> &nbsp; &nbsp;
+   <a href="mac.html"><img    src="../graphics/os-icon-mac.png"    alt="Mac"></a> &nbsp; &nbsp;
+   <a href="ubuntu.html"><img src="../graphics/os-icon-ubuntu.png" alt="Ubuntu"></a> &nbsp; &nbsp;
+   <a href="win.html"><img    src="../graphics/os-icon-win.png"    alt="XP"></a> &nbsp; &nbsp;
+   <a href="vista.html"><img  src="../graphics/os-icon-vista.png"  alt="Vista"></a> &nbsp; &nbsp;
+   <a href="metal.html"><img  src="../graphics/os-icon-java.png"   alt="Metal"></a> &nbsp; &nbsp;
 <br><br>
 
 <!--#if file="$DOCUMENT_NAME=screen-index.bhtml"-->
-   <h2>Apple Mac OS X Look & Feel</h2><br>
+   <h2>Apple Mac OS X Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-mac.png" alt="Mac Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@mac.bhtml"-->
-   <h2>Apple Mac OS X Look & Feel</h2><br>
+   <h2>Apple Mac OS X Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-mac.png" alt="Mac Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@ubuntu.bhtml"-->
-   <h2>Ubuntu GTK+ Look & Feel</h2><br>
+   <h2>Ubuntu GTK+ Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-ubuntu.png" alt="Ubuntu Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@win.bhtml"-->
-   <h2>Microsoft Windows XP Look & Feel</h2><br>
+   <h2>Microsoft Windows XP Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-win.png" alt="Windows XP Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@vista.bhtml"-->
-   <h2>Microsoft Windows Vista Look & Feel</h2><br>
+   <h2>Microsoft Windows Vista Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-vista.png" alt="Windows Vista Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@metal.bhtml"-->
-   <h2>Metal (Java) Look & Feel</h2><br>
+   <h2>Metal (Java) Look &amp; Feel</h2><br>
    <img src="../graphics/snap-backup-screen-java.png" alt="Metal Screenshot">
 <!--#endif -->
 <br><br>

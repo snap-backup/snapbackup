@@ -43,11 +43,9 @@
       <!--  Mac  -->
       <div class=box-top>Mac OS X</div>
       <div class=box-middle>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"
-            title="Download Snap Backup for Mac OS X">
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip">
             SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip</a>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"
-            title="Download Snap Backup for Mac OS X"><img
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"><img
             src="../graphics/os-icon-mac.png" style="vertical-align: -3px" alt="Mac"></a>
          (<!--#echo var="macInstall"-->)<br>
          <small>Updated: <!--#echo var="updated"--></small>
@@ -68,11 +66,9 @@
       <!--  Windows  -->
       <div class=box-top>Microsoft Windows XP/Vista/7</div>
       <div class=box-middle>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe"
-            title="Download Snap Backup for Windows">
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe">
             SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe</a>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe"
-            title="Download Snap Backup for Windows"><img
+         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.exe"><img
                src="../graphics/os-icon-win.png" style="vertical-align: -3px"
                alt="Windows"></a>
             (<!--#echo var="winInstall"-->)<br>
@@ -89,13 +85,12 @@
          (All Java Platforms)</span>
       </div>
       <div class=box-middle>
-         <a href="snapbackup.jar" title="Download Snap Backup Executable JAR">
-            snapbackup.jar</a>
-         <a href="snapbackup.jar" title="Download Snap Backup Executable JAR">
+         <a href="snapbackup.jar">snapbackup.jar</a>
+         <a href="snapbackup.jar">
             <img src="../graphics/os-icon-java.png" style="vertical-align: -3px"
                alt="Java"></a>
          (<!--#echo var="jarSize"-->)<br>
-         <a href="ReadMe.txt" title="License and Instructions">ReadMe.txt</a>
+         <a href="ReadMe.txt">ReadMe.txt</a>
          &nbsp; &nbsp;
          <a href="../graphics/snap-backup-icon.png">Optional Icon File</a>
          (<a href="../graphics/snap-backup-icon-32.png">small</a>)<br>

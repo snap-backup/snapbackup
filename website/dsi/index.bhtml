@@ -75,7 +75,7 @@ Snap Backup:<strong><ul>
 <p>
    Snap Backup is written in Java and designed to run on any computer with
    Java.&nbsp;  Snap Backup is an
-   <a href="http://code.google.com/p/snapbackup/" class=external-site>open source</a>
+   <a href="https://github.com/snap-backup/snapbackup">open source</a>
    software project and is internationalized (meaning we
    just need to translate the words to support new languages).&nbsp;  Please
    see the <a href="translate">translation</a> page if you
