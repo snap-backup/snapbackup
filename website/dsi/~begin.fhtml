@@ -23,8 +23,8 @@
 <title>Snap Backup &bull; <!--#echo var="pageTitle"--> &bull; Open Source (free)</title>
 <link rel=next href="/download/">
 <link rel=icon       href="<!--#echo var="prefix"-->graphics/bookmark.png">
-<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<link rel=stylesheet href="https://cdn.jsdelivr.net/dna.js/latest/dna.css">
+<link rel=stylesheet href="https://cdn.jsdelivr.net/fontawesome/4/css/font-awesome.min.css">
+<link rel=stylesheet href="https://cdn.jsdelivr.net/dna.js/0/dna.css">
 <link rel=stylesheet href="http://centerkey.com/css/reset.css">
 <link rel=stylesheet href="<!--#echo var="prefix"-->style.css">
 </head>

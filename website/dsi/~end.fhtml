@@ -13,8 +13,8 @@
 </div>
 
 <!-- Conclusion -->
-<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/dna.js/latest/dna.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery/2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/dna.js/0/dna.min.js"></script>
 <script src="http://centerkey.com/js/library.js"></script>
 <script src="<!--#echo var="prefix"-->app.js"></script>
 <!--  DSI Generated: <!--#echo var="LAST_MODIFIED"--> (http://centerkey.com/dsi)  -->
