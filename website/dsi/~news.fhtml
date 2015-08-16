@@ -1,5 +1,9 @@
 <div>
    <div class=news-item>
+      <div class=date>August 16, 2015</div>
+      <p>Snap Backup 6.0 is released with support for larger backup files.</p>
+   </div>
+   <div class=news-item>
       <div class=date>December 1, 2014</div>
       <p>Snap Backup is on <a href="https://plus.google.com/108837381095201598652/about"
       class=external-site>Google+</a>.</p>

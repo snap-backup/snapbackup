@@ -1,40 +1,52 @@
 <!--#set var="pageTitle" value="Download"-->
 <!--#include file="~begin.fhtml"-->
 
-<!--#set var="versionNum"  value="5.6"-->
-<!--#set var="updated"     value="April 23, 2011"-->
-<!--#set var="jarSize"     value="256KB"-->
-<!--#set var="macInstall" value="248KB"-->
+<!--#set var="versionNum" value="6.0"-->
+<!--#set var="updated"    value="August 16, 2015"-->
+<!--#set var="jarSize"    value="230KB"-->
+<!--#set var="macInstall" value="66MB"-->
 <!--#set var="winInstall" value="260KB"-->
 
-<p>Welcome to the Snap Backup download page.&nbsp;  Snap Backup is
+<p>
+   Welcome to the Snap Backup download page.&nbsp;  Snap Backup is
    <i>The One-Click Backup Utility</i> for safeguarding your important
    computer files.&nbsp;  Snap Backup is free and runs on just
    about any computer &mdash; Mac OS X, GNU/Linux, Unix, and
    Windows.
 </p>
-<p>Follow the steps below to install Snap Backup on your computer.
+<p>
+   Follow the steps below to install Snap Backup on your computer.
 </p>
-<h2>Install Instructions <span class=for-macs-only>for Mac OS X</span>
-   &mdash; Version <!--#echo var="versionNum"--></h2>
+<h2>
+   Install Instructions <span class=for-macs-only>for Mac OS X</span>
+   &mdash; Version <!--#echo var="versionNum"-->
+</h2>
 <div class=indent>
 
    <!--  Step #1  -->
+   <section class=for-non-macs>
 	<div class=sidebar style="width: 40%;">
-	   If you already have Java 6 or later, you do not need to install Java again (but it
-	   won't hurt).
+      <img src="../graphics/os-icon-mac.png" alt="Mac"><br>
+      Mac OS X users skip this step and go directly to step #2.
 	</div>
    <h3>1) Get Java</h3>
-      <p>Download and install the latest version of Java by clicking on the
+      <p>
+         Download and install the latest version of Java by clicking on the
          button below.
       </p>
-      <p><a href="http://www.java.com/" class=external-site><img class=indent
+      <p>
+         <a href="http://www.java.com/" class=external-site><img class=indent
             src="../graphics/logo-get-java.png" alt="Java"
           style="width: 100px;"></a>
       </p>
+      <p>
+   	   If you already have Java 7 or later, you do not need to install Java again (but it
+         won't hurt).
+      </p>
+   </section>
 
    <!--  Step #2  -->
-   <h3>2) Download Snap Backup Install File</h3>
+   <h3><span class=for-macs-only>1</span><span class=for-non-macs>2</span>) Download Snap Backup Install File</h3>
       <p class=for-non-macs>
          From the tables below, download the install file appropriate for
          your computer and follow the instructions provided.
@@ -43,19 +55,18 @@
       <!--  Mac  -->
       <div class=box-top>Mac OS X</div>
       <div class=box-middle>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip">
-            SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip</a>
-         <a href="SnapBackupInstaller-v<!--#echo var="versionNum"-->.pkg.zip"><img
-            src="../graphics/os-icon-mac.png" style="vertical-align: -3px" alt="Mac"></a>
+         <a href="https://github.com/snap-backup/snapbackup/blob/master/releases/SnapBackupInstaller-v<!--#echo var="versionNum"-->.dmg?raw=true">
+            SnapBackupInstaller-v<!--#echo var="versionNum"-->.dmg</a>
+         <a href="https://github.com/snap-backup/snapbackup/blob/master/releases/SnapBackupInstaller-v<!--#echo var="versionNum"-->.dmg?raw=true">
+            <img src="../graphics/os-icon-mac.png" style="vertical-align: -3px" alt="Mac">
+         </a>
          (<!--#echo var="macInstall"-->)<br>
          <small>Updated: <!--#echo var="updated"--></small>
-         </div>
+      </div>
       <div class=box-bottom>
-         To run the installer, <i>&lt;control-click&gt;</i> on the
-         "SnapBackupInstaller.pkg" file and choose  "Open".&nbsp; Once the installation
-         is complete, drag the "Snap Backup" icon from the <i>Applications</i> folder to
-         the <i>Dock</i> for easy
-         access.
+         Download and run the installer.&nbsp; Then use <i>Finder</i> to go into the
+         "Applications" folder and <i>&lt;control-click&gt;</i> on "SnapBackup".&nbsp;
+         Now choose "Open".
       </div>
 
    <br>
@@ -117,7 +128,7 @@
 		<br>
 		When you first run Snap<br>Backup, click the flag for<br>the language you desire.
 	</div>
-   <h3>3) Snap Backup Setup</h3>
+   <h3><span class=for-macs-only>2</span><span class=for-non-macs>3</span>) Snap Backup Setup</h3>
       <p>Run Snap Backup and consult the <a href="SnapBackupUserGuide.html"
          class=external-site>User Guide</a> (Select "User Guide" from the "Help"
          menu) for information on configuring and saving your backup settings.

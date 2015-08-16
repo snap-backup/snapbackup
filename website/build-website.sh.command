@@ -49,6 +49,8 @@ for file in screen-@*.html; do
 mv -v feedback-thanks.html   feedback/thanks.html
 mv -v translate-preview.html translate/preview.html
 mv -v graphics/bookmark.ico  favicon.ico
+cp -v ../../build/snapbackup.jar     download
+cp -v ../../src/resources/ReadMe.txt download
 echo
 
 # List files
