@@ -35,6 +35,7 @@
 
       <echo message="=== Create class files ===" />
       <delete dir="${BuildFolder}" />
+      <echo file="${BuildFolder}/version.txt">${version}</echo>
       <mkdir  dir="${JavaClasses}" />
       <javac
          srcdir="${JavaSource}"
@@ -95,17 +96,6 @@
          includes="SnapBackup_*.properties.txt" />
       <echo />
 
-      <echo message="=== Create Mac OS X application ===" />
-      <copy todir="${BuildFolder}">
-         <fileset dir="${Installer}/mac/application-bundle" />
-      </copy>
-      <replace file="${MacApp}/Info.plist" token="{snap-backup-version}" value="${version}" />
-      <chmod file="${MacApp}/MacOS/JavaApplicationStub" perm="ugo+x" />
-      <copy file="${Installer}/mac/snap-backup.icns"            todir="${MacApp}/Resources" />
-      <copy file="${BuildFolder}/snapbackup.jar"                todir="${MacApp}/Resources/Java" />
-      <copy file="${Resources}/graphics/application/splash.png" todir="${MacApp}/Resources/Java" />
-      <echo />
-
       <echo message="=== Create Windows installer ===" />
       <condition property="is.windows"><os family="windows" /></condition>
       <copy todir="${BuildFolder}">
@@ -128,7 +118,7 @@
       <!-- Create Keystore:
          $ cd src/resources
          $ keytool -genkey -alias snapbackup.org -validity 10000 -keyalg RSA -dname "CN=Dem
-            Pilafian, OU=Product Management, O=Center Key Software, L=San Carlos, ST=California,
+            Pilafian, OU=Product Management, O=Center Key, L=San Carlos, ST=California,
             C=US" -keystore snapbackup.jks
       -->
       <signjar

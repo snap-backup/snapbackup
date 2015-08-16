@@ -20,6 +20,22 @@ addAnt() {
    echo "Path: $PATH"
    }
 
+buildMacInstaller() {
+   echo "=== Build native installer (javapackager) ==="
+   cd ../build
+   pwd
+   cp ../src/resources/graphics/application/snap-backup-icon.png .
+   mkdir SnapBackup.iconset
+   sips -z 128 128 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128.png
+   iconutil --convert icns SnapBackup.iconset
+   mkdir -p package/macosx
+   mv SnapBackup.icns package/macosx
+   $JAVA_HOME/bin/javapackager -deploy -native dmg \
+      -srcfiles snapbackup.jar -appclass org.snapbackup.Main -name SnapBackup \
+      -outdir deploy -outfile SnapBackup -v
+   cp deploy/bundles/SnapBackup-1.0.dmg SnapBackupInstaller-v$(cat version.txt).dmg
+   }
+
 echo
 echo "Snap Backup Build"
 echo "================="
@@ -29,3 +45,5 @@ javac -version
 which ant || addAnt
 ant -version
 ant build
+echo
+buildMacInstaller
