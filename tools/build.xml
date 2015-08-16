@@ -4,8 +4,10 @@
 <!--  Ant Build File   -->
 <!-- - - - - - - - - - -->
 
-<!-- Be sure the version number is up to date in:
-        org/snapbackup/settings/SystemAttributes.java -->
+<!--
+   Be sure the version number is up to date in:
+      org/snapbackup/settings/SystemAttributes.java
+-->
 
 <project>
 
@@ -29,8 +31,9 @@
          </filterchain>
       </loadfile>
       <echo message="Version: ${version}" />
+      <echo />
 
-      <!--  Create Class Files  -->
+      <echo message="=== Create class files ===" />
       <delete dir="${BuildFolder}" />
       <mkdir  dir="${JavaClasses}" />
       <javac
@@ -46,8 +49,9 @@
          -->
          <compilerarg value="-Xlint:all,-serial"  />
       </javac>
+      <echo />
 
-      <!--  Prepare Resources  -->
+      <echo message="=== Prepare resources ===" />
       <native2ascii encoding="UTF8" src="${Resources}/properties" dest="${JavaClasses}" />
       <copy file="${JavaClasses}/SnapBackup.properties"
          tofile="${JavaClasses}/SnapBackup_en.properties" />
@@ -56,13 +60,13 @@
       </copy>
       <copy file="${Resources}/SnapBackupUserGuide.html" todir="${HtmlFolder}" />
       <copy file="${Resources}/SnapBackupSettings.xsd" todir="${JavaClasses}/org/snapbackup/business" />
-
       <!--  Workaround for: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127 -->
       <!--  Part 1 of 2 -->
       <copy file="${JavaClasses}/SnapBackup_id.properties"
          tofile="${JavaClasses}/SnapBackup_in.properties" />
+      <echo />
 
-      <!--  Create Executable JAR File -->
+      <echo message="=== Create executable JAR file ===" />
       <jar destfile="${JavaClasses}/../snapbackup.jar" basedir="${JavaClasses}">
          <fileset dir="." includes="*.class" />
          <manifest>
@@ -70,15 +74,15 @@
             <attribute name="SplashScreen-Image" value="org/snapbackup/ui/images/splash.png" />
          </manifest>
       </jar>
+      <echo />
 
-      <!--  Sign Executable JAR File -->
       <property environment="env" />
       <condition property="doaction">
          <isset property="env.SnapBackupJksPass" />
       </condition>
       <antcall target="action" />
 
-      <!--  Generate/Copy Files for Web Site  -->
+      <echo message="=== Generate and copy files for website ===" />
       <copy file="${Resources}/SnapBackupUserGuide.html" todir="${WebFolder}" />
       <copy file="${Resources}/ReadMe.txt" todir="${WebFolder}" />
       <copy todir="${WebFolder}">
@@ -89,8 +93,9 @@
          tofile="${WebFolder}/SnapBackup_en.properties.txt" />
       <zip destfile="${WebFolder}/SnapBackup.properties.zip" basedir="${WebFolder}"
          includes="SnapBackup_*.properties.txt" />
+      <echo />
 
-      <!--  Create Mac OS X Application  -->
+      <echo message="=== Create Mac OS X application ===" />
       <copy todir="${BuildFolder}">
          <fileset dir="${Installer}/mac/application-bundle" />
       </copy>
@@ -99,8 +104,9 @@
       <copy file="${Installer}/mac/snap-backup.icns"            todir="${MacApp}/Resources" />
       <copy file="${BuildFolder}/snapbackup.jar"                todir="${MacApp}/Resources/Java" />
       <copy file="${Resources}/graphics/application/splash.png" todir="${MacApp}/Resources/Java" />
+      <echo />
 
-      <!--  Create Windows Installer  -->
+      <echo message="=== Create Windows installer ===" />
       <condition property="is.windows"><os family="windows" /></condition>
       <copy todir="${BuildFolder}">
          <fileset dir="${Installer}/windows" />
@@ -117,8 +123,8 @@
 
    </target>
 
-   <!--  Sign Executable JAR File -->
    <target name="action" if="doaction">
+      <echo message="=== Sign executable JAR file ===" />
       <!-- Create Keystore:
          $ cd src/resources
          $ keytool -genkey -alias snapbackup.org -validity 10000 -keyalg RSA -dname "CN=Dem
@@ -128,6 +134,7 @@
       <signjar
          jar="${JavaClasses}/../snapbackup.jar" storepass="${env.SnapBackupJksPass}"
          alias="snapbackup.org" keystore="${Resources}/snapbackup.jks" />
+      <echo />
    </target>
 
 </project>
