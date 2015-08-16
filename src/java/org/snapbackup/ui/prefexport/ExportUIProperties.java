@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Export Settings UI Properties:                                             //
@@ -28,6 +28,7 @@ package org.snapbackup.ui.prefexport;
 import org.snapbackup.settings.AppProperties;
 
 class ExportUIProperties {
+
    final String title =            AppProperties.getProperty("ExportTitle");
 
    final String locationTitle =    AppProperties.getPropertyPadded("ExportLocationTitle");
@@ -41,4 +42,5 @@ class ExportUIProperties {
    final String buttonExport =     AppProperties.getProperty("ExportButtonAction");
 
    final String msgSuccess =       AppProperties.getProperty("ExportMsgSuccess");
-   }
+
+}

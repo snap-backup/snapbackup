@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Export Settings Dialog:                                                    //
@@ -130,8 +130,7 @@ public class ExportDialog extends JDialog {
       locationFileChooser.setFileFilter(new ExportPrefs().xmlFilter);
       int returnStatus = locationFileChooser.showSaveDialog(this);
       if (returnStatus == JFileChooser.APPROVE_OPTION)
-         locationTextField.setText(
-               locationFileChooser.getSelectedFile().getAbsolutePath());
+         locationTextField.setText(locationFileChooser.getSelectedFile().getAbsolutePath());
       }
 
    void actionReset() {
@@ -151,8 +150,7 @@ public class ExportDialog extends JDialog {
          this.dispose();
          }
       else
-         JOptionPane.showMessageDialog(this, errMsg, ui.locationCmd,
-               JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this, errMsg, ui.locationCmd, JOptionPane.ERROR_MESSAGE);
       }
 
-   }
+}

@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Import Data Model:                                                         //
@@ -87,4 +87,4 @@ public class ImportPrefs {
       return errMsg;
       }
 
-   }
+}

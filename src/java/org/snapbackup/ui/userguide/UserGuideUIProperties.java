@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // User Guide UI Properties:                                                  //
@@ -46,4 +46,4 @@ public class UserGuideUIProperties {
    final String userGuideButtonClose = AppProperties.getProperty("UserGuideButtonClose");
    final String userGuideErrMsg =      AppProperties.getProperty("UserGuideErrMsg");
 
-   }
+}

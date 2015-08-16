@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Options:                                                                   //
@@ -26,6 +26,7 @@
 package org.snapbackup.ui.options;
 
 public class Options {
+
    public static final String prefSpacer =        "OptionSpacer";
    public static final String spacerDefault =     "_";
 
@@ -58,4 +59,5 @@ public class Options {
    public static final String showSkippedDefault =     skipYes;
    public static final String prefNumLargestFiles =    "OptionNumLargestFiles";
    public static final String numLargestFilesDefault = "3";
-   }
+
+}

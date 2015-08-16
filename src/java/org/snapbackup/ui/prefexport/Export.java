@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Export Settings Dialog:                                                    //
@@ -30,6 +30,7 @@ import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.AppProperties;
 
 public class Export {
+
    //Constants
    public static final String prefSettingsFileName = "ExportFileName";
    public static final int    fileNameCols =         40;
@@ -39,4 +40,5 @@ public class Export {
    public final String defaultSettingsFileName =
          SystemAttributes.userDocsDir + SystemAttributes.fileSeparator +
          SystemAttributes.appName + Settings + ExportPrefs.xmlExtention;
-   }
+
+}

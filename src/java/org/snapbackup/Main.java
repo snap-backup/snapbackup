@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Main Startup:                                                              //
@@ -35,8 +35,8 @@ import org.snapbackup.settings.UserPreferences;
 
 public class Main {
 
-   //Run Snap Backup in either command line mode where the parameter is the profile name
-   //or in GUI (Swing) mode if there are no parameters.
+   // Run Snap Backup in either command line mode where the parameter is the profile name
+   // or in GUI (Swing) mode if there are no parameters.
    public static void main(String[] argv) {
       if (argv.length > 0)
          DataModel.doCmdLineBackup(argv[0], argv.length > 1 ? argv[1] : null);
@@ -56,4 +56,4 @@ public class Main {
          }
       }
 
-   }
+}

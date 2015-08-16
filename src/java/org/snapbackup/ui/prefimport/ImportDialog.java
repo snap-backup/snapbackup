@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // Import Settings Dialog:                                                    //
@@ -155,4 +155,4 @@ public class ImportDialog extends JDialog {
                JOptionPane.ERROR_MESSAGE);
       }
 
-   }
+}

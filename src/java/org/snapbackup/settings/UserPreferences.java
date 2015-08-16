@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // User Preferences:                                                          //
@@ -142,11 +142,11 @@ public class UserPreferences {
    public static boolean profileInDB() {
       return prefs.get(profilePrefix() + prefProfileName, null) != null;
       }
-    
+
    public static boolean profileInDB(String profileName) {
       return prefs.get(profilePrefix(profileName) + prefProfileName, null) != null;
       }
-    
+
    public static String readProfilePref(String prefName) {
       //Returns user's preference.  If none, default app property is returned.
       return prefs.get(profilePrefix() + prefName.toLowerCase(),
@@ -217,4 +217,4 @@ public class UserPreferences {
       prefs.put(key, prefValue);
       }
 
-   }
+}
