@@ -11,7 +11,7 @@ webServerUrl=http://localhost/snapbackup.org
 echo
 echo "Snap Backup Website"
 echo "###################"
-cd $(dirname $0)
+cd $(dirname $0)/../website
 websiteFolder=$(pwd)
 
 # Build HTML files (run DSI templating)
