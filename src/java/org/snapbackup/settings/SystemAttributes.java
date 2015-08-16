@@ -16,7 +16,7 @@
 // details.                                                                   //
 //                                                                            //
 // Copyright (c) individual contributors to the Snap Backup project           //
-// Snap Backup is a registered trademark of Center Key Software               //
+// Snap Backup is a registered trademark of Center Key                        //
 // http://snapbackup.org                                                      //
 //                                                                            //
 // System Attributes:                                                         //
@@ -36,6 +36,7 @@ public class SystemAttributes {
    //Release constants
    public static final String appName = "SnapBackup";  //".properties" name
    public static final String appVersion = "6.0";
+   // 6.0 - 8/16/2015 -  Upgrade to Java 7
    // 5.6 - 4/23/2011 -  Albanian
    // 5.5 - 1/2/2011 -   Romanian
    // 5.4 - 10/24/2010 - Manifest splash screen and convert to .org
@@ -82,7 +83,7 @@ public class SystemAttributes {
    public static final String appAuthors = "Dem Pilafian";  //Names of code contributors
    public static final String appCopyright =
       "Copyright &copy; individual contributors to the Snap Backup project<br>" +
-      "Snap Backup&reg; is a registered trademark of Center Key Software";
+      "Snap Backup&reg; is a registered trademark of Center Key";
 
    //Useful constants
    public static final String nullStr =         "";
@@ -97,10 +98,10 @@ public class SystemAttributes {
    public static final String endHtml =         "</html>";
    public static final String headerPre =       startHtml + "<center><br><b><font size=+2 color=navy face='comic sans ms, sand, fantasy'>";
    public static final String headerMid =       "</font></b>";
-   public static final String headerSplashTag = "<br><br><b><font color=gray>Center Key Software</font></b>";
+   public static final String headerSplashTag = "<br><br><b><font color=gray>Center Key</font></b>";
    public static final String headerPost =      "<br>&nbsp;</center>" + endHtml;
    public static final String feedbackEMail =   "feedback" + atSign + "snapbackup.org";
-   public static final String postalAddress =   "Center Key Software\nBox 21\nSan Carlos, California  94070\nUSA";
+   public static final String postalAddress =   "Center Key\nBox 21\nSan Carlos, California  94070\nUSA";
    public static final String homeURL =         "http://snapbackup.org";  //on About Box
    public static final String updatesURL =      homeURL + "/version/";  //not displayed
    public static final String downloadURL =     homeURL + "/download";  //on About Box
@@ -149,4 +150,5 @@ public class SystemAttributes {
       fileSysView.getDefaultDirectory().getAbsolutePath() + docsExtra;
    public static final String userDesktopDir =
       fileSysView.getHomeDirectory().getAbsolutePath() + desktopExtra;
-   }
+
+}
