@@ -14,7 +14,6 @@
    <property name="Home"        location=".." />
    <property name="JavaSource"  location="${Home}/src/java" />
    <property name="Resources"   location="${Home}/src/resources" />
-   <property name="Installer"   location="${Home}/src/installer" />
    <property name="BuildFolder" location="${Home}/build" />
    <property name="JavaClasses" location="${Home}/build/classes" />
    <property name="HtmlFolder"  location="${Home}/build/classes/org/snapbackup/ui/userguide/html" />
@@ -95,21 +94,6 @@
       <zip destfile="${WebFolder}/SnapBackup.properties.zip" basedir="${WebFolder}"
          includes="SnapBackup_*.properties.txt" />
       <echo />
-
-      <echo message="=== Create Windows installer ===" />
-      <condition property="is.windows"><os family="windows" /></condition>
-      <copy todir="${BuildFolder}">
-         <fileset dir="${Installer}/windows" />
-      </copy>
-      <exec dir="${BuildFolder}" executable="\Program Files\NSIS\makensis.exe" osfamily="windows">
-         <arg value="/V2"  />
-         <arg value="snap-backup.nsi"  />
-      </exec>
-      <delete file="${BuildFolder}/snap-backup.nsi" />
-      <delete file="${BuildFolder}/SnapBackupIcon16.ico" />
-      <delete file="${BuildFolder}/SnapBackupIcon32.ico" />
-      <delete file="${BuildFolder}/SnapBackupLicense.txt" />
-      <delete file="${BuildFolder}/Uninstall.txt" />
 
    </target>
 
