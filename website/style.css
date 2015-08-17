@@ -3,9 +3,9 @@
 
 /* Base */
 body    { background-image: url("graphics/arches.png"); background-repeat: no-repeat; color: teal; margin: 0px; }
-a       { border-color: teal; }
-a:hover { background-color: teal; outline-color: teal; }
 sup     { font-size: 70%; }
+:not(.plain) > a:not(.plain):not(.image-link) { border-color: 1px dotted teal; }
+:not(.plain) > a:not(.plain):not(.image-link):hover { background-color: teal; outline: 2px solid teal; }
 
 /* Layout */
 .stress   { font-weight: bold; font-style: italic; color: teal; }
@@ -76,3 +76,9 @@ ul#nav-bar li.current a, ul#nav-bar li a:hover {
 
 .perfect { border-color: teal; }
 .perfect h1 { background-color: teal; color: yellow; }
+
+#github-banner {  /* fork me */
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   }
