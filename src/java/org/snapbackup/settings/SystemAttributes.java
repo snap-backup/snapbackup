@@ -60,11 +60,12 @@ public class SystemAttributes {
    // 3.1 - 6/1/2005 -   Filters
    // 3.0 - 5/9/2005 -   Multiple profiles
    public static final String[] localeCodes = {
-      "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq" };
-      //Codes -- http://www.loc.gov/standards/iso639-2/php/code_list.php
-      //Flags -- https://www.paypal.com/be/cgi-bin/webscr?cmd=_display-approved-signup-countries-outside
-      //See build.xml for workaround to "in" bug regarding Indonesian:
-      //   http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6457127
+      "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq"
+      };
+      // Codes -- http://www.loc.gov/standards/iso639-2/php/code_list.php
+      // Flags -- https://www.paypal.com/be/webapps/mpp/country-worldwide
+      // See build.xml for workaround to "in" bug regarding Indonesian:
+      //    http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127
    public static final String[][] appTranslators = {
       { "Giorgio Ponza",          "http://www.janxes.it/jsp/societa/Giorgio.jsp" },      //"it"
       { "Pasc&aacute;l Bihler",   "http://www.bi-on.de/pascal/" },                       //"de"
@@ -79,13 +80,13 @@ public class SystemAttributes {
       { "Andy Saksono",           "http://en.wikipedia.org/wiki/Indonesian_language" },  //"id"
       { "Dany",                   "http://dragut8912.hi5.com" },                         //"ro"
       { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                      //"sq"
-   };
+      };
    public static final String appAuthors = "Dem Pilafian";  //Names of code contributors
    public static final String appCopyright =
       "Copyright &copy; individual contributors to the Snap Backup project<br>" +
       "Snap Backup&reg; is a registered trademark of Center Key";
 
-   //Useful constants
+   // Useful constants
    public static final String nullStr =         "";
    public static final String space =           " ";
    public static final String comma =           ",";
@@ -107,7 +108,7 @@ public class SystemAttributes {
    public static final String downloadURL =     homeURL + "/download";  //on About Box
    public static final String visitURL =        homeURL + "/app?v=" + appVersion;  //not displayed
 
-   //Bootstrap data needed before reading properties file
+   // Bootstrap data needed before reading properties file
    public static final String errMsgHeader = "ERROR -- '";
    public static final String errMsgMissingResource = "' property not found in: ";
    public static final String prefLocale = "locale";
@@ -118,7 +119,7 @@ public class SystemAttributes {
    public static final String splitStr = "~@~";  //Delimiter for multi-line data
    public static final String cmdLineDefaultProfile = "~";
 
-   //System information retrieved from JVM
+   // System information retrieved from JVM
    static final Properties     sysInfo =       System.getProperties();
    public static final String  userName =      sysInfo.getProperty("user.name");
    public static final String  userHomeDir =   sysInfo.getProperty("user.home");
