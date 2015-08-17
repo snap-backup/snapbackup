@@ -4,8 +4,6 @@
 /* Base */
 body    { background-image: url("graphics/arches.png"); background-repeat: no-repeat; color: teal; margin: 0px; }
 sup     { font-size: 70%; }
-:not(.plain) > a:not(.plain):not(.image-link) { border-color: 1px dotted teal; }
-:not(.plain) > a:not(.plain):not(.image-link):hover { background-color: teal; outline: 2px solid teal; }
 
 /* Layout */
 .stress   { font-weight: bold; font-style: italic; color: teal; }
@@ -71,6 +69,9 @@ ul#nav-bar li.current a, ul#nav-bar li a:hover {
    }
 
 /* 3rd party */
+:not(.plain) > a:not(.plain):not(.image-link) { border-color: teal; }
+:not(.plain) > a:not(.plain):not(.image-link):hover { background-color: teal; outline-color: teal; }
+
 .google-group { background-color: white; border: 1px solid gray; padding: 5px; }
 .google-group img { height: 30px; }
 
