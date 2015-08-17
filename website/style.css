@@ -35,7 +35,7 @@ h3         { margin-top: 10px; }
 .box-top    { font-weight: bold; font-size: 110%; border: solid teal 1px; text-align: center;
                  background: darkgray; padding: 3px; }
 .box-middle { border-left: solid teal 1px; border-right: solid teal 1px; text-align: center; padding: 5px; }
-.box-bottom { border: solid teal 1px; text-align: center; padding: 5px; }
+.box-bottom { border: solid teal 1px; text-align: center; padding: 5px 35px; }
 
 .nav { float: left; background-color: darkgray; text-transform: uppercase; font-weight: bold; font-size: 75%; padding: 20px 10px 20px 0px; margin-top: 250px; }
 ul#nav-bar {

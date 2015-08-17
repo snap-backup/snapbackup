@@ -29,8 +29,8 @@
 
 <hr id=incremental>
 <h2>Does Snap Backup perform "incremental" backups or "full" backups?</h2>
-<p>Snap Backup performs full backups.&nbsp;  Incremental backups are good
-for many needs, like backing up an entire hard drive, but such an
+<p>Full.&nbsp;  Incremental backups are good for many needs, like backing
+up an entire hard drive, but such an
 approach adds complexity to the backup process.&nbsp;  Snap Backup is
 intended for people who just want to backup their data files not their
 entire hard drives.</p>
@@ -45,12 +45,9 @@ platform.)</p>
 
 <hr id=restore>
 <h2>Does Snap Backup have a restore feature?</h2>
-<p>Eventually a restore (unzip) capability might be added to Snap Backup, but
-for now you'll need to use one of the numerous standard zip utilities,
-like gzip (gunzip), 7-Zip, The Unarchiver, or Mac's built-in Archive
-Utility.&nbsp;  Your computer probably already has the ability to open a
-".zip" file by simply double clicking it.&nbsp;  Hopefully, you
-will find restoring to be an infrequent activity.</p>
+<p>No, that's not really necessary.&nbsp;  Just double-click a ".zip" backup file,
+and your OS will expand the contents for you.&nbsp;  Hopefully, you will find restoring
+to be an infrequent activity.</p>
 
 <hr id=disk>
 <h2>Can Snap Backup be used to backup up a hard drive?</h2>
@@ -78,10 +75,10 @@ On Windows, the USB Drive will show up as a drive letter, such as
 
 <hr id=cd>
 <h2>Does Snap Backup write data to CDs or DVDs?</h2>
-<p>Before burning your data to a CD or DVD, you might find it helpful to use Snap
+<p>No, Snap Backup does not burn files directly to CDs or DVDs.&nbsp;
+Before burning your data to a CD or DVD, you might find it helpful to use Snap
 Backup to zip up all your data into a backup file and then burn the backup file
-to the CD or DVD.&nbsp;  However, Snap Backup itself does not burn files
-directly to CDs or DVDs.</p>
+to the CD or DVD.</p>
 
 <hr id=copy>
 <h2>Can Snap Backup copy files instead of compressing them into a zip file?</h2>
@@ -105,7 +102,8 @@ files based on their size.</p>
 
 <hr id=automatic>
 <h2>Can Snap Backup schedule backups to happen automatically?</h2>
-<p>To facilitate launching backups from scripts and schedulers, Snap Backup can be
+<p>Yes, with some scripting.&nbsp;  To facilitate launching backups from scripts and
+schedulers, Snap Backup can be
 run from the command-line.&nbsp;  Use the scheduler included with for your operating
 system (for example, "cron" on Linux and "Scheduled Tasks" on Windows) to automate
 your backups.&nbsp;  For instructions, see the "Command-Line Option" section in the
@@ -171,9 +169,9 @@ settings will automatically be preserved.</p>
 
 <hr id=free>
 <h2>Is Snap Backup really free?</h2>
-<p>Yes.&nbsp;  Snap Backup is free as in beer and as well as free as in free
+<p>Yes.&nbsp;  Snap Backup is both free as in beer and free as in
 speech.&nbsp; Because Snap Backup is an open source project, you can
-look at the <a href="https://github.com/snap-backup/snapbackup">source code</a>.</p>
+look at and modify the <a href="https://github.com/snap-backup/snapbackup">source code</a>.</p>
 
 </p>
 <!--#set var="flare_separator" value="&nbsp;&nbsp;"-->
