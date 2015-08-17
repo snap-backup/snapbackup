@@ -44,9 +44,9 @@
       <!--  Windows  -->
       <div class=box-top>Microsoft Windows</div>
       <div class=box-middle>
-         <a href="snap-backup-installer-v<!--#echo var="versionNum"-->.msi?raw=true">
+         <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.msi?raw=true">
             snap-backup-installer-v<!--#echo var="versionNum"-->.msi</a>
-         <a href="snap-backup-installer-v<!--#echo var="versionNum"-->.msi?raw=true">
+         <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.msi?raw=true">
             <img src="../graphics/os-icon-win.png" style="vertical-align: -3px" alt="Windows">
          </a>
          <br>
@@ -59,7 +59,7 @@
       <br>
 
       <!--  Generic JAR  -->
-      <div class=box-top>Generic executable JAR File
+      <div class=box-top>Generic executable JAR file
          <span style="font-size: 70%; text-transform: uppercase">
          (All Java Platforms)</span>
       </div>
