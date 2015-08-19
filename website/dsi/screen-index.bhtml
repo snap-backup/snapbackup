@@ -24,27 +24,27 @@ Screens: &nbsp;
 <br><br>
 
 <!--#if file="$DOCUMENT_NAME=screen-index.bhtml"-->
-   <h2>Apple Mac OS X Look &amp; Feel</h2><br>
+   <h2>Apple Mac OS X look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-mac.png" alt="Mac Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@mac.bhtml"-->
-   <h2>Apple Mac OS X Look &amp; Feel</h2><br>
+   <h2>Apple Mac OS X look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-mac.png" alt="Mac Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@ubuntu.bhtml"-->
-   <h2>Ubuntu GTK+ Look &amp; Feel</h2><br>
+   <h2>Ubuntu GTK+ look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-ubuntu.png" alt="Ubuntu Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@win.bhtml"-->
-   <h2>Microsoft Windows XP Look &amp; Feel</h2><br>
+   <h2>Microsoft Windows XP look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-win.png" alt="Windows XP Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@vista.bhtml"-->
-   <h2>Microsoft Windows Vista Look &amp; Feel</h2><br>
+   <h2>Microsoft Windows Vista look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-vista.png" alt="Windows Vista Screenshot">
 <!--#elif file="$DOCUMENT_NAME=screen-@metal.bhtml"-->
-   <h2>Metal (Java) Look &amp; Feel</h2><br>
+   <h2>Metal (Java) look &amp; feel</h2><br>
    <img src="../graphics/snap-backup-screen-java.png" alt="Metal Screenshot">
 <!--#endif -->
 <br><br>
 
-For a description of how to use the features, check out:
+Check out the manual:
 <p class=indent>
    <a href="../download/SnapBackupUserGuide.html"
       class=external-site>Snap Backup User Guide</a>
