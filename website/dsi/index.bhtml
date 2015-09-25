@@ -82,25 +82,7 @@ Snap Backup:<strong><ul>
    want to help translate Snap Backup into your favorite language.
 </p>
 
-<h2>Comments</h2>
-<!-- PERFECT Form -->
-<form class=perfect method=post>
-   <h1>Send Us a Message</h1>
-   <label><span>Message:</span>
-      <textarea name=message rows=2 cols=20></textarea></label>
-   <label><span>Name:</span>
-      <input name=name size=10></label>
-   <label><span>E-Mail:</span>
-      <input name=email size=15></label>
-   <p><button type=submit>Submit</button></p>
-   <p class=note>Powered by
-      <a href="http://centerkey.com/php/" class=external-site>PERFECT</a></p>
-</form>
-<p>
-   All the fields are optional.&nbsp;  However, if you want a response, make sure
-   to provide your e-mail address.
-</p>
-
+<br>
 <div class=push-right>
    <div id=social-buttons class=plain></div>
 </div>

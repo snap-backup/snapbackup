@@ -44,14 +44,9 @@ ul#nav-bar {
    margin-top: 220px;
    }
 ul#nav-bar li {
-   background-image: -webkit-linear-gradient(top, silver, teal);
-   background-image:    -moz-linear-gradient(top, silver, teal);
-   background-image:     -ms-linear-gradient(top, silver, teal);
-   background-image:      -o-linear-gradient(top, silver, teal);
-   background-image:         linear-gradient(top, silver, teal);
-   border-bottom: 1px solid dimgray;
-   border-right: 1px solid dimgray;
-   background-color: teal; /* IE6...IE9 */
+   border-bottom: 1px solid silver;
+   border-right: 1px solid silver;
+   background-color: teal;
    }
 ul#nav-bar li:first-child {
    border-top: 1px solid dimgray;
@@ -75,8 +70,9 @@ ul#nav-bar li.current a, ul#nav-bar li a:hover {
 .google-group { background-color: white; border: 1px solid gray; padding: 5px; }
 .google-group img { height: 30px; }
 
-.perfect { border-color: teal; }
-.perfect h1 { background-color: teal; color: yellow; }
+form.perfect { border-color: teal; padding: 15px 0px; }
+form.perfect h1 { background-color: teal; color: yellow; }
+form.perfect label span { width: 14em; }
 
 #github-banner {  /* fork me */
    position: absolute;

@@ -96,7 +96,7 @@
    key.</p>
 <p>The property "OptionalLocalizedApplicationTitle" is provided in case the name
    "Snap Backup" needs to be localized for clarity.</p>
-<p>Because e-mail sometimes mutilates international characters, you may need to
+<p>Because email sometimes mutilates international characters, you may need to
    zip up your translated properties file before submitting it.&nbsp;  Or you can
    check the properties file directly into the
    <a href="http://code.google.com/p/snapbackup/wiki/TranslatorSteps">project repository</a>.</p>
