@@ -1,7 +1,9 @@
-Snap Backup Project
-===================
+### Snap Backup Project
 
 *The One-Click Backup Utility*
+
+---
+<img align=right src="website/graphics/snap-backup-icon.png">
 
 Snap Backup is a utility for individual computer users who need a simple and convenient way to backup their valuable files.  It is available in Dutch, English, Esperanto, German, Italian, Korean, Portuguese, Russian, Spanish, and Slovene.
 
