@@ -1,9 +1,9 @@
-<!--#set var="pageTitle" value="The One-Click Backup Utility"-->
+<!--#set var="pageTitle" value="The one-click backup utility"-->
 <!--#include file="~begin.fhtml"-->
 
 <!--  Body  -->
 <p>
-   Snap Backup<sup>&reg;</sup> is <i>The One-Click Backup Utility</i> that makes
+   Snap Backup<sup>&reg;</sup> is <i>The one-click backup utility</i> that makes
    it simple to protect your important work.&nbsp;  Snap Backup is for individual
    computer users who need a simple and convenient way to backup their
    valuable files, and it's free (open source).
@@ -24,7 +24,7 @@
       <!--#include file="~languages.fhtml"-->
    </p>
    <div class=thumb-box>
-      <div>The One-Click Backup Utility</div>
+      <div>The one-click backup utility</div>
       <a href="screen"><img src="graphics/snap-backup-thumb.png" alt="Screen"><br>
       View Details</a>
    </div>

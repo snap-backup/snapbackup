@@ -1,11 +1,11 @@
-<!--#set var="pageTitle" value="The One-Click Backup Utility"-->
+<!--#set var="pageTitle" value="The one-click backup utility"-->
 <!--#include file="~begin.fhtml"-->
 
 <!--  Body  -->
 <b>Title:</b>
    Snap Backup<br><br>
 <b>Phrase:</b>
-   The One-Click Backup Utility<br><br>
+   The one-click backup utility<br><br>
 <b>Category:</b>
    Personal Backup Utility<br><br>
 <b>Description:</b>

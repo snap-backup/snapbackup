@@ -1,6 +1,6 @@
 ### Snap Backup Project
 
-*The One-Click Backup Utility*
+*The one-click backup utility*
 
 ---
 <img align=right src="website/graphics/snap-backup-icon.png">

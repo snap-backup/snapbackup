@@ -1,5 +1,5 @@
 Snap Backup
-The One-Click Backup Utility
+The one-click backup utility
 ============================
 
 License
