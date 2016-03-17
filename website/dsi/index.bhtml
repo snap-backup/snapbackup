@@ -9,8 +9,7 @@
    valuable files, and it's free (open source).
 </p>
 <h2>Protecting your data should be easy</h2>
-<p class=push-right><a href="download/"><img src="graphics/download-now.png"
-      alt="Download"></a>
+<p class=push-right><a href=download><img src=graphics/download-now.png alt=Download></a>
 </p>
 <p>
    How much work would you lose if your hard drive crashed right now or you lost
@@ -25,7 +24,7 @@
    </p>
    <div class=thumb-box>
       <div>The one-click backup utility</div>
-      <a href="screen"><img src="graphics/snap-backup-thumb.png" alt="Screen"><br>
+      <a href=screen><img src=graphics/snap-backup-thumb.png alt=Screen><br>
       View Details</a>
    </div>
 </div>
@@ -51,7 +50,7 @@ Snap Backup:<strong><ul>
       <!--#include file="~news.fhtml"-->
    </div>
 
-   <a href="http://techdem.centerkey.com/2012/03/snap-backup-dropbox-free-cloud-backup.html"
+   <a href=http://blog.centerkey.com/2012/03/snap-backup-dropbox-free-cloud-backup.html
    class=external-site>cloud backup</a>.&nbsp;
    Snap Backup automatically puts the current date in the backup file name,
    alleviating you from the tedious task of renaming your backup
@@ -69,16 +68,16 @@ Snap Backup:<strong><ul>
    to protect their valuable data.
 </p>
 
-<a href="http://www.java.com/" class=external-site><img class=push-right
-   src="graphics/logo-java.png" style="width: 150px;" alt="Java"></a>
+<a href=http://www.java.com class=external-site><img class=push-right
+   src=graphics/logo-java.png style="width: 150px;" alt=Java></a>
 <h2>For everyone</h2>
 <p>
    Snap Backup is written in Java and designed to run on any computer with
    Java.&nbsp;  Snap Backup is an
-   <a href="https://github.com/snap-backup/snapbackup">open source</a>
+   <a href=https://github.com/snap-backup/snapbackup>open source</a>
    software project and is internationalized (meaning we
    just need to translate the words to support new languages).&nbsp;  Please
-   see the <a href="translate">translation</a> page if you
+   see the <a href=translate>translation</a> page if you
    want to help translate Snap Backup into your favorite language.
 </p>
 

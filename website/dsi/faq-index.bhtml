@@ -4,26 +4,26 @@
 <!--  Body  -->
 <p>Have a burning question about Snap Backup?&nbsp;  This is the place
    to look for answers.&nbsp;  If your question is not answered here,
-   feel free to use the <a href="../feedback">feedback</a> form.
+   feel free to use the <a href=../feedback>feedback</a> form.
 </p>
 <p class=small>
-   <a href="#incremental">incremental</a> |
-   <a href="#bit">bit</a> |
-   <a href="#restore">restore</a> |
-   <a href="#disk">disk</a> |
-   <a href="#mac">mac</a> |
-   <a href="#usb">usb</a> |
-   <a href="#cd">cd</a> |
-   <a href="#copy">copy</a> |
-   <a href="#profiles">profiles</a> |
-   <a href="#filters">filters</a> |
-   <a href="#automatic">automatic</a> |
-   <a href="#languages">languages</a> |
-   <a href="#zip">zip</a> |
-   <a href="#freeze">freeze</a> |
-   <a href="#4gb">4gb</a> |
-   <a href="#upgrade">upgrade</a> |
-   <a href="#free">free</a>
+   <a href=#incremental>incremental</a> |
+   <a href=#bit>bit</a> |
+   <a href=#restore>restore</a> |
+   <a href=#disk>disk</a> |
+   <a href=#mac>mac</a> |
+   <a href=#usb>usb</a> |
+   <a href=#cd>cd</a> |
+   <a href=#copy>copy</a> |
+   <a href=#profiles>profiles</a> |
+   <a href=#filters>filters</a> |
+   <a href=#automatic>automatic</a> |
+   <a href=#languages>languages</a> |
+   <a href=#zip>zip</a> |
+   <a href=#freeze>freeze</a> |
+   <a href=#4gb>4gb</a> |
+   <a href=#upgrade>upgrade</a> |
+   <a href=#free>free</a>
 </p>
 <br class=leapfrog>
 
@@ -60,7 +60,7 @@ entire hard drive.</p>
 <h2>Which files and folders do I need to backup on Mac OS X?</h2>
 <p>If you are a Mac user, check out this article for inforamtion on exactly
 which files and folders to backup:
-<a href="http://techdem.blogspot.com/2009/04/save-mac-data-with-snap-backup.html"
+<a href=http://blog.centerkey.com/2009/04/save-mac-data-with-snap-backup.html
    class=external-site>Save Mac Data with Snap Backup</a></p>
 
 <hr id=usb>
@@ -107,7 +107,7 @@ schedulers, Snap Backup can be
 run from the command-line.&nbsp;  Use the scheduler included with for your operating
 system (for example, "cron" on Linux and "Scheduled Tasks" on Windows) to automate
 your backups.&nbsp;  For instructions, see the "Command-Line Option" section in the
-<a href="../download/SnapBackupUserGuide.html" class=external-site>Snap Backup
+<a href=../download/SnapBackupUserGuide.html class=external-site>Snap Backup
 User Guide</a>.</p>
 
 <hr id=languages>
@@ -123,7 +123,7 @@ use that if available.</p>
 ending in ".jar".&nbsp;  The ".jar" file extension is the standard extension for
 a Java program (an executable Java ARchive) and indicates the file should be
 opened by Java &mdash; not by a zip utility.&nbsp;  The easiest way to fix the problem
-is to just <a href="http://www.java.com/" class=external-site>reinstall Java</a>, which
+is to just <a href=http://www.java.com class=external-site>reinstall Java</a>, which
 automatically resets the ".jar" file association back to Java.&nbsp;  If that does not
 work, look to see if your zip utility has an option in its preferences to release the
 ".jar" file association.</p>
@@ -171,7 +171,7 @@ settings will automatically be preserved.</p>
 <h2>Is Snap Backup really free?</h2>
 <p>Yes.&nbsp;  Snap Backup is both free as in beer and free as in
 speech.&nbsp; Because Snap Backup is an open source project, you can
-look at and modify the <a href="https://github.com/snap-backup/snapbackup">source code</a>.</p>
+look at and modify the <a href=https://github.com/snap-backup/snapbackup>source code</a>.</p>
 
 </p>
 <!--#set var="flare_separator" value="&nbsp;&nbsp;"-->
