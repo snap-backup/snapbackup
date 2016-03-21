@@ -25,7 +25,7 @@
          <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.dmg?raw=true">
             snap-backup-installer-v<!--#echo var="versionNum"-->.dmg</a>
          <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.dmg?raw=true">
-            <img src="../graphics/os-icon-mac.png" style="vertical-align: -3px" alt="Mac">
+            <img src=../graphics/os-icon-mac.png style="vertical-align: -3px" alt=Mac>
          </a>
          <br>
          <small>Updated: <!--#echo var="updated"--></small>
@@ -47,7 +47,7 @@
          <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.msi?raw=true">
             snap-backup-installer-v<!--#echo var="versionNum"-->.msi</a>
          <a href="<!--#echo var="downloadUrlBase"--><!--#echo var="versionNum"-->.msi?raw=true">
-            <img src="../graphics/os-icon-win.png" style="vertical-align: -3px" alt="Windows">
+            <img src=../graphics/os-icon-win.png style="vertical-align: -3px" alt=Windows>
          </a>
          <br>
          <small>Updated: <!--#echo var="updated"--></small>
@@ -64,24 +64,23 @@
          (All Java Platforms)</span>
       </div>
       <div class=box-middle>
-         <a href="snapbackup.jar">snapbackup.jar</a>
-         <a href="snapbackup.jar">
-            <img src="../graphics/os-icon-java.png" style="vertical-align: -3px"
-               alt="Java"></a>
-         (<!--#echo var="jarSize"-->)<br>
-         <a href="ReadMe.txt">ReadMe.txt</a>
+         <a href=snapbackup.jar>snapbackup.jar</a>
+         <a href=snapbackup.jar>
+            <img src=../graphics/os-icon-java.png style="vertical-align: -3px" alt=Java></a>
+            (<!--#echo var="jarSize"-->)<br>
+         <a href=ReadMe.txt>ReadMe.txt</a>
          &nbsp; &nbsp;
-         <a href="../graphics/snap-backup-icon.png">Optional Icon File</a>
-         (<a href="../graphics/snap-backup-icon-32.png">small</a>)<br>
+         <a href=../graphics/snap-backup-icon.png>Optional Icon File</a>
+         (<a href=../graphics/snap-backup-icon-32.png>small</a>)<br>
          <small>Updated: <!--#echo var="updated"--></small>
       </div>
       <div class=box-bottom>
          <p>
             First, download and install Java from:<br>
-            <a href="http://www.java.com/" class=external-site>www.java.com</a>
+            <a href=http://www.java.com class=external-site>www.java.com</a>
             <br>
-            <a href="http://www.java.com/" class=external-site>
-               <img src="../graphics/logo-get-java.png" alt="Java" style="width: 100px;">
+            <a href=http://www.java.com class=external-site>
+               <img src=../graphics/logo-get-java.png alt=Java style="width: 100px;">
             </a>
          </p>
          <p>
@@ -104,19 +103,19 @@
 		When you first run Snap<br>Backup, click the flag for<br>the language you desire.
 	</div>
    <h3>Getting started</h3>
-      <p>Run Snap Backup and consult the <a href="SnapBackupUserGuide.html"
+      <p>Run Snap Backup and consult the <a href=SnapBackupUserGuide.html
          class=external-site>User Guide</a> (Select "User Guide" from the "Help"
          menu) for information on configuring and saving your backup settings.
       </p>
       <div class=for-macs-only>
          Check Out:
          <p class=indent><a
-            href="http://techdem.centerkey.com/2009/04/save-mac-data-with-snap-backup.html"
+            href=http://blog.centerkey.com/2009/04/save-mac-data-with-snap-backup.html
             class=external-site>Save Mac Data</a>
          </p>
       </div>
       Your
-      <a href="../feedback">feedback</a> will be
+      <a href=../feedback>feedback</a> will be
       helpful in improving future versions of Snap Backup.&nbsp;  Please let
       us know if there are additional languages or platforms you would
       personally like to see supported.<br>

@@ -1,18 +1,18 @@
 <!--#if file="$DOCUMENT_NAME=translate-index.bhtml"-->
-   <a href="../download/SnapBackup_sq.properties.txt">Albanian (Shqip)       <img src="../graphics/language-sq.png"></a><br>
-   <a href="../download/SnapBackup_nl.properties.txt">Dutch (Nederlands)     <img src="../graphics/language-nl.png"></a><br>
-   <a href="../download/SnapBackup_en.properties.txt">English                <img src="../graphics/language-en.png"></a><br>
-   <a href="../download/SnapBackup_eo.properties.txt">Esperanto              <img src="../graphics/language-eo.png"></a><br>
-   <a href="../download/SnapBackup_fr.properties.txt">French (Français)      <img src="../graphics/language-fr.png"></a><br>
-   <a href="../download/SnapBackup_de.properties.txt">German (Deutsch)       <img src="../graphics/language-de.png"></a><br>
-   <a href="../download/SnapBackup_id.properties.txt">Indonesian (Bahasa)    <img src="../graphics/language-id.png"></a><br>
-   <a href="../download/SnapBackup_it.properties.txt">Italian (Italiano)     <img src="../graphics/language-it.png"></a><br>
-   <a href="../download/SnapBackup_ko.properties.txt">Korean (한국어)          <img src="../graphics/language-ko.png"></a><br>
-   <a href="../download/SnapBackup_pt.properties.txt">Portuguese (Português) <img src="../graphics/language-pt.png"></a><br>
-   <a href="../download/SnapBackup_ro.properties.txt">Romanian (Română)      <img src="../graphics/language-ro.png"></a><br>
-   <a href="../download/SnapBackup_ru.properties.txt">Russian (Русский)      <img src="../graphics/language-ru.png"></a><br>
-   <a href="../download/SnapBackup_es.properties.txt">Spanish (Español)      <img src="../graphics/language-es.png"></a><br>
-   <a href="../download/SnapBackup_sl.properties.txt">Slovene (Slovenščina)  <img src="../graphics/language-sl.png"></a><br>
+   <a href=../download/SnapBackup_sq.properties.txt>Albanian (Shqip)       <img src=../graphics/language-sq.png alt=sq></a><br>
+   <a href=../download/SnapBackup_nl.properties.txt>Dutch (Nederlands)     <img src=../graphics/language-nl.png alt=nl></a><br>
+   <a href=../download/SnapBackup_en.properties.txt>English                <img src=../graphics/language-en.png alt=en></a><br>
+   <a href=../download/SnapBackup_eo.properties.txt>Esperanto              <img src=../graphics/language-eo.png alt=eo></a><br>
+   <a href=../download/SnapBackup_fr.properties.txt>French (Français)      <img src=../graphics/language-fr.png alt=fr></a><br>
+   <a href=../download/SnapBackup_de.properties.txt>German (Deutsch)       <img src=../graphics/language-de.png alt=de></a><br>
+   <a href=../download/SnapBackup_id.properties.txt>Indonesian (Bahasa)    <img src=../graphics/language-id.png alt=id></a><br>
+   <a href=../download/SnapBackup_it.properties.txt>Italian (Italiano)     <img src=../graphics/language-it.png alt=it></a><br>
+   <a href=../download/SnapBackup_ko.properties.txt>Korean (한국어)          <img src=../graphics/language-ko.png alt=ko></a><br>
+   <a href=../download/SnapBackup_pt.properties.txt>Portuguese (Português) <img src=../graphics/language-pt.png alt=pt></a><br>
+   <a href=../download/SnapBackup_ro.properties.txt>Romanian (Română)      <img src=../graphics/language-ro.png alt=ro></a><br>
+   <a href=../download/SnapBackup_ru.properties.txt>Russian (Русский)      <img src=../graphics/language-ru.png alt=ro></a><br>
+   <a href=../download/SnapBackup_es.properties.txt>Spanish (Español)      <img src=../graphics/language-es.png alt=es></a><br>
+   <a href=../download/SnapBackup_sl.properties.txt>Slovene (Slovenščina)  <img src=../graphics/language-sl.png alt=sl></a><br>
 <!--#elif file="$DOCUMENT_NAME=faq-index.bhtml"-->
    Albanian (Shqip), Dutch (Nederlands), English, Esperanto, German (Deutsch),
    Indonesian (Bahasa), Italian (Italiano), Korean (한국어), Portuguese (Português),
@@ -22,17 +22,17 @@
    Indonesian (Bahasa), Italian (Italiano), Korean (한국어), Portuguese (Português),
    Romanian (Română), Russian (Русский), Spanish (Español), and Slovene (Slovenščina).
 <!--#else -->
-   Albanian (Shqip)       <img src="<!--#echo var="prefix"-->graphics/language-sq.png" alt=nl><br>
-   Dutch (Nederlands)     <img src="<!--#echo var="prefix"-->graphics/language-nl.png" alt=nl><br>
-   English                <img src="<!--#echo var="prefix"-->graphics/language-en.png" alt=en><br>
-   Esperanto              <img src="<!--#echo var="prefix"-->graphics/language-eo.png" alt=eo><br>
-   German (Deutsch)       <img src="<!--#echo var="prefix"-->graphics/language-de.png" alt=de><br>
-   Indonesian (Bahasa)    <img src="<!--#echo var="prefix"-->graphics/language-id.png" alt=id><br>
-   Italian (Italiano)     <img src="<!--#echo var="prefix"-->graphics/language-it.png" alt=it><br>
-   Korean (한국어)          <img src="<!--#echo var="prefix"-->graphics/language-ko.png" alt=ko><br>
-   Portuguese (Português) <img src="<!--#echo var="prefix"-->graphics/language-pt.png" alt=pt><br>
-   Romanian (Română)      <img src="<!--#echo var="prefix"-->graphics/language-ro.png" alt=ro><br>
-   Russian (Русский)      <img src="<!--#echo var="prefix"-->graphics/language-ru.png" alt=ru><br>
-   Spanish (Español)      <img src="<!--#echo var="prefix"-->graphics/language-es.png" alt=es><br>
-   Slovene (Slovenščina)  <img src="<!--#echo var="prefix"-->graphics/language-sl.png" alt=sl><br>
+   Albanian (Shqip)       <img src='<!--#echo var="prefix"-->graphics/language-sq.png' alt=sq><br>
+   Dutch (Nederlands)     <img src='<!--#echo var="prefix"-->graphics/language-nl.png' alt=nl><br>
+   English                <img src='<!--#echo var="prefix"-->graphics/language-en.png' alt=en><br>
+   Esperanto              <img src='<!--#echo var="prefix"-->graphics/language-eo.png' alt=eo><br>
+   German (Deutsch)       <img src='<!--#echo var="prefix"-->graphics/language-de.png' alt=de><br>
+   Indonesian (Bahasa)    <img src='<!--#echo var="prefix"-->graphics/language-id.png' alt=id><br>
+   Italian (Italiano)     <img src='<!--#echo var="prefix"-->graphics/language-it.png' alt=it><br>
+   Korean (한국어)          <img src='<!--#echo var="prefix"-->graphics/language-ko.png' alt=ko><br>
+   Portuguese (Português) <img src='<!--#echo var="prefix"-->graphics/language-pt.png' alt=pt><br>
+   Romanian (Română)      <img src='<!--#echo var="prefix"-->graphics/language-ro.png' alt=ro><br>
+   Russian (Русский)      <img src='<!--#echo var="prefix"-->graphics/language-ru.png' alt=ru><br>
+   Spanish (Español)      <img src='<!--#echo var="prefix"-->graphics/language-es.png' alt=es><br>
+   Slovene (Slovenščina)  <img src='<!--#echo var="prefix"-->graphics/language-sl.png' alt=sl><br>
 <!--#endif -->

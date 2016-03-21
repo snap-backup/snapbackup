@@ -173,9 +173,4 @@ settings will automatically be preserved.</p>
 speech.&nbsp; Because Snap Backup is an open source project, you can
 look at and modify the <a href=https://github.com/snap-backup/snapbackup>source code</a>.</p>
 
-</p>
-<!--#set var="flare_separator" value="&nbsp;&nbsp;"-->
-<!--#include file="~flare.fhtml"-->
-</p>
-
 <!--#include file="~end.fhtml"-->
