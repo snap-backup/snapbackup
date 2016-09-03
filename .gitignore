@@ -4,3 +4,6 @@
 /build/
 /website/dsi/dsi.jar
 /website/httpdocs/
+
+# Extraneous system files
+.DS_Store
