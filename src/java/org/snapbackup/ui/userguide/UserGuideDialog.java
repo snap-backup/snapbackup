@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import javax.swing.*;
 import org.snapbackup.ui.UIUtilities;
-import edu.jhu.apl.PrintUtilities;
 
 public class UserGuideDialog extends JDialog {
 
@@ -35,9 +34,8 @@ public class UserGuideDialog extends JDialog {
    JLabel      versionLabel =   new JLabel(ui.userGuideVersion);
    JScrollPane htmlScrollPane = new JScrollPane();
    JEditorPane htmlEditorPane;
-   JButton     printButton =    new JButton(ui.userGuideButtonPrint);
    JButton     closeButton =    new JButton(ui.userGuideButtonClose);
-   JButton[]   buttonList =     { printButton, closeButton };
+   JButton[]   buttonList =     { closeButton };
 
    public UserGuideDialog(Frame owner) {
       super(owner);
@@ -80,9 +78,6 @@ public class UserGuideDialog extends JDialog {
       htmlScrollPane.setPreferredSize(size);
       //htmlScrollPane.setSize(size);
       //htmlScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-      printButton.addActionListener(new ActionListener() {
-          public void actionPerformed(ActionEvent e) { printButtonAction(); }
-          } );
       closeButton.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) { closeButtonAction(); }
           } );
@@ -103,15 +98,10 @@ public class UserGuideDialog extends JDialog {
       basePanel.add(headerPanel);
       //basePanel.add(htmlScrollPane, BorderLayout.CENTER);
       basePanel.add(htmlScrollPane);
-      buttonPanel.add(printButton);
       buttonPanel.add(closeButton);
       //basePanel.add(buttonPanel, BorderLayout.PAGE_END);
       basePanel.add(buttonPanel);
       getContentPane().add(basePanel);
-      }
-
-   public void printButtonAction() {
-      new PrintUtilities(htmlEditorPane).print();
       }
 
    public void closeButtonAction() {

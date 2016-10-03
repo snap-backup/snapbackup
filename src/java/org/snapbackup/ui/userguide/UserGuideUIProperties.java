@@ -27,7 +27,6 @@ public class UserGuideUIProperties {
    final String userGuideHeader =      AppProperties.getProperty("UserGuideHeader");
    final String userGuideTitle =       AppProperties.getProperty("ApplicationTitle") + space + userGuideHeader;
    final String userGuideVersion =     AppProperties.getProperty("UserGuideVersion") + space + appVersion;
-   final String userGuideButtonPrint = AppProperties.getProperty("UserGuideButtonPrint");
    final String userGuideButtonClose = AppProperties.getProperty("UserGuideButtonClose");
    final String userGuideErrMsg =      AppProperties.getProperty("UserGuideErrMsg");
 

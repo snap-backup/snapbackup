@@ -195,7 +195,6 @@ public class UIProperties {
    public final String err09ArchiveProblem =     AppProperties.getProperty("Err09ArchiveProblem");
    public final String err10CannotParseFilter =  AppProperties.getProperty("Err10CannotParseFilter");
    public final String err20BrowserFailure =     AppProperties.getProperty("Err20BrowserFailure");
-   public final String err25PrintFailure =       AppProperties.getProperty("Err25PrintFailure");
    public final String err30ProfileNotFound =    AppProperties.getProperty("Err30ProfileNotFound");
    public final String err40BackupTooLarge =     AppProperties.getProperty("Err40BackupTooLarge");
 
