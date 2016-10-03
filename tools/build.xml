@@ -46,6 +46,7 @@
          <!--
          bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
          [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
+         http://stackoverflow.com/questions/7816423
          -->
          <compilerarg value="-Xlint:all,-serial"  />
       </javac>

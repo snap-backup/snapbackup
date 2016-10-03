@@ -13,12 +13,13 @@
 # ===
 # Install Ant or download and unzip into the "~/apps/ant" folder:
 #    Download --> http://ant.apache.org/bindownload.cgi (".zip archive")
-#    Example install folder --> ~/apps/ant/apache-ant-1.9.6/bin
+#    Example install folder --> ~/apps/ant/apache-ant-1.9.7/bin
 
 addAnt() {
    antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
    PATH=$PATH:$antHome/bin
    echo "Path: $PATH"
+   which ant || echo "*** Must install ant first. See: build.sh.command"
    }
 
 buildMacInstaller() {
