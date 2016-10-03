@@ -3,7 +3,7 @@
 
 <!--  Body  -->
 <div style="height: 100px;"></div>
-<h2>Your message has been sent.&nbsp;  Thanks.</h2>
+<h2>Your message has been sent.&nbsp; Thanks.</h2>
 <div style="height: 400px;"></div>
 
 <!--#include file="~end.fhtml"-->

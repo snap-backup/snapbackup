@@ -3,9 +3,9 @@
 
 <!--  Body  -->
 <p>Snap Backup is an internationalized application &mdash; meaning that it is ready
-   to be localized into different languages.&nbsp;  However, translators
+   to be localized into different languages.&nbsp; However, translators
    are needed to convert the words from English into various other
-   languages.&nbsp;  If you want to help out, the process is
+   languages.&nbsp; If you want to help out, the process is
    straightforward.</p>
 <h2>Make Snap Backup Work in Your Language</h2>
 <ol>
@@ -30,7 +30,7 @@
       <p>View the "<a href="../download/SnapBackup_en.properties.txt"
          class=external-site>Snap Backup properties file</a>" so you can see
          how Snap Backup stores the text displayed in the user
-         interface.&nbsp;  For example, the text for the "Exit" button in Snap
+         interface.&nbsp; For example, the text for the "Exit" button in Snap
          Backup is defined with the following line:
       </p>
       <p class=indent><code>ButtonExit=Exit</code></p>
@@ -78,7 +78,7 @@
       <h3>Become Famous</h3>
       Well, we can't make you a rock star, but we will definitely give you
       <a href="../about/">credit</a> in the Snap Backup "About" box for your
-      translation work.&nbsp;  Snap Backup is downloaded at a rate of about
+      translation work.&nbsp; Snap Backup is downloaded at a rate of about
       40,000 times a year.
       <br><br>
    </li>
@@ -91,13 +91,13 @@
 <p>A line in the properties file beginning with the character "#" is a
    comment.</p>
 <p>The default fast key (mnemonic) for menu items and buttons is the first
-   character of the displayed text.&nbsp;  To designate a different character as
+   character of the displayed text.&nbsp; To designate a different character as
    the fast key, insert an "&amp;" just before the character desired to be the fast
    key.</p>
 <p>The property "OptionalLocalizedApplicationTitle" is provided in case the name
    "Snap Backup" needs to be localized for clarity.</p>
 <p>Because email sometimes mutilates international characters, you may need to
-   zip up your translated properties file before submitting it.&nbsp;  Or you can
+   zip up your translated properties file before submitting it.&nbsp; Or you can
    check the properties file directly into the
    <a href="http://code.google.com/p/snapbackup/wiki/TranslatorSteps">project repository</a>.</p>
 

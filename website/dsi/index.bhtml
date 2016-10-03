@@ -4,7 +4,7 @@
 <!--  Body  -->
 <p>
    Snap Backup<sup>&reg;</sup> is <i>The one-click backup utility</i> that makes
-   it simple to protect your important work.&nbsp;  Snap Backup is for individual
+   it simple to protect your important work.&nbsp; Snap Backup is for individual
    computer users who need a simple and convenient way to backup their
    valuable files, and it's open source and free for all to use.
 </p>
@@ -40,7 +40,7 @@ Snap Backup:<strong><ul>
 
 <div class=space-below>
    The first time you run Snap Backup, you configure where
-   your data files reside and where to create backup files.&nbsp;  Snap Backup
+   your data files reside and where to create backup files.&nbsp; Snap Backup
    will also copy your backup to an archive location, such as a USB flash drive
    (memory stick), external hard drive, or
 
@@ -54,7 +54,7 @@ Snap Backup:<strong><ul>
    class=external-site>cloud backup</a>.&nbsp;
    Snap Backup automatically puts the current date in the backup file name,
    alleviating you from the tedious task of renaming your backup
-   file every time you backup.&nbsp;  The backup file is a single compressed
+   file every time you backup.&nbsp; The backup file is a single compressed
    file that can be read by zip programs such as gzip, 7-Zip, The Unarchiver,
    and Mac's built-in Archive Utility.
 </div>
@@ -62,8 +62,8 @@ Snap Backup:<strong><ul>
 <h2>Take control</h2>
 <p>
    System administrators have backup procedures for their company servers,
-   databases, and network files.&nbsp;  Individual computer users, on the other
-   hand, are usually left to fend for themselves.&nbsp;  Snap Backup is the
+   databases, and network files.&nbsp; Individual computer users, on the other
+   hand, are usually left to fend for themselves.&nbsp; Snap Backup is the
    simple answer for individual users, in the corporation or at home, who want
    to protect their valuable data.
 </p>
@@ -73,10 +73,10 @@ Snap Backup:<strong><ul>
 <h2>For everyone</h2>
 <p>
    Snap Backup is written in Java and designed to run on any computer with
-   Java.&nbsp;  Snap Backup is an
+   Java.&nbsp; Snap Backup is an
    <a href=https://github.com/snap-backup/snapbackup>open source</a>
    software project and is internationalized (meaning we
-   just need to translate the words to support new languages).&nbsp;  Please
+   just need to translate the words to support new languages).&nbsp; Please
    see the <a href=translate>translation</a> page if you
    want to help translate Snap Backup into your favorite language.
 </p>
