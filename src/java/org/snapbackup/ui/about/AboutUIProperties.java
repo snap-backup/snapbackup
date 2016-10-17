@@ -28,7 +28,6 @@ public class AboutUIProperties {
    public final String aboutLicense =      AppProperties.getProperty("AboutLicense");
    public final String aboutDownload =     AppProperties.getProperty("AboutDownload");
    public final String aboutCfgTitle =     AppProperties.getPropertyPadded("AboutConfigurationTitle");
-   public final String aboutContact =      AppProperties.getProperty("AboutContactInfo");
    public final String aboutButtonWeb =    AppProperties.getProperty("AboutButtonWeb");
    public final String aboutButtonClose =  AppProperties.getProperty("AboutButtonClose");
 

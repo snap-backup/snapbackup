@@ -1,12 +1,12 @@
 #!/bin/sh
 #########################
 ##  Snap Backup        ##
-##  Build on Mac OS X  ##
+##  Build on macOS  ##
 #########################
 
 # JDK
 # ===
-# Install the Java SE Devloper Kit for Mac OS X x64:
+# Install the Java SE Devloper Kit for macOS x64:
 #    http://www.oracle.com/technetwork/java/javase/downloads
 #
 # Ant
@@ -15,17 +15,36 @@
 #    Download --> http://ant.apache.org/bindownload.cgi (".zip archive")
 #    Example install folder --> ~/apps/ant/apache-ant-1.9.7/bin
 
+projectHome=$(cd $(dirname $0)/..; pwd)
+
 addAnt() {
    antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
    PATH=$PATH:$antHome/bin
    echo "Path: $PATH"
    which ant || echo "*** Must install ant first. See: build.sh.command"
+   echo
+   }
+
+setup() {
+   cd $projectHome
+   JAVA_HOME=$(/usr/libexec/java_home)
+   javac -version
+   which ant || addAnt
+   ant -version
+   attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
+   version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
+   echo
+   }
+
+buildExecutableJar() {
+   cd $projectHome/tools
+   ant build
+   echo
    }
 
 buildMacInstaller() {
-   echo
+   cd $projectHome/build
    $JAVA_HOME/bin/javapackager -version
-   cd ../build
    cp ../src/resources/graphics/application/snap-backup-icon.png .
    mkdir SnapBackup.iconset
    sips -z 128 128 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128.png
@@ -35,18 +54,17 @@ buildMacInstaller() {
    $JAVA_HOME/bin/javapackager -deploy -native dmg \
       -srcfiles snapbackup.jar -appclass org.snapbackup.Main \
       -name SnapBackup -vendor "Snap Backup" -outdir deploy -outfile SnapBackup -v
-   cp deploy/bundles/SnapBackup-1.0.dmg snap-backup-installer-v$(cat version.txt).dmg
+   cp deploy/bundles/SnapBackup-1.0.dmg snap-backup-installer-$version.dmg
+   cp snapbackup.jar snapbackup-$version.jar
+   cp -v snapbackup*.jar snap-backup-installer-*.dmg ../releases
    pwd
    ls -l *.dmg
+   echo
    }
 
 echo
 echo "Snap Backup Build"
 echo "================="
-cd $(dirname $0)
-JAVA_HOME=$(/usr/libexec/java_home)
-javac -version
-which ant || addAnt
-ant -version
-ant build
+setup
+buildExecutableJar
 buildMacInstaller

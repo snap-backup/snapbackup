@@ -37,9 +37,9 @@ public class AboutDialog extends JDialog {
       SystemAttributes.appCopyright + "</small>" + endHtml;
    final String licenseStr =     ui.aboutLicense + newLine + newLine +
       ui.aboutDownload + newLine + tab + SystemAttributes.downloadURL;
-   final String contactInfoStr = (ui.aboutContact + newLine +
-      SystemAttributes.postalAddress + newLine + SystemAttributes.homeURL +
-      newLine + SystemAttributes.feedbackEMail).replaceAll(newLine, newLine + tab);
+   // final String contactInfoStr = (ui.aboutContact + newLine +
+   //    SystemAttributes.postalAddress + newLine + SystemAttributes.homeURL +
+   //    newLine + SystemAttributes.feedbackEMail).replaceAll(newLine, newLine + tab);
 
    //Define About Controls
    JPanel    aboutPanel =        new JPanel();
@@ -52,7 +52,7 @@ public class AboutDialog extends JDialog {
    JLabel    copyright =         new JLabel(copyrightStr);
    JTextArea license =           new JTextArea(licenseStr);
    JTextArea configInfo =        new JTextArea();
-   JTextArea contactInfo =       new JTextArea(contactInfoStr);
+   // JTextArea contactInfo =       new JTextArea(contactInfoStr);
    JButton   webButton =         new JButton(ui.aboutButtonWeb);
    JButton   closeButton =       new JButton(ui.aboutButtonClose);
    JButton[] buttonList =        { webButton, closeButton };
@@ -127,9 +127,9 @@ public class AboutDialog extends JDialog {
          SystemAttributes.javaHomeDir + newLine +
          SystemAttributes.javaVMInfo);
       configInfo.setBorder(BorderFactory.createTitledBorder(ui.aboutCfgTitle));
-      contactInfo.setEditable(false);
-      contactInfo.setFont(UIProperties.standardFont);
-      contactInfo.setBackground(Color.white);  //needed for Motif
+      // contactInfo.setEditable(false);
+      // contactInfo.setFont(UIProperties.standardFont);
+      // contactInfo.setBackground(Color.white);  //needed for Motif
       webButton.setBackground(Color.white);
       webButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { Browser.open(SystemAttributes.visitURL); }
@@ -166,8 +166,8 @@ public class AboutDialog extends JDialog {
       aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
       aboutPanel.add(configInfo);
       aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
-      aboutPanel.add(contactInfo);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      // aboutPanel.add(contactInfo);
+      // aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
       aboutPanel.add(copyright);
       aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
       aboutPanel.add(webButton);

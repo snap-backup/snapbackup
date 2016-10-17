@@ -13,7 +13,7 @@ package org.snapbackup.ui.options;
 public class Options {
 
    public static final String prefSpacer =        "OptionSpacer";
-   public static final String spacerDefault =     "_";
+   public static final String spacerDefault =     "-";
 
    public static final String prefOrder =         "OptionOrder";
    public static final String orderDefault =      "012";  // 0=year, 1=month, 2=day (naturally sorts)

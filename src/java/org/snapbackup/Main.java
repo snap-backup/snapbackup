@@ -36,7 +36,6 @@ public class Main {
                UIProperties.skinErrMsg, JOptionPane.ERROR_MESSAGE);
             UserPreferences.deletePref(DataModel.prefSkinName);
             }
-         UserPreferences.migrateOldSettings();  //pre v5.4 --> v5.4
          new Application();
          }
       }
