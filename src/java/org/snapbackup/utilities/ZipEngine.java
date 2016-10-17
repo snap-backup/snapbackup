@@ -12,6 +12,7 @@ package org.snapbackup.utilities;
 
 import java.io.*;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Locale;
@@ -31,6 +32,9 @@ import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.UserPreferences;
 
 public class ZipEngine {
+
+   final static List<String> extraneousFiles =   Arrays.asList(".DS_Store", "Thumbs.db", "desktop.ini");
+   final static List<String> extraneousFolders = Arrays.asList(".git", "node_modules");
 
    final static int kb =             1024;
    final static int buffSize =       kb * 256;  //optimal size not known
@@ -121,13 +125,13 @@ public class ZipEngine {
          file = new File(filePath);
          String displayPath = useRelativePaths ? filePath.substring(rootPathLen) : filePath;
          if (filterIncludeOn && !filterIncludeP.matcher(file.getName()).matches())
-             logSkippedMsg(displayPath);
+            logSkippedMsg(displayPath);
          else if (filterExcludeOn && filterExcludeP.matcher(file.getName()).matches())
-             logSkippedMsg(displayPath + exclusionNote);
+            logSkippedMsg(displayPath + exclusionNote);
          else if (filterSizeOn && file.length() > filterSize)
-             logSkippedMsg(displayPath + exclusionNote + sizePre +
-                nf.format(file.length() / kb) + sizePost);
-         else if (!SystemAttributes.isMac || !file.getName().equals(".DS_Store")) {
+            logSkippedMsg(displayPath + exclusionNote + sizePre +
+               nf.format(file.length() / kb) + sizePost);
+         else if (!extraneousFiles.contains(file.getName())) {
             if (backupProgress != null)
                BackupProgressDialog.current.updateProgress(zipCount);
             Logger.logMsg(Str.macroExpand(zippingLogMsg, zipCount++) + displayPath);
@@ -155,6 +159,8 @@ public class ZipEngine {
       String displayPath = useRelativePaths ? dirName.substring(rootPathLen) : dirName;
       if (filterFolderOn && filterFolderP.matcher(dir.getName()).matches())
          logSkippedMsg(displayPath + fileSeparator + exclusionNote);
+      else if (extraneousFolders.contains(dir.getName()))
+         logSkippedMsg(displayPath);
       else {
          Logger.logMsg(folderLogMsg + displayPath);
          File[] itemList = dir.listFiles();  //list folder's sub-items
