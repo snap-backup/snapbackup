@@ -1,69 +1,106 @@
 #!/bin/sh
 
-###########################
-#  Snap Backup            #
-#  http://snapbackup.org  #
-###########################
+##################
+# Snap Backup    #
+# snapbackup.org #
+##################
 
-webServerFolder=~/Dropbox/Documents/Sites/snapbackup.org
-webServerUrl=http://localhost/snapbackup.org
+# To make this file runnable:
+#    $ chmod +x *.sh.command
+
+port=11598
+projectHome=$(cd $(dirname $0)/..; pwd)
+
+needNpm() {
+   echo "**********************************"
+   echo "Need to install Node.js to get npm"
+   echo "**********************************"
+   open "http://nodejs.org/"
+   exit
+   }
+
+needGulp() {
+   echo "***************************************"
+   echo "Need to install Gulp:                  "
+   echo "   $ sudo npm install --global gulp-cli"
+   echo "***************************************"
+   exit
+   }
+
+setup() {
+   cd $projectHome
+   pwd
+   echo
+   which npm || needNpm
+   npm --version
+   npm install
+   echo
+   which gulp || needGulp
+   gulp --version
+   echo
+   }
+
+buildHtmlFiles() {
+   cd $projectHome
+   find . -name ".DS_Store" -delete
+   attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
+   versionJava=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
+   versionHtml=$(grep --max-count 1 version package.json | awk -F'"' '{print $4}')
+   echo "Java version: $versionJava"
+   echo "HTML version: $versionHtml"
+   echo
+   gulp web
+   cd website/httpdocs
+   mv htaccess.txt .htaccess
+   sed s/@@version/$versionJava/ ../static/version/index.php >version/index.php
+   cd translate
+   mv SnapBackup.properties.txt SnapBackup_en.properties.txt
+   zip --quiet SnapBackup.properties.zip SnapBackup_*.properties.txt
+   echo
+   }
+
+publish() {
+   cd $projectHome/website/httpdocs
+   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F\" '{ print $2 }')
+   publishFolder=$publishWebRoot/snapbackup.org
+   copyWebFiles() {
+      echo "Publishing:"
+      echo $publishFolder
+      cp -R * $publishFolder
+      echo
+      }
+   [ -w $publishFolder ] && copyWebFiles
+   }
+
+setupWebServer() {
+   cd $projectHome/website
+   process=$(pgrep -lf "SimpleHTTPServer $port")
+   launch() {
+      echo "Launching SimpleHTTPServer:"
+      pwd
+      python -m SimpleHTTPServer $port &> /dev/null &
+      echo
+      }
+   [[ -z "$process" ]] && launch
+   echo "Web Server:"
+   pgrep -lf SimpleHTTPServer
+   echo
+   }
+
+launchBrowser() {
+   url=http://localhost:$port/httpdocs
+   echo "Opening:"
+   echo $url
+   sleep 2
+   open $url
+   echo
+   }
 
 echo
 echo "Snap Backup Website"
-echo "###################"
-cd $(dirname $0)/../website
-websiteFolder=$(pwd)
-
-# Build HTML files (run DSI templating)
-cd $websiteFolder/dsi
-cp screen-index.bhtml screen-@mac.bhtml
-cp screen-index.bhtml screen-@ubuntu.bhtml
-cp screen-index.bhtml screen-@win.bhtml
-cp screen-index.bhtml screen-@vista.bhtml
-cp screen-index.bhtml screen-@metal.bhtml
-[ ! -f dsi.jar ] && curl --remote-name http://centerkey.com/dsi/download/dsi.jar
-java -jar dsi.jar
-rm screen-@*.bhtml
-echo
-
-# Put web files into "httpdocs" folder
-cd $websiteFolder
-echo "Target:"
-rm -rf $websiteFolder/httpdocs
-mkdir  $websiteFolder/httpdocs
-mv -v dsi/*.html        $websiteFolder/httpdocs
-cp -v *.html *.css *.js $websiteFolder/httpdocs
-cp -R graphics app      $websiteFolder/httpdocs
-cd $websiteFolder/httpdocs
-cp placeholder.html www.snapbackup.com-index.html
-cp placeholder.html www.snapbackup.net-index.html
-for file in *-index.html; do
-   folder=$(echo $file | sed "s/-.*//")
-   mkdir $folder
-   mv -v $file $folder/index.html
-   done
-for file in screen-@*.html; do
-   os=$(echo $file | sed "s/screen-@//" | sed "s/.html//")
-   mv -v $file screen/$os.html
-   done
-mv -v feedback-thanks.html   feedback/thanks.html
-mv -v translate-preview.html translate/preview.html
-mv -v graphics/bookmark.ico  favicon.ico
-cp -v ../../build/snapbackup.jar     download
-cp -v ../../src/resources/ReadMe.txt download
-echo
-
-# List files
-cd $websiteFolder/httpdocs
-echo "Website:"
-pwd
-url="$target/index.html"
-updateWebServer() {
-   echo $webServerFolder
-   cp -R * $webServerFolder
-   cp -v $websiteFolder/htaccess.txt $webServerFolder/.htaccess
-   url=$webServerUrl
-   }
-[ -d $webServerFolder ] && updateWebServer
-echo "Opening --> $url"
-open $url
+echo "==================="
+setup
+buildHtmlFiles
+publish
+setupWebServer
+launchBrowser

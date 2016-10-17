@@ -1,0 +1,107 @@
+@@include("website/templates/page-begin.html", { "pageTitle": "Download" })
+
+<main data-menu=download>
+   <p>
+      Snap Backup is <i>The one-click backup utility</i> for safeguarding your important
+      computer files.&nbsp; Snap Backup is open source and runs on just
+      about any computer &mdash; macOS, Linux, Unix, and
+      Windows.
+   </p>
+   <h3>
+      Download version @@pkg.version
+      <span class=for-macs-only>for macOS</span>
+   </h3>
+   <br>
+   <div>
+      <div class=box-top>macOS</div>
+      <div class=box-middle>
+         <a href="@@download.mac">@@installer.mac</a>
+         <a href="@@download.mac">
+            <img src=../graphics/os-icon-mac.png style="vertical-align: -3px" alt=Mac>
+         </a>
+         <br>
+         <small>Updated: @@updated</small>
+      </div>
+      <div class=box-bottom>
+         Download and run the installer.&nbsp; Then use <i>Finder</i> to go into the
+         "Applications" folder and <i>&lt;control-click&gt;</i> on "SnapBackup".&nbsp;
+         Now choose "Open".
+      </div>
+      <br>
+      <p class=for-macs-only>For other operating systems: <a href="./?view=all">All Downloads</a></p>
+      <div class=for-non-macs>
+         <div class=box-top>Microsoft Windows</div>
+         <div class=box-middle>
+
+            <a href="@@download.win">@@installer.win</a>
+            <a href="@@download.win">
+               <img src=../graphics/os-icon-windows.png style="vertical-align: -3px" alt=Windows>
+            </a>
+            <br>
+            <small>Updated: @@updated</small>
+         </div>
+         <div class=box-bottom>
+            Save the install file to a location such as your <i>Desktop</i> and
+            then double-click the file to start the installation.<br>
+         </div>
+         <br>
+         <div class=box-top>Generic executable JAR file
+            <span style="font-size: 70%; text-transform: uppercase">
+            (All Java Platforms)</span>
+         </div>
+         <div class=box-middle>
+            <a href="@@download.java">snapbackup.jar</a>
+            <a href="@@download.java">
+               <img src=../graphics/os-icon-java.png style="vertical-align: -3px" alt=Java></a>
+               (@@jarSize)<br>
+            <a href=ReadMe.txt>ReadMe.txt</a>
+            &nbsp; &nbsp;
+            <a href=../graphics/snap-backup-icon.png>Optional Icon File</a>
+            (<a href=../graphics/snap-backup-icon-32.png>small</a>)<br>
+            <small>Updated: @@updated</small>
+         </div>
+         <div class=box-bottom>
+            <p>
+               First, download and install Java from:<br>
+               <a href=http://www.java.com class=external-site>www.java.com</a>
+               <br>
+               <a href=http://www.java.com class=external-site>
+                  <img src=../graphics/logo-get-java.png alt=Java style="width: 100px;">
+               </a>
+            </p>
+            <p>
+               Second, save the JAR file and ReadMe file to a convenient location,
+               such as:<br><code>/Applications/SnapBackup</code>
+            </p>
+            <p>
+               Third, double-click the <code>snapbackup.jar</code> file to run Snap Backup.&nbsp;
+               On some systems, you may need to enter the following command:<br>
+               <code>java -jar snapbackup.jar</code>
+            </p>
+      	</div><br>
+      </div>
+   	<aside>
+   		<b>Languages Included:</b><br>
+         @@include("website/templates/languages-icons.html")
+   		<br>
+   		When you first run Snap<br>Backup, click the flag for<br>the language you desire.
+   	</aside>
+      <h3>Getting started</h3>
+      <p>Run Snap Backup and consult the <a href=../snap-backup-user-guide.html
+         class=external-site>User Guide</a> (Select "User Guide" from the "Help"
+         menu) for information on configuring and saving your backup settings.
+      </p>
+      <div class=for-macs-only>
+         Check Out:
+         <p class=indent><a
+            href=http://blog.centerkey.com/2009/04/save-mac-data-with-snap-backup.html
+            class=external-site>Save Mac Data</a>
+         </p>
+      </div>
+      Submit product enhancement ideas using the project's
+      <a href=https://github.com/snap-backup/snapbackup/issues>GitHub issue tracker</a>.
+      <br class=leapfrog>
+   </div>
+</main>
+
+@@include("website/templates/page-end.html")

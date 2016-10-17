@@ -1,0 +1,92 @@
+@@include("website/templates/page-begin.html", { "webRoot": "." })
+
+<main data-menu=gateway>
+   <p>
+      Snap Backup<sup>&reg;</sup> is <i>The one-click backup utility</i> that makes
+      it simple to protect your important work.&nbsp; Snap Backup is for individual
+      computer users who need a quick and convenient way to backup their
+      valuable files, and it's open source and free for all to use.
+   </p>
+   <h2>Protecting your data should be easy</h2>
+   <p class=push-right><a href=download><img src=graphics/download-now.png alt=Download></a>
+   </p>
+   <p>
+      How much work would you lose if your hard drive crashed right now or you lost
+      your laptop?
+   </p>
+
+   <!--  Download & screen shot icons  -->
+   <aside>
+      <p>
+         <b>Available in:</b><br>
+         @@include("website/templates/languages-icons.html", { "webRoot": "." })
+      </p>
+      <div class=thumb-box>
+         <div>The one-click backup utility</div>
+         <a href=screen><img src=graphics/snap-backup-thumb.png alt=Screen><br>
+         View Details</a>
+      </div>
+   </aside>
+
+   Snap Backup:
+   <ul>
+      <li>One click to perform a backup</li>
+      <li>Configurable settings</li>
+      <li>Runs on macOS, Linux, Solaris, and Windows</li>
+      <li>Supports multiple languages
+   </ul>
+
+   <div class=space-below>
+      The first time you run Snap Backup, you configure where
+      your data files reside and where to create backup files.&nbsp; Snap Backup
+      will also copy your backup to an archive location, such as a USB flash drive
+      (memory stick), external hard drive, or
+
+      <!--  News  -->
+      <div id=news>
+         <div class=news-header>News</div>
+         @@include("website/templates/news.html")
+      </div>
+
+      <a href=http://blog.centerkey.com/2012/03/snap-backup-dropbox-free-cloud-backup.html
+      class=external-site>cloud backup</a>.&nbsp;
+      Snap Backup automatically puts the current date in the backup file name,
+      alleviating you from the tedious task of renaming your backup
+      file every time you backup.&nbsp; The backup file is a single compressed
+      file that can be read by zip programs such as gzip, 7-Zip, The Unarchiver,
+      and Mac's built-in Archive Utility.
+   </div>
+
+   <h2>Take control</h2>
+   <p>
+      System administrators have backup procedures for their company servers,
+      databases, and network files.&nbsp; Individual computer users, on the other
+      hand, are usually left to fend for themselves.&nbsp; Snap Backup is the
+      simple answer for individual users, in the corporation or at home, who want
+      to protect their valuable data.
+   </p>
+
+   <a href=http://www.java.com class=external-site><img class=push-right
+      src=graphics/logo-java.png style="width: 150px;" alt=Java></a>
+   <h2>For everyone</h2>
+   <p>
+      Snap Backup is written in Java and designed to run on any computer with
+      Java.&nbsp; Snap Backup is an
+      <a href=https://github.com/snap-backup/snapbackup>open source</a>
+      software project and is internationalized (meaning we
+      just need to translate the words to support new languages).&nbsp; Please
+      see the <a href=translate>translation</a> page if you
+      want to help translate Snap Backup into your favorite language.
+   </p>
+
+   <br>
+   <div class=push-right>
+      <div id=social-buttons class=plain></div>
+   </div>
+   <h2 class=space-below-2x>Random</h2>
+   <div class=align-right>
+   @@include("website/templates/comments.html")
+   </div>
+</main>
+
+@@include("website/templates/page-end.html", { "webRoot": "." })

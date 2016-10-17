@@ -1,8 +1,0 @@
-<!--#set var="pageTitle" value="The one-click backup utility"-->
-<!--#include file="~begin.fhtml"-->
-
-<main style="text-align: center; padding: 200px 0px;">
-   <a href="http://snapbackup.org">The one-click backup utility</a>
-</main>
-
-<!--#include file="~end.fhtml"-->

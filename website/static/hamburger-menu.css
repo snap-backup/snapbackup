@@ -1,0 +1,101 @@
+/**********************************************/
+/* Hamburger Menu ☰ A responsive CSS solution */
+/* github.com/center-key/hamburger-menu       */
+/* MIT or WTFPL (your choice)                 */
+/**********************************************/
+
+/*
+HTML for Hamberger Menu:
+   <nav class=hamburger-menu>
+      <a class=hamburger href=#>&#9776;</a>
+      <ul>
+         <li><a href=page1>Page 1</a></li>
+         <li><a href=page2>Page 2</a></li>
+         <li><a href=page3>Page 3</a></li>
+      </ul>
+   </nav>
+*/
+
+/* Base */
+html {
+   font-size: 100%;
+   font-family: geneva, tahoma, sans-serif;
+   }
+body {
+   padding: 0rem 2rem 0rem 8rem;  /* adjust left padding to provide enough space for menu */
+   margin: 0px;
+   }
+
+/* Configuration */
+nav.hamburger-menu .hamburger,
+nav.hamburger-menu >ul >li >a {
+   color: gainsboro;              /* menu font color */
+   }
+nav.hamburger-menu .hamburger,
+nav.hamburger-menu >ul {
+   background-color: black;       /* menu background color */
+   }
+nav.hamburger-menu >ul >li.current >a,
+nav.hamburger-menu >ul >li:hover >a {
+   color: white;                  /* menu font highlight color on hover */
+   background-color: dimgray;     /* menu background highlight color on hover */
+   }
+
+/* Menu style and behavior */
+nav.hamburger-menu .hamburger {
+   display: none;
+   }
+nav.hamburger-menu >ul {
+   position: fixed;
+   top: 0px;
+   bottom: 0px;
+   left: 0px;
+   list-style: none;
+   padding: 0px;
+   margin: 0px;
+   overflow-y: scroll;
+   }
+nav.hamburger-menu .hamburger,
+nav.hamburger-menu >ul >li >a {
+   text-decoration: none;
+   }
+nav.hamburger-menu >ul >li >a {
+   display: block;
+   font-size: 1.1rem;
+   font-weight: bold;
+   text-decoration: none;
+   padding: 10px 15px 10px 8px;
+   transition: 0.4s all;
+   }
+@media(max-width: 750px) {
+   body {
+      padding: 2rem 0.5rem 0rem 0.5rem;
+      cursor: pointer;  /* enables closing menu */
+      }
+   nav.hamburger-menu {
+      cursor: auto;
+      }
+   nav.hamburger-menu .hamburger {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      font-size: 1.4rem;
+      padding: 6px 10px 8px 8px;
+      }
+   nav.hamburger-menu .hamburger:not(:hover) {
+      transition: opacity 0.5s 0.8s;
+      }
+   nav.hamburger-menu .hamburger:hover {
+      opacity: 0;
+      }
+   nav.hamburger-menu >ul {
+      max-width: 0px;
+      overflow: hidden;
+      transition: max-width 1.0s;
+      }
+   nav.hamburger-menu:hover .hamburger + ul {
+      max-width: 10em;
+      overflow-y: scroll;
+      }
+   }

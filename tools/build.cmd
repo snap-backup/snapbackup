@@ -49,7 +49,14 @@ move SnapBackup.ico package\windows
 call "%JAVA_HOME%\bin\javapackager" -deploy -native msi ^
    -srcfiles snapbackup.jar -appclass org.snapbackup.Main ^
    -name SnapBackup -vendor "Snap Backup" -outdir deploy -outfile SnapBackup -v
+
+:: TODO: Replace with ->
+::    attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
+::    version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
+:     ...
+::    for /f "tokens=3" %%v in (findstr "appVersion =" ?attributesFile?) do version=%%v
 set /p version=<version.txt
+
 copy deploy\bundles\SnapBackup-1.0.msi snap-backup-installer-v%version%.msi
 echo.
 

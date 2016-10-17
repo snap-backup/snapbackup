@@ -1,0 +1,19 @@
+# Snap Backup
+# HTAccess File
+
+AddType text/plain .txt
+ErrorDocument 404 /404.html
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.org$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.org/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.eu$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.eu/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.com$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.com/ [redirect=301,last]
+
+RewriteCond %{HTTP_HOST} ^www\.snapbackup\.net$ [nocase]
+RewriteRule ^(.*)$       http://snapbackup.net/ [redirect=301,last]

@@ -34,7 +34,10 @@
 
       <echo message="=== Create class files ===" />
       <delete dir="${BuildFolder}" />
+
+      <!-- TODO: Remove line below -->
       <echo file="${BuildFolder}/version.txt">${version}</echo>
+
       <mkdir  dir="${JavaClasses}" />
       <javac
          srcdir="${JavaSource}"
@@ -59,7 +62,7 @@
       <copy todir="${JavaClasses}/org/snapbackup/ui/images">
          <fileset dir="${Resources}/graphics/application" />
       </copy>
-      <copy file="${Resources}/SnapBackupUserGuide.html" todir="${HtmlFolder}" />
+      <copy file="${Resources}/snap-backup-user-guide.html" todir="${HtmlFolder}" />
       <copy file="${Resources}/SnapBackupSettings.xsd" todir="${JavaClasses}/org/snapbackup/business" />
       <!--  Workaround for: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127 -->
       <!--  Part 1 of 2 -->
@@ -82,18 +85,6 @@
          <isset property="env.SnapBackupJksPass" />
       </condition>
       <antcall target="action" />
-
-      <echo message="=== Generate and copy files for website ===" />
-      <copy file="${Resources}/SnapBackupUserGuide.html" todir="${WebFolder}" />
-      <copy file="${Resources}/ReadMe.txt" todir="${WebFolder}" />
-      <copy todir="${WebFolder}">
-         <fileset dir="${Resources}/properties" includes="SnapBackup*.properties" />
-         <globmapper from="*" to="*.txt" />
-      </copy>
-      <move file="${WebFolder}/SnapBackup.properties.txt"
-         tofile="${WebFolder}/SnapBackup_en.properties.txt" />
-      <zip destfile="${WebFolder}/SnapBackup.properties.zip" basedir="${WebFolder}"
-         includes="SnapBackup_*.properties.txt" />
       <echo />
 
    </target>
