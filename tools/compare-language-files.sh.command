@@ -1,7 +1,7 @@
 #!/bin/sh
-###################
-##  Snap Backup  ##
-###################
+###############
+# Snap Backup #
+###############
 
 lineCount() {
    echo "\nProperties line count:"

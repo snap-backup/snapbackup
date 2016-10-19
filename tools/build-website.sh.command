@@ -1,5 +1,4 @@
 #!/bin/sh
-
 ##################
 # Snap Backup    #
 # snapbackup.org #
@@ -97,8 +96,8 @@ launchBrowser() {
    }
 
 echo
-echo "Snap Backup Website"
-echo "==================="
+echo "snapbackup.org website"
+echo "======================"
 setup
 buildHtmlFiles
 publish
