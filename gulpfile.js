@@ -27,7 +27,6 @@ download.win =   download.win.replace('6.1.0', '6.0');
 var context = {
    pkg:        pkg,
    webRoot:    '..',
-   useBaseTag: false,
    pageTitle:  pkg.description,
    updated:    'October 16, 2016',
    jarSize:    '223 KB',
@@ -45,7 +44,9 @@ function buildWebsite() {
    gulp.src('src/resources/snap-backup-user-guide.html')
       .pipe(w3cjs())
       .pipe(w3cjs.reporter())
-      .pipe(gulp.dest(httpdocsFolder));
+      .pipe(gulp.dest(httpdocsFolder))
+      .pipe(htmlhint(htmlHintConfig))
+      .pipe(htmlhint.reporter());
    gulp.src('src/resources/graphics/application/language-*.png')
       .pipe(gulp.dest(httpdocsFolder + '/graphics'));
    gulp.src('src/resources/properties/SnapBackup*.properties')
@@ -53,14 +54,13 @@ function buildWebsite() {
       .pipe(gulp.dest(httpdocsFolder + '/translate'));
    gulp.src('website/static/**/*')
       .pipe(gulp.dest(httpdocsFolder));
-   gulp.src('website/root/**')
+   gulp.src('website/root/**/*.html')
       .pipe(fileinclude({ basepath: '@root', indent: true, context: context }))
-      .pipe(gulp.dest(httpdocsFolder))
       .pipe(w3cjs())
       .pipe(w3cjs.reporter())
-      // .pipe(htmlhint(htmlHintConfig))
-      // .pipe(htmlhint.reporter());
-      ;
+      .pipe(htmlhint(htmlHintConfig))
+      .pipe(htmlhint.reporter())
+      .pipe(gulp.dest(httpdocsFolder));
    }
 
 gulp.task('clean',   cleanWebsite);
