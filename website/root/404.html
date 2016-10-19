@@ -1,4 +1,4 @@
-@@include("website/templates/page-begin.html", { "pageTitle": "404 Page not found", "useBaseTag": true });
+@@include("website/templates/page-begin.html", { "pageTitle": "404 Page not found", "webRoot": "http://snapbackup/org" });
 
 <main>
    <p>
@@ -17,4 +17,4 @@
    </p>
 </main>
 
-@@include("website/templates/page-end.html")
+@@include("website/templates/page-end.html", { "webRoot": "http://snapbackup/org" })
