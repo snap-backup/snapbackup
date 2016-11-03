@@ -5,15 +5,13 @@
 /**********************************************/
 
 /*
-HTML for Hamberger Menu:
-   <nav class=hamburger-menu>
-      <a class=hamburger href=#>&#9776;</a>
-      <ul>
-         <li><a href=page1>Page 1</a></li>
-         <li><a href=page2>Page 2</a></li>
-         <li><a href=page3>Page 3</a></li>
-      </ul>
-   </nav>
+Structure for Hamburger Menu:
+   nav.hamburger-menu
+      a.hamburger
+      ul
+         li a
+         li a
+         li a
 */
 
 /* Base */
@@ -26,7 +24,7 @@ body {
    margin: 0px;
    }
 
-/* Configuration */
+/* Hamburger Menu Colors */
 nav.hamburger-menu .hamburger,
 nav.hamburger-menu >ul >li >a {
    color: gainsboro;              /* menu font color */
@@ -65,9 +63,9 @@ nav.hamburger-menu >ul >li >a {
    font-weight: bold;
    text-decoration: none;
    padding: 10px 15px 10px 8px;
-   transition: 0.4s all;
+   transition: all 0.4s;
    }
-@media(max-width: 750px) {
+@media (max-width: 667px) {  /* selects iPhone 6/6s/7 landscape and anything narrower */
    body {
       padding: 2rem 0.5rem 0rem 0.5rem;
       cursor: pointer;  /* enables closing menu */
@@ -84,7 +82,7 @@ nav.hamburger-menu >ul >li >a {
       padding: 6px 10px 8px 8px;
       }
    nav.hamburger-menu .hamburger:not(:hover) {
-      transition: opacity 0.5s 0.8s;
+      transition: opacity 0.5s 0.8s;  /* delay to allow menu time to hide */
       }
    nav.hamburger-menu .hamburger:hover {
       opacity: 0;
