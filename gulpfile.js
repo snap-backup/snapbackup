@@ -1,6 +1,11 @@
 // Snap Backup
 // Gulp configuration and tasks
 
+// Periodically check dependencies:
+//    $ cd snapbackup
+//    $ npm outdated
+//    $ npm update
+
 var gulp =        require('gulp');
 var fileinclude = require('gulp-file-include');
 var htmlhint =    require('gulp-htmlhint');
@@ -63,6 +68,5 @@ function buildWebsite() {
       .pipe(gulp.dest(httpdocsFolder));
    }
 
-gulp.task('clean',   cleanWebsite);
-gulp.task('web',     ['clean'], buildWebsite);
-gulp.task('default', ['web']);
+gulp.task('clean', cleanWebsite);
+gulp.task('web',   ['clean'], buildWebsite);
