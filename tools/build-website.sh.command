@@ -26,6 +26,15 @@ needGulp() {
    exit
    }
 
+needGulpLocal() {
+   echo "***************************************"
+   echo "Need to install Gulp locally:          "
+   echo "   $ cd $(dirname $0)"
+   echo "   $ npm install gulp                  "
+   echo "***************************************"
+   exit
+   }
+
 info() {
    cd $projectHome
    echo "npm:"
@@ -35,6 +44,7 @@ info() {
    echo "Gulp:"
    which gulp || needGulp
    gulp --version
+   test -d node_modules || needGulpLocal
    echo
    }
 
