@@ -2,7 +2,7 @@
 
 window.app = {
    hamburgerMenu: function() {
-      $(document).on({ click: $.noop });  //workaround for sticky hover on mobile
+      $(window.document).on({ click: $.noop });  //workaround for sticky hover on mobile
       var menuItem = $('main').data().menu;  //use "data-menu" attribute to set current menu item
       $('nav.hamburger-menu li[data-menu=' + menuItem + ']').addClass('current');
       },
