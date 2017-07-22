@@ -18,12 +18,12 @@ var releaseUrl = 'https://github.com/snap-backup/snapbackup/blob/master/releases
 var installer = {
    mac: 'snap-backup-installer-' + pkg.version + '.dmg',
    win: 'snap-backup-installer-' + pkg.version + '.msi'
-   }
+   };
 var download = {
    mac:  releaseUrl + installer.mac +    '?raw=true',
    win:  releaseUrl + installer.win +    '?raw=true',
    java: releaseUrl + 'snapbackup.jar' + '?raw=true'
-   }
+   };
 ///////////////////
 // Temporary
 installer.win = installer.win.replace('6.1.0', '6.0');

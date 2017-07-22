@@ -10,41 +10,17 @@
 port=11598  #"sb" -> 115 98
 projectHome=$(cd $(dirname $0)/..; pwd)
 
-needNpm() {
-   echo "**********************************"
-   echo "Need to install Node.js to get npm"
-   echo "**********************************"
-   open "http://nodejs.org/"
-   exit
-   }
-
-needGulp() {
-   echo "***************************************"
-   echo "Need to install Gulp:                  "
-   echo "   $ sudo npm install --global gulp-cli"
-   echo "***************************************"
-   exit
-   }
-
-needGulpLocal() {
-   echo "***************************************"
-   echo "Need to install Gulp locally:          "
-   echo "   $ cd $(dirname $0)"
-   echo "   $ npm install gulp                  "
-   echo "***************************************"
-   exit
-   }
-
 info() {
+   # Check for Node.js installation and download project dependencies
    cd $projectHome
-   echo "npm:"
-   which npm || needNpm
-   npm --version
+   pwd
    echo
-   echo "Gulp:"
-   which gulp || needGulp
-   gulp --version
-   test -d node_modules || needGulpLocal
+   echo "Node.js:"
+   which node || { echo "Need to install Node.js: https://nodejs.org"; exit; }
+   node --version
+   test -d node_modules || npm install
+   npm update
+   npm outdated
    echo
    }
 
@@ -111,6 +87,7 @@ echo "snapbackup.org website"
 echo "======================"
 echo
 info
+npm test
 setupWebServer
 buildHtmlFiles
 publish
