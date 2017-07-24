@@ -47,7 +47,16 @@ buildMacInstaller() {
    $JAVA_HOME/bin/javapackager -version
    cp ../src/resources/graphics/application/snap-backup-icon.png .
    mkdir SnapBackup.iconset
-   sips -z 128 128 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128.png
+   sips -z   16   16 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16.png
+   sips -z   32   32 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16@2x.png
+   sips -z   32   32 snap-backup-icon.png --out SnapBackup.iconset/icon_32x32.png
+   sips -z  128  128 snap-backup-icon.png --out SnapBackup.iconset/icon_32x32@2x.png
+   sips -z  128  128 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128.png
+   sips -z  256  256 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128@2x.png
+   sips -z  256  256 snap-backup-icon.png --out SnapBackup.iconset/icon_256x256.png
+   sips -z  512  512 snap-backup-icon.png --out SnapBackup.iconset/icon_256x256@2x.png
+   sips -z  512  512 snap-backup-icon.png --out SnapBackup.iconset/icon_512x512.png
+   sips -z 1024 1024 snap-backup-icon.png --out SnapBackup.iconset/icon_512x512@2x.png
    iconutil --convert icns SnapBackup.iconset
    mkdir -p package/macosx
    mv SnapBackup.icns package/macosx
