@@ -61,7 +61,7 @@ public class OptionsDialog extends JDialog {
    JRadioButton year4DigitsButton =    new JRadioButton(ui.fileFormatYear4Digits);
    JPanel       separatorPanel =       new JPanel();
    JLabel       separatorPromptLabel = new JLabel(ui.fileFormatSeparatorPrompt);
-   JComboBox<String> separatorDropDown =    new JComboBox<String>(str2Array(ui.fileFormatSeparatorList));
+   JComboBox<String> separatorDropDown =  new JComboBox<String>(str2Array(ui.fileFormatSeparatorList));
 
    JPanel       fileOverwritePanel =   new JPanel();
    JLabel       askBackupLabel =       new JLabel(ui.overwriteBackupPrompt);
@@ -317,7 +317,7 @@ public class OptionsDialog extends JDialog {
       UserPreferences.savePref(Options.prefNumRowsLog, ((Integer)logRowsSpinner.getValue()).toString());
 
       UserPreferences.savePref(Options.prefShowSkipped, msgLogInfoSkippedCheckbox.isSelected() ? Options.skipYes : Options.skipNo);
-      UserPreferences.savePref(Options.prefNumLargestFiles, "" + msgLogInfoLargestDropDown.getSelectedIndex());
+      UserPreferences.savePref(Options.prefNumLargestFiles, msgLogInfoLargestDropDown.getSelectedItem().toString());
 
       this.dispose();
       }

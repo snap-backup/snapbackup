@@ -43,6 +43,6 @@ public class Options {
    public static final String prefShowSkipped =        "OptionShowSkippedFiles";
    public static final String showSkippedDefault =     skipYes;
    public static final String prefNumLargestFiles =    "OptionNumLargestFiles";
-   public static final String numLargestFilesDefault = "3";
+   public static final String numLargestFilesDefault = "5";
 
 }
