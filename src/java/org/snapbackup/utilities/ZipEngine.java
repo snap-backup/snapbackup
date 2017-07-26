@@ -34,7 +34,7 @@ import org.snapbackup.settings.UserPreferences;
 public class ZipEngine {
 
    final static List<String> extraneousFiles =   Arrays.asList(".DS_Store", "Thumbs.db", "desktop.ini");
-   final static List<String> extraneousFolders = Arrays.asList(".git", "node_modules");
+   final static List<String> extraneousFolders = Arrays.asList(".git", "node_modules", "$RECYCLE.BIN");
 
    final static int kb =             1024;
    final static int buffSize =       kb * 256;  //optimal size not known
