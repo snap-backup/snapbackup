@@ -6,7 +6,7 @@
 
 :: JDK
 :: ===
-:: Install the Java SE Devloper Kit:
+:: Install the Java SE Developer Kit:
 ::    http://www.oracle.com/technetwork/java/javase/downloads ("Windows x86")
 ::
 :: Ant
