@@ -32,11 +32,6 @@ var jsHintConfig = {
    jquery:  true,
    globals: { library: false, window: false }
    };
-///////////////////
-// Temporary
-installer.win = installer.win.replace('6.1.0', '6.0');
-download.win =   download.win.replace('6.1.0', '6.0');
-///////////////////
 var context = {
    pkg:        pkg,
    webRoot:    '..',

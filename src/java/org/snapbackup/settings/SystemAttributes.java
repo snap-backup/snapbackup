@@ -20,7 +20,8 @@ public class SystemAttributes {
 
    //Release constants
    public static final String appName = "SnapBackup";  //".properties" name
-   public static final String appVersion = "6.1.0";  //keep in sync with package.json
+   public static final String appVersion = "6.2.0";  //keep in sync with package.json
+   // 6.2.0 -            - Exclude Windows recycle bin and improved showing largest files option
    // 6.1.0 - 10/16/2016 - Automatically skip extraneous files and switch to semantic versioning
    // 6.0 -   8/16/2015 -  Upgrade to Java 7
    // 5.6 -   4/23/2011 -  Albanian

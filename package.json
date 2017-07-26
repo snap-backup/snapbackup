@@ -1,6 +1,6 @@
 {
    "name":        "snapbackup",
-   "version":     "6.1.0",
+   "version":     "6.2.0",
    "description": "The one-click backup utility",
    "license":     "GPL-3.0",
    "main":        "gulpfile.js",
