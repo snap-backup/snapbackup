@@ -9,6 +9,7 @@
 var gulp =        require('gulp');
 var fileinclude = require('gulp-file-include');
 var htmlhint =    require('gulp-htmlhint');
+var jsHint =      require('gulp-jshint');
 var rename =      require('gulp-rename');
 var w3cjs =       require('gulp-w3cjs');
 var del =         require('del');
@@ -23,6 +24,13 @@ var download = {
    mac:  releaseUrl + installer.mac +    '?raw=true',
    win:  releaseUrl + installer.win +    '?raw=true',
    java: releaseUrl + 'snapbackup.jar' + '?raw=true'
+   };
+var jsHintConfig = {
+   strict:  'implied',
+   undef:   true,
+   unused:  true,
+   jquery:  true,
+   globals: { library: false, window: false }
    };
 ///////////////////
 // Temporary
@@ -66,6 +74,9 @@ function buildWebsite() {
       .pipe(htmlhint(htmlHintConfig))
       .pipe(htmlhint.reporter())
       .pipe(gulp.dest(httpdocsFolder));
+   gulp.src('website/static/*.js')
+      .pipe(jsHint(jsHintConfig))
+      .pipe(jsHint.reporter());
    }
 
 gulp.task('clean', cleanWebsite);

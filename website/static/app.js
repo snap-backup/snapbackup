@@ -1,6 +1,6 @@
 // Snap Backup
 
-window.app = {
+var app = {
    hamburgerMenu: function() {
       $(window.document).on({ click: $.noop });  //workaround for sticky hover on mobile
       var menuItem = $('main').data().menu;  //use "data-menu" attribute to set current menu item
