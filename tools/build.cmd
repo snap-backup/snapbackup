@@ -13,12 +13,12 @@
 :: ===
 :: Download and unzip Ant into the "\Apps\Ant" folder:
 ::    Download --> http://ant.apache.org/bindownload.cgi (".zip archive")
-::    Example install folder --> \Apps\Ant\apache-ant-1.9.6\bin
+::    Example install folder --> \Apps\Ant\apache-ant-1.10.1\bin
 ::
 :: ImageMagick
 :: ===========
 :: Download and install ImageMagick with the default settings:
-::    http://www.imagemagick.org/script/binary-releases.php ("Win32 dynamic at 16 bits-per-pixel")
+::    http://www.imagemagick.org/script/binary-releases.php ("Win64 dynamic at 16 bits-per-pixel component")
 ::
 :: WiX Toolset
 :: ===========
@@ -43,7 +43,7 @@ echo.
 call "%JAVA_HOME%\bin\javapackager" -version
 cd ..\build
 copy ..\src\resources\graphics\application\snap-backup-icon.png .
-convert snap-backup-icon.png SnapBackup.ico
+magick convert snap-backup-icon.png SnapBackup.ico
 mkdir package\windows
 move SnapBackup.ico package\windows
 call "%JAVA_HOME%\bin\javapackager" -deploy -native msi ^
