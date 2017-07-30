@@ -1,8 +1,11 @@
 @echo off
-::::::::::::::::::::::::::::::::::::
-::  Snap Backup                   ::
-::  Build on Microsoft Windows XP ::
-::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::
+::  Snap Backup                ::
+::  Build on Microsoft Windows ::
+:::::::::::::::::::::::::::::::::
+
+::  Script tested on:
+::     Windows 10 Pro
 
 :: JDK
 :: ===
@@ -31,12 +34,17 @@ for /d %%i in ("\Program Files\Java\jdk*") do set JAVA_HOME=%%i
 :: Set ANT_HOME
 for /d %%i in ("\Apps\Ant\apache-ant*") do set ANT_HOME=%%i
 
+:: Add Wix to path
+for /d %%i in ("\Program Files (x86)\Wix Toolset*") do set WIX_HOME=%%i\bin
+
 :: Display variables and launch Ant
 set JAVA_HOME
 set ANT_HOME
+set WIX_HOME
 call "%JAVA_HOME%\bin\javac" -version
 call "%ANT_HOME%\bin\ant" -version
 call "%ANT_HOME%\bin\ant" build
+set PATH=%PATH%;%WIX_HOME%
 echo.
 
 :: Create native installer (javapackager)
@@ -58,14 +66,8 @@ call "%JAVA_HOME%\bin\javapackager" -deploy -native msi ^
 set /p version=<version.txt
 
 copy deploy\bundles\SnapBackup-1.0.msi snap-backup-installer-v%version%.msi
+copy deploy\bundles\SnapBackup-1.0.msi ..\releases\snap-backup-installer-v%version%.msi
+dir *.msi
 echo.
-
-:: Copy to VirtualBox folder
-if exist \\VBOXSVR\VirtualBox_Share (
-   copy *.msi          \\VBOXSVR\VirtualBox_Share
-   copy ..\tools\*.cmd \\VBOXSVR\VirtualBox_Share
-   dir                 \\VBOXSVR\VirtualBox_Share
-   echo.
-   )
 
 pause
