@@ -71,9 +71,28 @@ buildMacInstaller() {
    echo
    }
 
+releaseInstructions() {
+   cd $projectHome
+   version=v$(grep '"version"' package.json | awk -F'"' '{print $4}')
+   echo "Local changes:"
+   git status --short
+   echo
+   echo "Releases:"
+   git tag
+   echo
+   echo "To release this version:"
+   echo "   cd $projectHome"
+   echo "   git tag -af $version -m \"Stable release\""
+   echo "   git tag -af current -m \"Current stable release\""
+   echo "   git remote -v"
+   echo "   git push origin --tags --force"
+   echo
+   }
+
 echo
 echo "Snap Backup Build"
 echo "================="
 setup
 buildExecutableJar
 buildMacInstaller
+releaseInstructions
