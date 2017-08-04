@@ -65,8 +65,8 @@ call "%JAVA_HOME%\bin\javapackager" -deploy -native msi ^
 ::    for /f "tokens=3" %%v in (findstr "appVersion =" ?attributesFile?) do version=%%v
 set /p version=<version.txt
 
-copy deploy\bundles\SnapBackup-1.0.msi snap-backup-installer-v%version%.msi
-copy deploy\bundles\SnapBackup-1.0.msi ..\releases\snap-backup-installer-v%version%.msi
+copy deploy\bundles\SnapBackup-1.0.msi snap-backup-installer-%version%.msi
+copy deploy\bundles\SnapBackup-1.0.msi ..\releases\snap-backup-installer-%version%.msi
 dir *.msi
 echo.
 
