@@ -11,7 +11,8 @@
    "keywords":    ["backup", "utility", "zip", "internationalization", "java"],
    "author":      { "name": "Center Key", "url": "http://centerkey.com" },
    "scripts": {
-      "test":  "jshint gulpfile.js"
+      "pretest": "jshint gulpfile.js",
+      "test":    "gulp web"
       },
    "jshintConfig": {
       "esversion": 6,

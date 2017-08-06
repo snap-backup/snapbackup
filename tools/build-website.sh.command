@@ -50,7 +50,7 @@ buildHtmlFiles() {
    echo
    echo "Tasks:"
    echo "To get latest modules --> $ npm update"
-   gulp web
+   npm test
    cd website/httpdocs
    mv htaccess.txt .htaccess
    sed s/@@version/$versionJava/ ../static/version/index.php >version/index.php
@@ -87,7 +87,6 @@ echo "snapbackup.org website"
 echo "======================"
 echo
 info
-npm test
 setupWebServer
 buildHtmlFiles
 publish
