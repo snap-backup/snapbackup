@@ -36,7 +36,7 @@ var context = {
    pkg:       pkg,
    webRoot:   '..',
    pageTitle: pkg.description,
-   updated:   'October 16, 2016',
+   updated:   'August 5, 2017',
    jarSize:   '223 KB',
    installer: installer,
    download:  download
