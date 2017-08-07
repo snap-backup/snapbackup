@@ -17,7 +17,7 @@ body >header .arch {
    position: absolute;
    top: 0px;
    left: 124px;
-   width: 200%;
+   width: calc(100% - 124px);
    background-color: palegreen;
    z-index: -1000;
    }
@@ -111,8 +111,8 @@ nav.hamburger-menu >ul >li:hover >a {
    background-color: lightseagreen;  /* menu background highlight color on hover */
    }
 
-nav.hamburger-menu >ul >li >a {
-   padding: 10px 20px 10px 16px;  /* override default padding */
+nav.hamburger-menu >ul {
+   width: 128px;
    }
 
 /* Mobile */
@@ -121,12 +121,16 @@ nav.hamburger-menu >ul >li >a {
       padding: 0px 20px 0px 0px;  /* adjust left padding to provide enough space for menu */
       }
    body >header {
-      padding-top: 40px;
+      padding-top: 60px;
       }
    body >header .arch {
       left: -4px;
+      width: calc(100% + 4px);
       }
    body >header >h1 {
-      font-size: 2rem;
+      font-size: 1.6rem;
+      }
+   body main section h2 {
+      font-size: 1.3rem;
       }
    }
