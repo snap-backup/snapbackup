@@ -34,7 +34,6 @@ var jsHintConfig = {
    };
 var context = {
    pkg:       pkg,
-   webRoot:   '..',
    pageTitle: pkg.description,
    updated:   'August 5, 2017',
    jarSize:   '223 KB',
