@@ -33,12 +33,13 @@ var jsHintConfig = {
    globals: { library: false, window: false }
    };
 var context = {
-   pkg:       pkg,
-   pageTitle: pkg.description,
-   updated:   'August 5, 2017',
-   jarSize:   '223 KB',
-   installer: installer,
-   download:  download
+   pkg:           pkg,
+   pageTitle:     pkg.description,
+   updated:       'August 5, 2017',
+   jarSize:       '223 KB',
+   installer:     installer,
+   download:      download,
+   propertiesUri: 'https://github.com/snap-backup/snapbackup/blob/master/src/resources/properties'
    };
 var httpdocsFolder = 'website/httpdocs';
 var htmlHintConfig = { 'attr-value-double-quotes': false };
