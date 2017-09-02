@@ -24,6 +24,7 @@
          @@include("website/templates/languages-icons.html")
       </p>
    </section>
+
    <section>
       <h2>Protecting your data should be easy</h2>
       <p>
@@ -51,12 +52,14 @@
          and Mac's built-in Archive Utility.
       </p>
    </section>
+
    <section>
       <h2>News</h2>
       <div>
          @@include("website/templates/news.html")
       </div>
    </section>
+
    <section>
       <h2>Take control</h2>
       <p>
@@ -67,6 +70,7 @@
          to protect their valuable data.
       </p>
    </section>
+
    <section>
       <aside>
          <a href=http://www.java.com class=external-site>
@@ -83,6 +87,7 @@
          want to help translate Snap Backup into your favorite language.
       </p>
    </section>
+
    <section>
       <aside>
          <div id=social-buttons class=plain></div>
@@ -91,6 +96,32 @@
       <div>
          @@include("website/templates/comments.html")
       </div>
+   </section>
+
+   <section>
+      <form class=perfect>
+         <h2>Send us a message</h2>
+         <label>
+            <span>Message:</span>
+            <textarea name=message placeholder="Enter your message"></textarea>
+         </label>
+         <label>
+            <span>Name:</span>
+            <input name=name placeholder="Enter your name">
+         </label>
+         <label>
+            <span>Email:</span>
+            <input name=email type=email placeholder="Enter your email">
+         </label>
+         <p>
+            <span>Powered by <a href=http://centerkey.com/php>PERFECT</a></span>
+            <button type=submit>Send</button>
+         </p>
+      </form>
+      <p>
+         If you have a question, check out the <a href=faq>FAQ</a> or file an
+         <a href=https://github.com/snap-backup/snapbackup/issues>issue</a>.
+      </p>
    </section>
 
 </main>
