@@ -1,8 +1,9 @@
 # Snap Backup
 
-# Generated and downloaded files
-/build/
+# Downloaded and generated files
 /node_modules/
+/package-lock.json
+/build/
 /website/httpdocs/
 
 # Extraneous system files

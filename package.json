@@ -1,34 +1,43 @@
 {
-   "name":        "snapbackup",
-   "version":     "6.2.0",
+   "name": "snapbackup",
+   "version": "6.2.0",
    "description": "The one-click backup utility",
-   "license":     "GPL-3.0",
-   "main":        "gulpfile.js",
-   "repository":  "snap-backup/snapbackup",
-   "homepage":    "https://github.com/snap-backup/snapbackup",
-   "bugs":        "https://github.com/snap-backup/snapbackup/issues",
-   "docs":        "http://snapbackup.org/faq",
-   "keywords":    ["backup", "utility", "zip", "internationalization", "java"],
-   "author":      { "name": "Center Key", "url": "http://centerkey.com" },
+   "license": "GPL-3.0",
+   "main": "gulpfile.js",
+   "repository": "snap-backup/snapbackup",
+   "homepage": "https://github.com/snap-backup/snapbackup",
+   "bugs": "https://github.com/snap-backup/snapbackup/issues",
+   "docs": "http://snapbackup.org/faq",
+   "keywords": [
+      "backup",
+      "utility",
+      "zip",
+      "internationalization",
+      "java"
+   ],
+   "author": {
+      "name": "Center Key",
+      "url": "http://centerkey.com"
+   },
    "scripts": {
       "pretest": "jshint gulpfile.js",
-      "test":    "gulp web"
-      },
+      "test": "gulp web"
+   },
    "jshintConfig": {
       "esversion": 6,
-      "strict":    "implied",
-      "node":      true,
-      "undef":     true,
-      "unused":    true
-      },
+      "strict": "implied",
+      "node": true,
+      "undef": true,
+      "unused": true
+   },
    "devDependencies": {
-      "del":               "~3.0",
-      "gulp":              "~3.9",
+      "del": "~3.0",
+      "gulp": "~3.9",
       "gulp-file-include": "~1.2",
-      "gulp-htmlhint":     "~0.3",
-      "gulp-jshint":       "~2.0",
-      "gulp-rename":       "~1.2",
-      "gulp-w3cjs":        "~1.3",
-      "jshint":            "~2.9"
-      }
+      "gulp-htmlhint": "~0.3",
+      "gulp-jshint": "~2.0",
+      "gulp-rename": "~1.2",
+      "gulp-w3cjs": "~1.3",
+      "jshint": "~2.9"
+   }
 }
