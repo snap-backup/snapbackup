@@ -1,7 +1,7 @@
 /* Live in Style -- Snap Backup */
 /* colors: teal (#008080), palegreen (#98FB98), yellow (#FFFF00) */
 
-/* Base */
+/* Layout */
 body {
    padding: 0px 50px 0px 124px;  /* adjust left padding to provide enough space for menu */
    }
@@ -53,29 +53,24 @@ main >section:first-child >h2:first-child {
 main >section >aside figure {
    max-width: 200px;
    }
+main >section .news cite,
+main >section [data-reveal=more-news] cite {
+   display: block;
+   font-size: 0.8rem;
+   font-style: normal;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   }
 
 /* Footer */
 body >footer {
    font-size: 0.8rem;
    color: gray;
-   border-top: 1px solid silver;
    padding: 10px;
    }
 
 /* Layout */
-.stress { font-weight: bold; font-style: italic; color: teal; }
 img.screen { border: 3px solid teal; margin: 10px 0px; }
-
-.thumb-box     { text-align: center; background-color: teal; padding: 10px; border: 1px solid silver; }
-.thumb-box div { color: palegreen; font-size: 70%; }
-.thumb-box a   { color: whitesmoke; font-size: 70%; }
-
-.steps { font-size: 90%; border: 1px solid silver; padding: 2px; margin: 3px 0px 0px 30px; }
-
-#news { float: left; font-size: 80%; border: dashed 1px teal; width: 170px; padding: 7px 7px 7px 10px; margin: 10px 15px 5px 0px; }
-#news .news-header { font-size: 100%; font-weight: bold; text-align: center; color: teal; border: solid teal 1px; background-color: yellow; padding: 1px; margin-bottom: 9px; }
-#news .date { display: inline-block; font-style: italic; color: white; background-color: darkgray; padding: 2px 9px 1px 10px; }
-#news p { margin: 3px 0px 15px 0px; }
 
 /* Section boxes */
 .box-top    { font-weight: bold; font-size: 110%; border: solid teal 1px; text-align: center; background: darkgray; padding: 3px; }
