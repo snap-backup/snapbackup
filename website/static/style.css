@@ -91,10 +91,10 @@ button:hover { background-color: lightseagreen; }
 .reveal-action { color: teal; }
 .reveal-action:hover { background-color: teal; }
 
-/* PERFECT style colors */
-.perfect { border-color: teal; }                                    /* outer color */
-.perfect h1 { background-color: teal; }                             /* outer color */
-.perfect input, .perfect textarea { background-color: mintcream; }  /* input fields */
+/* PERFECT colors */
+form.perfect { border-color: teal; }                                        /* outer color */
+form.perfect h2 { background-color: teal; }                                 /* outer color */
+form.perfect input, form.perfect textarea { background-color: mintcream; }  /* input fields */
 
 /* Hamburger Menu Colors */
 /* Configuration */
