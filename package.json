@@ -26,9 +26,9 @@
    "jshintConfig": {
       "esversion": 6,
       "strict": "implied",
-      "node": true,
       "undef": true,
-      "unused": true
+      "unused": true,
+      "node": true
    },
    "devDependencies": {
       "del": "~3.0",
