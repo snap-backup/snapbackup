@@ -17,18 +17,19 @@
 
 projectHome=$(cd $(dirname $0)/..; pwd)
 
-addAnt() {
-   antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
-   PATH=$PATH:$antHome/bin
-   echo "Path: $PATH"
-   which ant || echo "*** Must install ant first. See: build.sh.command"
-   echo
-   }
-
 setup() {
    cd $projectHome
    JAVA_HOME=$(/usr/libexec/java_home)
+   echo $JAVA_HOME
+   java -version
    javac -version
+   addAnt() {
+      antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
+      PATH=$PATH:$antHome/bin
+      echo "Path: $PATH"
+      which ant || echo "*** Must install ant first. See: build.sh.command"
+      echo
+      }
    which ant || addAnt
    ant -version
    attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
@@ -60,10 +61,12 @@ buildMacInstaller() {
    iconutil --convert icns SnapBackup.iconset
    mkdir -p package/macosx
    mv SnapBackup.icns package/macosx
+   echo "javapackager:"
    $JAVA_HOME/bin/javapackager -deploy -native dmg \
-      -srcfiles snapbackup.jar -appclass org.snapbackup.Main \
+      -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.Main \
+      -Bicon=package/macosx/SnapBackup.icns \
       -name SnapBackup -vendor "Snap Backup" -outdir deploy -outfile SnapBackup -v
-   cp deploy/bundles/SnapBackup-1.0.dmg snap-backup-installer-$version.dmg
+   cp deploy/SnapBackup-1.0.dmg snap-backup-installer-$version.dmg
    cp snapbackup.jar snapbackup-$version.jar
    cp -v snapbackup*.jar snap-backup-installer-*.dmg ../releases
    pwd

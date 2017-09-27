@@ -42,8 +42,8 @@
       <javac
          srcdir="${JavaSource}"
          destdir="${JavaClasses}"
-         source="7"
-         target="7"
+         source="8"
+         target="8"
          debug="on"
          includeAntRuntime="false">
          <!--
@@ -51,12 +51,14 @@
          [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
          http://stackoverflow.com/questions/7816423
          -->
-         <compilerarg value="-Xlint:all,-serial"  />
+         <compilerarg value="-Xlint:all,-serial" />
       </javac>
       <echo />
 
       <echo message="=== Prepare resources ===" />
-      <native2ascii encoding="UTF8" src="${Resources}/properties" dest="${JavaClasses}" />
+      <copy todir="${JavaClasses}">
+         <fileset dir="${Resources}/properties" />
+      </copy>
       <copy file="${JavaClasses}/SnapBackup.properties"
          tofile="${JavaClasses}/SnapBackup_en.properties" />
       <copy todir="${JavaClasses}/org/snapbackup/ui/images">
