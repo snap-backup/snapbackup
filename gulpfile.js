@@ -6,43 +6,44 @@
 //    $ npm outdated
 //    $ npm update
 
-var gulp =        require('gulp');
-var fileInclude = require('gulp-file-include');
-var htmlHint =    require('gulp-htmlhint');
-var jsHint =      require('gulp-jshint');
-var rename =      require('gulp-rename');
-var w3cJs =       require('gulp-w3cjs');
-var del =         require('del');
+const gulp =        require('gulp');
+const fileInclude = require('gulp-file-include');
+const htmlHint =    require('gulp-htmlhint');
+const jsHint =      require('gulp-jshint');
+const rename =      require('gulp-rename');
+const w3cJs =       require('gulp-w3cjs');
+const del =         require('del');
 
-var pkg = require('./package.json');
-var releaseUrl = 'https://github.com/snap-backup/snapbackup/blob/master/releases/';
-var installer = {
+const pkg = require('./package.json');
+const releaseUrl = 'https://github.com/snap-backup/snapbackup/blob/master/releases/';
+const installer = {
    mac: 'snap-backup-installer-' + pkg.version + '.dmg',
    win: 'snap-backup-installer-' + pkg.version + '.msi'
    };
-var download = {
+const download = {
    mac:  releaseUrl + installer.mac +    '?raw=true',
    win:  releaseUrl + installer.win +    '?raw=true',
    java: releaseUrl + 'snapbackup.jar' + '?raw=true'
    };
-var jsHintConfig = {
+const jsHintConfig = {
    strict:  'implied',
    undef:   true,
    unused:  true,
+   browser: true,
    jquery:  true,
-   globals: { library: false, window: false }
+   globals: { library: false }
    };
-var context = {
+const context = {
    pkg:           pkg,
    pageTitle:     pkg.description,
-   updated:       'August 5, 2017',
-   jarSize:       '223 KB',
+   updated:       pkg.extra.updated,
+   jarSize:       pkg.extra.jarSize,
    installer:     installer,
    download:      download,
    propertiesUri: 'https://github.com/snap-backup/snapbackup/blob/master/src/resources/properties'
    };
-var httpdocsFolder = 'website/httpdocs';
-var htmlHintConfig = { 'attr-value-double-quotes': false };
+const httpdocsFolder = 'website/httpdocs';
+const htmlHintConfig = { 'attr-value-double-quotes': false };
 
 function cleanWebsite() {
     return del(httpdocsFolder + '/**');

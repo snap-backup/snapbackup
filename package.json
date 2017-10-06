@@ -19,9 +19,9 @@
       "name": "Center Key",
       "url": "http://centerkey.com"
    },
-   "scripts": {
-      "pretest": "jshint gulpfile.js",
-      "test": "gulp web"
+   "extra": {
+      "updated": "August 5, 2017",
+      "jarSize": "222 KB"
    },
    "jshintConfig": {
       "esversion": 6,
@@ -29,6 +29,10 @@
       "undef": true,
       "unused": true,
       "node": true
+   },
+   "scripts": {
+      "pretest": "jshint gulpfile.js",
+      "test": "gulp web"
    },
    "devDependencies": {
       "del": "~3.0",
