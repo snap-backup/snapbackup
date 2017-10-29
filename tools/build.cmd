@@ -1,11 +1,11 @@
 @echo off
-:::::::::::::::::::::::::::::::::
-::  Snap Backup                ::
-::  Build on Microsoft Windows ::
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::
+:: Snap Backup                ::
+:: Build on Microsoft Windows ::
+::::::::::::::::::::::::::::::::
 
-::  Script tested on:
-::     Windows 10 Pro
+:: Script tested on:
+::    Windows 10 Pro
 
 :: JDK
 :: ===
@@ -55,7 +55,7 @@ magick convert snap-backup-icon.png SnapBackup.ico
 mkdir package\windows
 move SnapBackup.ico package\windows
 call "%JAVA_HOME%\bin\javapackager" -deploy -native msi ^
-   -srcfiles snapbackup.jar -appclass org.snapbackup.Main ^
+   -srcfiles snapbackup.jar -appclass org.snapbackup.SnapBackup ^
    -name SnapBackup -vendor "Snap Backup" -outdir deploy -outfile SnapBackup -v
 
 :: TODO: Replace with ->

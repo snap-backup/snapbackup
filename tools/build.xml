@@ -76,7 +76,7 @@
       <jar destfile="${JavaClasses}/../snapbackup.jar" basedir="${JavaClasses}">
          <fileset dir="." includes="*.class" />
          <manifest>
-            <attribute name="Main-Class" value="org.snapbackup.Main" />
+            <attribute name="Main-Class" value="org.snapbackup.SnapBackup" />
             <attribute name="SplashScreen-Image" value="org/snapbackup/ui/images/splash.png" />
          </manifest>
       </jar>

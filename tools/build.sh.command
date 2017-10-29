@@ -64,7 +64,7 @@ buildMacInstaller() {
    echo "javapackager:"
    $JAVA_HOME/bin/javapackager -deploy -native pkg -name SnapBackup \
       -BappVersion=$version -Bicon=package/macosx/SnapBackup.icns \
-      -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.Main \
+      -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.SnapBackup \
       -outdir out -v
    cp out/SnapBackup-*.pkg snap-backup-installer-$version.pkg
    cp snapbackup.jar snapbackup-$version.jar

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Snap Backup                                                                //
-// Main.java                                                                  //
+// SnapBackup.java                                                            //
 //                                                                            //
 // Main Startup:                                                              //
 //    This object launches the command line or GUI version of appliction.     //
@@ -18,7 +18,7 @@ import org.snapbackup.ui.UIProperties;
 import org.snapbackup.settings.AppProperties;
 import org.snapbackup.settings.UserPreferences;
 
-public class Main {
+public class SnapBackup {
 
    // Run Snap Backup in either command line mode where the parameter is the profile name
    // or in GUI (Swing) mode if there are no parameters.
