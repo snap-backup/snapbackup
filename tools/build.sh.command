@@ -1,8 +1,8 @@
 #!/bin/sh
-#########################
-##  Snap Backup        ##
-##  Build on macOS  ##
-#########################
+####################
+## Snap Backup    ##
+## Build on macOS ##
+####################
 
 # JDK
 # ===
@@ -62,15 +62,15 @@ buildMacInstaller() {
    mkdir -p package/macosx
    mv SnapBackup.icns package/macosx
    echo "javapackager:"
-   $JAVA_HOME/bin/javapackager -deploy -native dmg \
+   $JAVA_HOME/bin/javapackager -deploy -native pkg -name SnapBackup \
+      -BappVersion=$version -Bicon=package/macosx/SnapBackup.icns \
       -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.Main \
-      -Bicon=package/macosx/SnapBackup.icns \
-      -name SnapBackup -vendor "Snap Backup" -outdir deploy -outfile SnapBackup -v
-   cp deploy/SnapBackup-1.0.dmg snap-backup-installer-$version.dmg
+      -outdir out -v
+   cp out/SnapBackup-*.pkg snap-backup-installer-$version.pkg
    cp snapbackup.jar snapbackup-$version.jar
-   cp -v snapbackup*.jar snap-backup-installer-*.dmg ../releases
+   cp -v snapbackup*.jar snap-backup-installer-*.pkg ../releases
    pwd
-   ls -l *.dmg
+   ls -l *.pkg
    echo
    }
 

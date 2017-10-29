@@ -17,7 +17,7 @@ const del =         require('del');
 const pkg = require('./package.json');
 const releaseUrl = 'https://github.com/snap-backup/snapbackup/blob/master/releases/';
 const installer = {
-   mac: 'snap-backup-installer-' + pkg.version + '.dmg',
+   mac: 'snap-backup-installer-' + pkg.version + '.pkg',
    win: 'snap-backup-installer-' + pkg.version + '.msi'
    };
 const download = {
