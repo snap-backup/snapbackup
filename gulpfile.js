@@ -31,7 +31,7 @@ const jsHintConfig = {
    unused:  true,
    browser: true,
    jquery:  true,
-   globals: { library: false }
+   globals: { dna: false, library: false }
    };
 const context = {
    pkg:           pkg,
