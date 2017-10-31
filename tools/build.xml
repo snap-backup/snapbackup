@@ -42,13 +42,13 @@
       <javac
          srcdir="${JavaSource}"
          destdir="${JavaClasses}"
-         source="8"
-         target="8"
          debug="on"
          includeAntRuntime="false">
          <!--
+         source="8"
+         target="8"
          bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
-         [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.7
+         [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.8
          http://stackoverflow.com/questions/7816423
          -->
          <compilerarg value="-Xlint:all,-serial" />
