@@ -17,7 +17,7 @@ Structure for Hamburger Menu:
 /* Base */
 html {
    font-size: 100%;
-   font-family: geneva, tahoma, sans-serif;
+   font-family: system-ui, geneva, tahoma, sans-serif;
    }
 body {
    padding: 0rem 2rem 0rem 8rem;  /* adjust left padding to provide enough space for menu */
@@ -65,7 +65,7 @@ nav.hamburger-menu >ul >li >a {
    padding: 10px 15px 10px 8px;
    transition: all 0.4s;
    }
-@media (max-width: 667px) {  /* selects iPhone 6/6s/7 landscape and anything narrower */
+@media (max-width: 667px) {  /* selects iPhone 6/6s/7/8 landscape and anything narrower */
    body {
       padding: 2rem 0.5rem 0rem 0.5rem;
       cursor: pointer;  /* enables closing menu */
