@@ -7,7 +7,7 @@
    "repository": "snap-backup/snapbackup",
    "homepage": "https://github.com/snap-backup/snapbackup",
    "bugs": "https://github.com/snap-backup/snapbackup/issues",
-   "docs": "http://snapbackup.org/faq",
+   "docs": "https://snapbackup.org/faq",
    "keywords": [
       "backup",
       "utility",
@@ -17,7 +17,7 @@
    ],
    "author": {
       "name": "Center Key",
-      "url": "http://centerkey.com"
+      "url": "https://centerkey.com"
    },
    "extra": {
       "updated": "August 5, 2017",

@@ -91,7 +91,7 @@ public class SystemAttributes {
    public static final String headerPost =      "<br>&nbsp;</center>" + endHtml;
    // public static final String feedbackEMail =   "feedback" + atSign + "snapbackup.org";
    // public static final String postalAddress =   "Center Key\nBox 21\nSan Carlos, California  94070\nUSA";
-   public static final String homeURL =         "http://snapbackup.org";  //on About Box
+   public static final String homeURL =         "https://snapbackup.org";  //on About Box
    public static final String updatesURL =      homeURL + "/version/";  //not displayed
    public static final String downloadURL =     homeURL + "/download";  //on About Box
    public static final String visitURL =        homeURL + "/app?v=" + appVersion;  //not displayed

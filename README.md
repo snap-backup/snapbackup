@@ -15,12 +15,12 @@ Korean, Portuguese, Russian, Spanish, and Slovene.
 
 #### 1. Download
 If you want to use Snap Backup to backup your files, go to the download page to get the installer:<br>
-[snapbackup.org/download](http://snapbackup.org/download)
+[snapbackup.org/download](https://snapbackup.org/download)
 
 #### 2. Translate
 If you want to translate Snap Backup into a new language, check out the translation web page, join the translator mailing list, and then follow the translator contributor steps.
 
-   * Translation Web Page: [snapbackup.org/translate](http://snapbackup.org/translate)
+   * Translation Web Page: [snapbackup.org/translate](https://snapbackup.org/translate)
    * Translators Mailing List: [groups.google.com/group/snapbackup-translate](https://groups.google.com/group/snapbackup-translate)
    * Translator Contributor Steps: [Translator Steps](https://github.com/snap-backup/snapbackup/wiki/Translator-Steps)
 

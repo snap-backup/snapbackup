@@ -22,5 +22,5 @@ Consult your Java documentation for the exact steps to launch an executable
 JAR on your system.
 
 ============================
-http://snapbackup.org
+https://snapbackup.org
 Copyright (c) individual contributors
