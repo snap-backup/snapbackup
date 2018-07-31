@@ -10,18 +10,18 @@
 :: JDK
 :: ===
 :: Install the Java SE Developer Kit:
-::    http://www.oracle.com/technetwork/java/javase/downloads ("Windows x86")
+::    https://www.oracle.com/technetwork/java/javase/downloads ("Windows x86")
 ::
 :: Ant
 :: ===
 :: Download and unzip Ant into the "\Apps\Ant" folder:
-::    Download --> http://ant.apache.org/bindownload.cgi (".zip archive")
+::    Download --> https://ant.apache.org/bindownload.cgi (".zip archive")
 ::    Example install folder --> \Apps\Ant\apache-ant-1.10.1\bin
 ::
 :: ImageMagick
 :: ===========
 :: Download and install ImageMagick with the default settings:
-::    http://www.imagemagick.org/script/binary-releases.php ("Win64 dynamic at 16 bits-per-pixel component")
+::    https://www.imagemagick.org/script/download.php ("Win64 dynamic at 16 bits-per-pixel component")
 ::
 :: WiX Toolset
 :: ===========

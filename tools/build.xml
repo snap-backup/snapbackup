@@ -49,7 +49,7 @@
          target="8"
          bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
          [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.8
-         http://stackoverflow.com/questions/7816423
+         https://stackoverflow.com/questions/7816423
          -->
          <compilerarg value="-Xlint:all,-serial" />
       </javac>
@@ -66,7 +66,7 @@
       </copy>
       <copy file="${Resources}/snap-backup-user-guide.html" todir="${HtmlFolder}" />
       <copy file="${Resources}/SnapBackupSettings.xsd" todir="${JavaClasses}/org/snapbackup/business" />
-      <!--  Workaround for: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127 -->
+      <!--  Workaround for: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127 -->
       <!--  Part 1 of 2 -->
       <copy file="${JavaClasses}/SnapBackup_id.properties"
          tofile="${JavaClasses}/SnapBackup_in.properties" />

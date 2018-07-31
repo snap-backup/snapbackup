@@ -7,17 +7,17 @@
 # JDK
 # ===
 # Install the Java SE Devloper Kit for macOS x64:
-#    http://www.oracle.com/technetwork/java/javase/downloads
+#    https://www.oracle.com/technetwork/java/javase/downloads
 #
 # Ant
 # ===
 # Install Ant or download and unzip into the "~/apps/ant" folder:
-#    Download --> http://ant.apache.org/bindownload.cgi (".zip archive")
+#    Download --> https://ant.apache.org/bindownload.cgi (".zip archive")
 #    Example install folder --> ~/apps/ant/apache-ant-1.9.7/bin
 
 projectHome=$(cd $(dirname $0)/..; pwd)
 
-setup() {
+setupTools() {
    cd $projectHome
    JAVA_HOME=$(/usr/libexec/java_home)
    echo $JAVA_HOME
@@ -94,7 +94,7 @@ releaseInstructions() {
 echo
 echo "Snap Backup Build"
 echo "================="
-setup
+setupTools
 buildExecutableJar
 buildMacInstaller
 releaseInstructions

@@ -37,9 +37,6 @@ public class AboutDialog extends JDialog {
       SystemAttributes.appCopyright + "</small>" + endHtml;
    final String licenseStr =     ui.aboutLicense + newLine + newLine +
       ui.aboutDownload + newLine + tab + SystemAttributes.downloadURL;
-   // final String contactInfoStr = (ui.aboutContact + newLine +
-   //    SystemAttributes.postalAddress + newLine + SystemAttributes.homeURL +
-   //    newLine + SystemAttributes.feedbackEMail).replaceAll(newLine, newLine + tab);
 
    //Define About Controls
    JPanel    aboutPanel =        new JPanel();

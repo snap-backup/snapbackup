@@ -50,24 +50,23 @@ public class SystemAttributes {
    public static final String[] localeCodes = {
       "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq"
       };
-      // Codes -- http://www.loc.gov/standards/iso639-2/php/code_list.php
+      // Codes -- https://www.loc.gov/standards/iso639-2/php/code_list.php
       // Flags -- https://www.paypal.com/be/webapps/mpp/country-worldwide
       // See build.xml for workaround to "in" bug regarding Indonesian:
-      //    http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127
+      //    https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127
    public static final String[][] appTranslators = {
-      { "Giorgio Ponza",          "http://www.janxes.it/jsp/societa/Giorgio.jsp" },      //"it"
-      { "Pasc&aacute;l Bihler",   "http://www.bi-on.de/pascal/" },                       //"de"
-      { "Carlos Maltzahn",        "http://homepage.mac.com/carlosmalt/" },               //"de"
-      //{ "Angelo Brillout",      null },                                                //"fr" [with Pascal]
-      { "Suzanne Bolduc",         "http://www.esperanto.net/" },                         //"eo"
-      { "Elena Kogan",            "http://speakrussian.report.ru/" },                    //"ru"
-      { "Oscar Laurens Schrover", "http://www.macfan.nl/" },                             //"nl"
-      { "Angel Herr&aacute;ez",   "http://www2.uah.es/biomodel/" },                      //"es"
-      { "Antonio de Rezende Jr.", "http://en.wikipedia.org/wiki/Portuguese_language" },  //"pt"
-      { "Sa&#353;o Topolovec",    "http://en.wikipedia.org/wiki/Slovene_language" },     //"sl" [&scaron;]
-      { "Andy Saksono",           "http://en.wikipedia.org/wiki/Indonesian_language" },  //"id"
-      { "Dany",                   "http://dragut8912.hi5.com" },                         //"ro"
-      { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                      //"sq"
+      { "Giorgio Ponza",          "http://www.janxes.it/jsp/societa/Giorgio.jsp" },       //"it"
+      { "Pasc&aacute;l Bihler",   "http://www.bi-on.de/pascal/" },                        //"de"
+      { "Carlos Maltzahn",        "http://homepage.mac.com/carlosmalt/" },                //"de"
+      { "Suzanne Bolduc",         "http://www.esperanto.net/" },                          //"eo"
+      { "Elena Kogan",            "http://speakrussian.report.ru/" },                     //"ru"
+      { "Oscar Laurens Schrover", "http://www.macfan.nl/" },                              //"nl"
+      { "Angel Herr&aacute;ez",   "http://www2.uah.es/biomodel/" },                       //"es"
+      { "Antonio de Rezende Jr.", "https://en.wikipedia.org/wiki/Portuguese_language" },  //"pt"
+      { "Sa&#353;o Topolovec",    "https://en.wikipedia.org/wiki/Slovene_language" },     //"sl" [&scaron;]
+      { "Andy Saksono",           "https://en.wikipedia.org/wiki/Indonesian_language" },  //"id"
+      { "Dany",                   "http://dragut8912.hi5.com" },                          //"ro"
+      { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                       //"sq"
       };
    public static final String appAuthors = "Dem Pilafian";  //Names of code contributors
    public static final String appCopyright =
@@ -89,8 +88,6 @@ public class SystemAttributes {
    public static final String headerMid =       "</font></b>";
    public static final String headerSplashTag = "<br><br><b><font color=gray>Center Key</font></b>";
    public static final String headerPost =      "<br>&nbsp;</center>" + endHtml;
-   // public static final String feedbackEMail =   "feedback" + atSign + "snapbackup.org";
-   // public static final String postalAddress =   "Center Key\nBox 21\nSan Carlos, California  94070\nUSA";
    public static final String homeURL =         "https://snapbackup.org";  //on About Box
    public static final String updatesURL =      homeURL + "/version/";  //not displayed
    public static final String downloadURL =     homeURL + "/download";  //on About Box
@@ -104,7 +101,7 @@ public class SystemAttributes {
    public static final String prefPrefix = appName.toLowerCase() + prefChar;
    public static final String prefProfilePrefix = prefPrefix + "~";
    public static final String prefProfilePostfix = "~" + prefChar;
-   public static final String splitStr = "~@~";  //Delimiter for multi-line data
+   public static final String splitStr = "~@~";  //delimiter for multi-line data
    public static final String cmdLineDefaultProfile = "~";
 
    // System information retrieved from JVM
@@ -126,7 +123,7 @@ public class SystemAttributes {
       sysInfo.getProperty("java.vendor");
    public static final String javaHomeDir = sysInfo.getProperty("java.home");
    public static final String javaVMInfo =
-      //example: "Java HotSpot(TM) 64-Bit Server VM, 25.102-b14 [1820 MB]"
+      // Example: "Java HotSpot(TM) 64-Bit Server VM, 25.102-b14 [1820 MB]"
       sysInfo.getProperty("java.vm.name") + ", " +
       sysInfo.getProperty("java.vm.version") + " [" +
       Runtime.getRuntime().maxMemory()/(1024*1024) + " MB]";
