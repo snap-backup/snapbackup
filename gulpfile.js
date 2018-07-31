@@ -46,37 +46,38 @@ const context = {
 const httpdocsFolder = 'website/httpdocs';
 const htmlHintConfig = { 'attr-value-double-quotes': false };
 
-function cleanWebsite() {
-    return del(httpdocsFolder + '/**');
-    }
+const task = {
+   cleanWebsite: function() {
+      return del(httpdocsFolder + '/**');  // ???->/**
+      },
+   buildWebsite: function() {
+      return mergeStream(
+         gulp.src('src/resources/snap-backup-user-guide.html')
+            .pipe(w3cJs())
+            .pipe(w3cJs.reporter())
+            .pipe(gulp.dest(httpdocsFolder))
+            .pipe(htmlHint(htmlHintConfig))
+            .pipe(htmlHint.reporter()),
+         gulp.src('src/resources/graphics/application/language-*.png')
+            .pipe(gulp.dest(httpdocsFolder + '/graphics')),
+         gulp.src('src/resources/properties/SnapBackup*.properties')
+            .pipe(rename({ extname: '.properties.txt' }))
+            .pipe(gulp.dest(httpdocsFolder + '/translate')),
+         gulp.src('website/static/**/*')
+            .pipe(gulp.dest(httpdocsFolder)),
+         gulp.src('website/root/**/*.html')
+            .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
+            .pipe(w3cJs())
+            .pipe(w3cJs.reporter())
+            .pipe(htmlHint(htmlHintConfig))
+            .pipe(htmlHint.reporter())
+            .pipe(gulp.dest(httpdocsFolder)),
+         gulp.src('website/static/*.js')
+            .pipe(jsHint(jsHintConfig))
+            .pipe(jsHint.reporter())
+         );
+      }
+   };
 
-function buildWebsite() {
-   return mergeStream(
-      gulp.src('src/resources/snap-backup-user-guide.html')
-         .pipe(w3cJs())
-         .pipe(w3cJs.reporter())
-         .pipe(gulp.dest(httpdocsFolder))
-         .pipe(htmlHint(htmlHintConfig))
-         .pipe(htmlHint.reporter()),
-      gulp.src('src/resources/graphics/application/language-*.png')
-         .pipe(gulp.dest(httpdocsFolder + '/graphics')),
-      gulp.src('src/resources/properties/SnapBackup*.properties')
-         .pipe(rename({ extname: '.properties.txt' }))
-         .pipe(gulp.dest(httpdocsFolder + '/translate')),
-      gulp.src('website/static/**/*')
-         .pipe(gulp.dest(httpdocsFolder)),
-      gulp.src('website/root/**/*.html')
-         .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
-         .pipe(w3cJs())
-         .pipe(w3cJs.reporter())
-         .pipe(htmlHint(htmlHintConfig))
-         .pipe(htmlHint.reporter())
-         .pipe(gulp.dest(httpdocsFolder)),
-      gulp.src('website/static/*.js')
-         .pipe(jsHint(jsHintConfig))
-         .pipe(jsHint.reporter())
-      );
-   }
-
-gulp.task('clean', cleanWebsite);
-gulp.task('web',   buildWebsite);
+gulp.task('clean', task.cleanWebsite);
+gulp.task('web',   task.buildWebsite);
