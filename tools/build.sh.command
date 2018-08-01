@@ -19,14 +19,18 @@ projectHome=$(cd $(dirname $0)/..; pwd)
 
 setupTools() {
    cd $projectHome
+   pwd
+   echo
    JAVA_HOME=$(/usr/libexec/java_home)
+   echo "Java:"
    echo $JAVA_HOME
    java -version
    javac -version
+   echo
+   echo "Ant:"
    addAnt() {
       antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
       PATH=$PATH:$antHome/bin
-      echo "Path: $PATH"
       which ant || echo "*** Must install ant first. See: build.sh.command"
       echo
       }
@@ -44,9 +48,10 @@ buildExecutableJar() {
    }
 
 buildMacInstaller() {
-   cd $projectHome/build
-   $JAVA_HOME/bin/javapackager -version
-   cp ../src/resources/graphics/application/snap-backup-icon.png .
+   cd $projectHome
+   echo "Applications icons:"
+   cp src/resources/graphics/application/snap-backup-icon.png build
+   cd build
    mkdir SnapBackup.iconset
    sips -z   16   16 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16.png
    sips -z   32   32 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16@2x.png
@@ -61,33 +66,25 @@ buildMacInstaller() {
    iconutil --convert icns SnapBackup.iconset
    mkdir -p package/macosx
    mv SnapBackup.icns package/macosx
-   echo "javapackager:"
+   echo "macOS installer (javapackager):"
+   $JAVA_HOME/bin/javapackager -version
    $JAVA_HOME/bin/javapackager -deploy -native pkg -name SnapBackup \
       -BappVersion=$version -Bicon=package/macosx/SnapBackup.icns \
       -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.SnapBackup \
       -outdir out -v
    cp out/SnapBackup-*.pkg snap-backup-installer-$version.pkg
-   cp snapbackup.jar snapbackup-$version.jar
-   cp -v snapbackup*.jar snap-backup-installer-*.pkg ../releases
-   pwd
+   mv snapbackup.jar snapbackup-$version.jar
+   echo "Output:"
    ls -l *.pkg
    echo
    }
 
-releaseInstructions() {
+updateReleasesFolder() {
    cd $projectHome
-   version=v$(grep '"version"' package.json | awk -F'"' '{print $4}')
-   echo "Local changes:"
-   git status --short
-   echo
-   echo "Releases:"
-   git tag
-   echo
-   echo "To release this version:"
-   echo "   cd $projectHome"
-   echo "   git tag --annotate --force --message 'Stable release' $version"
-   echo "   git remote --verbose"
-   echo "   git push origin --tags --force"
+   echo "Releases folder:"
+   cp -v build/snap-backup-installer-*.pkg releases
+   cp -v build/snapbackup-*.jar            releases
+   cp -v build/snapbackup-*.jar            releases/snapbackup-latest.jar
    echo
    }
 
@@ -97,4 +94,4 @@ echo "================="
 setupTools
 buildExecutableJar
 buildMacInstaller
-releaseInstructions
+updateReleasesFolder

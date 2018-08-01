@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" ?>
-<!-- - - - - - - - - - -->
-<!--  Snap Backup      -->
-<!--  Ant Build File   -->
-<!-- - - - - - - - - - -->
+<!-- - - - - - -  - -->
+<!-- Snap Backup    -->
+<!-- Ant Build File -->
+<!-- - - - - - -  - -->
 
 <!--
-   Be sure the version number is up to date in:
-      org/snapbackup/settings/SystemAttributes.java
+   Be sure the version number is up-to-date in:
+      src/java/org/snapbackup/settings/SystemAttributes.java
 -->
 
 <project>
@@ -22,7 +22,7 @@
 
    <target name="build">
 
-      <!--  Get Snap Backup Version  -->
+      <!-- Get Snap Backup Version -->
       <loadfile srcfile="${JavaSource}/org/snapbackup/settings/SystemAttributes.java" property="version">
          <filterchain>
             <linecontains><contains value="appVersion =" /></linecontains>
