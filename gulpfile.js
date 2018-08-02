@@ -1,31 +1,34 @@
 // Snap Backup
 // Gulp configuration and tasks
 
-// Periodically check dependencies:
-//    $ cd snapbackup
-//    $ npm outdated
-//    $ npm update
-
+// Imports
 const gulp =        require('gulp');
+const concat =      require('gulp-concat');
 const fileInclude = require('gulp-file-include');
 const htmlHint =    require('gulp-htmlhint');
 const jsHint =      require('gulp-jshint');
 const rename =      require('gulp-rename');
 const w3cJs =       require('gulp-w3cjs');
+const zip =         require('gulp-zip');
 const del =         require('del');
 const mergeStream = require('merge-stream');
 
+// Configuration
 const pkg = require('./package.json');
-const releaseUrl = 'https://github.com/snap-backup/snapbackup/blob/master/releases/';
+const releaseUrl = pkg.homepage + '/blob/master/releases/';
 const installer = {
-   mac: 'snap-backup-installer-' + pkg.version + '.pkg',
-   win: 'snap-backup-installer-' + pkg.version + '.msi'
+   mac:  'snap-backup-installer-' + pkg.version + '.pkg',
+   win:  'snap-backup-installer-' + pkg.version + '.msi',
+   java: 'snapbackup-' +            pkg.version + '.jar'
    };
+if (true) installer.win = installer.win.replace(pkg.version, '6.2.0');  //CAUTION!!!
 const download = {
-   mac:  releaseUrl + installer.mac +    '?raw=true',
-   win:  releaseUrl + installer.win +    '?raw=true',
-   java: releaseUrl + 'snapbackup.jar' + '?raw=true'
+   mac:  releaseUrl + installer.mac +  '?raw=true',
+   win:  releaseUrl + installer.win +  '?raw=true',
+   java: releaseUrl + installer.java + '?raw=true',
+   past: releaseUrl
    };
+const htmlHintConfig = { 'attr-value-double-quotes': false };
 const jsHintConfig = {
    strict:  'implied',
    undef:   true,
@@ -37,47 +40,69 @@ const jsHintConfig = {
 const context = {
    pkg:           pkg,
    pageTitle:     pkg.description,
-   updated:       pkg.extra.updated,
-   jarSize:       pkg.extra.jarSize,
    installer:     installer,
    download:      download,
-   propertiesUri: 'https://github.com/snap-backup/snapbackup/blob/master/src/resources/properties'
+   propertiesUri: pkg.homepage + '/blob/master/src/resources/properties'
    };
-const httpdocsFolder = 'website/httpdocs';
-const htmlHintConfig = { 'attr-value-double-quotes': false };
+const websitesTargetFolder = 'websites-target';
+const orgWebsite = {
+   root:      websitesTargetFolder + '/www.snapbackup.org',
+   translate: websitesTargetFolder + '/www.snapbackup.org/translate',
+   graphics:  websitesTargetFolder + '/www.snapbackup.org/graphics'
+   };
 
+// Tasks
 const task = {
-   cleanWebsite: function() {
-      return del(httpdocsFolder + '/**');  // ???->/**
+   cleanWebsitesTarget: function() {
+      return del(websitesTargetFolder + '/**/*');  //only delete folder contents so as to not kill webserver
       },
-   buildWebsite: function() {
+   buildWebsites: function() {
+      function processWeb(topLevel) {
+         return gulp.src(`websites/web/www.snapbackup.${topLevel}/**/*`)
+            .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
+            .pipe(gulp.dest(`${websitesTargetFolder}/www.snapbackup.${topLevel}`));
+         }
       return mergeStream(
+         processWeb('com'),
+         processWeb('eu'),
+         processWeb('net'),
+         processWeb('org'),
          gulp.src('src/resources/snap-backup-user-guide.html')
-            .pipe(w3cJs())
-            .pipe(w3cJs.reporter())
-            .pipe(gulp.dest(httpdocsFolder))
-            .pipe(htmlHint(htmlHintConfig))
-            .pipe(htmlHint.reporter()),
-         gulp.src('src/resources/graphics/application/language-*.png')
-            .pipe(gulp.dest(httpdocsFolder + '/graphics')),
+            .pipe(gulp.dest(orgWebsite.root)),
          gulp.src('src/resources/properties/SnapBackup*.properties')
             .pipe(rename({ extname: '.properties.txt' }))
-            .pipe(gulp.dest(httpdocsFolder + '/translate')),
-         gulp.src('website/static/**/*')
-            .pipe(gulp.dest(httpdocsFolder)),
-         gulp.src('website/root/**/*.html')
-            .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
+            .pipe(gulp.dest(orgWebsite.translate))
+            .pipe(zip('SnapBackup.properties.zip'))
+            .pipe(gulp.dest(orgWebsite.translate)),
+         gulp.src('src/resources/properties/SnapBackup.properties')
+            .pipe(rename('SnapBackup_en.properties.txt'))
+            .pipe(gulp.dest(orgWebsite.translate)),
+         gulp.src('src/resources/graphics/application/language-*.png')
+            .pipe(gulp.dest(orgWebsite.graphics)),
+         gulp.src('websites/graphics/**/*')
+            .pipe(gulp.dest(orgWebsite.graphics)),
+         gulp.src('websites/*.css')
+            .pipe(concat('style.css'))
+            .pipe(gulp.dest(orgWebsite.root)),
+         gulp.src('websites/*.js')
+            .pipe(concat('app.js'))
+            .pipe(gulp.dest(orgWebsite.root))
+         );
+      },
+   lintWebsites: function() {
+      return mergeStream(
+         gulp.src(websitesTargetFolder + '/**/*.html')
             .pipe(w3cJs())
             .pipe(w3cJs.reporter())
             .pipe(htmlHint(htmlHintConfig))
-            .pipe(htmlHint.reporter())
-            .pipe(gulp.dest(httpdocsFolder)),
-         gulp.src('website/static/*.js')
+            .pipe(htmlHint.reporter()),
+         gulp.src('websites/**/*.js')
             .pipe(jsHint(jsHintConfig))
             .pipe(jsHint.reporter())
          );
       }
    };
 
-gulp.task('clean', task.cleanWebsite);
-gulp.task('web',   task.buildWebsite);
+gulp.task('clean', task.cleanWebsitesTarget);
+gulp.task('web',   task.buildWebsites);
+gulp.task('lint',  task.lintWebsites);

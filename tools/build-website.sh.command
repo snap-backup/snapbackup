@@ -10,7 +10,7 @@
 port=11598  #"sb" -> 115 98
 projectHome=$(cd $(dirname $0)/..; pwd)
 
-info() {
+setupTools() {
    # Check for Node.js installation and download project dependencies
    cd $projectHome
    pwd
@@ -24,8 +24,21 @@ info() {
    echo
    }
 
+buildWebFiles() {
+   cd $projectHome
+   attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
+   versionJava=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
+   versionHtml=$(grep --max-count 1 version package.json | awk -F'"' '{print $4}')
+   warning="v$versionJava (SystemAttributes.java) does not match v$versionHtml (package.json)"
+   test $versionJava != $versionHtml && echo "*** WARNING: $warning"
+   echo "Build:"
+   echo "v$versionHtml"
+   npm test
+   echo
+   }
+
 setupWebServer() {
-   cd $projectHome/website
+   cd $projectHome/websites-target
    process=$(pgrep -lf "SimpleHTTPServer $port")
    launch() {
       echo "Launching SimpleHTTPServer:"
@@ -39,42 +52,21 @@ setupWebServer() {
    echo
    }
 
-buildHtmlFiles() {
-   cd $projectHome
-   attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
-   versionJava=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
-   versionHtml=$(grep --max-count 1 version package.json | awk -F'"' '{print $4}')
-   echo "Versions:"
-   echo "Java: $versionJava"
-   echo "HTML: $versionHtml"
-   echo
-   echo "Tasks:"
-   echo "To get latest modules --> $ npm update"
-   npm test
-   cd website/httpdocs
-   mv htaccess.txt .htaccess
-   sed s/@@version/$versionJava/ ../static/version/index.php >version/index.php
-   cd translate
-   mv SnapBackup.properties.txt SnapBackup_en.properties.txt
-   zip --quiet SnapBackup.properties.zip SnapBackup_*.properties.txt
-   echo
-   }
-
-publish() {
-   cd $projectHome/website/httpdocs
+publishWebFiles() {
+   cd $projectHome/websites-target
    publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F\" '{ print $2 }')
-   publishFolder=$publishWebRoot/snapbackup.org
+   publishFolder=$publishWebRoot/centerkey.com
    copyWebFiles() {
       echo "Publishing:"
       echo $publishFolder
-      cp -R * $publishFolder
+      cp -R www.snapbackup.* $publishFolder
       echo
       }
    test -w $publishFolder && copyWebFiles
    }
 
 launchBrowser() {
-   url=http://localhost:$port/httpdocs
+   url=http://localhost:$port/
    echo "Opening:"
    echo $url
    sleep 2
@@ -83,11 +75,10 @@ launchBrowser() {
    }
 
 echo
-echo "snapbackup.org website"
-echo "======================"
-echo
-info
+echo "snapbackup.org"
+echo "=============="
+setupTools
+buildWebFiles
 setupWebServer
-buildHtmlFiles
-publish
+publishWebFiles
 launchBrowser
