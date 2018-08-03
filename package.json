@@ -33,7 +33,7 @@
    },
    "scripts": {
       "pretest": "jshint gulpfile.js",
-      "test": "gulp clean && gulp web"
+      "test": "gulp clean && gulp web && gulp lint"
    },
    "devDependencies": {
       "del": "~3.0",

@@ -20,7 +20,7 @@ nameCheck() {
    grep = < SnapBackup.properties | sed s/\=.*// > base-properies.txt
    for file in SnapBackup_*.properties; do
       echo "     $file"
-      grep = < $file | sed s/\=.*//	| diff - base-properies.txt
+      grep = < $file | sed s/\=.*// | diff - base-properies.txt
       done
    rm base-properies.txt
    echo

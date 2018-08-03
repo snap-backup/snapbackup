@@ -21,7 +21,6 @@ const installer = {
    win:  'snap-backup-installer-' + pkg.version + '.msi',
    java: 'snapbackup-' +            pkg.version + '.jar'
    };
-if (true) installer.win = installer.win.replace(pkg.version, '6.2.0');  //CAUTION!!!
 const download = {
    mac:  releaseUrl + installer.mac +  '?raw=true',
    win:  releaseUrl + installer.win +  '?raw=true',
