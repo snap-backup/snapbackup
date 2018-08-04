@@ -9,20 +9,20 @@
 &nbsp;
 [![Build Status](https://travis-ci.org/snap-backup/snapbackup.svg)](https://travis-ci.org/snap-backup/snapbackup)
 
-Snap Backup is a utility for individual computer users who need a simple and convenient way to
-backup their valuable files.&nbsp;
+Snap Backup ([snapbackup.org](https://snapbackup.org)) is a utility for individual computer users
+who need a simple and convenient way to backup their valuable files.&nbsp;
 It is available in Dutch, English, Esperanto, German, Italian, Korean, Portuguese, Russian,
 Spanish, and Slovene.
 
-#### 1. Download
+## Download
 If you want to use Snap Backup to backup your files, go to the download page to get the installer:<br>
 [snapbackup.org/download](https://snapbackup.org/download)
 
-#### 2. Translate
+## Translate
 If you want to translate Snap Backup into another language, check out the translate web page:<br>
 [snapbackup.org/translate](https://snapbackup.org/translate)
 
-#### 3. Contribute
+## Contribute
 If you are a Java developer and want to contribute to the Snap Backup project, check out:<br>
 [Contributor Steps](https://github.com/snap-backup/snapbackup/wiki/Contributor-Steps)
 

@@ -21,7 +21,7 @@ public class SystemAttributes {
    //Release constants
    public static final String appName = "SnapBackup";  //".properties" name
    public static final String appVersion = "6.3.0";  //keep in sync with package.json
-   // 6.3.0 - 9/23/2017 -  Support Java 9
+   // 6.3.0 - 8/3/2018 -   Support Java 9
    // 6.2.0 - 7/30/2017 -  Exclude Windows recycle bin and improved showing largest files option
    // 6.1.0 - 10/16/2016 - Automatically skip extraneous files and switch to semantic versioning
    // 6.0 -   8/16/2015 -  Upgrade to Java 7
@@ -55,17 +55,17 @@ public class SystemAttributes {
       // See build.xml for workaround to "in" bug regarding Indonesian:
       //    https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127
    public static final String[][] appTranslators = {
-      { "Giorgio Ponza",          "http://www.janxes.it/jsp/societa/Giorgio.jsp" },       //"it"
-      { "Pasc&aacute;l Bihler",   "http://www.bi-on.de/pascal/" },                        //"de"
-      { "Carlos Maltzahn",        "http://homepage.mac.com/carlosmalt/" },                //"de"
-      { "Suzanne Bolduc",         "http://www.esperanto.net/" },                          //"eo"
-      { "Elena Kogan",            "http://speakrussian.report.ru/" },                     //"ru"
-      { "Oscar Laurens Schrover", "http://www.macfan.nl/" },                              //"nl"
-      { "Angel Herr&aacute;ez",   "http://www2.uah.es/biomodel/" },                       //"es"
+      { "Giorgio Ponza",          "https://en.wikipedia.org/wiki/Italian_language" },     //"it"
+      { "Pasc&aacute;l Bihler",   "http://www.bi-on.de" },                                //"de"
+      { "Carlos Maltzahn",        "https://users.soe.ucsc.edu/~carlosm" },                //"de"
+      { "Suzanne Bolduc",         "http://esperanto.net" },                               //"eo"
+      { "Elena Kogan",            "https://en.wikipedia.org/wiki/Russian_language" },     //"ru"
+      { "Oscar Laurens Schrover", "https://en.wikipedia.org/wiki/Dutch_language" },       //"nl"
+      { "Angel Herr&aacute;ez",   "http://biomodel.uah.es" },                             //"es"
       { "Antonio de Rezende Jr.", "https://en.wikipedia.org/wiki/Portuguese_language" },  //"pt"
       { "Sa&#353;o Topolovec",    "https://en.wikipedia.org/wiki/Slovene_language" },     //"sl" [&scaron;]
       { "Andy Saksono",           "https://en.wikipedia.org/wiki/Indonesian_language" },  //"id"
-      { "Dany",                   "http://dragut8912.hi5.com" },                          //"ro"
+      { "Dany",                   "https://en.wikipedia.org/wiki/Romanian_language" },    //"ro"
       { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                       //"sq"
       };
    public static final String appAuthors = "Dem Pilafian";  //Names of code contributors
