@@ -6,8 +6,8 @@
 projectHome=$(cd $(dirname $0)/..; pwd)
 
 lineCount() {
-   echo "Properties line count:"
    cd $projectHome/src/resources/properties
+   echo "Properties line count:"
    for file in SnapBackup*.properties; do
       wc -l $file
       done
@@ -15,8 +15,8 @@ lineCount() {
    }
 
 nameCheck() {
-   echo "Properties name check:"
    cd $projectHome/src/resources/properties
+   echo "Properties name check:"
    grep = < SnapBackup.properties | sed s/\=.*// > base-properies.txt
    for file in SnapBackup_*.properties; do
       echo "     $file"
