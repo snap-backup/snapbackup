@@ -4,7 +4,7 @@
 // v2.1.0 (March 26, 2018)                           //
 // Process a web form to extract the user input and  //
 //    then email the data to a predefined recipient. //
-// MIT or WTFPL (your choice)                        //
+// MIT License or WTFPL (your choice)                //
 // https://centerkey.com/php                         //
 ///////////////////////////////////////////////////////
 

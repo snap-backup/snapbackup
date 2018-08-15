@@ -1,7 +1,7 @@
 # Snap Backup
-<img src=https://raw.githubusercontent.com/snap-backup/snapbackup/master/src/resources/graphics/application/snap-backup-icon.png
-   align=right width=160 alt=logo>
-*The one-click backup utility*
+<img src=https://snapbackup.org/graphics/snap-backup-icon.png align=right width=160 alt=logo>
+
+_The one-click backup utility_
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/snap-backup/snapbackup/blob/master/LICENSE.txt)
 &nbsp;
@@ -10,9 +10,20 @@
 [![Build Status](https://travis-ci.org/snap-backup/snapbackup.svg)](https://travis-ci.org/snap-backup/snapbackup)
 
 Snap Backup ([snapbackup.org](https://snapbackup.org)) is a utility for individual computer users
-who need a simple and convenient way to backup their valuable files.&nbsp;
-It is available in Dutch, English, Esperanto, German, Italian, Korean, Portuguese, Russian,
-Spanish, and Slovene.
+who need a simple and convenient way to backup their valuable files.
+
+It is available in:
+
+1. Dutch
+1. English
+1. Esperanto
+1. German
+1. Italian
+1. Korean
+1. Portuguese
+1. Russian
+1. Spanish
+1. Slovene
 
 ## Download
 If you want to use Snap Backup to backup your files, go to the download page to get the installer:<br>
@@ -24,7 +35,8 @@ If you want to translate Snap Backup into another language, check out the transl
 
 ## Contribute
 If you are a Java developer and want to contribute to the Snap Backup project, check out:<br>
-[Contributor Steps](https://github.com/snap-backup/snapbackup/wiki/Contributor-Steps)
+[Contributor Steps](https://github.com/snap-backup/snapbackup/wiki/Contributor-Steps)<br>
+For a bunch of bite sized fixes needed, see the [111 coding style problems detected by static code analysis (Issue #5)](https://github.com/snap-backup/snapbackup/issues/5).
 
 ---
 [GPLv3](LICENSE.txt)

@@ -178,7 +178,10 @@ nav.hamburger-menu >ul {
    body >header >h1 {
       font-size: 1.6rem;
       }
-   body main section h2 {
+   body main >section h2 {
       font-size: 1.3rem;
+      }
+   body main >section .indent {
+      margin-left: 20px;
       }
    }

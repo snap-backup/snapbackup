@@ -15,12 +15,20 @@
 #    Download --> https://ant.apache.org/bindownload.cgi (".zip archive")
 #    Example install folder --> ~/apps/ant/apache-ant-1.9.7/bin
 
+banner="Snap Backup - Build"
 projectHome=$(cd $(dirname $0)/..; pwd)
 
-setupTools() {
+displayIntro() {
    cd $projectHome
+   echo
+   echo $banner
+   echo $(echo $banner | sed -e "s/./=/g")
    pwd
    echo
+   }
+
+setupBuildTools() {
+   cd $projectHome
    JAVA_HOME=$(/usr/libexec/java_home)
    echo "Java:"
    echo $JAVA_HOME
@@ -88,10 +96,8 @@ updateReleasesFolder() {
    echo
    }
 
-echo
-echo "Snap Backup Build"
-echo "================="
-setupTools
+displayIntro
+setupBuildTools
 buildExecutableJar
 buildMacInstaller
 updateReleasesFolder

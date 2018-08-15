@@ -3,13 +3,21 @@
 # Snap Backup #
 ###############
 
-projectHome=$(cd $(dirname $0)/..; pwd)
+banner="Snap Backup - Analyse Java Code"
 pmdVersion=6.6.0
+projectHome=$(cd $(dirname $0)/..; pwd)
+
+displayIntro() {
+   cd $projectHome
+   echo
+   echo $banner
+   echo $(echo $banner | sed -e "s/./=/g")
+   pwd
+   echo
+   }
 
 setupPmd() {
    cd $projectHome
-   pwd
-   echo
    echo "Setup PMD:"
    pmdFolder=$projectHome/tools/pmd/pmd-bin-$pmdVersion
    echo $pmdFolder
@@ -33,13 +41,13 @@ runPmd() {
    pwd
    report=$projectHome/tools/pmd/report.html
    $pmdFolder/bin/run.sh pmd -dir . -rulesets java-basic,java-design -f html > $report
-   echo "--> $report"
+   echo
+   echo "Report:"
+   echo $report
    echo
    }
 
-echo
-echo "Analyse Java Code"
-echo "================="
+displayIntro
 setupPmd
 runPmd
 sleep 2

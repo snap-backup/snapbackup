@@ -3,7 +3,21 @@
 # Snap Backup #
 ###############
 
+banner="Snap Backup - Compare Language Files"
 projectHome=$(cd $(dirname $0)/..; pwd)
+
+displayIntro() {
+   cd $projectHome
+   echo
+   echo $banner
+   echo $(echo $banner | sed -e "s/./=/g")
+   pwd
+   echo
+   echo "Properties folder:"
+   cd $projectHome/src/resources/properties
+   pwd
+   echo
+   }
 
 lineCount() {
    cd $projectHome/src/resources/properties
@@ -26,11 +40,6 @@ nameCheck() {
    echo
    }
 
-echo
-echo "Compare Language Files"
-echo "======================"
-cd $projectHome/src/resources/properties
-pwd
-echo
+displayIntro
 lineCount
 nameCheck
