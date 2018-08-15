@@ -5,14 +5,16 @@
 ##################
 
 # To make this file runnable:
-#    $ chmod +x *.sh.command
+#     $ chmod +x *.sh.command
 
-port=11598  #"sb" -> 115 98
+banner="Snap Backup - Website"
 projectHome=$(cd $(dirname $0)/..; pwd)
 
 setupTools() {
-   # Check for Node.js installation and download project dependencies
    cd $projectHome
+   echo
+   echo $banner
+   echo $(echo $banner | sed -e "s/./=/g")
    pwd
    echo
    echo "Node.js:"
@@ -37,36 +39,34 @@ buildWebFiles() {
    echo
    }
 
-setupWebServer() {
-   cd $projectHome/websites-target
-   process=$(pgrep -lf "SimpleHTTPServer $port")
-   launch() {
-      echo "Launching SimpleHTTPServer:"
-      pwd
-      python -m SimpleHTTPServer $port &> /dev/null &
+publishWebFiles() {
+   cd $projectHome
+   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F\" '{ print $2 }')
+   publishFolder=$publishWebRoot/centerkey.com
+   publish() {
+      echo "Publishing:"
+      echo $publishFolder
+      cp -R websites-target/www.snapbackup.* $publishFolder
       echo
       }
-   test -z "$process" && launch
-   echo "Web server:"
-   pgrep -lf SimpleHTTPServer
+   test -w $publishSite && publish
+   }
+
+setupWebServer() {
+   cd $projectHome
+   port=$(grep web-server package.json | sed -e "s/[^0-9]//g")
+   # Requires package.json script: "web-server": "http-server -p 8080 &"
+   echo "Web Server (indexzero/http-server on node):"
+   test -z $(pgrep -f $projectHome) && npm run web-server
+   pgrep -fl http-server
+   echo "To stop web server:"
+   echo "   $ pgrep -fl http-server"
+   echo "   $ pkill -f $projectHome"
    echo
    }
 
-publishWebFiles() {
-   cd $projectHome/websites-target
-   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F\" '{ print $2 }')
-   publishFolder=$publishWebRoot/centerkey.com
-   copyWebFiles() {
-      echo "Publishing:"
-      echo $publishFolder
-      cp -R www.snapbackup.* $publishFolder
-      echo
-      }
-   test -w $publishFolder && copyWebFiles
-   }
-
 launchBrowser() {
-   url=http://localhost:$port/
+   url=http://localhost:$port/websites-target/
    echo "Opening:"
    echo $url
    sleep 2
@@ -74,11 +74,8 @@ launchBrowser() {
    echo
    }
 
-echo
-echo "snapbackup.org"
-echo "=============="
 setupTools
 buildWebFiles
-setupWebServer
 publishWebFiles
+setupWebServer  #port: Snap Backup -> SB -> 83 66 -> 8366
 launchBrowser

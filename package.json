@@ -4,7 +4,7 @@
    "description": "The one-click backup utility",
    "license": "GPL-3.0",
    "main": "gulpfile.js",
-   "repository": "snap-backup/snapbackup",
+   "repository": "github:snap-backup/snapbackup",
    "homepage": "https://github.com/snap-backup/snapbackup",
    "bugs": "https://github.com/snap-backup/snapbackup/issues",
    "docs": "https://snapbackup.org/faq",
@@ -32,6 +32,7 @@
       "node": true
    },
    "scripts": {
+      "web-server": "http-server -p 8366 &",
       "pretest": "jshint gulpfile.js",
       "test": "gulp clean && gulp web && gulp lint"
    },
@@ -45,6 +46,7 @@
       "gulp-rename": "~1.4",
       "gulp-w3cjs": "~1.3",
       "gulp-zip": "~4.2",
+      "http-server": "~0.11",
       "jshint": "~2.9",
       "merge-stream": "~1.0"
    }
