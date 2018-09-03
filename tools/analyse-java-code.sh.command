@@ -1,17 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 ###############
 # Snap Backup #
 ###############
 
 banner="Snap Backup - Analyse Java Code"
-pmdVersion=6.6.0
+pmdVersion=6.7.0
 projectHome=$(cd $(dirname $0)/..; pwd)
 
 displayIntro() {
    cd $projectHome
    echo
    echo $banner
-   echo $(echo $banner | sed -e "s/./=/g")
+   echo $(echo $banner | sed s/./=/g)
    pwd
    echo
    }
@@ -28,7 +28,7 @@ setupPmd() {
       pwd
       curl --location --remote-name https://github.com/pmd/pmd/releases/download/pmd_releases%2F$pmdVersion/pmd-bin-$pmdVersion.zip
       unzip pmd-bin-$pmdVersion.zip
-      ls -l
+      ls -o
       rm pmd-bin-$pmdVersion.zip
       }
    test -d $pmdFolder || downloadPmd
