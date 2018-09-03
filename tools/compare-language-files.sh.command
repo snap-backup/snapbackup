@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ###############
 # Snap Backup #
 ###############
@@ -10,7 +10,7 @@ displayIntro() {
    cd $projectHome
    echo
    echo $banner
-   echo $(echo $banner | sed -e "s/./=/g")
+   echo $(echo $banner | sed s/./=/g)
    pwd
    echo
    echo "Properties folder:"

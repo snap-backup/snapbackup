@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ####################
 ## Snap Backup    ##
 ## Build on macOS ##
@@ -22,7 +22,7 @@ displayIntro() {
    cd $projectHome
    echo
    echo $banner
-   echo $(echo $banner | sed -e "s/./=/g")
+   echo $(echo $banner | sed s/./=/g)
    pwd
    echo
    }
@@ -83,7 +83,7 @@ buildMacInstaller() {
    cp out/SnapBackup-*.pkg snap-backup-installer-$version.pkg
    mv snapbackup.jar snapbackup-$version.jar
    echo "Output:"
-   ls -l *.pkg
+   ls -o *.pkg
    echo
    }
 
