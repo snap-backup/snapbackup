@@ -1,19 +1,19 @@
 #!/bin/bash
-####################
-## Snap Backup    ##
-## Build on macOS ##
-####################
+##################
+# Snap Backup    #
+# Build on macOS #
+##################
 
 # JDK
 # ===
-# Install the Java SE Devloper Kit for macOS x64:
+# Install the Java SE Development Kit (JDK) for macOS:
 #    https://www.oracle.com/technetwork/java/javase/downloads
 #
 # Ant
 # ===
 # Install Ant or download and unzip into the "~/apps/ant" folder:
 #    Download --> https://ant.apache.org/bindownload.cgi (".zip archive")
-#    Example install folder --> ~/apps/ant/apache-ant-1.9.7/bin
+#    Example install folder --> ~/apps/ant/apache-ant-1.10.5/bin
 
 banner="Snap Backup - Build"
 projectHome=$(cd $(dirname $0)/..; pwd)
