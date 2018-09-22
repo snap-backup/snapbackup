@@ -73,6 +73,7 @@ buildMacInstaller() {
    sips -z 1024 1024 snap-backup-icon.png --out SnapBackup.iconset/icon_512x512@2x.png
    iconutil --convert icns SnapBackup.iconset
    mkdir -p package/macosx
+   sips -z 100 100 -p 150 150 snap-backup-icon.png --out package/macosx/SnapBackup-background.png
    mv SnapBackup.icns package/macosx
    echo "macOS installer (javapackager):"
    $JAVA_HOME/bin/javapackager -version
