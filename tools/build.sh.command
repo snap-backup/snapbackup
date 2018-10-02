@@ -18,6 +18,22 @@
 banner="Snap Backup - Build"
 projectHome=$(cd $(dirname $0)/..; pwd)
 
+addAppToPath() {
+   # Pass in the name of the app, such as: "ant", "mongodb", or "groovy"
+   # Example usage:
+   #     addAppToPath groovy
+   # Uses the ~/apps/ folder and assumes structure like: ~/apps/groovy/groovy-2.5.2/bin/groovy
+   appName=$1
+   addBin() {
+      binFolder=$(find ~/apps/$appName/*/bin -type d | tail -1)
+      PATH=$PATH:$binFolder
+      which $appName || { echo "*** Folder 'bin' not found at: ~/apps/$appName"; exit; }
+      }
+   which $appName || addBin
+   $appName -version
+   echo
+   }
+
 displayIntro() {
    cd $projectHome
    echo
@@ -36,14 +52,7 @@ setupBuildTools() {
    javac -version
    echo
    echo "Ant:"
-   addAnt() {
-      antHome=~/apps/ant/$(ls ~/apps/ant | grep apache-ant | tail -1)
-      PATH=$PATH:$antHome/bin
-      which ant || echo "*** Must install ant first. See: build.sh.command"
-      echo
-      }
-   which ant || addAnt
-   ant -version
+   addAppToPath ant
    attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
    version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
    echo
