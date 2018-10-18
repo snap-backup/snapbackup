@@ -132,8 +132,8 @@ button { background-color: teal; }
 button:hover { background-color: lightseagreen; }
 
 /* Reveal action color */
-.reveal-action { color: teal; }
-.reveal-action:hover { background-color: teal; }
+.reveal-button { color: teal; }
+.reveal-button:hover { background-color: teal; }
 
 /* PERFECT colors */
 form.perfect { border-color: teal; }                                        /* outer color */
