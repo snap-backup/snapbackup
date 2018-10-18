@@ -2,16 +2,16 @@
 // Gulp configuration and tasks
 
 // Imports
-const gulp =             require('gulp');
-const concat =           require('gulp-concat');
-const fileInclude =      require('gulp-file-include');
-const htmlHint =         require('gulp-htmlhint');
-const jsHint =           require('gulp-jshint');
-const rename =           require('gulp-rename');
-const w3cHtmlValidator = require('gulp-w3cjs');
-const zip =              require('gulp-zip');
-const del =              require('del');
-const mergeStream =      require('merge-stream');
+const concat =        require('gulp-concat');
+const del =           require('del');
+const fileInclude =   require('gulp-file-include');
+const gulp =          require('gulp');
+const htmlHint =      require('gulp-htmlhint');
+const htmlValidator = require('gulp-w3c-html-validator');
+const jsHint =        require('gulp-jshint');
+const mergeStream =   require('merge-stream');
+const rename =        require('gulp-rename');
+const zip =           require('gulp-zip');
 
 // Setup
 const pkg = require('./package.json');
@@ -91,10 +91,10 @@ const task = {
    lintWebsites: function() {
       return mergeStream(
          gulp.src(websitesTargetFolder + '/**/*.html')
-            .pipe(w3cHtmlValidator())
-            .pipe(w3cHtmlValidator.reporter())
             .pipe(htmlHint(htmlHintConfig))
-            .pipe(htmlHint.reporter()),
+            .pipe(htmlHint.reporter())
+            .pipe(htmlValidator())
+            .pipe(htmlValidator.reporter()),
          gulp.src('websites/**/*.js')
             .pipe(jsHint(jsHintConfig))
             .pipe(jsHint.reporter())
