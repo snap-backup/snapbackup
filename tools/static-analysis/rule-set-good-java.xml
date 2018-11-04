@@ -3,5 +3,6 @@
    <description>Rules for good Java</description>
    <rule ref="rulesets/java/quickstart.xml">
       <exclude name="ControlStatementBraces" />
+      <exclude name="OneDeclarationPerLine" />
    </rule>
 </ruleset>
