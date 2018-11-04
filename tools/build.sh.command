@@ -8,6 +8,7 @@
 # ===
 # Install the Java SE Development Kit (JDK) for macOS:
 #    https://www.oracle.com/technetwork/java/javase/downloads
+#    Note: OpenJDK does not contain javapackager needed to create the installer
 #
 # Ant
 # ===
@@ -17,22 +18,6 @@
 
 banner="Snap Backup - Build"
 projectHome=$(cd $(dirname $0)/..; pwd)
-
-addAppToPath() {
-   # Pass in the name of the app, such as: "ant", "mongodb", or "groovy"
-   # Example usage:
-   #     addAppToPath groovy
-   # Uses the ~/apps/ folder and assumes structure like: ~/apps/groovy/groovy-2.5.2/bin/groovy
-   appName=$1
-   addBin() {
-      binFolder=$(find ~/apps/$appName/*/bin -type d | tail -1)
-      PATH=$PATH:$binFolder
-      which $appName || { echo "*** Folder 'bin' not found at: ~/apps/$appName"; exit; }
-      }
-   which $appName || addBin
-   $appName -version
-   echo
-   }
 
 displayIntro() {
    cd $projectHome
@@ -45,7 +30,8 @@ displayIntro() {
 
 setupBuildTools() {
    cd $projectHome
-   JAVA_HOME=$(/usr/libexec/java_home)
+   source tools/add-app-to-path.sh java
+   source tools/add-app-to-path.sh ant
    echo "Java:"
    echo $JAVA_HOME
    java -version
