@@ -41,7 +41,7 @@ runPmd() {
    echo "Run PMD:"
    pwd
    report=$projectHome/tools/static-analysis/report.html
-   $pmdFolder/bin/run.sh pmd -dir $projectHome/src/java -rulesets ruleset-good-java.xml -f html > $report
+   $pmdFolder/bin/run.sh pmd -dir $projectHome/src/java -rulesets ruleset-good-java.xml -no-cache -f html > $report
    echo
    echo "Report:"
    echo $report
