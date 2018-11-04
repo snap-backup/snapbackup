@@ -8,6 +8,7 @@
    "homepage": "https://github.com/snap-backup/snapbackup",
    "bugs": "https://github.com/snap-backup/snapbackup/issues",
    "docs": "https://snapbackup.org/faq",
+   "author": "Center Key (https://centerkey.com)",
    "keywords": [
       "backup",
       "utility",
@@ -15,10 +16,6 @@
       "internationalization",
       "java"
    ],
-   "author": {
-      "name": "Center Key",
-      "url": "https://centerkey.com"
-   },
    "extra": {
       "updated": "August 3, 2018",
       "jarSize": "241 KB",
@@ -35,6 +32,11 @@
       "web-server": "http-server -p 8366 &",
       "pretest": "jshint gulpfile.js",
       "test": "gulp clean && gulp web && gulp lint"
+   },
+   "dependencies": {
+      "dna.js": "~1.4",
+      "jquery": "~3.3",
+      "web-ignition": "0.0.5"
    },
    "devDependencies": {
       "del": "~3.0",
