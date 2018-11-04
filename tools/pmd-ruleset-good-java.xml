@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ruleset name="good-java">
+   <description>Rules for good Java</description>
+   <rule ref="rulesets/java/quickstart.xml">
+      <exclude name="ControlStatementBraces" />
+   </rule>
+</ruleset>

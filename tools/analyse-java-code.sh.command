@@ -4,7 +4,7 @@
 ###############
 
 banner="Snap Backup - Analyse Java Code"
-pmdVersion=6.7.0
+pmdVersion=6.9.0
 projectHome=$(cd $(dirname $0)/..; pwd)
 
 displayIntro() {
@@ -19,6 +19,7 @@ displayIntro() {
 setupPmd() {
    cd $projectHome
    echo "Setup PMD:"
+   source tools/add-app-to-path.sh java
    pmdFolder=$projectHome/tools/pmd/pmd-bin-$pmdVersion
    echo $pmdFolder
    downloadPmd() {
@@ -36,11 +37,11 @@ setupPmd() {
    }
 
 runPmd() {
-   cd $projectHome/src/java
+   cd $projectHome/tools
    echo "Run PMD:"
    pwd
    report=$projectHome/tools/pmd/report.html
-   $pmdFolder/bin/run.sh pmd -dir . -rulesets java-basic,java-design -f html > $report
+   $pmdFolder/bin/run.sh pmd -dir $projectHome/src/java -rulesets pmd-ruleset-good-java.xml -f html > $report
    echo
    echo "Report:"
    echo $report
