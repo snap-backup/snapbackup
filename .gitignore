@@ -4,7 +4,7 @@
 /node_modules/
 /package-lock.json
 /build/
-/tools/pmd/
+/tools/static-analysis/pmd/
 /websites-target/
 
 # Extraneous system files
