@@ -4,7 +4,7 @@
 //                                                                            //
 // Zip Engine:                                                                //
 //    This object...                                                          //
-//                                                                            //q
+//                                                                            //
 // GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -67,10 +67,8 @@ public class ZipEngine {
    boolean abortBackup;
    int zipCount;
    int byteCount;
-   byte[] data = new byte[buffSize];  //Data for read/write operations
-
-   java.lang.Runtime rt = Runtime.getRuntime();  //memory leak!!!
-
+   byte[] data = new byte[buffSize];  //data for read/write operations
+   Runtime rt = Runtime.getRuntime();
    boolean filterIncludeOn, filterExcludeOn, filterFolderOn, filterSizeOn, showSkipped;
    Pattern filterIncludeP, filterExcludeP, filterFolderP;
    int filterSize;
@@ -135,14 +133,14 @@ public class ZipEngine {
             if (backupProgress != null)
                BackupProgressDialog.current.updateProgress(zipCount);
             Logger.logMsg(Str.macroExpand(zippingLogMsg, zipCount++) + displayPath);
-            BufferedInputStream input =  //Create buffered input stream from file input stream
+            BufferedInputStream input =  //create buffered input stream from file input stream
                new BufferedInputStream(new FileInputStream(file));
             zipEntry = new ZipEntry(displayPath);
             zipEntry.setTime(file.lastModified());
-            zipOut.putNextEntry(zipEntry);  //Put empty zip entry into archive
+            zipOut.putNextEntry(zipEntry);  //put empty zip entry into archive
 
             // Create a byte array object named data and declare byte count variable.
-            while ((byteCount = input.read(data, 0, buffSize)) > -1)  //Until input entirely read
+            while ((byteCount = input.read(data, 0, buffSize)) > -1)  //until input entirely read
                zipOut.write(data, 0, byteCount);
             zipOut.closeEntry();
             if (numLargestFiles > 0)
@@ -231,7 +229,7 @@ public class ZipEngine {
             for (String zipItem : zipItemList)
                if (!abortBackup) {
                   if (filtersOn)
-                     updateFilterInfo(filterInfo, iter.nextIndex());  // nextIndex?
+                     updateFilterInfo(filterInfo, iter.nextIndex());  //nextIndex?
                   zipItem(zipItem);
                   }
             */
