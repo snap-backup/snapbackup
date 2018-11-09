@@ -41,12 +41,12 @@ buildWebFiles() {
 
 publishWebFiles() {
    cd $projectHome
-   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F\" '{ print $2 }')
-   publishFolder=$publishWebRoot/centerkey.com
+   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F'"' '{ print $2 }')
+   publishSite=$publishWebRoot/centerkey.com
    publish() {
       echo "Publishing:"
-      echo $publishFolder
-      cp -R websites-target/www.snapbackup.* $publishFolder
+      echo $publishSite
+      cp -R websites-target/www.snapbackup.* $publishSite
       echo
       }
    test -w $publishSite && publish
