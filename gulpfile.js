@@ -1,4 +1,4 @@
-// Snap Backup
+// Snap Backup ~ GPLv3
 // Gulp configuration and tasks
 
 // Imports
@@ -11,6 +11,7 @@ const htmlValidator = require('gulp-w3c-html-validator');
 const jsHint =        require('gulp-jshint');
 const mergeStream =   require('merge-stream');
 const rename =        require('gulp-rename');
+const size =          require('gulp-size');
 const zip =           require('gulp-zip');
 
 // Setup
@@ -52,53 +53,68 @@ const orgWebsite = {
 
 // Tasks
 const task = {
-   cleanWebsitesTarget: function() {
+   cleanWebsitesTarget: () => {
       return del(websitesTargetFolder + '/**/*');  //only delete folder contents so as to not kill webserver
       },
-   buildWebsites: function() {
-      function processWeb(topLevel) {
-         return gulp.src(`websites/web/www.snapbackup.${topLevel}/**/*`)
+   buildWebsites: () => {
+      const processWeb = (topLevel) =>
+         gulp.src(`websites/web/www.snapbackup.${topLevel}/**/*`)
             .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
             .pipe(gulp.dest(`${websitesTargetFolder}/www.snapbackup.${topLevel}`));
-         }
+      const processUserGuide = () =>
+         gulp.src('src/resources/snap-backup-user-guide.html')
+            .pipe(gulp.dest(orgWebsite.root));
+      const processProperties = () =>
+         gulp.src('src/resources/properties/SnapBackup*.properties')
+            .pipe(rename({ extname: '.properties.txt' }))
+            .pipe(gulp.dest(orgWebsite.translate))
+            .pipe(zip('SnapBackup.properties.zip'))
+            .pipe(gulp.dest(orgWebsite.translate));
+      const processDefaultProperties = () =>
+         gulp.src('src/resources/properties/SnapBackup.properties')
+            .pipe(rename('SnapBackup_en.properties.txt'))
+            .pipe(gulp.dest(orgWebsite.translate));
+      const processFlags = () =>
+         gulp.src('src/resources/graphics/application/language-*.png')
+            .pipe(gulp.dest(orgWebsite.graphics));
+      const processGraphics = () =>
+         gulp.src('websites/graphics/**/*')
+            .pipe(gulp.dest(orgWebsite.graphics));
+      const processCss = () =>
+         gulp.src('websites/*.css')
+            .pipe(concat('style.css'))
+            .pipe(gulp.dest(orgWebsite.root));
+      const processJs = () =>
+         gulp.src('websites/*.js')
+            .pipe(concat('app.js'))
+            .pipe(gulp.dest(orgWebsite.root));
       return mergeStream(
          processWeb('com'),
          processWeb('eu'),
          processWeb('net'),
          processWeb('org'),
-         gulp.src('src/resources/snap-backup-user-guide.html')
-            .pipe(gulp.dest(orgWebsite.root)),
-         gulp.src('src/resources/properties/SnapBackup*.properties')
-            .pipe(rename({ extname: '.properties.txt' }))
-            .pipe(gulp.dest(orgWebsite.translate))
-            .pipe(zip('SnapBackup.properties.zip'))
-            .pipe(gulp.dest(orgWebsite.translate)),
-         gulp.src('src/resources/properties/SnapBackup.properties')
-            .pipe(rename('SnapBackup_en.properties.txt'))
-            .pipe(gulp.dest(orgWebsite.translate)),
-         gulp.src('src/resources/graphics/application/language-*.png')
-            .pipe(gulp.dest(orgWebsite.graphics)),
-         gulp.src('websites/graphics/**/*')
-            .pipe(gulp.dest(orgWebsite.graphics)),
-         gulp.src('websites/*.css')
-            .pipe(concat('style.css'))
-            .pipe(gulp.dest(orgWebsite.root)),
-         gulp.src('websites/*.js')
-            .pipe(concat('app.js'))
-            .pipe(gulp.dest(orgWebsite.root))
-         );
+         processUserGuide(),
+         processProperties(),
+         processDefaultProperties(),
+         processFlags(),
+         processGraphics(),
+         processCss(),
+         processJs());
       },
-   lintWebsites: function() {
-      return mergeStream(
+   lintWebsites: () => {
+      const analyzeHtml = () =>
          gulp.src(websitesTargetFolder + '/**/*.html')
             .pipe(htmlHint(htmlHintConfig))
             .pipe(htmlHint.reporter())
             .pipe(htmlValidator())
-            .pipe(htmlValidator.reporter()),
+            .pipe(htmlValidator.reporter())
+            .pipe(size({ showFiles: true }));
+      const analyzeJs = () =>
          gulp.src('websites/**/*.js')
             .pipe(jsHint(jsHintConfig))
             .pipe(jsHint.reporter())
-         );
+            .pipe(size({ showFiles: true }));
+      return mergeStream(analyzeHtml(), analyzeJs());
       }
    };
 
