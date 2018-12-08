@@ -8,7 +8,6 @@ const fileInclude =   require('gulp-file-include');
 const gulp =          require('gulp');
 const htmlHint =      require('gulp-htmlhint');
 const htmlValidator = require('gulp-w3c-html-validator');
-const jsHint =        require('gulp-jshint');
 const mergeStream =   require('merge-stream');
 const rename =        require('gulp-rename');
 const size =          require('gulp-size');
@@ -29,14 +28,6 @@ const download = {
    past: releaseUrl
    };
 const htmlHintConfig = { 'attr-value-double-quotes': false };
-const jsHintConfig = {
-   strict:  'implied',
-   undef:   true,
-   unused:  true,
-   browser: true,
-   jquery:  true,
-   globals: { dna: false, library: false }
-   };
 const context = {
    pkg:           pkg,
    pageTitle:     pkg.description,
@@ -101,21 +92,13 @@ const task = {
          processCss(),
          processJs());
       },
-   lintWebsites: () => {
-      const analyzeHtml = () =>
-         gulp.src(websitesTargetFolder + '/**/*.html')
-            .pipe(htmlHint(htmlHintConfig))
-            .pipe(htmlHint.reporter())
-            .pipe(htmlValidator())
-            .pipe(htmlValidator.reporter())
-            .pipe(size({ showFiles: true }));
-      const analyzeJs = () =>
-         gulp.src('websites/**/*.js')
-            .pipe(jsHint(jsHintConfig))
-            .pipe(jsHint.reporter())
-            .pipe(size({ showFiles: true }));
-      return mergeStream(analyzeHtml(), analyzeJs());
-      }
+   lintWebsites: () =>
+      gulp.src(websitesTargetFolder + '/**/*.html')
+         .pipe(htmlHint(htmlHintConfig))
+         .pipe(htmlHint.reporter())
+         .pipe(htmlValidator())
+         .pipe(htmlValidator.reporter())
+         .pipe(size({ showFiles: true }))
    };
 
 // Gulp

@@ -27,11 +27,11 @@ It is available in:
 
 ## Download
 If you want to use Snap Backup to backup your files, go to the download page to get the installer:<br>
-[snapbackup.org/download](https://snapbackup.org/download)
+[https://snapbackup.org/download](https://snapbackup.org/download)
 
 ## Translate
 If you want to translate Snap Backup into another language, check out the translate web page:<br>
-[snapbackup.org/translate](https://snapbackup.org/translate)
+[https://snapbackup.org/translate](https://snapbackup.org/translate)
 
 ## Contribute
 If you are a Java developer and want to contribute to the Snap Backup project, check out:<br>

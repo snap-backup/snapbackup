@@ -26,11 +26,17 @@
       "strict": "implied",
       "undef": true,
       "unused": true,
-      "node": true
+      "browser": true,
+      "jquery": true,
+      "node": true,
+      "globals": {
+         "dna": false,
+         "library": false
+      }
    },
    "scripts": {
       "web-server": "http-server -p 8366 &",
-      "pretest": "jshint gulpfile.js",
+      "pretest": "jshint gulpfile.js websites",
       "test": "gulp clean && gulp web && gulp lint"
    },
    "dependencies": {
