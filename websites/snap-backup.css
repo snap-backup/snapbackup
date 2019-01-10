@@ -67,6 +67,12 @@ main >section >nav a:not(:last-child)::after {
    background-color: white;
    padding: 0px 5px 0px 8px;
    }
+main >section .language-flags img {
+   width: 22px;
+   }
+main >section aside {
+   max-width: none;
+   }
 main >section >aside figure {
    max-width: 200px;
    }
