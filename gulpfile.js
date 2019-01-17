@@ -17,15 +17,15 @@ const zip =           require('gulp-zip');
 const pkg = require('./package.json');
 const releaseUrl = pkg.homepage + '/blob/master/releases/';
 const installer = {
-   mac:  'snap-backup-installer-' + pkg.version + '.pkg',
-   win:  'snap-backup-installer-' + pkg.version + '.msi',
-   java: 'snapbackup-' +            pkg.version + '.jar'
+   mac:  'snap-backup-installer-v' + pkg.version + '.pkg',
+   win:  'snap-backup-installer-v' + pkg.version + '.msi',
+   java: 'snapbackup-v' +            pkg.version + '.jar'
    };
 const download = {
    mac:  releaseUrl + installer.mac +  '?raw=true',
    win:  releaseUrl + installer.win +  '?raw=true',
    java: releaseUrl + installer.java + '?raw=true',
-   past: releaseUrl
+   past: releaseUrl + 'archive'
    };
 const htmlHintConfig = { 'attr-value-double-quotes': false };
 const context = {

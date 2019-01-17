@@ -1,12 +1,15 @@
 #!/bin/bash
-#
-# add-app-to-path.sh
+###################
+# add-app-to-path #
+###################
+
 # https://gist.github.com/dpilafian/2ca6c58efa050ae2b2fa1810a6850fc0
 # WTFPL
 #
-# Pass in the name of the app, such as: "ant", "mongo", or "groovy".  If the app is not on the
-# path, its "bin" folder will be added to the path.  Additionally, an all uppercase home
-# environment variable, such as "JAVA_HOME", will be set to the parent of the "bin" folder.
+# Pass in the name of the app, such as: "ant", "mongo", or "groovy".  If
+# the app is not on the path, its "bin" folder will be added to the path.
+# Additionally, an all uppercase home environment variable, such as
+# "JAVA_HOME", will be set to the parent of the "bin" folder.
 #
 # Assumes folder structure like:
 #    ~/apps/groovy/groovy-2.5.2/bin/groovy

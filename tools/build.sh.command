@@ -76,8 +76,8 @@ buildMacInstaller() {
       -BappVersion=$version -Bicon=package/macosx/SnapBackup.icns \
       -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.SnapBackup \
       -outdir out -v
-   cp out/SnapBackup-*.pkg snap-backup-installer-$version.pkg
-   mv snapbackup.jar snapbackup-$version.jar
+   cp out/SnapBackup-*.pkg snap-backup-installer-v$version.pkg
+   mv snapbackup.jar snapbackup-v$version.jar
    echo "Output:"
    ls -o *.pkg
    echo
@@ -87,8 +87,9 @@ updateReleasesFolder() {
    cd $projectHome
    echo "Releases folder:"
    cp -v build/snap-backup-installer-*.pkg releases
+   cp -v build/snap-backup-installer-*.pkg releases/archive
    cp -v build/snapbackup-*.jar            releases
-   cp -v build/snapbackup-*.jar            releases/snapbackup-latest.jar
+   cp -v build/snapbackup-*.jar            releases/archive
    echo
    }
 
