@@ -19,9 +19,9 @@ displayIntro() {
 setupPmd() {
    cd $projectHome
    echo "Setup PMD:"
+   echo $pmdVersion
    source tools/add-app-to-path.sh java
    pmdFolder=$projectHome/tools/static-analysis/pmd/pmd-bin-$pmdVersion
-   ecoh $pmdVersion
    echo $pmdFolder
    downloadPmd() {
       echo "Downloading..."
