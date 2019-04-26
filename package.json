@@ -22,8 +22,9 @@
       "domain": "snapbackup.org"
    },
    "jshintConfig": {
-      "esversion": 6,
+      "esversion": 9,
       "strict": "implied",
+      "eqeqeq": true,
       "undef": true,
       "unused": true,
       "browser": true,
@@ -42,11 +43,11 @@
    "dependencies": {
       "dna.js": "~1.5",
       "hamburger-menu": "~0.3",
-      "jquery": "~3.3",
+      "jquery": "~3.4",
       "web-ignition": "~1.1"
    },
    "devDependencies": {
-      "del": "~3.0",
+      "del": "~4.1",
       "gulp": "~4.0",
       "gulp-concat": "~2.6",
       "gulp-file-include": "~2.0",
