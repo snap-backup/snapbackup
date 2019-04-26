@@ -43,8 +43,11 @@ body >header >aside a img {
    }
 
 /* Main */
-main {
-   padding-left: 3em;
+main >.wedge {
+   float: left;
+   width: 30px;
+   height: 60px;
+   shape-outside: polygon(0px 0px, 30px 0px, 0px 60px);
    }
 main >section:first-child >p:first-child,
 main >section:first-child >h2:first-child {

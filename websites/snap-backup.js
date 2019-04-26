@@ -6,6 +6,7 @@ const app = {
       $('nav.hamburger-menu li[data-menu=' + menuItem + ']').addClass('current');
       },
    setup: () => {
+      $('<div>').addClass('wedge').prependTo($('main'));
       const macVersion = library.browser.macOS() && dna.browser.getUrlParams().view !== 'all';
       $('.for-macs-only').toggle(macVersion);
       $('.for-non-macs').toggle(!macVersion);
