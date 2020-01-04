@@ -30,15 +30,15 @@ displayIntro() {
 
 setupBuildTools() {
    cd $projectHome
-   source tools/add-app-to-path.sh java
-   source tools/add-app-to-path.sh ant
    echo "Java:"
    echo $JAVA_HOME
+   which java || exit
    java -version
    javac -version
    echo
    echo "Ant:"
-   addAppToPath ant
+   which ant || exit
+   ant -version
    attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
    version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
    echo

@@ -20,7 +20,8 @@ setupPmd() {
    cd $projectHome
    echo "Setup PMD:"
    echo $pmdVersion
-   source tools/add-app-to-path.sh java
+   which java || exit
+   java -version
    pmdFolder=$projectHome/tools/static-analysis/pmd/pmd-bin-$pmdVersion
    echo $pmdFolder
    downloadPmd() {
