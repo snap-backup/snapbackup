@@ -19,13 +19,13 @@ const releaseUrl = pkg.homepage + '/blob/master/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',
    win:  'snap-backup-installer-v' + pkg.version + '.msi',
-   java: 'snapbackup-v' +            pkg.version + '.jar'
+   java: 'snapbackup-v' +            pkg.version + '.jar',
    };
 const download = {
    mac:  releaseUrl + installer.mac +  '?raw=true',
    win:  releaseUrl + installer.win +  '?raw=true',
    java: releaseUrl + installer.java + '?raw=true',
-   past: releaseUrl + 'archive'
+   past: releaseUrl + 'archive',
    };
 const htmlHintConfig = { 'attr-value-double-quotes': false };
 const context = {
@@ -33,21 +33,21 @@ const context = {
    pageTitle:     pkg.description,
    installer:     installer,
    download:      download,
-   propertiesUri: pkg.homepage + '/blob/master/src/resources/properties'
+   propertiesUri: pkg.homepage + '/blob/master/src/resources/properties',
    };
 const websitesTargetFolder = 'websites-target';
 const orgWebsite = {
    root:      websitesTargetFolder + '/www.snapbackup.org',
    translate: websitesTargetFolder + '/www.snapbackup.org/translate',
-   graphics:  websitesTargetFolder + '/www.snapbackup.org/graphics'
+   graphics:  websitesTargetFolder + '/www.snapbackup.org/graphics',
    };
 
 // Tasks
 const task = {
-   cleanWebsitesTarget: () => {
+   cleanWebsitesTarget() {
       return del(websitesTargetFolder + '/**/*');  //only delete folder contents so as to not kill webserver
       },
-   buildWebsites: () => {
+   buildWebsites() {
       const processWeb = (topLevel) =>
          gulp.src(`websites/web/www.snapbackup.${topLevel}/**/*`)
             .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
@@ -92,13 +92,14 @@ const task = {
          processCss(),
          processJs());
       },
-   lintWebsites: () =>
-      gulp.src(websitesTargetFolder + '/**/*.html')
+   lintWebsites() {
+      return gulp.src(websitesTargetFolder + '/**/*.html')
          .pipe(htmlHint(htmlHintConfig))
          .pipe(htmlHint.reporter())
          .pipe(htmlValidator())
          .pipe(htmlValidator.reporter())
-         .pipe(size({ showFiles: true }))
+         .pipe(size({ showFiles: true }));
+      },
    };
 
 // Gulp
