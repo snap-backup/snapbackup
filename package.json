@@ -43,7 +43,7 @@
    "dependencies": {
       "dna.js": "~1.6",
       "hamburger-menu": "~0.3",
-      "jquery": "~3.4",
+      "jquery": "~3.5",
       "web-ignition": "~1.2"
    },
    "devDependencies": {
