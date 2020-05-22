@@ -36,9 +36,16 @@
       }
    },
    "scripts": {
-      "web-server": "http-server -p 8366 &",
+      "web-server": "lsof -P -i :8366 || http-server --port 8366 &",
       "pretest": "jshint gulpfile.js websites",
       "test": "gulp clean && gulp web && gulp lint"
+   },
+   "cdnVersion": {
+      "dnajs": "1.6",
+      "fontAwesome": "5.13",
+      "hamburgerMenu": "0.3",
+      "jQuery": "3.5",
+      "webIgnition": "1.2"
    },
    "dependencies": {
       "dna.js": "~1.6",
@@ -50,7 +57,7 @@
       "del": "~5.1",
       "gulp": "~4.0",
       "gulp-concat": "~2.6",
-      "gulp-file-include": "~2.1",
+      "gulp-file-include": "~2.2",
       "gulp-htmlhint": "~3.0",
       "gulp-jshint": "~2.1",
       "gulp-rename": "~2.0",

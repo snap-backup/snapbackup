@@ -45,7 +45,7 @@ const orgWebsite = {
 // Tasks
 const task = {
    cleanWebsitesTarget() {
-      return del(websitesTargetFolder + '/**/*');  //only delete folder contents so as to not kill webserver
+      return del([websitesTargetFolder + '/**/*', '**/.DS_Store']);  //only delete folder contents so as to not kill webserver
       },
    buildWebsites() {
       const processWeb = (topLevel) =>
