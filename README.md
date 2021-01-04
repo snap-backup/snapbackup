@@ -36,7 +36,7 @@ If you want to translate Snap Backup into another language, check out the transl
 ## Contribute
 If you are a Java developer and want to contribute to the Snap Backup project, check out:<br>
 [Contributor Steps](https://github.com/snap-backup/snapbackup/wiki/Contributor-Steps)<br>
-For a bunch of bite sized fixes needed, see the [111 coding style problems detected by static code analysis (Issue #5)](https://github.com/snap-backup/snapbackup/issues/5).
+For a bunch of bite sized fixes needed, see the [~~111~~ 66 coding style problems detected by static code analysis (Issue #5)](https://github.com/snap-backup/snapbackup/issues/5).
 
 ---
 [GPLv3](LICENSE.txt)
