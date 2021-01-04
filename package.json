@@ -42,30 +42,30 @@
    },
    "cdnVersion": {
       "dnajs": "1.6",
-      "fontAwesome": "5.13",
+      "fontAwesome": "5.15",
       "hamburgerMenu": "0.3",
       "jQuery": "3.5",
-      "webIgnition": "1.2"
+      "webIgnition": "1.3"
    },
    "dependencies": {
       "dna.js": "~1.6",
       "hamburger-menu": "~0.3",
       "jquery": "~3.5",
-      "web-ignition": "~1.2"
+      "web-ignition": "~1.3"
    },
    "devDependencies": {
-      "del": "~5.1",
+      "del": "~6.0",
       "gulp": "~4.0",
       "gulp-concat": "~2.6",
-      "gulp-file-include": "~2.2",
-      "gulp-htmlhint": "~3.0",
+      "gulp-file-include": "~2.3",
+      "gulp-htmlhint": "~4.0",
       "gulp-jshint": "~2.1",
       "gulp-rename": "~2.0",
       "gulp-size": "~3.0",
       "gulp-w3c-html-validator": "~2.0",
       "gulp-zip": "~5.0",
       "http-server": "~0.12",
-      "jshint": "~2.11",
+      "jshint": "~2.12",
       "merge-stream": "~2.0"
    }
 }
