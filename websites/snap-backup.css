@@ -138,7 +138,7 @@ a:hover { background-color: teal; outline-color: teal; }
 
 /* Flat button color */
 button { background-color: teal; }
-button:hover { background-color: lightseagreen; }
+button:hover:not(:disabled) { background-color: lightseagreen; }
 
 /* Reveal action color */
 .reveal-button { color: teal; }

@@ -2,19 +2,20 @@
 // Gulp configuration and tasks
 
 // Imports
-const concat =        require('gulp-concat');
-const del =           require('del');
-const fileInclude =   require('gulp-file-include');
-const gulp =          require('gulp');
-const htmlHint =      require('gulp-htmlhint');
-const htmlValidator = require('gulp-w3c-html-validator');
-const mergeStream =   require('merge-stream');
-const rename =        require('gulp-rename');
-const size =          require('gulp-size');
-const zip =           require('gulp-zip');
+import concat from        'gulp-concat';
+import del from           'del';
+import fileInclude from   'gulp-file-include';
+import gulp from          'gulp';
+import htmlHint from      'gulp-htmlhint';
+import htmlValidator from 'gulp-w3c-html-validator';
+import mergeStream from   'merge-stream';
+import rename from        'gulp-rename';
+import size from          'gulp-size';
+import zip from           'gulp-zip';
+import { readFileSync } from 'fs';
 
 // Setup
-const pkg = require('./package.json');
+const pkg = JSON.parse(readFileSync('./package.json'));
 const releaseUrl = pkg.homepage + '/blob/master/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',

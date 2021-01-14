@@ -3,6 +3,7 @@
    "version": "6.3.0",
    "description": "The one-click backup utility",
    "license": "GPL-3.0",
+   "type": "module",
    "main": "gulpfile.js",
    "repository": "github:snap-backup/snapbackup",
    "homepage": "https://github.com/snap-backup/snapbackup",
