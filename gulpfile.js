@@ -7,11 +7,11 @@ import del from           'del';
 import fileInclude from   'gulp-file-include';
 import gulp from          'gulp';
 import htmlHint from      'gulp-htmlhint';
-import htmlValidator from 'gulp-w3c-html-validator';
 import mergeStream from   'merge-stream';
 import rename from        'gulp-rename';
 import size from          'gulp-size';
 import zip from           'gulp-zip';
+import { htmlValidator } from 'gulp-w3c-html-validator';
 import { readFileSync } from 'fs';
 
 // Setup
@@ -97,7 +97,7 @@ const task = {
       return gulp.src(websitesTargetFolder + '/**/*.html')
          .pipe(htmlHint(htmlHintConfig))
          .pipe(htmlHint.reporter())
-         .pipe(htmlValidator())
+         .pipe(htmlValidator.analyzer())
          .pipe(htmlValidator.reporter())
          .pipe(size({ showFiles: true }));
       },

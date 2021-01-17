@@ -63,7 +63,7 @@
       "gulp-jshint": "~2.1",
       "gulp-rename": "~2.0",
       "gulp-size": "~3.0",
-      "gulp-w3c-html-validator": "~2.0",
+      "gulp-w3c-html-validator": "~3.0",
       "gulp-zip": "~5.0",
       "http-server": "~0.12",
       "jshint": "~2.12",
