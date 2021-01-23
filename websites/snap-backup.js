@@ -7,7 +7,7 @@ const app = {
       },
    setup() {
       $('<div>').addClass('wedge').prependTo($('main'));
-      const macVersion = library.browser.macOS() && dna.browser.getUrlParams().view !== 'all';
+      const macVersion = libX.browser.macOS() && dna.browser.getUrlParams().view !== 'all';
       $('.for-macs-only').toggle(macVersion);
       $('.for-non-macs').toggle(!macVersion);
       },
