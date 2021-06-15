@@ -3,7 +3,7 @@
 
 _The one-click backup utility_
 
-[![License:GPLv3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/snap-backup/snapbackup/blob/master/LICENSE.txt)
+[![License:GPLv3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/snap-backup/snapbackup/blob/main/LICENSE.txt)
 &nbsp;
 [![Vulnerabilities](https://snyk.io/test/github/snap-backup/snapbackup/badge.svg)](https://snyk.io/test/github/snap-backup/snapbackup)
 &nbsp;

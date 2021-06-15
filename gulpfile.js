@@ -16,7 +16,7 @@ import { readFileSync } from 'fs';
 
 // Setup
 const pkg = JSON.parse(readFileSync('./package.json'));
-const releaseUrl = pkg.homepage + '/blob/master/releases/';
+const releaseUrl = pkg.homepage + '/blob/main/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',
    win:  'snap-backup-installer-v' + pkg.version + '.msi',
@@ -34,7 +34,7 @@ const context = {
    pageTitle:     pkg.description,
    installer:     installer,
    download:      download,
-   propertiesUri: pkg.homepage + '/blob/master/src/resources/properties',
+   propertiesUri: pkg.homepage + '/blob/main/src/resources/properties',
    };
 const websitesTargetFolder = 'websites-target';
 const orgWebsite = {
