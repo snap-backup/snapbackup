@@ -38,7 +38,7 @@
    },
    "scripts": {
       "web-server": "lsof -P -i :8366 || http-server --port 8366 &",
-      "pretest": "jshint gulpfile.js websites",
+      "pretest": "jshint . --exclude node_modules",
       "test": "gulp clean && gulp web && gulp lint"
    },
    "cdnVersion": {
