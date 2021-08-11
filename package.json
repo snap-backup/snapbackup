@@ -65,7 +65,7 @@
       "gulp-size": "~4.0",
       "gulp-w3c-html-validator": "~5.0",
       "gulp-zip": "~5.1",
-      "http-server": "~0.12",
+      "http-server": "~13.0",
       "jshint": "~2.13",
       "merge-stream": "~2.0"
    }
