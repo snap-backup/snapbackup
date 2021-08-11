@@ -42,6 +42,11 @@ const orgWebsite = {
 // Tasks
 const task = {
    buildWebsites() {
+      const processIndex = () =>
+         gulp.src(`websites/web/index.html`)
+            .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
+            .pipe(size({ showFiles: true }))
+            .pipe(gulp.dest(websitesTargetFolder));
       const processWeb = (topLevel) =>
          gulp.src(`websites/web/www.snapbackup.${topLevel}/**/*`)
             .pipe(fileInclude({ basepath: '@root', indent: true, context: context }))
@@ -82,8 +87,8 @@ const task = {
             .pipe(size({ showFiles: true }))
             .pipe(gulp.dest(orgWebsite.root));
       return mergeStream(
+         processIndex(),
          processWeb('com'),
-         processWeb('eu'),
          processWeb('net'),
          processWeb('org'),
          processUserGuide(),

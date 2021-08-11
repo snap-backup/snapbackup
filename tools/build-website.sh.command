@@ -55,29 +55,12 @@ publishWebFiles() {
    test -w $publishSite && publish
    }
 
-setupWebServer() {
-   cd $projectHome
-   port=$(grep web-server package.json | sed 's/[^0-9]*\([0-9]*\).*/\1/')  #extract port number from script
-   echo "Web Server (http-party/http-server on node):"
-   npm run web-server
-   sleep 2  #ensure pid is ready to read
-   echo "To stop web server:"
-   echo "   $ lsof -P -i :$port"
-   echo "   $ kill $(lsof -Pt -i :$port)"
-   echo
-   }
-
 launchBrowser() {
-   url=http://localhost:$port/websites-target/
-   echo "Opening:"
-   echo $url
-   sleep 2
-   open $url
-   echo
+   cd $projectHome
+   npm run interactive
    }
 
 setupTools
 buildWebFiles
 publishWebFiles
-setupWebServer  #port: Snap Backup -> SB -> 83 66 -> 8366
 launchBrowser
