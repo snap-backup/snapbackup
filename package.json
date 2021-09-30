@@ -45,14 +45,14 @@
       "interactive": "browser-sync websites-target --watch"
    },
    "cdnVersion": {
-      "dnajs": "1.8",
+      "dnajs": "1.9",
       "fontAwesome": "5.15",
       "hamburgerMenu": "0.3",
       "jQuery": "3.6",
       "webIgnition": "1.4"
    },
    "dependencies": {
-      "dna.js": "~1.8",
+      "dna.js": "~1.9",
       "hamburger-menu": "~0.3",
       "jquery": "~3.6",
       "web-ignition": "~1.4"
@@ -70,6 +70,6 @@
       "merge-stream": "~2.0",
       "npm-run-all2": "~5.0",
       "rimraf": "~3.0",
-      "w3c-html-validator": "~0.7"
+      "w3c-html-validator": "~0.8"
    }
 }
