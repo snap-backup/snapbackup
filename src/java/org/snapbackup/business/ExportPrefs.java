@@ -24,7 +24,7 @@ import org.snapbackup.settings.SystemAttributes;
 
 public class ExportPrefs {
 
-   public static final String xmlExtention =            ".xml";
+   public static final String xmlExtension =            ".xml";
    public static final String xmlTopNodeName =          "snapbackup";
    public static final String xmlSettingsNodeName =     "usersettings";
    public static final String xmlSettingNodeName =      "setting";
@@ -45,7 +45,7 @@ public class ExportPrefs {
    public class XmlFileFilter extends FileFilter {
       public boolean accept(File f) {
          return f.isDirectory() || f.getName().toLowerCase().endsWith(
-               ExportPrefs.xmlExtention);
+               ExportPrefs.xmlExtension);
          }
       public String getDescription() {
          return "XML files";

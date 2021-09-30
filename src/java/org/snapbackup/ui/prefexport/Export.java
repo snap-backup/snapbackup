@@ -21,9 +21,9 @@ public class Export {
    public static final int    fileNameCols =         40;
 
    //Setup
-   public final String Settings =        AppProperties.getProperty("ExportSettings");
+   public final String Settings = AppProperties.getProperty("ExportSettings");
    public final String defaultSettingsFileName =
-         SystemAttributes.userDocsDir + SystemAttributes.fileSeparator +
-         SystemAttributes.appName + Settings + ExportPrefs.xmlExtention;
+      SystemAttributes.userDocsDir + SystemAttributes.fileSeparator +
+      SystemAttributes.appName + Settings + ExportPrefs.xmlExtension;
 
 }
