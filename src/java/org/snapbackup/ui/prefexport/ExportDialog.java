@@ -45,7 +45,7 @@ public class ExportDialog extends JDialog {
    public ExportDialog(Frame owner) {
       super(owner);
       AppProperties.addSupplimentalProperty(Export.prefSettingsFileName,
-            new Export().defaultSettingsFileName);
+         new Export().defaultSettingsFileName);
       setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       setTitle(ui.title);
       configureContols();
@@ -131,7 +131,7 @@ public class ExportDialog extends JDialog {
       String errMsg = new ExportPrefs().doExport(locationTextField.getText());
       if (errMsg == null) {
          JOptionPane.showMessageDialog(this, ui.msgSuccess, new Export().Settings,
-               JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.PLAIN_MESSAGE);
          this.dispose();
          }
       else

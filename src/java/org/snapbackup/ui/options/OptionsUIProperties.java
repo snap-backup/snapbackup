@@ -25,8 +25,8 @@ class OptionsUIProperties {
    final String fileFormatOrderMonth =      AppProperties.getProperty("OptionsFileFormatDateOrderMonth");
    final String fileFormatOrderDay =        AppProperties.getProperty("OptionsFileFormatDateOrderDay");
    final String fileFormatOrderNone =       AppProperties.getProperty("OptionsFileFormatDateOrderNone");
-   final String[] orderList =     {fileFormatOrderYear,  fileFormatOrderMonth, fileFormatOrderDay};
-   final String[] orderListNone = {fileFormatOrderYear,  fileFormatOrderMonth, fileFormatOrderDay, fileFormatOrderNone};
+   final String[] orderList =               { fileFormatOrderYear, fileFormatOrderMonth, fileFormatOrderDay };
+   final String[] orderListNone =           { fileFormatOrderYear, fileFormatOrderMonth, fileFormatOrderDay, fileFormatOrderNone };
    final String fileFormatYearPrompt =      AppProperties.getProperty("OptionsFileFormatDateYearPrompt");
    final String fileFormatYear2Digits =     AppProperties.getProperty("OptionsFileFormatDateYear2Digits");
    final String fileFormatYear4Digits =     AppProperties.getProperty("OptionsFileFormatDateYear4Digits");
