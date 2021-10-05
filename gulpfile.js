@@ -2,13 +2,13 @@
 // Gulp configuration and tasks
 
 // Imports
-import concat from        'gulp-concat';
-import fileInclude from   'gulp-file-include';
-import gulp from          'gulp';
-import mergeStream from   'merge-stream';
-import rename from        'gulp-rename';
-import size from          'gulp-size';
-import zip from           'gulp-zip';
+import concat      from 'gulp-concat';
+import fileInclude from 'gulp-file-include';
+import gulp        from 'gulp';
+import mergeStream from 'merge-stream';
+import rename      from 'gulp-rename';
+import size        from 'gulp-size';
+import zip         from 'gulp-zip';
 import { readFileSync } from 'fs';
 
 // Setup
