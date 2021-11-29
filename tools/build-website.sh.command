@@ -9,6 +9,9 @@
 
 banner="Snap Backup - Website"
 projectHome=$(cd $(dirname $0)/..; pwd)
+apacheCfg=/usr/local/etc/httpd
+apacheLog=/usr/local/var/log/httpd/error_log
+webDocRoot=$(grep ^DocumentRoot $apacheCfg/httpd.conf | awk -F'"' '{ print $2 }')
 
 setupTools() {
    cd $projectHome
@@ -42,8 +45,7 @@ buildWebFiles() {
 
 publishWebFiles() {
    cd $projectHome
-   publishWebRoot=$(grep ^DocumentRoot /private/etc/apache2/httpd.conf | awk -F'"' '{ print $2 }')
-   publishSite=$publishWebRoot/centerkey.com
+   publishSite=$webDocRoot/centerkey.com
    publish() {
       echo "Publishing:"
       echo $publishSite
