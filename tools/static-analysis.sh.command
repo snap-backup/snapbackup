@@ -43,7 +43,7 @@ runPmd() {
    echo "Run PMD:"
    pwd
    report=$projectHome/tools/static-analysis/report.html
-   $pmdFolder/bin/run.sh pmd -dir $projectHome/src/java -rulesets rule-set-good-java.xml -no-cache -f html > $report
+   $pmdFolder/bin/run.sh pmd --dir $projectHome/src/java --rulesets rule-set-good-java.xml --no-cache --format html > $report
    fixFont='s|<head>|<head><style>html { font-family: system-ui; }</style>|'
    sed -i "" "$fixFont" $report
    fixPath='s|[^>]*\/\(snapbackup\/src\/java\/\)|\1|'
