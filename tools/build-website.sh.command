@@ -50,8 +50,6 @@ publishWebFiles() {
       echo "Publishing:"
       echo $publishSite
       cp -R websites-target/www.snapbackup.* $publishSite
-      cd $publishSite/www.snapbackup.org
-      perfect=$(ls perfect.*); mv -v $perfect perfect3.${perfect##*.}
       echo
       }
    test -w $publishSite && publish

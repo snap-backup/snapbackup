@@ -19,8 +19,7 @@
    ],
    "extra": {
       "updated": "August 3, 2018",
-      "jarSize": "241 KB",
-      "domain": "snapbackup.org"
+      "jarSize": "241 KB"
    },
    "jshintConfig": {
       "esversion": 9,

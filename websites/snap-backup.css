@@ -144,11 +144,6 @@ button:hover:not(:disabled) { background-color: lightseagreen; }
 .reveal-button { color: teal; }
 .reveal-button:hover { background-color: teal; }
 
-/* PERFECT colors */
-form.perfect { border-color: teal; }                                        /* outer color */
-form.perfect h2 { background-color: teal; }                                 /* outer color */
-form.perfect input, form.perfect textarea { background-color: mintcream; }  /* input fields */
-
 /* HamburgerMenu ☰ Custom width and colors */
 body {
    padding-right: 20px;         /* gutter on left and right sides of page */
