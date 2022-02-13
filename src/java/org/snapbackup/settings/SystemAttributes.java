@@ -82,7 +82,7 @@ public class SystemAttributes {
    public static final String tab =             "     ";
    public static final String dividerStr =      " / ";
    public static final String newLine =         "\n";
-   public static final String startHtml =       "<html lang=en>";
+   public static final String startHtml =       "<html>";
    public static final String endHtml =         "</html>";
    public static final String headerPre =       startHtml + "<center><br><b><font size=+2 color=navy face='comic sans ms, sand, fantasy'>";
    public static final String headerMid =       "</font></b>";
