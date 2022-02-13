@@ -111,8 +111,8 @@ public class SystemAttributes {
    public static final String  fileSeparator = sysInfo.getProperty("file.separator");
    public static final boolean isMac =         sysInfo.getProperty("mrj.version") != null;
    public static final boolean evilWinSys =    fileSeparator.equals("\\");
-   public static final String  evilWinDrive =  (userHomeDir.indexOf(":\\") == 1 ?
-      userHomeDir.substring(0, 2) : "");  //example: "C:\zzz" --> "C:"
+   public static final String  evilWinDrive =  userHomeDir.indexOf(":\\") == 1 ?
+      userHomeDir.substring(0, 2) : "";  //example: "C:\zzz" --> "C:"
    public static final String osInfo =  //example: "Mac OS X (10.12/x86_64/en)"
       sysInfo.getProperty("os.name") + " (" +
       sysInfo.getProperty("os.version") + fileSeparator +

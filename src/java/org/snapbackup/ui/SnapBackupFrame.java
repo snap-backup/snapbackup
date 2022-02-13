@@ -405,8 +405,8 @@ public class SnapBackupFrame extends JFrame {
       constraints.gridwidth = colSpan;
       constraints.gridheight = rowSpan;
       constraints.fill = stretch;
-      constraints.weightx = (stretch == GridBagConstraints.NONE ? 0.0 : 0.5);
-      constraints.weighty = (stretch == GridBagConstraints.BOTH ? 0.5 : 0.0);
+      constraints.weightx = stretch == GridBagConstraints.NONE ? 0.0 : 0.5;
+      constraints.weighty = stretch == GridBagConstraints.BOTH ? 0.5 : 0.0;
       return constraints;
       }
    public GridBagConstraints gridLoc(GridBagConstraints constraints,
