@@ -183,7 +183,7 @@ public class DataModel {
       //Creates a List of lines from a string of multi-line data delimited with "splitStr"
       List<String> list =
             new ArrayList<String>(Arrays.asList(strList.split(SystemAttributes.splitStr)));
-      if (strList.equals(nullStr))
+      if (nullStr.equals(strList))
          list = new ArrayList<String>();
       while (list.size() < minSize)
          list.add(nullStr);
@@ -231,7 +231,7 @@ public class DataModel {
       String line = zipItem;
       if (f.getFiltersEnabled()) {
          line = line + tab;
-         if (!includeFilter.equals(nullStr))
+         if (!nullStr.equals(includeFilter))
             line = line + filterMarkerPre + includeFilter + filterMarkerPost + space + space;
          String exclude = nullStr;
          boolean first = true;
@@ -239,11 +239,11 @@ public class DataModel {
             exclude = exclude + (first ? nullStr : ", ") + excludeFilter;
             first = false;
             }
-         if (!excludeFoldersFilter.equals(nullStr)) {
+         if (!nullStr.equals(excludeFoldersFilter)) {
             exclude = exclude + (first ? nullStr : ", ") + fs + excludeFoldersFilter + fs;
             first = false;
             }
-         if (!sizeFilter.equals(nullStr)) {
+         if (!nullStr.equals(sizeFilter)) {
             exclude = exclude + (first ? nullStr : ", ") + filterMarkerSize +
                sizeFilter + filterMarkerUnits;
             first = false;

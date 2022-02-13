@@ -69,8 +69,8 @@ public class UserPreferences {
 
    public static boolean exists(String prefName) {
       //Returns true if the preference has a value.
-      return !prefs.get(prefix + prefName.toLowerCase(),
-            prefValueNotFound).equals(prefValueNotFound);
+      return !prefValueNotFound.equals(
+         prefs.get(prefix + prefName.toLowerCase(), prefValueNotFound));
       }
 
    // Profiles

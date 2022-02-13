@@ -22,7 +22,7 @@ public class UIUtilities {
       Toolkit.getDefaultToolkit().getScreenSize();
 
    public static void makeBold (Component widget) {
-      if (!UserPreferences.readLocalePref().equals("ko"))   //HACK!!!  refactor with variable localeSupportsBold
+      if (!"ko".equals(UserPreferences.readLocalePref()))   //HACK!!!  refactor with variable localeSupportsBold
          widget.setFont(new Font(widget.getFont().getFamily(), Font.BOLD,
             widget.getFont().getSize()));
       }
@@ -33,7 +33,7 @@ public class UIUtilities {
       }
 
    public static void bumpUpFontSize (Component widget, int bumps) {
-      if (!UserPreferences.readLocalePref().equals("ko")) {   //HACK!!!  refactor with variable localeSupportsBold
+      if (!"ko".equals(UserPreferences.readLocalePref())) {   //HACK!!!  refactor with variable localeSupportsBold
          Font f = widget.getFont();
          widget.setFont(new Font(f.getFamily(), f.getStyle(), f.getSize() + bumps));
          }
@@ -46,7 +46,7 @@ public class UIUtilities {
    public static void makeEmphasized(Component widget) {
       //Set to bold amd add color
       Font font = widget.getFont();
-      if (!UserPreferences.readLocalePref().equals("ko"))   //HACK!!!  refactor with variable localeSupportsBold
+      if (!"ko".equals(UserPreferences.readLocalePref()))   //HACK!!!  refactor with variable localeSupportsBold
          widget.setFont(new Font(font.getFamily(), Font.BOLD, font.getSize()));
       widget.setForeground(UIProperties.emphasisColor);
       }
