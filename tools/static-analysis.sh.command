@@ -5,6 +5,7 @@
 
 banner="Snap Backup - Static Analysis of Java Code"
 pmdVersion=$(curl -s https://pmd.github.io | grep "Latest Version:" | awk '{ print $3 }')
+pmdDownload=https://github.com/pmd/pmd/releases/download/pmd_releases%2F$pmdVersion/pmd-bin-$pmdVersion.zip
 projectHome=$(cd $(dirname $0)/..; pwd)
 
 displayIntro() {
@@ -20,16 +21,17 @@ setupPmd() {
    cd $projectHome
    echo "Setup PMD:"
    echo $pmdVersion
-   which java || exit
-   java -version
    pmdFolder=$projectHome/tools/static-analysis/pmd/pmd-bin-$pmdVersion
    echo $pmdFolder
+   which java || exit
+   java --version
    downloadPmd() {
       echo "Downloading..."
+      echo $pmdDownload
       mkdir -p tools/static-analysis/pmd
       cd tools/static-analysis/pmd
       pwd
-      curl --location --remote-name https://github.com/pmd/pmd/releases/download/pmd_releases%2F$pmdVersion/pmd-bin-$pmdVersion.zip
+      curl --location --remote-name $pmdDownload
       unzip pmd-bin-$pmdVersion.zip
       ls -o
       rm pmd-bin-$pmdVersion.zip

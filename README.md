@@ -7,7 +7,7 @@ _The one-click backup utility_
 &nbsp;
 [![Vulnerabilities](https://snyk.io/test/github/snap-backup/snapbackup/badge.svg)](https://snyk.io/test/github/snap-backup/snapbackup)
 &nbsp;
-[![Build](https://github.com/snap-backup/snapbackup/workflows/build/badge.svg)](https://github.com/snap-backup/snapbackup/actions?query=workflow%3Abuild)
+[![Build](https://github.com/snap-backup/snapbackup/workflows/build/badge.svg)](https://github.com/snap-backup/snapbackup/actions/workflows/run-spec-on-push.yaml)
 
 Snap Backup ([snapbackup.org](https://snapbackup.org)) is a utility for individual computer users
 who need a simple and convenient way to backup their valuable files.
