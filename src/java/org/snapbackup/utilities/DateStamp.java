@@ -11,9 +11,10 @@
 package org.snapbackup.utilities;
 
 import java.util.Calendar;
-import org.snapbackup.ui.options.Options;
+import org.snapbackup.logger.Logger;
 import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.UserPreferences;
+import org.snapbackup.ui.options.Options;
 
 public abstract class DateStamp {
 
@@ -47,9 +48,10 @@ public abstract class DateStamp {
       String dateStamp = SystemAttributes.nullStr;
       for (char ymd : order.toCharArray())
          switch (ymd) {
-            case '0': dateStamp = dateStamp + separator + year;   break;
-            case '1': dateStamp = dateStamp + separator + month;  break;
-            case '2': dateStamp = dateStamp + separator + day;    break;
+            case '0': dateStamp = dateStamp + separator + year;      break;
+            case '1': dateStamp = dateStamp + separator + month;     break;
+            case '2': dateStamp = dateStamp + separator + day;       break;
+            default:  Logger.logMsg("Invalid ymd order: " + order);  break;
             }
       /*
       for (int slot = 0; slot < order.length(); slot++)
