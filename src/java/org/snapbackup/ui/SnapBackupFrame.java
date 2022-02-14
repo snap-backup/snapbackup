@@ -86,15 +86,15 @@ public class SnapBackupFrame extends JFrame {
    JLabel   iconLabel =       new JLabel(Icons.snapBackupIcon);
 
    //Define Profiles Controls
-   JPanel     profilesPanel =        new JPanel();
-   JPanel     profilesInnerPanel =   new JPanel();
-   JPanel     profilesButtonPanel =  new JPanel();
-   JLabel     profilesPromptLabel =  new JLabel(ui.profilesPrompt);
+   JPanel     profilesPanel =            new JPanel();
+   JPanel     profilesInnerPanel =       new JPanel();
+   JPanel     profilesButtonPanel =      new JPanel();
+   JLabel     profilesPromptLabel =      new JLabel(ui.profilesPrompt);
    JTextField profilesCurrentTextField = new JTextField();  //hidden field
-   List<String> names = DataModel.getProfilesNames();  //note: holds user data
-   JComboBox<String> profilesDropDown = new JComboBox<String>(names.toArray(new String[names.size()]));
-   JButton    profilesAddButton =    new JButton(ui.profilesNew);
-   JButton    profilesDeleteButton = new JButton(ui.profilesDelete);
+   List<String> names =                  DataModel.getProfilesNames();  //note: holds user data
+   JComboBox<String> profilesDropDown =  new JComboBox<String>(names.toArray(new String[0]));
+   JButton    profilesAddButton =        new JButton(ui.profilesNew);
+   JButton    profilesDeleteButton =     new JButton(ui.profilesDelete);
 
    //Define Source (Zip List) Controls
    JPanel       srcPanel =             new JPanel();
@@ -175,10 +175,9 @@ public class SnapBackupFrame extends JFrame {
          Locale a = new Locale(localeCodeA);
          Locale b = new Locale(localeCodeB);
          return
-            a.equals(b) ? 0 :
+            a.equals(b)      ? 0 :
             a.equals(locale) ? -1 :
-            b.equals(locale) ? 1 :
-            a.getDisplayName(locale).compareTo(b.getDisplayName(locale));
+            b.equals(locale) ? 1 : a.getDisplayName(locale).compareTo(b.getDisplayName(locale));
          }
       }
 
