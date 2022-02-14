@@ -15,7 +15,7 @@ import org.snapbackup.ui.options.Options;
 import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.UserPreferences;
 
-public class DateStamp {
+public abstract class DateStamp {
 
    static String twoDigitString(int number) {
       String tds = "" + number;

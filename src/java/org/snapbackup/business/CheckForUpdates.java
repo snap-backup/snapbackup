@@ -16,7 +16,7 @@ import java.net.URL;
 import org.snapbackup.logger.Logger;
 import org.snapbackup.settings.SystemAttributes;
 
-public class CheckForUpdates {
+public abstract class CheckForUpdates {
    final static String verificationCheck = "Snap Backup";
 
    public static String getLatestVersion() {

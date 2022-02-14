@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 // Reads values from the properties file and provides access to those
 // values.  Additional properties with values may added at run-time.
-public class AppProperties {
+public abstract class AppProperties {
 
    static final HashMap<String, String> supplimentalProperty =
       new HashMap<String, String>();

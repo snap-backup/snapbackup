@@ -16,7 +16,7 @@ import javax.swing.*;
 import org.snapbackup.ui.options.Options;
 import org.snapbackup.settings.UserPreferences;
 
-public class UIUtilities {
+public abstract class UIUtilities {
 
    private static final Dimension screenSize =
       Toolkit.getDefaultToolkit().getScreenSize();

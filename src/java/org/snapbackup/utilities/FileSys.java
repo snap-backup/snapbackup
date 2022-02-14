@@ -20,7 +20,7 @@ import org.snapbackup.logger.Logger;
 import org.snapbackup.ui.UIProperties;
 import org.snapbackup.settings.SystemAttributes;
 
-public class FileSys {
+public abstract class FileSys {
 
    static String errMsg;
    static String nullStr = SystemAttributes.nullStr;

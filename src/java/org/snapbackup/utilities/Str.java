@@ -10,7 +10,7 @@
 
 package org.snapbackup.utilities;
 
-public class Str {
+public abstract class Str {
 
    static final String macroChar = "%";  //TextReplacementCharacter
 

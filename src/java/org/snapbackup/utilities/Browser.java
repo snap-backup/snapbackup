@@ -10,7 +10,7 @@
 
 package org.snapbackup.utilities;
 
-public class Browser {
+public abstract class Browser {
 
    public static void open(String url) {
       try {

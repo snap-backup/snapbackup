@@ -14,7 +14,7 @@ import java.io.File;
 import javax.swing.*;
 import org.snapbackup.settings.SystemAttributes;
 
-public class Icons {
+public abstract class Icons {
 
    //static final Class iconClass = new Icons().getClass();
    //static final Class iconClass = Icons.class;

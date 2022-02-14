@@ -16,7 +16,7 @@ import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 import org.snapbackup.ui.SnapBackupFrame;
 
-public class UserPreferences {
+public abstract class UserPreferences {
 
    static Preferences prefs =
       Preferences.userNodeForPackage(UserPreferences.class);

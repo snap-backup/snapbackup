@@ -15,7 +15,7 @@ import javax.swing.*;
 
 import org.snapbackup.settings.SystemAttributes;
 
-public class Logger {
+public abstract class Logger {
 
    static JTextArea logArea;
    static boolean log2Screen = true;

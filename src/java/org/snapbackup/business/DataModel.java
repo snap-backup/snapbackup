@@ -26,7 +26,7 @@ import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.UserPreferences;
 import org.snapbackup.utilities.ZipEngine;
 
-public class DataModel {
+public abstract class DataModel {
 
    //Top-lever user prefereences
    static final String prefAppVersion =     "AppVersion";
