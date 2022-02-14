@@ -478,6 +478,7 @@ public abstract class DataModel {
                SnapBackupFrame.current.getExitButton().grabFocus();
                }
             TimerTask task = new TimerTask() {
+               @Override
                public void run() { backupProgress.dispose(); };
                };
             new Timer().schedule(task, 800);  //0.8 second delay
