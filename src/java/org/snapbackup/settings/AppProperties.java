@@ -13,6 +13,7 @@ package org.snapbackup.settings;
 
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -20,8 +21,7 @@ import java.util.ResourceBundle;
 // values.  Additional properties with values may added at run-time.
 public abstract class AppProperties {
 
-   static final HashMap<String, String> supplimentalProperty =
-      new HashMap<String, String>();
+   static final Map<String, String> supplimentalProperty = new HashMap<String, String>();
 
    static ResourceBundle applicationResources = getLocalizedBundle();
 
