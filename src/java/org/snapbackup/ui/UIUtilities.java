@@ -44,7 +44,7 @@ public abstract class UIUtilities {
       }
 
    public static void makeEmphasized(Component widget) {
-      //Set to bold amd add color
+      // Set to bold amd add color
       Font font = widget.getFont();
       if (!"ko".equals(UserPreferences.readLocalePref()))   //HACK!!!  refactor with variable localeSupportsBold
          widget.setFont(new Font(font.getFamily(), Font.BOLD, font.getSize()));
@@ -52,7 +52,7 @@ public abstract class UIUtilities {
       }
 
    public static void lockInMinSize(final JFrame frame) {
-      //Ensures user cannot resize frame to be smaller than frame is right now.
+      // Ensures user cannot resize frame to be smaller than frame is right now.
       final int origX = frame.getSize().width;
       final int origY = frame.getSize().height;
       //frame.setSize(new Dimension(origX, origY));
@@ -121,7 +121,7 @@ public abstract class UIUtilities {
          menu.setMnemonic(menu.getText().charAt(menu.getText().indexOf('&') + 1));
          menu.setText(menu.getText().replace("&", ""));
          for (Component menuItemComponent : menu.getMenuComponents())
-            if (menuItemComponent instanceof JMenuItem) {   //skip separators
+            if (menuItemComponent instanceof JMenuItem) {  //skip separators
                JMenuItem menuItem = (JMenuItem)menuItemComponent;
                menuItem.setMnemonic(menuItem.getText().charAt(
                      menuItem.getText().indexOf('&') + 1));
@@ -130,7 +130,7 @@ public abstract class UIUtilities {
          /*
          for (int count = 0; count < menu.getMenuComponentCount(); count++) {  //iterate over menu items
             Component menuItemComponent = menu.getMenuComponent(count);
-            if (menuItemComponent instanceof JMenuItem) {   //skip separators
+            if (menuItemComponent instanceof JMenuItem) {  //skip separators
                JMenuItem menuItem = (JMenuItem)menuItemComponent;
                menuItem.setMnemonic(menuItem.getText().charAt(
                      menuItem.getText().indexOf('&') + 1));

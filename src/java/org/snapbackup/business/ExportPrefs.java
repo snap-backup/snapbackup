@@ -44,8 +44,7 @@ public class ExportPrefs {
 
    public class XmlFileFilter extends FileFilter {
       public boolean accept(File f) {
-         return f.isDirectory() || f.getName().toLowerCase().endsWith(
-               ExportPrefs.xmlExtension);
+         return f.isDirectory() || f.getName().toLowerCase().endsWith(ExportPrefs.xmlExtension);
          }
       public String getDescription() {
          return "XML files";
@@ -59,7 +58,7 @@ public class ExportPrefs {
          Source source = new DOMSource(doc);
          Result result = new StreamResult(new File(filename));
          Transformer xformer = TransformerFactory.newInstance().newTransformer();
-         xformer.setOutputProperty(OutputKeys.INDENT, "yes");  //Human readable
+         xformer.setOutputProperty(OutputKeys.INDENT, "yes");  //human readable
          xformer.transform(source, result);
          }
       catch (Exception e) {
@@ -100,8 +99,7 @@ public class ExportPrefs {
       for (String key : data) {
          setting = xmlDoc.createElement(xmlSettingNodeName);
          setting.setAttribute(xmlSettingAttributeName, key);
-         setting.appendChild(xmlDoc.createTextNode(
-            dataToXml(UserPreferences.readPrefByKey(key))));
+         setting.appendChild(xmlDoc.createTextNode(dataToXml(UserPreferences.readPrefByKey(key))));
          settingNode.appendChild(setting);
          }
       if (errMsg == null)

@@ -4,7 +4,7 @@
 //                                                                            //
 // UI Properties:                                                             //
 //    This object...                                                          //
-//                                                                            //q
+//                                                                            //
 // GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +20,7 @@ import org.snapbackup.settings.SystemAttributes;
 
 public class UIProperties {
 
-   //Constants
+   // Constants
    //public static final int    backupCols = 50;
    public static final int    srcMinRows = 2;
    public static final int    srcDirCols = 45;
@@ -30,7 +30,7 @@ public class UIProperties {
    public static final int    logMinRows = 2;
    public static final char   standardWidthChar = 'm';  //determines column width
    public static final Font   standardFont = new JTextField().getFont();  //grab good font
-   public static final Color  standardBGColor = new JPanel().getBackground();  // .getBackground();  //grab grey color
+   public static final Color  standardBGColor = new JPanel().getBackground();  //grab gray color
    public static final Color  emphasisColor = Color.blue;
    public static final String iconURL = "images/";
    public static final String snapBackupIconURL = iconURL + "snap-backup-icon.png";
@@ -42,15 +42,15 @@ public class UIProperties {
    public static final String newLine = SystemAttributes.newLine;
 
    //
-   //From .properties File
+   // From .properties File
    //
 
-   //Skin (Look and Feel)
+   // Skin (Look and Feel)
    public static final UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
    public static String skinSetMsg =          AppProperties.getProperty("LookAndFeelSetMsg");
    public static String skinErrMsg =          AppProperties.getProperty("LookAndFeelErrMsg");
 
-   //Check for Updates
+   // Check for Updates
    public final String updatesVersionYours =     AppProperties.getProperty("UpdatesVersionYours");
    public final String updatesVersionIsCurrent = AppProperties.getProperty("UpdatesVersionIsCurrent");
    public final String updatesVersionNew =       AppProperties.getProperty("UpdatesVersionNew");
@@ -59,14 +59,14 @@ public class UIProperties {
    public final String updatesErrMsg1 =          AppProperties.getProperty("UpdatesErrMsg1");
    public final String updatesErrMsg2 =          AppProperties.getProperty("UpdatesErrMsg2");
 
-   //Header
+   // Header
    public final String appTitle =             AppProperties.getProperty("ApplicationTitle");
    public final String appTitleLocalized =    AppProperties.getProperty("OptionalLocalizedApplicationTitle");
    public final String header =               SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + ("".equals(appTitleLocalized) ? "" : "<br>" + appTitleLocalized) + SystemAttributes.headerPost;
    //public final String splashHeader =         SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + SystemAttributes.headerSplashTag + SystemAttributes.headerPost;
    public final String headerCmdLine =        appTitle + " " + SystemAttributes.appVersion + ("".equals(appTitleLocalized) ? "" : " (" + appTitleLocalized + ")");
 
-   //Menus (File Menu)
+   // Menus (File Menu)
    public final String menuGroupFile =        AppProperties.getProperty("MenuGroupFile");
 
    public final String menuItemLangs =        AppProperties.getProperty("MenuItemLanguages");
@@ -87,20 +87,20 @@ public class UIProperties {
    public final String menuItemOptions =      AppProperties.getProperty("MenuItemOptions");
    public final String menuItemExit =         AppProperties.getProperty("MenuItemExit");
 
-   //Menus (Help Menu)
+   // Menus (Help Menu)
    public final String menuGroupHelp =        AppProperties.getProperty("MenuGroupHelp");
    public final String menuItemGuide =        AppProperties.getProperty("MenuItemGuide");
    public final String menuItemUpdates =      AppProperties.getProperty("MenuItemUpdates");
    public final String menuItemAbout =        AppProperties.getProperty("MenuItemAbout");
 
-   //Filters
+   // Filters
    //public final String FiltersButton =        AppProperties.getProperty("FiltersButton");
    //public final String FiltersTitle =         AppProperties.getProperty("FiltersTitle");
    //public final String FiltersSave =          AppProperties.getProperty("FiltersButtonSave");
    //public final String FiltersDelete =        AppProperties.getProperty("FiltersButtonDelete");
    //public final String FiltersCancel =        AppProperties.getProperty("ButtonCancel");
 
-   //Profiles
+   // Profiles
    public final String profilesOffMsg =       AppProperties.getProperty("ProfilesOffMsg");
    public final String profilesErrMsg =       AppProperties.getProperty("ProfilesErrMsg");
    public final String profilesTitle =        AppProperties.getPropertyPadded("ProfilesTitle");
@@ -114,7 +114,7 @@ public class UIProperties {
    public final String profilesDeleteTitle =  AppProperties.getProperty("ProfilesDeleteTitle");
    public final String profilesDeletePrompt = AppProperties.getProperty("ProfilesDeletePrompt");
 
-   //Source (Zip List)
+   // Source (Zip List)
    public final String srcTitle =             AppProperties.getPropertyPadded("SourceTitle");
    public final String srcPrompt =            AppProperties.getProperty("SourcePrompt");
    public final String srcAddFile =           AppProperties.getProperty("SourceAddFile");
@@ -123,11 +123,11 @@ public class UIProperties {
    public final String srcRemove =            AppProperties.getProperty("SourceRemove");
    public final String srcFilter =            AppProperties.getProperty("SourceFilter");
 
-   //Tip
+   // Tip
    public final String tip =                  AppProperties.getProperty("Tip");
    public final String tipHelp =              AppProperties.getProperty("TipHelp");
 
-   //Destination (Backup & Archive)
+   // Destination (Backup & Archive)
    public final String destTitle =            AppProperties.getPropertyPadded("DestinationTitle");
    public final String destBackupPrompt =     AppProperties.getProperty("DestinationBackupPrompt");
    //public final String destBackupChooser =    AppProperties.getProperty("DestinationBackupChooser");
@@ -139,7 +139,7 @@ public class UIProperties {
    public final String destArchiveCmd =       AppProperties.getProperty("DestinationArchiveCommand");
    public final String destArchiveTag =       AppProperties.getProperty("DestinationArchiveTag");
 
-   //Log
+   // Log
    public final String logTitle =             AppProperties.getPropertyPadded("LogTitle");
    public final String logMsgStart =          AppProperties.getProperty("LogMsgStart");
    public final String logMsgEnd =            AppProperties.getProperty("LogMsgEnd");
@@ -160,13 +160,13 @@ public class UIProperties {
    public final String logMsgMemoryUsed =     AppProperties.getProperty("LogMsgMemoryUsed") + space;
    public final String logMsgAborted =        AppProperties.getProperty("LogMsgAborted");
 
-   //Buttons
+   // Buttons
    public final String buttonSave =           AppProperties.getProperty("ButtonSave");
    public final String buttonReset =          AppProperties.getProperty("ButtonReset");
    public final String buttonDoBackup =       AppProperties.getProperty("ButtonDoBackup");
    public final String buttonExit =           AppProperties.getProperty("ButtonExit");
 
-   //File Utilties
+   // File Utilties
    public final String fileUtilTitleBackupFolder =  AppProperties.getProperty("FileUtilityTitleBackupFolder");
    public final String fileUtilTitleBackupFile =    AppProperties.getProperty("FileUtilityTitleBackupFile");
    public final String fileUtilTitleArchiveFolder = AppProperties.getProperty("FileUtilityTitleArchiveFolder");
@@ -177,7 +177,7 @@ public class UIProperties {
    public final String fileUtilOverwriteButton =    AppProperties.getProperty("FileUtilityOverwriteButton");
    public final String fileUtilButtonAbort =        AppProperties.getProperty("FileUtilityButtonAbort");
 
-   //Messages
+   // Messages
    public final String msgSettingsSaved =        AppProperties.getProperty("MsgSettingsSaved");
    public final String msgSettingsRestored =     AppProperties.getProperty("MsgSettingsRestoredLine1") + newLine +
                                                  AppProperties.getProperty("MsgSettingsRestoredLine2");

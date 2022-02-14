@@ -29,7 +29,7 @@ public abstract class CheckForUpdates {
          verification = reader.readLine();
          reader.close();
          }
-      catch (Exception e) { //NoRouteToHostException or ConnectException
+      catch (Exception e) {  //NoRouteToHostException or ConnectException
          Logger.logMsg(e.toString());
          }
       return verificationCheck.equals(verification) ? version : null;

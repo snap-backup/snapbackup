@@ -258,7 +258,7 @@ public class OptionsDialog extends JDialog {
       if (orderUserInputMode) {
          int activeOrderValue = orderDropDowns.get(activeOrder).getSelectedIndex();
          for (int count = 0; count < orderDropDowns.size(); count++)
-            if (count != activeOrder && activeOrderValue == orderDropDowns.get(count).getSelectedIndex()) { //collision
+            if (count != activeOrder && activeOrderValue == orderDropDowns.get(count).getSelectedIndex()) {  //collision
                orderUserInputMode = false;
                int newValue = (activeOrderValue + 1) % 3;
                orderDropDowns.get(count).setSelectedIndex(newValue);

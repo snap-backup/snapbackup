@@ -277,21 +277,21 @@ public class SnapBackupFrame extends JFrame {
    public void addContols() {
       //Add Menu Controls
       setJMenuBar(menuBar);
-      menuBar.add(fileMenuGroup);           //menu: File
-      fileMenuGroup.add(languagesMenuItem); //menu: File | Langauge Options
-      fileMenuGroup.add(filtersMenuItem);   //menu: File | Backup Filters
-      fileMenuGroup.add(profilesMenuItem);  //menu: File | Multiple Profiles
-      fileMenuGroup.add(skinMenuItem);      //menu: File | Look & Feel
+      menuBar.add(fileMenuGroup);            //menu: File
+      fileMenuGroup.add(languagesMenuItem);  //menu: File | Langauge Options
+      fileMenuGroup.add(filtersMenuItem);    //menu: File | Backup Filters
+      fileMenuGroup.add(profilesMenuItem);   //menu: File | Multiple Profiles
+      fileMenuGroup.add(skinMenuItem);       //menu: File | Look & Feel
       fileMenuGroup.addSeparator();
-      fileMenuGroup.add(exportMenuItem);    //menu: File | Export Settings...
-      fileMenuGroup.add(importMenuItem);    //menu: File | Import Settings...
+      fileMenuGroup.add(exportMenuItem);     //menu: File | Export Settings...
+      fileMenuGroup.add(importMenuItem);     //menu: File | Import Settings...
       fileMenuGroup.addSeparator();
-      fileMenuGroup.add(optionsMenuItem);   //menu: File | Options...    ###############################
-      fileMenuGroup.add(exitMenuItem);      //menu: File | Exit
-      menuBar.add(helpMenuGroup);           //menu: Help
-      helpMenuGroup.add(guideMenuItem);     //menu: Help | User Guide
-      helpMenuGroup.add(updatesMenuItem);   //menu: Help | Check for Updates
-      helpMenuGroup.add(aboutMenuItem);     //menu: Help | About
+      fileMenuGroup.add(optionsMenuItem);    //menu: File | Options...    ###############################
+      fileMenuGroup.add(exitMenuItem);       //menu: File | Exit
+      menuBar.add(helpMenuGroup);            //menu: Help
+      helpMenuGroup.add(guideMenuItem);      //menu: Help | User Guide
+      helpMenuGroup.add(updatesMenuItem);    //menu: Help | Check for Updates
+      helpMenuGroup.add(aboutMenuItem);      //menu: Help | About
 
       //Add Title Control
       titlePanel.add(titleLabel, BorderLayout.PAGE_START);
@@ -568,7 +568,7 @@ public class SnapBackupFrame extends JFrame {
                skinMenuItemAction(e.getActionCommand()); }
             } );
          skinGroup.add(skinRbmi);
-         skinMenuItem.add(skinRbmi); //menu: File | Look & Feel | ZZZZ
+         skinMenuItem.add(skinRbmi);  //menu: File | Look & Feel | ZZZZ
          }
       exitMenuItem.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { exitMenuItemAction(); }
@@ -797,7 +797,7 @@ public class SnapBackupFrame extends JFrame {
             }
          else {
             if (!UserPreferences.profileInDB())
-               DataModel.saveSettings(this); //handles edge case for very first new profile added
+               DataModel.saveSettings(this);  //handles edge case for very first new profile added
             setCurrentProfile(profileName);
             destBackupNameTextField.setText(profileName);
             DataModel.saveSettings(this);  //copies last profile into new profile

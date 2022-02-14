@@ -25,7 +25,7 @@ public abstract class DateStamp {
       }
 
    public static String todaysDateStamp() {
-      //Return today's date stamp in the format: "YYYY-MM-DD"
+      // Return today's date stamp in the format: "YYYY-MM-DD"
       //Calendar today = Calendar.getInstance();
       //return "" + today.get(Calendar.YEAR) + "-" +
       //   twoDigitString(today.get(Calendar.MONTH) + 1) + "-" +
@@ -37,7 +37,7 @@ public abstract class DateStamp {
       }
 
    public static String todaysDateStamp(String order, boolean year2Digits, String separator) {
-      //Return today's date stamp
+      // Return today's date stamp
       Calendar today = Calendar.getInstance();
       String year = Integer.toString(today.get(Calendar.YEAR));
       if (year2Digits)

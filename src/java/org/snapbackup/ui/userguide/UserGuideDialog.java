@@ -26,7 +26,7 @@ public class UserGuideDialog extends JDialog {
 
    UserGuideUIProperties ui = new UserGuideUIProperties();
 
-   //Define About Controls
+   // Define About Controls
    JPanel      basePanel =      new JPanel();
    JPanel      headerPanel =    new JPanel();
    JPanel      buttonPanel =    new JPanel();
