@@ -16,6 +16,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -90,7 +91,8 @@ public class SnapBackupFrame extends JFrame {
    JPanel     profilesButtonPanel =  new JPanel();
    JLabel     profilesPromptLabel =  new JLabel(ui.profilesPrompt);
    JTextField profilesCurrentTextField = new JTextField();  //hidden field
-   JComboBox<String> profilesDropDown =  new JComboBox<String>(DataModel.getProfilesNames());  //note: holds user data
+   List<String> names = DataModel.getProfilesNames();  //note: holds user data
+   JComboBox<String> profilesDropDown = new JComboBox<String>(names.toArray(new String[names.size()]));
    JButton    profilesAddButton =    new JButton(ui.profilesNew);
    JButton    profilesDeleteButton = new JButton(ui.profilesDelete);
 

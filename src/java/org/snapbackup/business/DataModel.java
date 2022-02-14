@@ -84,8 +84,8 @@ public abstract class DataModel {
    static String  cmdArchivePath;
    static boolean cmdFiltersOn;
 
-   public static Vector<String> getProfilesNames() {
-      Vector<String> names = UserPreferences.getProfileNames();
+   public static List<String> getProfilesNames() {
+      List<String> names = UserPreferences.getProfileNames();
       if (names.isEmpty())
          names.add(AppProperties.getProperty(prefCurrentProfile));
       return names;

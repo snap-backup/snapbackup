@@ -10,8 +10,9 @@
 
 package org.snapbackup.settings;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
-import java.util.Vector;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 import org.snapbackup.ui.SnapBackupFrame;
@@ -138,8 +139,8 @@ public abstract class UserPreferences {
       return allKeys;
       }
 
-   public static Vector<String> getProfileNames() {
-      Vector<String> names = new Vector<String>();
+   public static List<String> getProfileNames() {
+      List<String> names = new ArrayList<String>();
       for (String key : getAllKeys())
          if (key.endsWith(SystemAttributes.prefChar + prefProfileName))
             names.add(prefs.get(key, prefValueNotFound));
