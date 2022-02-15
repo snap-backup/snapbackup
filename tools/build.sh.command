@@ -4,20 +4,19 @@
 # Build on macOS #
 ##################
 
-# JDK
-# ===
-# Install the Java SE Development Kit (JDK) for macOS:
-#    https://www.oracle.com/technetwork/java/javase/downloads
-#    Note: OpenJDK does not contain javapackager needed to create the installer
-#
-# Ant
-# ===
-# Install Ant or download and unzip into the "~/apps/ant" folder:
-#    Download --> https://ant.apache.org/bindownload.cgi (".zip archive")
-#    Example install folder --> ~/apps/ant/apache-ant-1.10.5/bin
+# Use Homebrew to install the JDK (openjdk) and Ant:
+#     url=https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+#     /bin/bash -c "$(curl -fsSL $url)"
+#     brew --version
+#     brew install openjdk ant
+#     java --version
+#     ant -version
 
 banner="Snap Backup - Build"
 projectHome=$(cd $(dirname $0)/..; pwd)
+iconPng=$projectHome/src/resources/graphics/application/snap-backup-icon.png
+attributesFile=$projectHome/src/java/org/snapbackup/settings/SystemAttributes.java
+version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
 
 displayIntro() {
    cd $projectHome
@@ -31,55 +30,47 @@ displayIntro() {
 setupBuildTools() {
    cd $projectHome
    echo "Java:"
-   echo $JAVA_HOME
    which java || exit
-   java -version
-   javac -version
-   echo
-   echo "Ant:"
+   java --version
+   javac --version
    which ant || exit
-   ant -version
-   attributesFile=src/java/org/snapbackup/settings/SystemAttributes.java
-   version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
    echo
    }
 
 buildExecutableJar() {
    cd $projectHome/tools
+   echo "Ant:"
+   ant -version
    ant build
    echo
    }
 
-buildMacInstaller() {
-   cd $projectHome
-   echo "Applications icons:"
-   cp src/resources/graphics/application/snap-backup-icon.png build
-   cd build
+createResources() {
+   cd $projectHome/build
+   echo "Create resources:"
    mkdir SnapBackup.iconset
-   sips -z   16   16 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16.png
-   sips -z   32   32 snap-backup-icon.png --out SnapBackup.iconset/icon_16x16@2x.png
-   sips -z   32   32 snap-backup-icon.png --out SnapBackup.iconset/icon_32x32.png
-   sips -z  128  128 snap-backup-icon.png --out SnapBackup.iconset/icon_32x32@2x.png
-   sips -z  128  128 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128.png
-   sips -z  256  256 snap-backup-icon.png --out SnapBackup.iconset/icon_128x128@2x.png
-   sips -z  256  256 snap-backup-icon.png --out SnapBackup.iconset/icon_256x256.png
-   sips -z  512  512 snap-backup-icon.png --out SnapBackup.iconset/icon_256x256@2x.png
-   sips -z  512  512 snap-backup-icon.png --out SnapBackup.iconset/icon_512x512.png
-   sips -z 1024 1024 snap-backup-icon.png --out SnapBackup.iconset/icon_512x512@2x.png
+   sips --version
+   sips --resampleHeightWidth 480 480 --padToHeightWidth 512 512 $iconPng  \
+      --out SnapBackup.iconset/icon_512x512.png
    iconutil --convert icns SnapBackup.iconset
-   mkdir -p package/macosx
-   sips -z 100 100 -p 150 150 snap-backup-icon.png --out package/macosx/SnapBackup-background.png
-   mv SnapBackup.icns package/macosx
-   echo "macOS installer (javapackager):"
-   $JAVA_HOME/bin/javapackager -version
-   $JAVA_HOME/bin/javapackager -deploy -native pkg -name SnapBackup \
-      -BappVersion=$version -Bicon=package/macosx/SnapBackup.icns \
-      -srcdir . -srcfiles snapbackup.jar -appclass org.snapbackup.SnapBackup \
-      -outdir out -v
-   cp out/SnapBackup-*.pkg snap-backup-installer-v$version.pkg
-   mv snapbackup.jar snapbackup-v$version.jar
-   echo "Output:"
-   ls -o *.pkg
+   mkdir -p package/macos
+   mv -v SnapBackup.icns package/macos
+   sips --resampleHeightWidth 120 120 --padToHeightWidth 175 175 $iconPng  \
+      --out package/macos/SnapBackup-background.png
+   cp -v package/macos/SnapBackup-background.png package/macos/SnapBackup-background-darkAqua.png
+   echo
+   }
+
+createMacInstaller() {
+   cd $projectHome/build
+   echo "Create macOS installer:"
+   jpackage --version
+   echo "Packaging..."
+   jpackage --name SnapBackup --input . --license-file ../LICENSE.txt --main-jar snapbackup.jar  \
+      --app-version $version --resource-dir package/macos --type pkg
+   mv -v SnapBackup-$version.pkg snap-backup-installer-v$version.pkg
+   mv -v snapbackup.jar snapbackup-v$version.jar
+   ls -o *.jar *.pkg
    echo
    }
 
@@ -96,5 +87,6 @@ updateReleasesFolder() {
 displayIntro
 setupBuildTools
 buildExecutableJar
-buildMacInstaller
+createResources
+createMacInstaller
 updateReleasesFolder
