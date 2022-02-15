@@ -27,7 +27,7 @@ import org.snapbackup.settings.UserPreferences;
 public class ImportPrefs {
 
    public static String xmlToData (String xml) {
-      //See ExportDataModel.dataToXml
+      // See: ExportDataModel.dataToXml
       return xml.replace(
          "&lt;", "<").replace(
          "&gt;", ">").replace(
@@ -52,14 +52,14 @@ public class ImportPrefs {
    public String doImport(String fileName) {
       String errMsg = null;
       try {
-         //Validate XML against XSD
+         // Validate XML against XSD
          InputStream schemaInput =
             getClass().getResourceAsStream("SnapBackupSettings.xsd");
          Schema schema = SchemaFactory.newInstance(
             XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(new StreamSource(schemaInput));
          schema.newValidator().validate(new StreamSource(new File(fileName)));
 
-         //Process XML
+         // Process XML
          Document xmlDoc;
          DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
          DocumentBuilder xmlBuilder = docBuilderFactory.newDocumentBuilder();

@@ -17,7 +17,7 @@ public class AboutUIProperties {
 
    static final String space =  SystemAttributes.space;
    //
-   //From .properties File
+   // From .properties file
    //
    public final String aboutTitle =        AppProperties.getPropertyPadded("AboutTitle");
    public final String aboutAppTitle =     AppProperties.getProperty("ApplicationTitle");

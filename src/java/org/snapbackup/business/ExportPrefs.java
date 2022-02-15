@@ -34,7 +34,7 @@ public class ExportPrefs {
    public final XmlFileFilter xmlFilter = new XmlFileFilter();
 
    public static String dataToXml (String data) {
-      //See ImportDataModel.xmlToData
+      // See ImportDataModel.xmlToData
       return data.replace(
          //"<", "&lt;").replace(
          //">", "&gt;").replace(
@@ -52,7 +52,7 @@ public class ExportPrefs {
       }
 
    String writeXmlFile(Document doc, String filename) {
-      //Output DOM to an XML file
+      // Output DOM to an XML file
       String errMsg = null;
       try {
          Source source = new DOMSource(doc);
@@ -82,7 +82,7 @@ public class ExportPrefs {
       Element topNode = xmlDoc.createElement(xmlTopNodeName);
       xmlDoc.appendChild(topNode);
 
-      //Add System Info to DOM
+      // Add System Info to DOM
       Element infoNode = xmlDoc.createElement(xmlInfoNodeName);
       topNode.appendChild(infoNode);
       infoNode.appendChild(xmlDoc.createTextNode(
@@ -91,7 +91,7 @@ public class ExportPrefs {
          SystemAttributes.osInfo + SystemAttributes.dividerStr +
          SystemAttributes.javaVersion));
 
-      //Add Settings Data to DOM
+      // Add Settings Data to DOM
       String[] data = UserPreferences.getAllKeys();
       Element settingNode = xmlDoc.createElement(xmlSettingsNodeName);
       topNode.appendChild(settingNode);

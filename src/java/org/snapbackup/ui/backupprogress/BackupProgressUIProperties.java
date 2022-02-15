@@ -14,10 +14,10 @@ import org.snapbackup.settings.AppProperties;
 
 public class BackupProgressUIProperties {
 
-   //Constants
+   // Constants
    public static final int progressMax = 20;
 
-   //Backup Progress
+   // Backup Progress
    public static final String backupProgressTitle =      AppProperties.getProperty("BackupProgressTitle");
    public static final String backupProgressTag =        AppProperties.getPropertyPadded("BackupProgressTag");
    public static final String backupProgressFiles =      AppProperties.getPropertyPadded("BackupProgressFiles");

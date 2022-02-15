@@ -38,7 +38,7 @@ public class AboutDialog extends JDialog {
    final String licenseStr =     ui.aboutLicense + newLine + newLine +
       ui.aboutDownload + newLine + tab + SystemAttributes.downloadURL;
 
-   //Define About Controls
+   // Define About Controls
    JPanel    aboutPanel =        new JPanel();
    JLabel    logo =              new JLabel(Icons.logoIcon);
    JLabel    productName =       new JLabel(UIProperties.current.header);

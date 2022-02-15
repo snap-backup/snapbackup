@@ -28,7 +28,7 @@ import org.snapbackup.utilities.ZipEngine;
 
 public abstract class DataModel {
 
-   //Top-lever user prefereences
+   // Top-lever user prefereences
    static final String prefAppVersion =     "AppVersion";
    static final String prefShowLanguages =  "ShowLanguages";
    static final String prefFiltersEnabled = "FiltersEnabled";
@@ -36,7 +36,7 @@ public abstract class DataModel {
    public static final String prefCurrentProfile = "CurrentProfile";
    public static final String prefSkinName =       "SkinName";
 
-   //User preferences associated with each profile
+   // User preferences associated with each profile
    static final String prefProfileName =    "ProfileName";
    static final String prefSrcDataList =    "SrcDataList";
    static final String prefSrcDataIncludeList =       "SrcDataIncludeList";        //filter
@@ -51,7 +51,7 @@ public abstract class DataModel {
    static final String prefArchiveDir =     "ArchiveDir";
    static final String prefArchiveDirWin =  "ArchiveDirWin";
 
-   //Constants
+   // Constants
    static final int    kb =                1024;
    static final String nullStr =           SystemAttributes.nullStr;
    static final String space =             SystemAttributes.space;
@@ -71,11 +71,11 @@ public abstract class DataModel {
    static final String filterMarkerUnits = AppProperties.getPropertyPadded("FilterMarkerUnits");  //usually: "KB"
 
 
-   //User selections not owned by a UI control
+   // User selections not owned by a UI control
    static List<String>
       zipItemList, zipIncludeList, zipExcludeList, zipExcludeFolderList, zipExcludeSizeList;
 
-   //Command-line data
+   // Command-line data
    static String  cmdBackupDir;
    static String  cmdBackupName;
    static String  cmdBackupPath;
@@ -154,7 +154,7 @@ public abstract class DataModel {
       final boolean archiveOn = f.getDestArchivePromptCheckBox().isSelected();
       f.getDestArchiveDirTextField().setEnabled(archiveOn);
       f.getDestArchiveChooserButton().setEnabled(archiveOn);
-      f.getDestArchiveTagLabel().setEnabled(archiveOn || !SystemAttributes.evilWinSys);  //Fix disappearing icon problem on Macs and Linux
+      f.getDestArchiveTagLabel().setEnabled(archiveOn || !SystemAttributes.evilWinSys);  //fix disappearing icon problem on Macs and Linux
       f.getDestArchivePathLabel().setEnabled(archiveOn);
       f.getDestArchiveDirTextField().repaint();
       f.getDestArchiveChooserButton().repaint();
@@ -169,7 +169,7 @@ public abstract class DataModel {
       }
 
    static String list2StrList(List<String> list) {
-      //Converts multi-line data (List) into a single long string using the "splitStr" delimiter
+      // Converts multi-line data (List) into a single long string using the "splitStr" delimiter
       StringBuffer strList = new StringBuffer();
       boolean firstLine = true;
       for (String line : list) {
@@ -180,7 +180,7 @@ public abstract class DataModel {
       }
 
    static List<String> strList2List(String strList, int minSize) {
-      //Creates a List of lines from a string of multi-line data delimited with "splitStr"
+      // Creates a List of lines from a string of multi-line data delimited with "splitStr"
       List<String> list =
             new ArrayList<String>(Arrays.asList(strList.split(SystemAttributes.splitStr)));
       if (nullStr.equals(strList))
@@ -297,14 +297,14 @@ public abstract class DataModel {
       }
 
    static void loadZipList(SnapBackupFrame f) {
-      //Zip list data store
+      // Zip list data store
       zipItemList = strList2List(UserPreferences.readProfilePref(prefSrcDataList));
       zipIncludeList = strList2List(UserPreferences.readProfilePref(prefSrcDataIncludeList), zipItemList.size());
       zipExcludeList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeList), zipItemList.size());
       zipExcludeFolderList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeFolderList), zipItemList.size());
       zipExcludeSizeList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeSizeList), zipItemList.size());
 
-      //Zip list ui control
+      // Zip list ui control
       if (f != null)
          buildZipListModel(f.getSrcZipListModel(), f);
       }
@@ -329,7 +329,7 @@ public abstract class DataModel {
       }
 
    public static void initSettings() {
-      //Command-line
+      // Command-line
       initSupplimentalSettings();
       loadZipList(null);
       }

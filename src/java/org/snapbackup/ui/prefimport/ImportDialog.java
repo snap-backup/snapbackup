@@ -30,7 +30,7 @@ import org.snapbackup.settings.UserPreferences;
 
 public class ImportDialog extends JDialog {
 
-   //Define Controls
+   // Define Controls
    ImportUIProperties ui = new ImportUIProperties();
    JPanel       basePanel =               new JPanel();
    JPanel       locationPanel =           new JPanel();

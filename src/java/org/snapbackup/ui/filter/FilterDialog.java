@@ -28,7 +28,7 @@ public class FilterDialog extends JDialog {
    String nullStr = SystemAttributes.nullStr;
    FilterUIProperties ui = new FilterUIProperties();   //make singleton for performance????
 
-   //Define Controls
+   // Define Controls
    JPanel     filterPanel =               new JPanel();
 
    JLabel     tagLabel =                  new JLabel(ui.filterRuleTag);

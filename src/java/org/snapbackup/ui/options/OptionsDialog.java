@@ -34,7 +34,7 @@ public class OptionsDialog extends JDialog {
       return strArray;
       }
 
-   //Define Options Controls
+   // Define Options Controls
    String coreBackupName;
    OptionsUIProperties ui = new OptionsUIProperties();   //make singleton for performance????
 
@@ -49,9 +49,9 @@ public class OptionsDialog extends JDialog {
    JComboBox<String> spacerDropDown =  new JComboBox<String>(str2Array(ui.fileFormatSpacerList));
    JPanel       orderPanel =           new JPanel();
    JLabel       orderLabel =           new JLabel(ui.fileFormatOrderPrompt);
-   JComboBox<String> order1stDropDown =  new JComboBox<String>(ui.orderList);
-   JComboBox<String> order2ndDropDown =  new JComboBox<String>(ui.orderList);
-   JComboBox<String> order3rdDropDown =  new JComboBox<String>(ui.orderListNone);
+   JComboBox<String> order1stDropDown = new JComboBox<String>(ui.orderList);
+   JComboBox<String> order2ndDropDown = new JComboBox<String>(ui.orderList);
+   JComboBox<String> order3rdDropDown = new JComboBox<String>(ui.orderListNone);
    List<JComboBox<String>> orderDropDowns = Arrays.asList(order1stDropDown, order2ndDropDown, order3rdDropDown);
    boolean      orderUserInputMode;    //Yeah, this is a hack
    JPanel       yearPanel =            new JPanel();
@@ -61,7 +61,7 @@ public class OptionsDialog extends JDialog {
    JRadioButton year4DigitsButton =    new JRadioButton(ui.fileFormatYear4Digits);
    JPanel       separatorPanel =       new JPanel();
    JLabel       separatorPromptLabel = new JLabel(ui.fileFormatSeparatorPrompt);
-   JComboBox<String> separatorDropDown =  new JComboBox<String>(str2Array(ui.fileFormatSeparatorList));
+   JComboBox<String> separatorDropDown = new JComboBox<String>(str2Array(ui.fileFormatSeparatorList));
 
    JPanel       fileOverwritePanel =   new JPanel();
    JLabel       askBackupLabel =       new JLabel(ui.overwriteBackupPrompt);

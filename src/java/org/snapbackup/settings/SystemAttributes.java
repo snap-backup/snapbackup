@@ -15,38 +15,38 @@ import java.util.Locale;
 import java.util.Properties;
 import javax.swing.filechooser.FileSystemView;
 
-//Constant values that do not belong in the properties file.
+// Constant values that do not belong in the properties file.
 public class SystemAttributes {
 
-   //Release constants
+   // Release constants
    public static final String appName = "SnapBackup";  //".properties" name
    public static final String appVersion = "6.3.0";  //keep in sync with package.json
-   // 6.3.0 - 8/3/2018 -   Support Java 9
-   // 6.2.0 - 7/30/2017 -  Exclude Windows recycle bin and improved showing largest files option
+   // 6.3.0 - 08/03/2018 - Support Java 9
+   // 6.2.0 - 07/30/2017 - Exclude Windows recycle bin and improved showing largest files option
    // 6.1.0 - 10/16/2016 - Automatically skip extraneous files and switch to semantic versioning
-   // 6.0 -   8/16/2015 -  Upgrade to Java 7
-   // 5.6 -   4/23/2011 -  Albanian
-   // 5.5 -   1/2/2011 -   Romanian
+   // 6.0 -   08/16/2015 - Upgrade to Java 7
+   // 5.6 -   04/23/2011 - Albanian
+   // 5.5 -   01/02/2011 - Romanian
    // 5.4 -   10/24/2010 - Manifest splash screen and convert to .org
-   // 5.3 -   4/17/2010 -  Indonesian
-   // 5.2 -   1/2/2010 -   Added reporting of largest files to the Message Log
-   // 5.1 -   6/2/2009 -   Added Check for Updates feature (and moved prefs)
-   // 5.0 -   5/6/2009 -   Added import/export and switched to Java 5.0
-   // 4.5 -   9/7/2008 -   Slovene (Slovenian)
-   // 4.4 -   6/9/2006 -   Korean, user guide print button, and exclude .DS_Store on Macs
-   // 4.3 -   5/7/2006 -   Portuguese
-   // 4.2 -   4/22/2006 -  Spanish
-   // 4.1 -   1/18/2006 -  Dutch
+   // 5.3 -   04/17/2010 - Indonesian
+   // 5.2 -   01/02/2010 - Added reporting of largest files to the Message Log
+   // 5.1 -   06/02/2009 - Added Check for Updates feature (and moved prefs)
+   // 5.0 -   05/06/2009 - Added import/export and switched to Java 5.0
+   // 4.5 -   09/07/2008 - Slovene (Slovenian)
+   // 4.4 -   06/09/2006 - Korean, user guide print button, and exclude .DS_Store on Macs
+   // 4.3 -   05/07/2006 - Portuguese
+   // 4.2 -   04/22/2006 - Spanish
+   // 4.1 -   01/18/2006 - Dutch
    // 4.0 -   12/18/2005 - Configurable source and log height (options)
-   // 3.8 -   12/1/2005 -  Skins (save user selection in preferences)
+   // 3.8 -   12/01/2005 - Skins (save user selection in preferences)
    // 3.7 -   10/23/2005 - Russian
-   // 3.6 -   9/22/2005 -  Esperanto and command-line
-   // 3.5 -   9/??/2005 -  Options feature
-   // 3.4 -   9/2/2005 -   Folder support for filters
-   // 3.3 -   7/5/2005 -   German
-   // 3.2 -   6/17/2005 -  Italian
-   // 3.1 -   6/1/2005 -   Filters
-   // 3.0 -   5/9/2005 -   Multiple profiles
+   // 3.6 -   09/22/2005 - Esperanto and command-line
+   // 3.5 -   09/??/2005 - Options feature
+   // 3.4 -   09/02/2005 - Folder support for filters
+   // 3.3 -   07/05/2005 - German
+   // 3.2 -   06/17/2005 - Italian
+   // 3.1 -   06/01/2005 - Filters
+   // 3.0 -   05/09/2005 - Multiple profiles
    public static final String[] localeCodes = {
       "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq"
       };
@@ -68,7 +68,7 @@ public class SystemAttributes {
       { "Dany",                   "https://en.wikipedia.org/wiki/Romanian_language" },    //"ro"
       { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                       //"sq"
       };
-   public static final String appAuthors = "Dem Pilafian";  //Names of code contributors
+   public static final String appAuthors = "Dem Pilafian";  //names of code contributors
    public static final String appCopyright =
       "Copyright &copy; individual contributors to the Snap Backup project<br>" +
       "Snap Backup&reg; is a registered trademark of Center Key";

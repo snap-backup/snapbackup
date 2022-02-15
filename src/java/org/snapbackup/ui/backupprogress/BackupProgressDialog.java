@@ -39,7 +39,7 @@ public class BackupProgressDialog extends JDialog {
       nfp.setMinimumFractionDigits(1);
       nfp.setMaximumFractionDigits(1);
 
-      //Create Controls
+      // Create Controls
       progressLabel = new JLabel(BackupProgressUIProperties.backupProgressTag);
       backupPB = new JProgressBar(0, progressMax);
       memFreeLabel = new JLabel(BackupProgressUIProperties.backupProgressMemoryFree);
@@ -48,7 +48,7 @@ public class BackupProgressDialog extends JDialog {
          public void actionPerformed(ActionEvent e) { cancelButtonAction(e); }
          } );
 
-      //Allign Controls
+      // Allign Controls
       progressLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 2, 0));
       backupPB.setBorder(BorderFactory.createEmptyBorder(0, 30, 20, 30));
       memFreeLabel.setBorder(BorderFactory.createEmptyBorder(2, 0, 20, 0));
@@ -57,7 +57,7 @@ public class BackupProgressDialog extends JDialog {
       memFreeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
       cancelButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-      //Add Controls and Display
+      // Add Controls and Display
       JPanel backupProgressPanel = new JPanel();
       backupProgressPanel.setLayout(new BoxLayout(backupProgressPanel, BoxLayout.Y_AXIS));
       backupProgressPanel.add(progressLabel);

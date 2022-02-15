@@ -40,7 +40,7 @@ public class SnapBackupFrame extends JFrame {
 
    UIProperties ui = UIProperties.current;
 
-   //Define Menu Controls
+   // Define Menu Controls
    JMenuBar    menuBar =           new JMenuBar();
    JMenu       fileMenuGroup =     new JMenu(ui.menuGroupFile);
    JMenu       languagesMenuItem = new JMenu(ui.menuItemLangs);
@@ -71,10 +71,10 @@ public class SnapBackupFrame extends JFrame {
    JMenuItem   updatesMenuItem =   new JMenuItem(ui.menuItemUpdates);
    JMenuItem   aboutMenuItem =     new JMenuItem(ui.menuItemAbout);
 
-   //Define Base
+   // Define Base
    JPanel  basePanel =          new JPanel();
 
-   //Define Header Panels
+   // Define Header Panels
    JPanel   headerPanel =     new JPanel();
    JPanel   titlePanel =      new JPanel();  //holds title & source
    JLabel   titleLabel =      new JLabel(ui.header);
@@ -85,7 +85,7 @@ public class SnapBackupFrame extends JFrame {
    JPanel   iconPanel =       new JPanel();  //holds icon & profiles
    JLabel   iconLabel =       new JLabel(Icons.snapBackupIcon);
 
-   //Define Profiles Controls
+   // Define Profiles Controls
    JPanel     profilesPanel =            new JPanel();
    JPanel     profilesInnerPanel =       new JPanel();
    JPanel     profilesButtonPanel =      new JPanel();
@@ -96,7 +96,7 @@ public class SnapBackupFrame extends JFrame {
    JButton    profilesAddButton =        new JButton(ui.profilesNew);
    JButton    profilesDeleteButton =     new JButton(ui.profilesDelete);
 
-   //Define Source (Zip List) Controls
+   // Define Source (Zip List) Controls
    JPanel       srcPanel =             new JPanel();
    JPanel       srcPanelButtons =      new JPanel();
    JLabel       srcPromptLabel =       new JLabel(ui.srcPrompt);
@@ -108,10 +108,10 @@ public class SnapBackupFrame extends JFrame {
    JButton      srcRemoveButton =      new JButton(ui.srcRemove);
    JButton      srcFilterButton =      new JButton(ui.srcFilter);
 
-   //Define Tip
+   // Define Tip
    JLabel tipLabel = new JLabel(ui.tip);
 
-   //Define Destination (Backup & Archive) Controls
+   // Define Destination (Backup & Archive) Controls
    JPanel       destPanel =                 new JPanel(new GridBagLayout());
    JLabel       destBackupPromptLabel =     new JLabel(ui.destBackupPrompt);
    JTextField   destBackupDirTextField =    new JTextField(UIProperties.srcDirCols);
@@ -126,12 +126,12 @@ public class SnapBackupFrame extends JFrame {
    JLabel       destArchiveTagLabel =       new JLabel(ui.destArchiveTag);
    JLabel       destArchivePathLabel =      new JLabel();
 
-   //Define Log Controls
+   // Define Log Controls
    JPanel      logPanel =      new JPanel();
    JScrollPane logScrollPane = new JScrollPane();
    JTextArea   logTextArea =   new JTextArea(UIProperties.logMinRows, UIProperties.logCols);
 
-   //Define Button Controls
+   // Define Button Controls
    JPanel  buttonPanel =    new JPanel();
    JButton saveButton =     new JButton(ui.buttonSave);
    JButton resetButton =    new JButton(ui.buttonReset);
@@ -182,7 +182,7 @@ public class SnapBackupFrame extends JFrame {
       }
 
    void configureContols() {
-      //Configure Menu Controls
+      // Configure Menu Controls
       languagesGroup.add(languagesMenuItemButtonShow);
       languagesGroup.add(languagesMenuItemButtonHide);
       languagesMenuItem.add(languagesMenuItemButtonShow);  //menu: File | Language Options | Show
@@ -197,11 +197,11 @@ public class SnapBackupFrame extends JFrame {
       profilesMenuItem.add(profilesMenuItemButtonOn);   //menu: File | Multiple Profiles | On
       profilesMenuItem.add(profilesMenuItemButtonOff);  //menu: File | Multiple Profiles | Off
 
-      //Configure Base
+      // Configure Base
       basePanel.setLayout(new BoxLayout(basePanel, BoxLayout.PAGE_AXIS));
       basePanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 
-      //Configure Header
+      // Configure Header
       headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.LINE_AXIS));
       titlePanel.setLayout(new BorderLayout());
       iconPanel.setLayout(new BoxLayout(iconPanel, BoxLayout.PAGE_AXIS));
@@ -219,7 +219,7 @@ public class SnapBackupFrame extends JFrame {
       srcPanel.setAlignmentX(0.5f);
       tipLabel.setAlignmentX(0.5f);
 
-      //Configure Profiles
+      // Configure Profiles
       profilesPanel.setLayout(new FlowLayout());
       profilesPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 0));
       profilesPanel.setAlignmentX(1.0f);
@@ -229,19 +229,19 @@ public class SnapBackupFrame extends JFrame {
       profilesDropDown.setAlignmentX(0.0f);
       profilesButtonPanel.setAlignmentX(0.0f);
 
-      //Configure Source (Zip List) Controls
+      // Configure Source (Zip List) Controls
       srcPanel.setLayout(new BorderLayout());
       srcPanel.setBorder(BorderFactory.createTitledBorder(ui.srcTitle));
       srcZipList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-      srcZipList.setVisibleRowCount(UIProperties.srcMinRows);  //Set field height
-      //srcZipList.setVisibleRowCount(15);  //Set field height !!!!!!!!!!
+      srcZipList.setVisibleRowCount(UIProperties.srcMinRows);  //set field height
+      //srcZipList.setVisibleRowCount(15);  //set field height
 
-      //Configure Tip
+      // Configure Tip
       tipLabel.setHorizontalAlignment(JLabel.CENTER);
       tipLabel.setToolTipText(ui.tipHelp);
       tipLabel.setFont(new Font(null, Font.BOLD, tipLabel.getFont().getSize()-1));
 
-      //Configure Destination (Backup & Archive) Controls
+      // Configure Destination (Backup & Archive) Controls
       destPanel.setBorder(BorderFactory.createTitledBorder(ui.destTitle));
       //destBackupChooserButton.setIcon(Icons.folderIcon);
       destBackupChooserButton.setToolTipText(ui.destBackupCmd);
@@ -253,7 +253,7 @@ public class SnapBackupFrame extends JFrame {
       destArchiveTagLabel.setIcon(Icons.driveIcon);
       UIUtilities.makeEmphasized(destArchivePathLabel);
 
-      //Configure Log Controls
+      // Configure Log Controls
       logPanel.setLayout(new BorderLayout());
       logPanel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createEmptyBorder(15, 0, 5, 0),
@@ -268,14 +268,14 @@ public class SnapBackupFrame extends JFrame {
          BorderFactory.createTitledBorder(ui.logTitle)));
          */
 
-      //Configure Button Controls
+      // Configure Button Controls
       UIUtilities.addFastKeys(buttonList);
       UIUtilities.makeBold(doBackupButton);
       getRootPane().setDefaultButton(doBackupButton);
       }
 
    public void addContols() {
-      //Add Menu Controls
+      // Add Menu Controls
       setJMenuBar(menuBar);
       menuBar.add(fileMenuGroup);            //menu: File
       fileMenuGroup.add(languagesMenuItem);  //menu: File | Langauge Options
@@ -293,11 +293,11 @@ public class SnapBackupFrame extends JFrame {
       helpMenuGroup.add(updatesMenuItem);    //menu: Help | Check for Updates
       helpMenuGroup.add(aboutMenuItem);      //menu: Help | About
 
-      //Add Title Control
+      // Add Title Control
       titlePanel.add(titleLabel, BorderLayout.PAGE_START);
 
       ////////////////////////
-      //Configure Language Flags
+      // Configure Language Flags
       final String localeCodeKey = SystemAttributes.userName;  //actual value not important
       Locale currentLocale = new Locale(UserPreferences.readLocalePref());
       //sortLocaleCodes(SystemAttributes.localeCodes, currentLocale);
@@ -332,7 +332,7 @@ public class SnapBackupFrame extends JFrame {
       //   iconPanel.add(langFlagsPanels[count]);
       iconPanel.add(iconLabel);
 
-      //Add Profiles
+      // Add Profiles
       profilesInnerPanel.add(profilesPromptLabel);
       profilesInnerPanel.add(profilesDropDown);
       profilesButtonPanel.add(profilesAddButton);
@@ -341,7 +341,7 @@ public class SnapBackupFrame extends JFrame {
       profilesPanel.add(profilesInnerPanel);
       iconPanel.add(profilesPanel);
 
-      //Add Source (Zip List) Controls
+      // Add Source (Zip List) Controls
       srcZipListScrollPane.setViewportView(srcZipList);
       srcPanel.add(srcPromptLabel, BorderLayout.PAGE_START);
       srcPanel.add(srcZipListScrollPane, BorderLayout.CENTER);
@@ -352,13 +352,13 @@ public class SnapBackupFrame extends JFrame {
       srcPanel.add(srcPanelButtons, BorderLayout.PAGE_END);
       titlePanel.add(srcPanel, BorderLayout.CENTER);
 
-      //Add Tip
+      // Add Tip
       titlePanel.add(tipLabel, BorderLayout.PAGE_END);
       headerPanel.add(titlePanel);
       headerPanel.add(iconPanel);
       basePanel.add(headerPanel);
 
-      //Add Destination (Backup and Archive) Controls
+      // Add Destination (Backup and Archive) Controls
       GridBagConstraints destFormat = new GridBagConstraints();
       destFormat.anchor = GridBagConstraints.WEST;
       destFormat.insets = new Insets(0, 10, 0, 10);  //top, left, bottom, right
@@ -379,19 +379,19 @@ public class SnapBackupFrame extends JFrame {
       destPanel.add(destArchivePathLabel,      gridLoc(destFormat, 1, 5, 4, 1));
       basePanel.add(destPanel);
 
-      //Add Log Controls
+      // Add Log Controls
       logScrollPane.setViewportView(logTextArea);
       logPanel.add(logScrollPane, BorderLayout.CENTER);
       basePanel.add(logPanel);
 
-      //Add Button Controls
+      // Add Button Controls
       buttonPanel.add(saveButton);
       buttonPanel.add(resetButton);
       buttonPanel.add(doBackupButton);
       buttonPanel.add(exitButton);
       basePanel.add(buttonPanel);
 
-      //Put It All Together
+      // Put It All Together
       getContentPane().add(basePanel);
 
       }
@@ -555,7 +555,7 @@ public class SnapBackupFrame extends JFrame {
       optionsMenuItem.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { optionsMenuItemAction(); }
          } );
-      //Skin (Look and Feel)
+      // Skin (Look and Feel)
       String currentSkinName = UserPreferences.readPref(DataModel.prefSkinName);
       currentSkinName = UIManager.getLookAndFeel().getClass().getName();
       JRadioButtonMenuItem skinRbmi;
@@ -589,7 +589,7 @@ public class SnapBackupFrame extends JFrame {
    //
    public void setupCallbacks() {
 
-      //Setup Callbacks for Profiles Controls
+      // Setup Callbacks for Profiles Controls
       profilesDropDown.addItemListener(new ItemListener() {
          public void itemStateChanged(ItemEvent e) {
             if (e.getStateChange() == ItemEvent.SELECTED) profilesSelectAction(); }
@@ -601,7 +601,7 @@ public class SnapBackupFrame extends JFrame {
          public void actionPerformed(ActionEvent e) { profilesDeleteButtonAction(); }
          } );
 
-      //Setup Callbacks for Source (Zip List) Controls
+      // Setup Callbacks for Source (Zip List) Controls
       srcZipList.addListSelectionListener(new ListSelectionListener() {
          public void valueChanged(ListSelectionEvent e) { srcZipListSelection(); }
          } );
@@ -620,7 +620,7 @@ public class SnapBackupFrame extends JFrame {
           public void actionPerformed(ActionEvent e) { srcFilterButtonAction(); }
           } );
 
-      //Setup Callbacks for Destination (Backup & Archive) Controls
+      // Setup Callbacks for Destination (Backup & Archive) Controls
       destBackupDirTextField.addKeyListener(new KeyAdapter() {
          @Override
          public void keyReleased(KeyEvent e) { destBackupDirTextFieldEdited(); }
@@ -643,7 +643,7 @@ public class SnapBackupFrame extends JFrame {
          public void actionPerformed(ActionEvent e) { destArchiveChooserButtonAction(); }
          } );
 
-      //Setup Callbacks for Button Controls
+      // Setup Callbacks for Button Controls
       saveButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { saveButtonAction(); }
          } );
@@ -662,7 +662,7 @@ public class SnapBackupFrame extends JFrame {
    // Callback Methods (Event Actions)
    //
 
-   //Menu Items Callbacks
+   // Menu Items Callbacks
    public void languagesMenuItemAction() {
       for (JPanel flagPanel : langFlagsPanels)
          flagPanel.setVisible(languagesMenuItemButtonShow.isSelected());
@@ -726,7 +726,7 @@ public class SnapBackupFrame extends JFrame {
       if (!oldNumRowsSrc.equals(UserPreferences.readPref(Options.prefNumRowsSrc)) ||
          !oldNumRowsLog.equals(UserPreferences.readPref(Options.prefNumRowsLog))) {
          UIUtilities.setInitialNumRows(this);
-         //Below lines are hack to force resize of frame (freaky!)
+         // Below lines are hack to force resize of frame (freaky!)
          this.setSize(this.getWidth()+1, this.getHeight());  //N
          this.validate();   //N
          this.pack();   //N
@@ -762,7 +762,7 @@ public class SnapBackupFrame extends JFrame {
       new AboutDialog(this);
       }
 
-   //Language Icon Callbacks
+   // Language Icon Callbacks
    public void selectLanguage(String localeCode) {
       UserPreferences.saveLocalePref(localeCode);
       AppProperties.reload();
@@ -771,7 +771,7 @@ public class SnapBackupFrame extends JFrame {
       this.dispose();
       }
 
-   //Profiles Callbacks
+   // Profiles Callbacks
    public void profilesSelectAction() {
        setCurrentProfile((String)profilesDropDown.getSelectedItem());
        DataModel.loadProfile(this);
@@ -824,7 +824,7 @@ public class SnapBackupFrame extends JFrame {
          }
       }
 
-   //Source Callbacks
+   // Source Callbacks
    public void srcZipListSelection() {
       DataModel.updateSrcButtons(this);
       }
@@ -839,8 +839,8 @@ public class SnapBackupFrame extends JFrame {
       srcAddFileChooser.setFileSelectionMode(fileSelectionMode);
       //jFileChooserData.setCurrentDirectory(new File(nullStr));
       srcAddFileChooser.setFileHidingEnabled(!SystemAttributes.evilWinSys);
-      //Above line enables Windows users to see the "Application Data" folder.
-      //A better option would probably be to add a user set option to control this.
+      // Above line enables Windows users to see the "Application Data" folder.
+      // A better option would probably be to add a user set option to control this.
       final int returnStatus =
          //srcAddFileChooser.showDialog(this, ui.srcAddCmd);
          srcAddFileChooser.showOpenDialog(this);
@@ -856,7 +856,7 @@ public class SnapBackupFrame extends JFrame {
       }
 
 
-   //Destination Callbacks
+   // Destination Callbacks
    public void destChooserButtonAction(JTextField destDirTextField, String msg) {
       JFileChooser destFileChooser = new JFileChooser();
       destFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -887,7 +887,7 @@ public class SnapBackupFrame extends JFrame {
       DataModel.updateArchiveDir(this);
       }
 
-   //Button Callbacks
+   // Button Callbacks
    public void destArchiveDirTextFieldEdited() {
       DataModel.updateDestPaths(this);
       }

@@ -26,7 +26,7 @@ import org.snapbackup.settings.UserPreferences;
 
 public class ExportDialog extends JDialog {
 
-   //Define Controls
+   // Define Controls
    ExportUIProperties ui = new ExportUIProperties();
    JPanel       basePanel =               new JPanel();
    JPanel       locationPanel =           new JPanel();

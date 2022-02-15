@@ -16,11 +16,11 @@ import org.snapbackup.settings.AppProperties;
 
 public class Export {
 
-   //Constants
+   // Constants
    public static final String prefSettingsFileName = "ExportFileName";
    public static final int    fileNameCols =         40;
 
-   //Setup
+   // Setup
    public final String Settings = AppProperties.getProperty("ExportSettings");
    public final String defaultSettingsFileName =
       SystemAttributes.userDocsDir + SystemAttributes.fileSeparator +

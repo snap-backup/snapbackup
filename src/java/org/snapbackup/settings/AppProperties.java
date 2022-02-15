@@ -31,8 +31,7 @@ public abstract class AppProperties {
       }
 
    public static String getProperty(String propertyName) {
-      //Reads a property from the ".properties" file.
-      //String propertyValue;
+      // Reads a property from the ".properties" file.
       try {
          return applicationResources.getString(propertyName);
          }
