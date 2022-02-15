@@ -13,16 +13,16 @@ import { readFileSync } from 'fs';
 
 // Setup
 const pkg = JSON.parse(readFileSync('./package.json'));
-const releaseUrl = pkg.homepage + '/blob/main/releases/';
+const releaseUrl = pkg.homepage + '/raw/main/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',
    win:  'snap-backup-installer-v' + pkg.version + '.msi',
    java: 'snapbackup-v' +            pkg.version + '.jar',
    };
 const download = {
-   mac:  releaseUrl + installer.mac +  '?raw=true',
-   win:  releaseUrl + installer.win +  '?raw=true',
-   java: releaseUrl + installer.java + '?raw=true',
+   mac:  releaseUrl + installer.mac,
+   win:  releaseUrl + installer.win,
+   java: releaseUrl + installer.java,
    past: releaseUrl + 'archive',
    };
 const context = {

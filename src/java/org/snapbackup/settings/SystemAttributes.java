@@ -20,7 +20,8 @@ public class SystemAttributes {
 
    // Release constants
    public static final String appName = "SnapBackup";  //".properties" name
-   public static final String appVersion = "6.3.0";  //keep in sync with package.json
+   public static final String appVersion = "6.4.0";  //keep in sync with package.json
+   // 6.4.0 - 02/15/2022 - Support openjdk and use jpackage to create installer
    // 6.3.0 - 08/03/2018 - Support Java 9
    // 6.2.0 - 07/30/2017 - Exclude Windows recycle bin and improved showing largest files option
    // 6.1.0 - 10/16/2016 - Automatically skip extraneous files and switch to semantic versioning

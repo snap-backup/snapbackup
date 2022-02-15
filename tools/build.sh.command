@@ -77,10 +77,12 @@ createMacInstaller() {
 updateReleasesFolder() {
    cd $projectHome
    echo "Releases folder:"
+   rm releases/*.jar releases/*.pkg
    cp -v build/snap-backup-installer-*.pkg releases
    cp -v build/snap-backup-installer-*.pkg releases/archive
    cp -v build/snapbackup-*.jar            releases
    cp -v build/snapbackup-*.jar            releases/archive
+   echo "[Only add files to the archive folder -- git discard modified files]"
    echo
    }
 
