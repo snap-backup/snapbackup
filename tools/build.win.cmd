@@ -25,8 +25,8 @@
 ::
 :: WiX Toolset
 :: ===========
-:: Enable .NET Framework
-::    Start --> Windows System --> Control Panel --> Programs --> 
+:: Enable .NET Framework:
+::    Start --> Windows System --> Control Panel --> Programs -->
 ::    Turn Windows features on or off --> check ".NET Framework 3.5" --> OK
 :: Download and run the "WiX Toolset build tools" installer:
 ::   https://wixtoolset.org/releases  (use latest v3 download)

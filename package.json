@@ -44,17 +44,17 @@
       "interactive": "browser-sync websites-target --watch"
    },
    "cdnVersion": {
-      "dnajs": "1.9",
-      "fontAwesome": "6.0",
+      "dnajs": "2.0",
+      "fontAwesome": "6.1",
       "hamburgerMenu": "0.3",
       "jQuery": "3.6",
-      "webIgnition": "1.4"
+      "webIgnition": "1.5"
    },
    "dependencies": {
-      "dna.js": "~1.9",
+      "dna.js": "~2.0",
       "hamburger-menu": "~0.4",
       "jquery": "~3.6",
-      "web-ignition": "~1.4"
+      "web-ignition": "~1.5"
    },
    "devDependencies": {
       "browser-sync": "~2.27",
