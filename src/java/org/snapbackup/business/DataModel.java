@@ -132,7 +132,7 @@ public abstract class DataModel {
       buildZipListModel(f.getSrcZipListModel(), f);
       f.getDestBackupDirTextField().setText(AppProperties.getProperty(prefBackupDir));
       f.getDestBackupNameTextField().setText(AppProperties.getProperty(prefBackupName));
-      f.getDestArchivePromptCheckBox().setSelected(AppProperties.getProperty(prefArchiveChecked).compareTo(trueStr) == 0);
+      f.getDestArchivePromptCheckBox().setSelected(trueStr.compareTo(AppProperties.getProperty(prefArchiveChecked)) == 0);
       f.getDestArchiveDirTextField().setText(AppProperties.getProperty(prefArchiveDir));
       updateControls(f);
       return UIProperties.current.msgSettingsRestored;
@@ -235,7 +235,7 @@ public abstract class DataModel {
             line = line + filterMarkerPre + includeFilter + filterMarkerPost + space + space;
          String exclude = nullStr;
          boolean first = true;
-         if (!excludeFilter.equals(nullStr)) {
+         if (!nullStr.equals(excludeFilter)) {
             exclude = exclude + (first ? nullStr : ", ") + excludeFilter;
             first = false;
             }
@@ -313,7 +313,7 @@ public abstract class DataModel {
       loadZipList(f);
       f.getDestBackupDirTextField().setText(UserPreferences.readProfilePref(prefBackupDir));
       f.getDestBackupNameTextField().setText(UserPreferences.readProfilePref(prefBackupName));
-      f.getDestArchivePromptCheckBox().setSelected(UserPreferences.readProfilePref(prefArchiveChecked).compareTo(trueStr) == 0);
+      f.getDestArchivePromptCheckBox().setSelected(trueStr.compareTo(UserPreferences.readProfilePref(prefArchiveChecked)) == 0);
       f.getDestArchiveDirTextField().setText(UserPreferences.readProfilePref(prefArchiveDir));
       updateControls(f);
       }
@@ -479,7 +479,7 @@ public abstract class DataModel {
                }
             TimerTask task = new TimerTask() {
                @Override
-               public void run() { backupProgress.dispose(); };
+               public void run() { backupProgress.dispose(); }
                };
             new Timer().schedule(task, 800);  //0.8 second delay
             }
@@ -494,7 +494,7 @@ public abstract class DataModel {
       cmdBackupDir =   UserPreferences.readProfilePref(prefBackupDir);
       cmdBackupName =  UserPreferences.readProfilePref(prefBackupName);
       cmdBackupPath =  calcDestPath(cmdBackupDir, cmdBackupName);
-      cmdDoArchive =   UserPreferences.readProfilePref(prefArchiveChecked).compareTo(trueStr) == 0;
+      cmdDoArchive =   trueStr.compareTo(UserPreferences.readProfilePref(prefArchiveChecked)) == 0;
       cmdArchiveDir =  UserPreferences.readProfilePref(prefArchiveDir);
       cmdArchivePath = calcDestPath(cmdArchiveDir, cmdBackupName);
       cmdFiltersOn =   UserPreferences.readBooleanPref(prefFiltersEnabled);
