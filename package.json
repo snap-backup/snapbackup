@@ -66,8 +66,8 @@
       "gulp-zip": "~5.1",
       "jshint": "~2.13",
       "merge-stream": "~2.0",
-      "npm-run-all2": "~5.0",
+      "npm-run-all2": "~6.0",
       "rimraf": "~3.0",
-      "w3c-html-validator": "~1.0"
+      "w3c-html-validator": "~1.1"
    }
 }
