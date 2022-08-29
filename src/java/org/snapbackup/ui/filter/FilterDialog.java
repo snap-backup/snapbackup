@@ -71,7 +71,7 @@ public class FilterDialog extends JDialog {
       setModal(true);
       setResizable(false);
       pack();
-      excludeSizeField.setSize(50, excludeSizeField.getSize().height);
+      excludeSizeField.setSize(80, excludeSizeField.getSize().height);
       excludeSizeField.setMaximumSize(excludeSizeField.getSize());
       setLocationRelativeTo(owner);
       setVisible(true);
@@ -170,8 +170,8 @@ public class FilterDialog extends JDialog {
       }
    void actionOk() {
       cleanupFilterData();
-      DataModel.setCurrentZipFilter(includeFilterField.getText(),
-         excludeFilterField.getText(), excludeFoldersFilterField.getText(), excludeSizeField.getText(), f);
+      DataModel.setCurrentZipFilter(includeFilterField.getText(), excludeFilterField.getText(),
+         excludeFoldersFilterField.getText(), excludeSizeField.getText(), f);
       this.dispose();
       }
 
@@ -194,8 +194,8 @@ public class FilterDialog extends JDialog {
       excludeFoldersFilterField.setText(cleanupFilter(excludeFoldersFilterField.getText()));
       excludeSizeField.setText(excludeSizeField.getText().replaceAll("[^0-9]", nullStr));
       excludeSizeField.setText(excludeSizeField.getText().replaceAll("^0*", nullStr));
-      if (excludeSizeField.getText().length() > 4)
-          excludeSizeField.setText("10000");
+      if (excludeSizeField.getText().length() > 5)
+          excludeSizeField.setText("100000");
       }
 
 }
