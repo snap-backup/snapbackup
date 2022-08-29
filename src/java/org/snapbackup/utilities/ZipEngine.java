@@ -52,7 +52,8 @@ public class ZipEngine {
    final static String regExResChars = "-+?()[]{}|$^<=.";
    final static String regExEscCode =  "\\";
    final String exclusionNote =      " -- " + AppProperties.getProperty("FilterRuleExcludeTitle");
-   final String cloudFileNote =      " -- " + AppProperties.getProperty("FilterRuleExcludeCloud");
+   final String cloudFileNote =      " -- " + AppProperties.getProperty("LabelWarning") + ": " +
+      AppProperties.getProperty("FilterRuleExcludeCloud");
    final String sizePre =            space + space + "[";
    final String sizePost =           space + AppProperties.getProperty("FilterMarkerUnits") + "]";
    final String outline =            ")" + space;

@@ -22,7 +22,7 @@ class ImportUIProperties {
    final String locationCmd =      AppProperties.getProperty("ImportLocationCommand");
    final String locationDetails =  AppProperties.getProperty("ImportLocationDetails");
    final String locationWarning =  SystemAttributes.startHtml + "<b>" +
-      AppProperties.getProperty("ImportWarning") + "</b> " +
+      AppProperties.getProperty("LabelWarning") + ":</b> " +
       AppProperties.getProperty("ImportWarningMessage") + SystemAttributes.endHtml;
 
    final String buttonCancel =     AppProperties.getProperty("ButtonCancel");
