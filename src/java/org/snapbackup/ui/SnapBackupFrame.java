@@ -139,7 +139,7 @@ public class SnapBackupFrame extends JFrame {
    JButton exitButton =     new JButton(ui.buttonExit);
 
    JButton[] buttonList = { srcAddFileButton, srcAddFolderButton, srcRemoveButton, srcFilterButton,
-         profilesAddButton, profilesDeleteButton, saveButton, resetButton, doBackupButton, exitButton };
+      profilesAddButton, profilesDeleteButton, saveButton, resetButton, doBackupButton, exitButton };
 
    public static SnapBackupFrame current;
 
@@ -164,21 +164,6 @@ public class SnapBackupFrame extends JFrame {
 
    void popupMsg(String msg) {
       popupMsg(msg, ui.appTitle);
-      }
-
-   class LocaleCodeComparator implements Comparator<String> {
-      Locale locale;
-      LocaleCodeComparator(Locale currentLocale) {
-         locale = currentLocale;
-         }
-      public int compare(String localeCodeA, String localeCodeB) {
-         Locale a = new Locale(localeCodeA);
-         Locale b = new Locale(localeCodeB);
-         return
-            a.equals(b)      ? 0 :
-            a.equals(locale) ? -1 :
-            b.equals(locale) ? 1 : a.getDisplayName(locale).compareTo(b.getDisplayName(locale));
-         }
       }
 
    void configureContols() {
@@ -278,7 +263,7 @@ public class SnapBackupFrame extends JFrame {
       // Add Menu Controls
       setJMenuBar(menuBar);
       menuBar.add(fileMenuGroup);            //menu: File
-      fileMenuGroup.add(languagesMenuItem);  //menu: File | Langauge Options
+      fileMenuGroup.add(languagesMenuItem);  //menu: File | Language Options
       fileMenuGroup.add(filtersMenuItem);    //menu: File | Backup Filters
       fileMenuGroup.add(profilesMenuItem);   //menu: File | Multiple Profiles
       fileMenuGroup.add(skinMenuItem);       //menu: File | Look & Feel
@@ -300,29 +285,28 @@ public class SnapBackupFrame extends JFrame {
       // Configure Language Flags
       final String localeCodeKey = SystemAttributes.userName;  //actual value not important
       Locale currentLocale = new Locale(UserPreferences.readLocalePref());
-      //sortLocaleCodes(SystemAttributes.localeCodes, currentLocale);
-      Arrays.sort(SystemAttributes.localeCodes,
-         new LocaleCodeComparator(currentLocale));
       for (int count = 0; count < SystemAttributes.localeCodes.length; count++) {
          String localeCode = SystemAttributes.localeCodes[count];
          Locale locale = new Locale(localeCode);
          JLabel langLabel = new JLabel(Icons.langIcon(localeCode));
-         langLabel.setToolTipText(locale.getDisplayLanguage(currentLocale) +
-            (locale.equals(currentLocale) ? SystemAttributes.nullStr :
-            SystemAttributes.dividerStr + locale.getDisplayLanguage(locale)));
+         String language = locale.getDisplayLanguage(currentLocale);
+         String toolTip = language + SystemAttributes.dividerStr + locale.getDisplayLanguage(locale);
+         langLabel.setToolTipText(locale.equals(currentLocale) ? language : toolTip);
          langLabel.putClientProperty(localeCodeKey, localeCode);
-         langLabel.addMouseListener(new MouseListener() {
-            public void mouseClicked(MouseEvent e) {
-               selectLanguage((String)((JLabel)e.getSource()).getClientProperty(
-                  localeCodeKey)); }
-            public void mouseEntered(MouseEvent e) {
-               setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); }
-            public void mouseExited(MouseEvent e) {
-               setCursor(Cursor.getPredefinedCursor (Cursor.DEFAULT_CURSOR)); }
-            public void mousePressed(MouseEvent e)  { /* do nothing*/ }
-            public void mouseReleased(MouseEvent e) { /* do nothing*/ }
-            } );
-         langFlagsPanels[count/flagsPerRow].add(langLabel);
+         if (locale.equals(currentLocale))
+            langLabel.setBorder(BorderFactory.createLineBorder(Color.cyan));
+         else
+            langLabel.addMouseListener(new MouseListener() {
+               public void mouseClicked(MouseEvent e) {
+                  selectLanguage((String)((JLabel)e.getSource()).getClientProperty(localeCodeKey)); }
+               public void mouseEntered(MouseEvent e) {
+                  setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); }
+               public void mouseExited(MouseEvent e) {
+                  setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)); }
+               public void mousePressed(MouseEvent e)  { /* do nothing*/ }
+               public void mouseReleased(MouseEvent e) { /* do nothing*/ }
+               });
+         langFlagsPanels[count / flagsPerRow].add(langLabel);
          }
       ////////////////////////
 
