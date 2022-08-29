@@ -422,8 +422,7 @@ public abstract class DataModel {
       startBackup = Calendar.getInstance();
       }
    public static void logTimeEnd() {
-      long elapsedMills =
-         Calendar.getInstance().getTimeInMillis() - startBackup.getTimeInMillis();
+      long elapsedMills = Calendar.getInstance().getTimeInMillis() - startBackup.getTimeInMillis();
       long minutes = elapsedMills/60000;
       Locale locale = new Locale(UserPreferences.readLocalePref());
       NumberFormat nf = NumberFormat.getNumberInstance(locale);

@@ -20,34 +20,35 @@ public class SystemAttributes {
 
    // Release constants
    public static final String appName = "SnapBackup";  //".properties" name
-   public static final String appVersion = "6.4.0";  //keep in sync with package.json
-   // 6.4.0 - 02/15/2022 - Support openjdk and use jpackage to create installer
-   // 6.3.0 - 08/03/2018 - Support Java 9
-   // 6.2.0 - 07/30/2017 - Exclude Windows recycle bin and improved showing largest files option
-   // 6.1.0 - 10/16/2016 - Automatically skip extraneous files and switch to semantic versioning
-   // 6.0 -   08/16/2015 - Upgrade to Java 7
-   // 5.6 -   04/23/2011 - Albanian
-   // 5.5 -   01/02/2011 - Romanian
-   // 5.4 -   10/24/2010 - Manifest splash screen and convert to .org
-   // 5.3 -   04/17/2010 - Indonesian
-   // 5.2 -   01/02/2010 - Added reporting of largest files to the Message Log
-   // 5.1 -   06/02/2009 - Added Check for Updates feature (and moved prefs)
-   // 5.0 -   05/06/2009 - Added import/export and switched to Java 5.0
-   // 4.5 -   09/07/2008 - Slovene (Slovenian)
-   // 4.4 -   06/09/2006 - Korean, user guide print button, and exclude .DS_Store on Macs
-   // 4.3 -   05/07/2006 - Portuguese
-   // 4.2 -   04/22/2006 - Spanish
-   // 4.1 -   01/18/2006 - Dutch
-   // 4.0 -   12/18/2005 - Configurable source and log height (options)
-   // 3.8 -   12/01/2005 - Skins (save user selection in preferences)
-   // 3.7 -   10/23/2005 - Russian
-   // 3.6 -   09/22/2005 - Esperanto and command-line
-   // 3.5 -   09/??/2005 - Options feature
-   // 3.4 -   09/02/2005 - Folder support for filters
-   // 3.3 -   07/05/2005 - German
-   // 3.2 -   06/17/2005 - Italian
-   // 3.1 -   06/01/2005 - Filters
-   // 3.0 -   05/09/2005 - Multiple profiles
+   public static final String appVersion = "6.4.1";  //keep in sync with package.json
+   // 6.4.1 - 2022/08/28 - Filter out files stored in remote clouds
+   // 6.4.0 - 2022/02/15 - Support openjdk and use jpackage to create installer
+   // 6.3.0 - 2018/08/03 - Support Java 9
+   // 6.2.0 - 2017/07/30 - Exclude Windows recycle bin and improved showing largest files option
+   // 6.1.0 - 2016/10/16 - Automatically skip extraneous files and switch to semantic versioning
+   // 6.0 -   2015/08/16 - Upgrade to Java 7
+   // 5.6 -   2011/04/23 - Albanian
+   // 5.5 -   2011/01/02 - Romanian
+   // 5.4 -   2010/10/24 - Manifest splash screen and convert to .org
+   // 5.3 -   2010/04/17 - Indonesian
+   // 5.2 -   2010/01/02 - Added reporting of largest files to the Message Log
+   // 5.1 -   2009/06/02 - Added Check for Updates feature (and moved prefs)
+   // 5.0 -   2009/05/06 - Added import/export and switched to Java 5.0
+   // 4.5 -   2008/09/07 - Slovene (Slovenian)
+   // 4.4 -   2006/06/09 - Korean, user guide print button, and exclude .DS_Store on Macs
+   // 4.3 -   2006/05/07 - Portuguese
+   // 4.2 -   2006/04/22 - Spanish
+   // 4.1 -   2006/01/18 - Dutch
+   // 4.0 -   2005/12/18 - Configurable source and log height (options)
+   // 3.8 -   2005/12/01 - Skins (save user selection in preferences)
+   // 3.7 -   2005/10/23 - Russian
+   // 3.6 -   2005/09/22 - Esperanto and command-line
+   // 3.5 -   2005/09/?? - Options feature
+   // 3.4 -   2005/09/02 - Folder support for filters
+   // 3.3 -   2005/07/05 - German
+   // 3.2 -   2005/06/17 - Italian
+   // 3.1 -   2005/06/01 - Filters
+   // 3.0 -   2005/05/09 - Multiple profiles
    public static final String[] localeCodes = {
       "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq"
       };
