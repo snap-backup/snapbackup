@@ -35,6 +35,7 @@ public class ZipEngine {
 
    final static List<String> extraneousFiles =   Arrays.asList(".DS_Store", "Thumbs.db", "desktop.ini");
    final static List<String> extraneousFolders = Arrays.asList(".git", "node_modules", "$RECYCLE.BIN");
+   final static List<String> cloudExtensions =   Arrays.asList("icloud");
 
    final static int kb =             1024;
    final static int buffSize =       kb * 256;  //optimal size not known
@@ -51,6 +52,7 @@ public class ZipEngine {
    final static String regExResChars = "-+?()[]{}|$^<=.";
    final static String regExEscCode =  "\\";
    final String exclusionNote =      " -- " + AppProperties.getProperty("FilterRuleExcludeTitle");
+   final String cloudFileNote =      " -- " + AppProperties.getProperty("FilterRuleExcludeCloud");
    final String sizePre =            space + space + "[";
    final String sizePost =           space + AppProperties.getProperty("FilterMarkerUnits") + "]";
    final String outline =            ")" + space;
@@ -121,15 +123,18 @@ public class ZipEngine {
           rt.gc();  //testing not yet done to see if this improves performance
       try {
          file = new File(filePath);
+         String filename = file.getName();
          String displayPath = useRelativePaths ? filePath.substring(rootPathLen) : filePath;
-         if (filterIncludeOn && !filterIncludeP.matcher(file.getName()).matches())
+         if (filterIncludeOn && !filterIncludeP.matcher(filename).matches())
             logSkippedMsg(displayPath);
-         else if (filterExcludeOn && filterExcludeP.matcher(file.getName()).matches())
+         else if (filterExcludeOn && filterExcludeP.matcher(filename).matches())
             logSkippedMsg(displayPath + exclusionNote);
          else if (filterSizeOn && file.length() > filterSize)
             logSkippedMsg(displayPath + exclusionNote + sizePre +
                nf.format(file.length() / kb) + sizePost);
-         else if (!extraneousFiles.contains(file.getName())) {
+         else if (cloudExtensions.contains(filename.substring(filename.lastIndexOf(".") + 1)))
+            logSkippedMsg(displayPath + cloudFileNote);
+         else if (!extraneousFiles.contains(filename)) {
             if (backupProgress != null)
                BackupProgressDialog.current.updateProgress(zipCount);
             Logger.logMsg(Str.macroExpand(zippingLogMsg, zipCount++) + displayPath);
