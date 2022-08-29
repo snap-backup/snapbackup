@@ -82,7 +82,7 @@ updateReleasesFolder() {
    cp -v build/snap-backup-installer-*.pkg releases/archive
    cp -v build/snapbackup-*.jar            releases
    cp -v build/snapbackup-*.jar            releases/archive
-   echo "[Only add files to the archive folder -- git discard modified files]"
+   git checkout -- releases/archive
    echo "To launch:"
    echo "   java -jar $projectHome/releases/snapbackup-v$version.jar"
    echo
