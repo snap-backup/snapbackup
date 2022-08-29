@@ -118,40 +118,40 @@ public class FilterDialog extends JDialog {
    void addContols() {
       filterPanel.add(tagLabel);
       filterPanel.add(backupItemLabel);
-      filterPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      filterPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       includeDataPanel.add(includePromptLabel);
       includeDataPanel.add(includeFilterField);
       includePanel.add(includeDataPanel);
       includePanel.add(includeHelpLabel);
       filterPanel.add(includePanel);
-      filterPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      filterPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       excludeDataPanel.add(excludePromptLabel);
       excludeDataPanel.add(excludeFilterField);
       excludePanel.add(excludeDataPanel);
       excludePanel.add(excludeHelpLabel);
-      excludePanel.add(Box.createRigidArea(new Dimension(0,10)));
+      excludePanel.add(Box.createRigidArea(new Dimension(0, 10)));
       excludeFoldersPanel.add(excludeFoldersPromptLabel);
       excludeFoldersPanel.add(excludeFoldersFilterField);
       excludePanel.add(excludeFoldersPanel);
       excludePanel.add(excludeFoldersHelpLabel);
-      excludePanel.add(Box.createRigidArea(new Dimension(0,10)));
+      excludePanel.add(Box.createRigidArea(new Dimension(0, 10)));
       excludeSizePanel.add(excludeSizePromptLabel);
       excludeSizePanel.add(excludeSizeField);
       excludeSizePanel.add(excludeSizeUnitsLabel);
       excludePanel.add(excludeSizePanel);
       filterPanel.add(excludePanel);
-      filterPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      filterPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       filterPanel.add(overrideNoteLabel);
-      filterPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      filterPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       buttonPanel.add(Box.createHorizontalGlue());
       buttonPanel.add(deleteButton);
-      buttonPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      buttonPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       buttonPanel.add(cancelButton);
-      buttonPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      buttonPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       buttonPanel.add(okButton);
       filterPanel.add(buttonPanel);
       getContentPane().add(filterPanel);

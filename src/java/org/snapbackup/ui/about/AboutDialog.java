@@ -158,17 +158,17 @@ public class AboutDialog extends JDialog {
       aboutPanel.add(version);
       aboutPanel.add(translatorsPanel);
       aboutPanel.add(author);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(license);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(configInfo);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       // aboutPanel.add(contactInfo);
-      // aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      // aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(copyright);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(webButton);
-      aboutPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(closeButton);
       for (Component component : aboutPanel.getComponents())
          ((JComponent)component).setAlignmentX(Component.LEFT_ALIGNMENT);

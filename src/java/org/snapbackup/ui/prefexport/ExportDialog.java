@@ -91,18 +91,18 @@ public class ExportDialog extends JDialog {
       locationPanel.add(locationInnerPanel);
       locationInnerPanel.add(locationPromptLabel);
       locationInnerPanel.add(locationTextField);
-      locationInnerPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      locationInnerPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       locationInnerPanel.add(locationChooserButton);
-      locationInnerPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      locationInnerPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       locationInnerPanel.add(resetButton);
-      locationPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      locationPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       locationPanel.add(locationDetails1Label);
       locationPanel.add(locationDetails2Label);
-      basePanel.add(Box.createRigidArea(new Dimension(0,10)));
+      basePanel.add(Box.createRigidArea(new Dimension(0, 10)));
       basePanel.add(buttonPanel);
       buttonPanel.add(Box.createHorizontalGlue());
       buttonPanel.add(cancelButton);
-      buttonPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      buttonPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       buttonPanel.add(actionButton);
       }
 

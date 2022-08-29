@@ -182,7 +182,7 @@ public class OptionsDialog extends JDialog {
       separatorPanel.add(separatorDropDown);
       nameFormatPanel.add(separatorPanel);
       optionsPanel.add(nameFormatPanel);
-      optionsPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      optionsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       fileOverwritePanel.add(askBackupCheckbox);
       fileOverwritePanel.add(askBackupLabel);
@@ -190,7 +190,7 @@ public class OptionsDialog extends JDialog {
       fileOverwritePanel.add(askArchiveCheckbox);
       fileOverwritePanel.add(askArchiveLabel);
       optionsPanel.add(fileOverwritePanel);
-      optionsPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      optionsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       numRowsPanel.add(srcRowsPromptLabel);
       numRowsPanel.add(srcRowsSpinner);
@@ -198,7 +198,7 @@ public class OptionsDialog extends JDialog {
       numRowsPanel.add(logRowsPromptLabel);
       numRowsPanel.add(logRowsSpinner);
       optionsPanel.add(numRowsPanel);
-      optionsPanel.add(Box.createRigidArea(new Dimension(0,10)));
+      optionsPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
       msgLogInfoPanel.add(msgLogInfoSkippedCheckbox);
       msgLogInfoPanel.add(msgLogInfoSkippedLabel);
@@ -209,9 +209,9 @@ public class OptionsDialog extends JDialog {
       optionsPanel.add(Box.createRigidArea(new Dimension(0,15)));
 
       buttonPanel.add(cancelButton);
-      buttonPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      buttonPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       buttonPanel.add(defaultsButton);
-      buttonPanel.add(Box.createRigidArea(new Dimension(5,0)));
+      buttonPanel.add(Box.createRigidArea(new Dimension(5, 0)));
       buttonPanel.add(okButton);
       optionsPanel.add(buttonPanel);
       }
