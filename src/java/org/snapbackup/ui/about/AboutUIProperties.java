@@ -20,7 +20,7 @@ public class AboutUIProperties {
    // From .properties file
    //
    public final String aboutTitle =        AppProperties.getPropertyPadded("AboutTitle");
-   public final String aboutAppTitle =     AppProperties.getProperty("ApplicationTitle");
+   public final String aboutAppTitle =     SystemAttributes.appTitle;
    public final String aboutVersion =      AppProperties.getProperty("AboutVersion") + space + SystemAttributes.appVersion;
    public final String aboutCreatedBy =    AppProperties.getProperty("AboutCreatedBy") + space + SystemAttributes.appAuthors;
    public final String aboutTranslatedBy = AppProperties.getProperty("AboutTranslatedBy");

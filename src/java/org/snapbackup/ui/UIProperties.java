@@ -60,11 +60,10 @@ public class UIProperties {
    public final String updatesErrMsg2 =          AppProperties.getProperty("UpdatesErrMsg2");
 
    // Header
-   public final String appTitle =             AppProperties.getProperty("ApplicationTitle");
-   public final String appTitleLocalized =    AppProperties.getProperty("OptionalLocalizedApplicationTitle");
-   public final String header =               SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + ("".equals(appTitleLocalized) ? "" : "<br>" + appTitleLocalized) + SystemAttributes.headerPost;
+   public final String appTitle =             SystemAttributes.appTitle;
+   public final String header =               SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + SystemAttributes.headerPost;
    //public final String splashHeader =         SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + SystemAttributes.headerSplashTag + SystemAttributes.headerPost;
-   public final String headerCmdLine =        appTitle + " " + SystemAttributes.appVersion + ("".equals(appTitleLocalized) ? "" : " (" + appTitleLocalized + ")");
+   public final String headerCmdLine =        appTitle + " " + SystemAttributes.appVersion;
 
    // Menus (File Menu)
    public final String menuGroupFile =        AppProperties.getProperty("MenuGroupFile");
