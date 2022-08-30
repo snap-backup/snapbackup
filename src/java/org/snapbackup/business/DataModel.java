@@ -29,27 +29,27 @@ import org.snapbackup.utilities.ZipEngine;
 public abstract class DataModel {
 
    // Top-lever user prefereences
-   static final String prefAppVersion =     "AppVersion";
-   static final String prefShowLanguages =  "ShowLanguages";
-   static final String prefFiltersEnabled = "FiltersEnabled";
-   static final String prefShowProfiles =   "ShowProfiles";
+   static final String prefAppVersion =            "AppVersion";
+   static final String prefShowLanguages =         "ShowLanguages";
+   static final String prefFiltersEnabled =        "FiltersEnabled";
+   static final String prefShowProfiles =          "ShowProfiles";
    public static final String prefCurrentProfile = "CurrentProfile";
    public static final String prefSkinName =       "SkinName";
 
    // User preferences associated with each profile
-   static final String prefProfileName =    "ProfileName";
-   static final String prefSrcDataList =    "SrcDataList";
+   static final String prefProfileName =              "ProfileName";
+   static final String prefSrcDataList =              "SrcDataList";
    static final String prefSrcDataIncludeList =       "SrcDataIncludeList";        //filter
    static final String prefSrcDataExcludeList =       "SrcDataExcludeList";        //filter
    static final String prefSrcDataExcludeFolderList = "SrcDataExcludeFolderList";  //filter
    static final String prefSrcDataExcludeSizeList =   "SrcDataExcludeSizeList";    //filter
-   static final String prefBackupDirBase =  "BackupDirBase";
-   static final String prefBackupDir =      "BackupDir";
-   static final String prefBackupName =     "BackupName";
-   static final String prefArchiveChecked = "ArchiveChecked";
-   static final String prefArchiveDirBase = "ArchiveDirBase";
-   static final String prefArchiveDir =     "ArchiveDir";
-   static final String prefArchiveDirWin =  "ArchiveDirWin";
+   static final String prefBackupDirBase =            "BackupDirBase";
+   static final String prefBackupDir =                "BackupDir";
+   static final String prefBackupName =               "BackupName";
+   static final String prefArchiveChecked =           "ArchiveChecked";
+   static final String prefArchiveDirBase =           "ArchiveDirBase";
+   static final String prefArchiveDir =               "ArchiveDir";
+   static final String prefArchiveDirWin =            "ArchiveDirWin";
 
    // Constants
    static final int    kb =                1024;
@@ -59,10 +59,10 @@ public abstract class DataModel {
    static final String divider =           SystemAttributes.dividerStr;
    static final String fs =                SystemAttributes.fileSeparator;
    static final String dataPrompt =        SystemAttributes.dataPrompt;
+   static final String replacementChar =   SystemAttributes.replacementChar;  //"%"
    static final String sizePre =           space + space + "[";
    static final String sizePost =          space + AppProperties.getProperty("FilterMarkerUnits") + "]";
    static final String zipExtension =      AppProperties.getProperty("StandardZipExtension");  //usually: ".zip"
-   static final String replacementChar =   AppProperties.getProperty("TextReplacementCharacter");  //usually: "%"
    static final String trueStr =           AppProperties.getProperty("True");  //usually: "true"
    static final String filterMarkerPre =   AppProperties.getProperty("FilterMarkerPre");    //usually: "["
    static final String filterMarkerPost =  AppProperties.getProperty("FilterMarkerPost");   //usually: "]"
@@ -357,18 +357,18 @@ public abstract class DataModel {
       AppProperties.addSupplimentalProperty(prefSrcDataExcludeList,       srcDataEmpty);
       AppProperties.addSupplimentalProperty(prefSrcDataExcludeFolderList, srcDataEmpty);
       AppProperties.addSupplimentalProperty(prefSrcDataExcludeSizeList,   srcDataEmpty);
-      AppProperties.addSupplimentalProperty(prefBackupDir,  backupDir);
-      AppProperties.addSupplimentalProperty(prefArchiveDir, archiveDir);
-      AppProperties.addSupplimentalProperty(Options.prefSpacer,     Options.spacerDefault);
-      AppProperties.addSupplimentalProperty(Options.prefOrder,      Options.orderDefault);
-      AppProperties.addSupplimentalProperty(Options.prefYear,       Options.yearDefault);
-      AppProperties.addSupplimentalProperty(Options.prefSeparator,  Options.separatorDefault);
-      AppProperties.addSupplimentalProperty(Options.prefAskBackup,  Options.askBackupDefault);
-      AppProperties.addSupplimentalProperty(Options.prefAskArchive, Options.askArchiveDefault);
-      AppProperties.addSupplimentalProperty(Options.prefNumRowsSrc, Options.numRowsSrcDefault);
-      AppProperties.addSupplimentalProperty(Options.prefNumRowsLog, Options.numRowsLogDefault);
-      AppProperties.addSupplimentalProperty(Options.prefShowSkipped,     Options.showSkippedDefault);
-      AppProperties.addSupplimentalProperty(Options.prefNumLargestFiles, Options.numLargestFilesDefault);
+      AppProperties.addSupplimentalProperty(prefBackupDir,                backupDir);
+      AppProperties.addSupplimentalProperty(prefArchiveDir,               archiveDir);
+      AppProperties.addSupplimentalProperty(Options.prefSpacer,           Options.spacerDefault);
+      AppProperties.addSupplimentalProperty(Options.prefOrder,            Options.orderDefault);
+      AppProperties.addSupplimentalProperty(Options.prefYear,             Options.yearDefault);
+      AppProperties.addSupplimentalProperty(Options.prefSeparator,        Options.separatorDefault);
+      AppProperties.addSupplimentalProperty(Options.prefAskBackup,        Options.askBackupDefault);
+      AppProperties.addSupplimentalProperty(Options.prefAskArchive,       Options.askArchiveDefault);
+      AppProperties.addSupplimentalProperty(Options.prefNumRowsSrc,       Options.numRowsSrcDefault);
+      AppProperties.addSupplimentalProperty(Options.prefNumRowsLog,       Options.numRowsLogDefault);
+      AppProperties.addSupplimentalProperty(Options.prefShowSkipped,      Options.showSkippedDefault);
+      AppProperties.addSupplimentalProperty(Options.prefNumLargestFiles,  Options.numLargestFilesDefault);
       }
 
    static String calcDestPath(String backupDir, String backupName) {

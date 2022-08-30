@@ -10,9 +10,11 @@
 
 package org.snapbackup.utilities;
 
+import org.snapbackup.settings.SystemAttributes;
+
 public abstract class Str {
 
-   static final String macroChar = "%";  //TextReplacementCharacter
+   static final String macroChar = SystemAttributes.replacementChar;  //"%"
 
    public static String macroExpand(String baseStr, String replaceStr) {
       return baseStr.substring(0, baseStr.indexOf(macroChar)) + replaceStr +
