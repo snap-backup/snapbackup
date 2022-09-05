@@ -15,15 +15,16 @@ import java.util.*;
 import javax.swing.DefaultListModel;
 import javax.swing.SwingWorker;
 import org.snapbackup.logger.Logger;
+import org.snapbackup.settings.AppProperties;
+import org.snapbackup.settings.SystemAttributes;
+import org.snapbackup.settings.UserPreferences;
 import org.snapbackup.ui.SnapBackupFrame;
 import org.snapbackup.ui.UIProperties;
 import org.snapbackup.ui.backupprogress.BackupProgressDialog;
 import org.snapbackup.ui.options.Options;
 import org.snapbackup.utilities.DateStamp;
 import org.snapbackup.utilities.FileSys;
-import org.snapbackup.settings.AppProperties;
-import org.snapbackup.settings.SystemAttributes;
-import org.snapbackup.settings.UserPreferences;
+import org.snapbackup.utilities.Str;
 import org.snapbackup.utilities.ZipEngine;
 
 public abstract class DataModel {
@@ -69,7 +70,6 @@ public abstract class DataModel {
    static final String filterMarkerSkip =  AppProperties.getProperty("FilterMarkerSkip");   //usually: "-"
    static final String filterMarkerSize =  AppProperties.getProperty("FilterMarkerSize");   //usually: ">"
    static final String filterMarkerUnits = AppProperties.getPropertyPadded("FilterMarkerUnits");  //usually: "KB"
-
 
    // User selections not owned by a UI control
    static List<String>
@@ -497,6 +497,18 @@ public abstract class DataModel {
       cmdArchiveDir =  UserPreferences.readProfilePref(prefArchiveDir);
       cmdArchivePath = calcDestPath(cmdArchiveDir, cmdBackupName);
       cmdFiltersOn =   UserPreferences.readBooleanPref(prefFiltersEnabled);
+      }
+
+   public static void doCmdLineList() {
+      new UIProperties();
+      UIProperties ui = UIProperties.current;
+      List<String> names = DataModel.getProfilesNames();
+      Logger.initOutput();
+      Logger.logMsg(ui.headerCmdLine);
+      Logger.logMsg(ui.profilesTitle + ": " + names.size());
+      for (String profileName : names)
+         Logger.logMsg("   " + Str.quote(profileName));
+      Logger.logMsg(ui.profilesPrompt + " " + Str.quote(UserPreferences.readPref(prefCurrentProfile)));
       }
 
    public static void doCmdLineBackup(String profileName, String logFile) {

@@ -72,7 +72,7 @@ public class SnapBackupFrame extends JFrame {
    JMenuItem   aboutMenuItem =     new JMenuItem(ui.menuItemAbout);
 
    // Define Base
-   JPanel  basePanel =          new JPanel();
+   JPanel  basePanel = new JPanel();
 
    // Define Header Panels
    JPanel   headerPanel =     new JPanel();
@@ -208,7 +208,7 @@ public class SnapBackupFrame extends JFrame {
       profilesPanel.setLayout(new FlowLayout());
       profilesPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 0));
       profilesPanel.setAlignmentX(1.0f);
-      profilesInnerPanel.setBorder(BorderFactory.createTitledBorder(ui.profilesTitle));
+      profilesInnerPanel.setBorder(BorderFactory.createTitledBorder(Str.pad(ui.profilesTitle)));
       profilesInnerPanel.setLayout(new BoxLayout(profilesInnerPanel, BoxLayout.PAGE_AXIS));
       profilesPromptLabel.setAlignmentX(0.0f);
       profilesDropDown.setAlignmentX(0.0f);
@@ -440,11 +440,11 @@ public class SnapBackupFrame extends JFrame {
    public boolean getProfilesEnabled() {
       return profilesMenuItemButtonOn.isSelected();
       }
-   public void setProfilesDropDown(String[] profileNames) {
-      profilesDropDown.removeAllItems();
-      for (String profileName : profileNames)
-         profilesDropDown.addItem(profileName);
-      }
+   // public void setProfilesDropDown(String[] profileNames) {
+   //    profilesDropDown.removeAllItems();
+   //    for (String profileName : profileNames)
+   //       profilesDropDown.addItem(profileName);
+   //    }
    public String readProfilesDropDown() {
       String profileList = profilesDropDown.getItemAt(0);
       for (int count = 1; count < profilesDropDown.getItemCount(); count++)

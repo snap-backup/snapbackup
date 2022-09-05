@@ -25,4 +25,12 @@ public abstract class Str {
       return macroExpand(baseStr, Integer.toString(replaceNum));
       }
 
+   public static String pad(String str) {
+      return " " + str + " ";
+      }
+
+   public static String quote(String str) {
+      return "\"" + str + "\"";
+      }
+
 }

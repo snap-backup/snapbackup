@@ -63,7 +63,7 @@ public class UIProperties {
    public final String appTitle =             SystemAttributes.appTitle;
    public final String header =               SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + SystemAttributes.headerPost;
    //public final String splashHeader =         SystemAttributes.headerPre + appTitle + SystemAttributes.headerMid + SystemAttributes.headerSplashTag + SystemAttributes.headerPost;
-   public final String headerCmdLine =        appTitle + " " + SystemAttributes.appVersion;
+   public final String headerCmdLine =        appTitle + " v" + SystemAttributes.appVersion;
 
    // Menus (File Menu)
    public final String menuGroupFile =        AppProperties.getProperty("MenuGroupFile");
@@ -102,7 +102,7 @@ public class UIProperties {
    // Profiles
    public final String profilesOffMsg =       AppProperties.getProperty("ProfilesOffMsg");
    public final String profilesErrMsg =       AppProperties.getProperty("ProfilesErrMsg");
-   public final String profilesTitle =        AppProperties.getPropertyPadded("ProfilesTitle");
+   public final String profilesTitle =        AppProperties.getProperty("ProfilesTitle");
    public final String profilesPrompt =       AppProperties.getProperty("ProfilesPrompt");
    public final String profilesNew =          AppProperties.getProperty("ProfilesButtonNew");
    public final String profilesDelete =       AppProperties.getProperty("ProfilesButtonDelete");

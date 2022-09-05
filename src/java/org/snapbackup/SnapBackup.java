@@ -22,10 +22,8 @@ public abstract class SnapBackup {
 
    // Run Snap Backup in either command line mode where the parameter is the profile name
    // or in GUI (Swing) mode if there are no parameters.
-   public static void main(String[] argv) {
-      if (argv.length > 0)
-         DataModel.doCmdLineBackup(argv[0], argv.length > 1 ? argv[1] : null);
-      else {
+   public static void main(String[] args) {
+      if (args.length == 0) {
          AppProperties.addSupplimentalProperty(DataModel.prefSkinName,
             UIManager.getSystemLookAndFeelClassName());  //make system l&f the default
          try {
@@ -38,6 +36,10 @@ public abstract class SnapBackup {
             }
          new Application();
          }
+      else if ("--list".equalsIgnoreCase(args[0]))
+         DataModel.doCmdLineList();
+      else
+         DataModel.doCmdLineBackup(args[0], args.length > 1 ? args[1] : null);
       }
 
 }
