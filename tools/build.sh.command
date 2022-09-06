@@ -17,12 +17,14 @@ projectHome=$(cd $(dirname $0)/..; pwd)
 iconPng=$projectHome/src/resources/graphics/application/snap-backup-icon.png
 attributesFile=$projectHome/src/java/org/snapbackup/settings/SystemAttributes.java
 version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
+mode=$1
 
 displayIntro() {
    cd $projectHome
    echo
    echo $banner
    echo $(echo $banner | sed s/./=/g)
+   test "$mode" = "fast" && echo "Mode: fast (skip installer generation)"
    pwd
    echo
    }
@@ -69,7 +71,6 @@ createMacInstaller() {
    jpackage --name SnapBackup --input . --license-file ../LICENSE.txt --main-jar snapbackup.jar  \
       --app-version $version --resource-dir package/macos --type pkg
    mv -v SnapBackup-$version.pkg snap-backup-installer-v$version.pkg
-   mv -v snapbackup.jar snapbackup-v$version.jar
    ls -o *.jar *.pkg
    echo
    }
@@ -77,11 +78,11 @@ createMacInstaller() {
 updateReleasesFolder() {
    cd $projectHome
    echo "Releases folder:"
-   rm releases/*.jar releases/*.pkg
+   rm -f releases/*.jar releases/*.pkg
    cp -v build/snap-backup-installer-*.pkg releases
    cp -v build/snap-backup-installer-*.pkg releases/archive
-   cp -v build/snapbackup-*.jar            releases
-   cp -v build/snapbackup-*.jar            releases/archive
+   cp -v build/snapbackup.jar              releases/snapbackup-v$version.jar
+   cp -v build/snapbackup.jar              releases/archive/snapbackup-v$version.jar
    git checkout -- releases/archive
    echo "To launch:"
    echo "   java -jar $projectHome/releases/snapbackup-v$version.jar"
@@ -92,5 +93,5 @@ displayIntro
 setupBuildTools
 buildExecutableJar
 createResources
-createMacInstaller
+test "$mode" != "fast" && createMacInstaller
 updateReleasesFolder
