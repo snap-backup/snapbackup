@@ -14,8 +14,6 @@ package org.snapbackup.ui;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import javax.swing.*;
@@ -144,7 +142,7 @@ public class SnapBackupFrame extends JFrame {
    public static SnapBackupFrame current;
 
    public SnapBackupFrame() {
-      current = this;
+      current = this;  //todo: AssignmentToNonFinalStatic
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       //setTitle(UIProperties.appTitle);
       setTitle(ui.appTitle);

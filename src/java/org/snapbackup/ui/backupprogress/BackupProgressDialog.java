@@ -33,7 +33,7 @@ public class BackupProgressDialog extends JDialog {
 
    public BackupProgressDialog(ZipEngine zipInst) {
       super(SnapBackupFrame.current);
-      current = this;
+      current = this;  //todo: AssignmentToNonFinalStatic
       zip = zipInst;
       setTitle(BackupProgressUIProperties.backupProgressTitle);
       nfp.setMinimumFractionDigits(1);

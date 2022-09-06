@@ -198,10 +198,11 @@ public class UIProperties {
    public final String err40BackupTooLarge =     AppProperties.getProperty("Err40BackupTooLarge");
 
    public static UIProperties current;
+
    public UIProperties() {
-      skinSetMsg = AppProperties.getProperty("LookAndFeelSetMsg");
-      skinErrMsg = AppProperties.getProperty("LookAndFeelErrMsg");
-      current = this;
+      skinSetMsg = AppProperties.getProperty("LookAndFeelSetMsg");  //todo: AssignmentToNonFinalStatic
+      skinErrMsg = AppProperties.getProperty("LookAndFeelErrMsg");  //todo: AssignmentToNonFinalStatic
+      current = this;  //todo: AssignmentToNonFinalStatic
       }
 
 }
