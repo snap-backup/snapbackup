@@ -511,18 +511,16 @@ public abstract class DataModel {
       Logger.logMsg(ui.profilesPrompt + " " + Str.quote(UserPreferences.readPref(prefCurrentProfile)));
       }
 
-   public static void doCmdLineBackup(String profileName, String logFile) {
+   public static void doCmdLineBackup(String profileName) {
       new UIProperties();
       final ZipEngine zip = new ZipEngine();
-      String name = profileName.equals(SystemAttributes.cmdLineDefaultProfile) ?
-         UserPreferences.readPref(prefCurrentProfile) : profileName;
-      UserPreferences.setCmdLineProfileName(name);
+      UserPreferences.setCmdLineProfileName(profileName);
       initSettings();
       Logger.initOutput();
       Logger.logMsg(UIProperties.current.headerCmdLine);
       logTimeStart();
       Logger.logMsg(UIProperties.current.logMsgStart);
-      Logger.logMsg(UIProperties.current.logMsgProfile + name);
+      Logger.logMsg(UIProperties.current.logMsgProfile + profileName);
       loadCmdLineData();
       //List[] filterInfo = {
       //   zipIncludeList, zipExcludeList, zipExcludeFolderList, zipExcludeSizeList };
@@ -534,7 +532,7 @@ public abstract class DataModel {
       if (UserPreferences.profileInDB())
          zip.zipItems(zipItemList, cmdBackupPath, cmdFiltersOn, filterInfo);
       else
-         zip.abortBackup(UIProperties.current.err30ProfileNotFound + dataPrompt + name);
+         zip.abortBackup(UIProperties.current.err30ProfileNotFound + dataPrompt + profileName);
       if (cmdDoArchive && !zip.isAbortSet())
          FileSys.copyFile(cmdBackupPath, cmdArchivePath, zip);
       if (zip.isAbortSet())

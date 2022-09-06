@@ -19,8 +19,8 @@ import javax.swing.filechooser.FileSystemView;
 public class SystemAttributes {
 
    // Release constants
-   public static final String appTitle = "Snap Backup";
-   public static final String appName = "SnapBackup";  //".properties" name
+   public static final String appTitle =   "Snap Backup";
+   public static final String appName =    "SnapBackup";  //".properties" name
    public static final String appVersion = "6.4.1";  //keep in sync with package.json
    // 6.4.1 - 2022/08/28 - Filter out files stored in remote clouds
    // 6.4.0 - 2022/02/15 - Support openjdk and use jpackage to create installer
@@ -98,15 +98,14 @@ public class SystemAttributes {
    public static final String visitURL =        homeURL + "/app?v=" + appVersion;  //not displayed
 
    // Bootstrap data needed before reading properties file
-   public static final String errMsgHeader = "ERROR -- '";
+   public static final String errMsgHeader =          "ERROR -- '";
    public static final String errMsgMissingResource = "' property not found in: ";
-   public static final String prefLocale = "locale";
-   public static final String prefChar = ".";
-   public static final String prefPrefix = appName.toLowerCase() + prefChar;
-   public static final String prefProfilePrefix = prefPrefix + "~";
-   public static final String prefProfilePostfix = "~" + prefChar;
-   public static final String splitStr = "~@~";  //delimiter for multi-line data
-   public static final String cmdLineDefaultProfile = "~";
+   public static final String prefLocale =            "locale";
+   public static final String prefChar =              ".";
+   public static final String prefPrefix =            appName.toLowerCase() + prefChar;
+   public static final String prefProfilePrefix =     prefPrefix + "~";
+   public static final String prefProfilePostfix =    "~" + prefChar;
+   public static final String splitStr =              "~@~";  //delimiter for multi-line data
 
    // System information retrieved from JVM
    static final Properties     sysInfo =       System.getProperties();

@@ -38,8 +38,12 @@ public abstract class SnapBackup {
          }
       else if ("--list".equalsIgnoreCase(args[0]))
          DataModel.doCmdLineList();
+      else if ("--current".equalsIgnoreCase(args[0]))
+         DataModel.doCmdLineBackup(UserPreferences.readPref("CurrentProfile"));
+      else if ("~".equals(args[0]))                                              //DEPRECATED
+         DataModel.doCmdLineBackup(UserPreferences.readPref("CurrentProfile"));  //DEPRECATED
       else
-         DataModel.doCmdLineBackup(args[0], args.length > 1 ? args[1] : null);
+         DataModel.doCmdLineBackup(args[0]);
       }
 
 }
