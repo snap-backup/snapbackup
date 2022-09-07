@@ -21,7 +21,6 @@ import java.util.List;
 import javax.swing.*;
 import org.snapbackup.ui.UIUtilities;
 import org.snapbackup.utilities.DateStamp;
-import org.snapbackup.settings.AppProperties;
 import org.snapbackup.settings.SystemAttributes;
 import org.snapbackup.settings.UserPreferences;
 
@@ -251,7 +250,7 @@ public class OptionsDialog extends JDialog {
                Integer.toString(order3rdDropDown.getSelectedIndex()),
             year2DigitsButton.isSelected(),
             (String)separatorDropDown.getSelectedItem()) +
-         AppProperties.getProperty("StandardZipExtension"));
+         ".zip");
       }
 
    void updateFileName(int activeOrder) {

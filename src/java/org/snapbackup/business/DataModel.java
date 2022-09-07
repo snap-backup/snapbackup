@@ -63,7 +63,6 @@ public abstract class DataModel {
    static final String replacementChar =   SystemAttributes.replacementChar;  //"%"
    static final String sizePre =           space + space + "[";
    static final String sizePost =          space + AppProperties.getProperty("FilterMarkerUnits") + "]";
-   static final String zipExtension =      AppProperties.getProperty("StandardZipExtension");  //usually: ".zip"
    static final String trueStr =           AppProperties.getProperty("True");  //usually: "true"
    static final String filterMarkerPre =   AppProperties.getProperty("FilterMarkerPre");    //usually: "["
    static final String filterMarkerPost =  AppProperties.getProperty("FilterMarkerPost");   //usually: "]"
@@ -372,15 +371,9 @@ public abstract class DataModel {
       }
 
    static String calcDestPath(String backupDir, String backupName) {
-      /*
-      if (!backupDir.endsWith(fs))
-         backupDir = backupDir + fs;
-      return backupDir + backupName + UserPreferences.readPref(Options.prefSpacer) +
-         DateStamp.todaysDateStamp() + zipExtension;
-      */
       return backupDir + (backupDir.endsWith(fs) ? nullStr : fs) + backupName +
          UserPreferences.readPref(Options.prefSpacer) +
-         DateStamp.todaysDateStamp() + zipExtension;
+         DateStamp.todaysDateStamp() + ".zip";
       }
 
    static String calcDestPath(SnapBackupFrame f, String dir) {
