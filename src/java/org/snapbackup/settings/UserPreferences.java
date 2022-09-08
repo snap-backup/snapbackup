@@ -19,9 +19,11 @@ import org.snapbackup.ui.SnapBackupFrame;
 
 public abstract class UserPreferences {
 
-   static Preferences prefs =
-      Preferences.userNodeForPackage(UserPreferences.class);
-   //   Preferences.userNodeForPackage(new UserPreferences().getClass());
+   public static final boolean defaultPrefShowLanguages =  true;
+   public static final boolean defaultPrefFiltersEnabled = false;
+   public static final boolean defaultPrefShowProfiles =   false;
+
+   static Preferences prefs = Preferences.userNodeForPackage(UserPreferences.class);
    static final String prefix = SystemAttributes.prefPrefix;
    static final String locale = SystemAttributes.prefLocale;
    static final String prefProfileName = "profilename";
@@ -41,16 +43,9 @@ public abstract class UserPreferences {
       return prefs.get(prefix + prefName.toLowerCase(), AppProperties.getProperty(prefName));
       }
 
-   public static boolean readBooleanPref(String prefName) {
-      // Returns user's preference.  If none, default app property is returned.
-      return prefs.getBoolean(prefix + prefName.toLowerCase(),
-         AppProperties.getBooleanProperty(prefName));
-      /*
-      //return string2Boolean(readPref(prefName));
-      String fallback = boolean2String(AppProperties.getProperty(prefName).equals(
-         AppProperties.getProperty("True")));
-      return string2Boolean(prefs.get(prefix + prefName.toLowerCase(), fallback));
-      */
+   public static boolean readBooleanPref(String prefName, boolean prefDefault) {
+      // Returns user's preference.  If none, the default value is returned.
+      return prefs.getBoolean(prefix + prefName.toLowerCase(), prefDefault);
       }
 
    public static void savePref(String prefName, String prefValue) {
