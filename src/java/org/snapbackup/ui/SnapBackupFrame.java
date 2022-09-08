@@ -59,7 +59,6 @@ public class SnapBackupFrame extends JFrame {
    JRadioButtonMenuItem profilesMenuItemButtonOff =
                                    new JRadioButtonMenuItem(ui.menuItemProfilesOff);
    ButtonGroup profilesGroup =     new ButtonGroup();
-   JMenu       skinMenuItem =      new JMenu(ui.menuItemSkin);
    JMenuItem   exportMenuItem =    new JMenuItem(ui.menuItemExport);
    JMenuItem   importMenuItem =    new JMenuItem(ui.menuItemImport);
    JMenuItem   optionsMenuItem =   new JMenuItem(ui.menuItemOptions);
@@ -264,7 +263,6 @@ public class SnapBackupFrame extends JFrame {
       fileMenuGroup.add(languagesMenuItem);  //menu: File | Language Options
       fileMenuGroup.add(filtersMenuItem);    //menu: File | Backup Filters
       fileMenuGroup.add(profilesMenuItem);   //menu: File | Multiple Profiles
-      fileMenuGroup.add(skinMenuItem);       //menu: File | Look & Feel
       fileMenuGroup.addSeparator();
       fileMenuGroup.add(exportMenuItem);     //menu: File | Export Settings...
       fileMenuGroup.add(importMenuItem);     //menu: File | Import Settings...
@@ -425,9 +423,6 @@ public class SnapBackupFrame extends JFrame {
    public boolean getFiltersEnabled() {
       return filtersMenuItemButtonOn.isSelected();
       }
-   public String getSkinName() {
-      return (String)skinMenuItem.getSelectedObjects()[0];
-      }
    public void initProfilesUI(boolean showProfiles) {
       profilesMenuItemButtonOn.setSelected(showProfiles);
       profilesMenuItemButtonOff.setSelected(!showProfiles);
@@ -537,21 +532,6 @@ public class SnapBackupFrame extends JFrame {
       optionsMenuItem.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { optionsMenuItemAction(); }
          } );
-      // Skin (Look and Feel)
-      String currentSkinName = UserPreferences.readPref(DataModel.prefSkinName);
-      currentSkinName = UIManager.getLookAndFeel().getClass().getName();
-      JRadioButtonMenuItem skinRbmi;
-      ButtonGroup skinGroup = new ButtonGroup();
-      for (UIManager.LookAndFeelInfo laf : UIProperties.lafs) {
-         skinRbmi = new JRadioButtonMenuItem(laf.getName(),
-            laf.getClassName().equals(currentSkinName));
-         skinRbmi.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-               skinMenuItemAction(e.getActionCommand()); }
-            } );
-         skinGroup.add(skinRbmi);
-         skinMenuItem.add(skinRbmi);  //menu: File | Look & Feel | ZZZZ
-         }
       exitMenuItem.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { exitMenuItemAction(); }
          } );
@@ -664,32 +644,6 @@ public class SnapBackupFrame extends JFrame {
             ui.menuItemProfiles);
       profilesInnerPanel.setVisible(showProfiles);
       DataModel.saveShowProfilesSetting(this);
-      }
-   public void skinMenuItemAction(String actionCmd) {
-      int count = 0;
-      while (count < UIProperties.lafs.length &&
-            !actionCmd.equals(UIProperties.lafs[count].getName()))
-         count++;
-      try {
-         UIManager.LookAndFeelInfo laf = UIProperties.lafs[count];
-         UIManager.setLookAndFeel(laf.getClassName());
-         SwingUtilities.updateComponentTreeUI(this);
-
-         //FIX NULL ICON PROBLEM ???
-         //destBackupChooserButton.setIcon(Icons.folderIcon);
-         //static JButton      destBackupChooserButton =   new JButton(Icons.folderIcon);
-         //Icons.folderIcon == null ? 'Choose...' : Icons.folderIcon);
-
-         pack();
-         UIUtilities.lockInMinSize(this);
-         popupMsg(Str.macroExpand(UIProperties.skinSetMsg, laf.getName()),
-            ui.menuItemSkin);
-         DataModel.saveSkinSetting(laf.getClassName());
-         }
-      catch (Exception except) {
-         popupMsg(UIProperties.skinErrMsg + SystemAttributes.newLine +
-            except.getMessage(), ui.menuItemSkin);
-         }
       }
    public void exitMenuItemAction() {
       DataModel.exit();
@@ -836,7 +790,6 @@ public class SnapBackupFrame extends JFrame {
    public void srcFilterButtonAction() {
       new FilterDialog(this);
       }
-
 
    // Destination Callbacks
    public void destChooserButtonAction(JTextField destDirTextField, String msg) {

@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import org.snapbackup.business.DataModel;
 import org.snapbackup.ui.Application;
-import org.snapbackup.ui.UIProperties;
-import org.snapbackup.settings.AppProperties;
 import org.snapbackup.settings.UserPreferences;
 
 public abstract class SnapBackup {
@@ -23,16 +21,13 @@ public abstract class SnapBackup {
    // Run Snap Backup in either command line mode where the parameter is the profile name
    // or in GUI (Swing) mode if there are no parameters.
    public static void main(String[] args) {
+      String platformLaf = UIManager.getSystemLookAndFeelClassName();
       if (args.length == 0) {
-         AppProperties.addSupplimentalProperty(DataModel.prefSkinName,
-            UIManager.getSystemLookAndFeelClassName());  //make system l&f the default
          try {
-            UIManager.setLookAndFeel(UserPreferences.readPref(DataModel.prefSkinName));
+            UIManager.setLookAndFeel(platformLaf);
             }
          catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(),
-               UIProperties.skinErrMsg, JOptionPane.ERROR_MESSAGE);
-            UserPreferences.deletePref(DataModel.prefSkinName);
+            JOptionPane.showMessageDialog(null, e.toString(), platformLaf, JOptionPane.ERROR_MESSAGE);
             }
          new Application();
          }

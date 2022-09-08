@@ -14,7 +14,6 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 import org.snapbackup.settings.AppProperties;
 import org.snapbackup.settings.SystemAttributes;
 
@@ -44,11 +43,6 @@ public class UIProperties {
    //
    // From .properties File
    //
-
-   // Skin (Look and Feel)
-   public static final UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
-   public static String skinSetMsg =          AppProperties.getProperty("LookAndFeelSetMsg");
-   public static String skinErrMsg =          AppProperties.getProperty("LookAndFeelErrMsg");
 
    // Check for Updates
    public final String updatesVersionYours =     AppProperties.getProperty("UpdatesVersionYours");
@@ -80,7 +74,6 @@ public class UIProperties {
    public final String menuItemProfilesOn =   AppProperties.getProperty("MenuItemProfilesOn");
    public final String menuItemProfilesOff =  AppProperties.getProperty("MenuItemProfilesOff");
 
-   public final String menuItemSkin =         AppProperties.getProperty("MenuItemLook");
    public final String menuItemExport =       AppProperties.getProperty("MenuItemExport");
    public final String menuItemImport =       AppProperties.getProperty("MenuItemImport");
    public final String menuItemOptions =      AppProperties.getProperty("MenuItemOptions");
@@ -200,8 +193,6 @@ public class UIProperties {
    public static UIProperties current;
 
    public UIProperties() {
-      skinSetMsg = AppProperties.getProperty("LookAndFeelSetMsg");  //todo: AssignmentToNonFinalStatic
-      skinErrMsg = AppProperties.getProperty("LookAndFeelErrMsg");  //todo: AssignmentToNonFinalStatic
       current = this;  //todo: AssignmentToNonFinalStatic
       }
 

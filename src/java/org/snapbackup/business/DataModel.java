@@ -35,7 +35,6 @@ public abstract class DataModel {
    static final String prefFiltersEnabled =        "FiltersEnabled";
    static final String prefShowProfiles =          "ShowProfiles";
    public static final String prefCurrentProfile = "CurrentProfile";
-   public static final String prefSkinName =       "SkinName";
 
    // User preferences associated with each profile
    static final String prefProfileName =              "ProfileName";
@@ -115,10 +114,6 @@ public abstract class DataModel {
 
    public static void saveShowProfilesSetting(SnapBackupFrame f) {
       UserPreferences.savePref(prefShowProfiles, f.getProfilesEnabled());
-      }
-
-   public static void saveSkinSetting(String skinName) {
-      UserPreferences.savePref(prefSkinName, skinName);
       }
 
    public static String restoreDefaultSettings(SnapBackupFrame f) {
