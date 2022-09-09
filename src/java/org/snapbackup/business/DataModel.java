@@ -89,18 +89,18 @@ public abstract class DataModel {
       }
 
    public static String saveSettings(SnapBackupFrame f) {
-      UserPreferences.savePref(prefAppVersion, SystemAttributes.appVersion);
+      UserPreferences.savePref(prefAppVersion,     SystemAttributes.appVersion);
       UserPreferences.savePref(prefCurrentProfile, f.getCurrentProfileName());
-      UserPreferences.saveProfilePref(prefProfileName, f.getCurrentProfileName());
-      UserPreferences.saveProfilePref(prefSrcDataList, list2StrList(zipItemList));
-      UserPreferences.saveProfilePref(prefSrcDataIncludeList, list2StrList(zipIncludeList));
-      UserPreferences.saveProfilePref(prefSrcDataExcludeList, list2StrList(zipExcludeList));
+      UserPreferences.saveProfilePref(prefProfileName,              f.getCurrentProfileName());
+      UserPreferences.saveProfilePref(prefSrcDataList,              list2StrList(zipItemList));
+      UserPreferences.saveProfilePref(prefSrcDataIncludeList,       list2StrList(zipIncludeList));
+      UserPreferences.saveProfilePref(prefSrcDataExcludeList,       list2StrList(zipExcludeList));
       UserPreferences.saveProfilePref(prefSrcDataExcludeFolderList, list2StrList(zipExcludeFolderList));
-      UserPreferences.saveProfilePref(prefSrcDataExcludeSizeList, list2StrList(zipExcludeSizeList));
-      UserPreferences.saveProfilePref(prefBackupDir, f.getDestBackupDirTextField().getText());
-      UserPreferences.saveProfilePref(prefBackupName, f.getDestBackupNameTextField().getText());
-      UserPreferences.saveProfilePref(prefArchiveChecked, f.getDestArchivePromptCheckBox().isSelected());
-      UserPreferences.saveProfilePref(prefArchiveDir, f.getDestArchiveDirTextField().getText());
+      UserPreferences.saveProfilePref(prefSrcDataExcludeSizeList,   list2StrList(zipExcludeSizeList));
+      UserPreferences.saveProfilePref(prefBackupDir,                f.getDestBackupDirTextField().getText());
+      UserPreferences.saveProfilePref(prefBackupName,               f.getDestBackupNameTextField().getText());
+      UserPreferences.saveProfilePref(prefArchiveChecked,           f.getDestArchivePromptCheckBox().isSelected());
+      UserPreferences.saveProfilePref(prefArchiveDir,               f.getDestArchiveDirTextField().getText());
       return UIProperties.current.msgSettingsSaved;
       }
 
@@ -125,7 +125,7 @@ public abstract class DataModel {
       buildZipListModel(f.getSrcZipListModel(), f);
       f.getDestBackupDirTextField().setText(AppProperties.getProperty(prefBackupDir));
       f.getDestBackupNameTextField().setText(AppProperties.getProperty(prefBackupName));
-      f.getDestArchivePromptCheckBox().setSelected("true".compareTo(AppProperties.getProperty(prefArchiveChecked)) == 0);
+      f.getDestArchivePromptCheckBox().setSelected(UserPreferences.defaultPrefArchiveChecked);
       f.getDestArchiveDirTextField().setText(AppProperties.getProperty(prefArchiveDir));
       updateControls(f);
       return UIProperties.current.msgSettingsRestored;
@@ -211,12 +211,6 @@ public abstract class DataModel {
          f.getSrcZipList().setSelectedIndex(
             Math.min(loc, zipItemList.size() - 1));
       }
-
-   /*
-   static boolean elemExists(List list, int loc) {
-      return !((String)list.get(loc)).equals(nullStr);
-      }
-   */
 
    public static String buildZipListLine(String zipItem, String includeFilter,
          String excludeFilter, String excludeFoldersFilter, String sizeFilter,
@@ -306,7 +300,7 @@ public abstract class DataModel {
       loadZipList(f);
       f.getDestBackupDirTextField().setText(UserPreferences.readProfilePref(prefBackupDir));
       f.getDestBackupNameTextField().setText(UserPreferences.readProfilePref(prefBackupName));
-      f.getDestArchivePromptCheckBox().setSelected("true".compareTo(UserPreferences.readProfilePref(prefArchiveChecked)) == 0);
+      f.getDestArchivePromptCheckBox().setSelected(UserPreferences.readProfilePref(prefArchiveChecked, UserPreferences.defaultPrefArchiveChecked));
       f.getDestArchiveDirTextField().setText(UserPreferences.readProfilePref(prefArchiveDir));
       updateControls(f);
       }
@@ -314,9 +308,9 @@ public abstract class DataModel {
    public static void initSettings(SnapBackupFrame f) {
       initSupplimentalSettings();
       //SnapBackupFrame.setProfilesDropDown(UserPreferences.readPref(prefProfileList).split(SystemAttributes.splitStr));
-      f.initLanguagesUI(UserPreferences.readBooleanPref(prefShowLanguages,  UserPreferences.defaultPrefShowLanguages));
-      f.initFiltersUI(  UserPreferences.readBooleanPref(prefFiltersEnabled, UserPreferences.defaultPrefFiltersEnabled));
-      f.initProfilesUI( UserPreferences.readBooleanPref(prefShowProfiles,   UserPreferences.defaultPrefShowProfiles));
+      f.initLanguagesUI(UserPreferences.readPref(prefShowLanguages,  UserPreferences.defaultPrefShowLanguages));
+      f.initFiltersUI(  UserPreferences.readPref(prefFiltersEnabled, UserPreferences.defaultPrefFiltersEnabled));
+      f.initProfilesUI( UserPreferences.readPref(prefShowProfiles,   UserPreferences.defaultPrefShowProfiles));
       f.selectProfile(  UserPreferences.readPref(prefCurrentProfile));
       loadProfile(f);  //usually redudent but needed in case profile happens to be 1st on the list
       }
@@ -389,16 +383,6 @@ public abstract class DataModel {
    static String calcDestArchivePath() {
       return calcDestArchivePath(SnapBackupFrame.current);
       }
-
-   /*
-   public static void copyFile(String fromFileName, String toFileName) {
-      File to =   new File(toFileName);
-      File from = new File(fromFileName);
-      Logger.logMsg(UIProperties.logMsgCopyArchive + toFileName);
-      if (false)
-         Logger.logMsg(UIProperties.err08ArchiveProblem);
-      }
-   */
 
    public static void exit() {
       System.exit(0);
@@ -480,10 +464,10 @@ public abstract class DataModel {
       cmdBackupDir =   UserPreferences.readProfilePref(prefBackupDir);
       cmdBackupName =  UserPreferences.readProfilePref(prefBackupName);
       cmdBackupPath =  calcDestPath(cmdBackupDir, cmdBackupName);
-      cmdDoArchive =   "true".compareTo(UserPreferences.readProfilePref(prefArchiveChecked)) == 0;
+      cmdDoArchive =   UserPreferences.readProfilePref(prefArchiveChecked, UserPreferences.defaultPrefArchiveChecked);
       cmdArchiveDir =  UserPreferences.readProfilePref(prefArchiveDir);
       cmdArchivePath = calcDestPath(cmdArchiveDir, cmdBackupName);
-      cmdFiltersOn =   UserPreferences.readBooleanPref(prefFiltersEnabled, UserPreferences.defaultPrefFiltersEnabled);
+      cmdFiltersOn =   UserPreferences.readPref(prefFiltersEnabled, UserPreferences.defaultPrefFiltersEnabled);
       }
 
    public static void doCmdLineList() {

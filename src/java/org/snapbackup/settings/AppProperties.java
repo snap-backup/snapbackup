@@ -47,10 +47,6 @@ public abstract class AppProperties {
          }
       }
 
-   public static boolean getBooleanProperty(String propertyName) {
-      return getProperty(propertyName).equals(getProperty("True"));
-      }
-
    public static String getPropertyPadded(String propertyName) {
       return " " + getProperty(propertyName) + " ";
       }

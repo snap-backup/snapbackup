@@ -22,6 +22,7 @@ public abstract class UserPreferences {
    public static final boolean defaultPrefShowLanguages =  true;
    public static final boolean defaultPrefFiltersEnabled = false;
    public static final boolean defaultPrefShowProfiles =   false;
+   public static final boolean defaultPrefArchiveChecked = false;
 
    static Preferences prefs = Preferences.userNodeForPackage(UserPreferences.class);
    static final String prefix = SystemAttributes.prefPrefix;
@@ -43,7 +44,7 @@ public abstract class UserPreferences {
       return prefs.get(prefix + prefName.toLowerCase(), AppProperties.getProperty(prefName));
       }
 
-   public static boolean readBooleanPref(String prefName, boolean prefDefault) {
+   public static boolean readPref(String prefName, boolean prefDefault) {
       // Returns user's preference.  If none, the default value is returned.
       return prefs.getBoolean(prefix + prefName.toLowerCase(), prefDefault);
       }
@@ -101,18 +102,23 @@ public abstract class UserPreferences {
       }
 
    public static String readProfilePref(String prefName) {
-      // Returns user's preference.  If none, default app property is returned.
+      // Returns the string value of the user's preference.  If none, the default app property is returned.
       return prefs.get(profilePrefix() + prefName.toLowerCase(),
-              AppProperties.getProperty(prefName));
+         AppProperties.getProperty(prefName));
+      }
+
+   public static boolean readProfilePref(String prefName, boolean defaultValue) {
+      // Returns the boolean value of the user's preference.  If none, the default value is returned.
+      return prefs.getBoolean(profilePrefix() + prefName.toLowerCase(), defaultValue);
       }
 
    public static void saveProfilePref(String prefName, String prefValue) {
-       // Stores user's preference.
+       // Stores the string value of a user's preference.
        prefs.put(profilePrefix() + prefName.toLowerCase(), prefValue);
        }
 
    public static void saveProfilePref(String prefName, boolean prefValue) {
-       // Stores user's preference.
+       // Stores the boolean value of a user's preference.
        prefs.putBoolean(profilePrefix() + prefName.toLowerCase(), prefValue);
        }
 
@@ -139,10 +145,6 @@ public abstract class UserPreferences {
       for (String key : getAllKeys())
          if (key.endsWith(SystemAttributes.prefChar + prefProfileName))
             names.add(prefs.get(key, prefValueNotFound));
-      //String[] allKeys = getAllKeys();
-      //for (int count = 0; count < allKeys.length; count++)
-      //   if (allKeys[count].endsWith(SystemAttributes.prefChar + prefProfileName))
-      //      names.add(prefs.get(allKeys[count], prefValueNotFound));
       return names;
       }
 
@@ -150,10 +152,6 @@ public abstract class UserPreferences {
       for (String key : getAllKeys())
          if (key.startsWith(profilePrefix()))
             prefs.remove(key);
-      //String[] keys = getAllKeys();
-      //for (int count = 0; count < keys.length; count++)
-      //   if (keys[count].startsWith(profilePrefix()))
-      //      prefs.remove(keys[count]);
       }
 
    // Export/Import
