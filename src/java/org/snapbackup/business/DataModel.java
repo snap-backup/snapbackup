@@ -205,16 +205,15 @@ public abstract class DataModel {
       zipExcludeFolderList.remove(loc);
       zipExcludeSizeList.remove(loc);
       f.getSrcZipListModel().remove(loc);  //remove from UI control
+      UserPreferences.deleteProfile();
       if (zipItemList.isEmpty())
          f.getSrcRemoveButton().setEnabled(false);
       else
-         f.getSrcZipList().setSelectedIndex(
-            Math.min(loc, zipItemList.size() - 1));
+         f.getSrcZipList().setSelectedIndex(Math.min(loc, zipItemList.size() - 1));
       }
 
    public static String buildZipListLine(String zipItem, String includeFilter,
-         String excludeFilter, String excludeFoldersFilter, String sizeFilter,
-         SnapBackupFrame f) {
+      String excludeFilter, String excludeFoldersFilter, String sizeFilter, SnapBackupFrame f) {
       String line = zipItem;
       if (f.getFiltersEnabled()) {
          line = line + tab;
@@ -285,11 +284,11 @@ public abstract class DataModel {
 
    static void loadZipList(SnapBackupFrame f) {
       // Zip list data store
-      zipItemList = strList2List(UserPreferences.readProfilePref(prefSrcDataList));
-      zipIncludeList = strList2List(UserPreferences.readProfilePref(prefSrcDataIncludeList), zipItemList.size());
-      zipExcludeList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeList), zipItemList.size());
+      zipItemList =          strList2List(UserPreferences.readProfilePref(prefSrcDataList));
+      zipIncludeList =       strList2List(UserPreferences.readProfilePref(prefSrcDataIncludeList),       zipItemList.size());
+      zipExcludeList =       strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeList),       zipItemList.size());
       zipExcludeFolderList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeFolderList), zipItemList.size());
-      zipExcludeSizeList = strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeSizeList), zipItemList.size());
+      zipExcludeSizeList =   strList2List(UserPreferences.readProfilePref(prefSrcDataExcludeSizeList),   zipItemList.size());
 
       // Zip list ui control
       if (f != null)
@@ -300,8 +299,8 @@ public abstract class DataModel {
       loadZipList(f);
       f.getDestBackupDirTextField().setText(UserPreferences.readProfilePref(prefBackupDir));
       f.getDestBackupNameTextField().setText(UserPreferences.readProfilePref(prefBackupName));
+      f.getDestArchiveDirTextField().setText(UserPreferences.readProfilePref(prefArchiveDir));  //before selecting checkbox (saveSettings)
       f.getDestArchivePromptCheckBox().setSelected(UserPreferences.readProfilePref(prefArchiveChecked, UserPreferences.defaultPrefArchiveChecked));
-      f.getDestArchiveDirTextField().setText(UserPreferences.readProfilePref(prefArchiveDir));
       updateControls(f);
       }
 

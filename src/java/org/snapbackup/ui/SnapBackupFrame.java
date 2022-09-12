@@ -244,11 +244,6 @@ public class SnapBackupFrame extends JFrame {
       logTextArea.setFont(UIProperties.standardFont);
       logTextArea.setBackground(Color.lightGray);
       logTextArea.setBorder(BorderFactory.createLoweredBevelBorder());
-      /*   OLD BAD WAY???
-      logScrollPane.setBorder(BorderFactory.createCompoundBorder(
-         BorderFactory.createEmptyBorder(10, 0, 10, 0),
-         BorderFactory.createTitledBorder(ui.logTitle)));
-         */
 
       // Configure Button Controls
       UIUtilities.addFastKeys(buttonList);
@@ -267,7 +262,7 @@ public class SnapBackupFrame extends JFrame {
       fileMenuGroup.add(exportMenuItem);     //menu: File | Export Settings...
       fileMenuGroup.add(importMenuItem);     //menu: File | Import Settings...
       fileMenuGroup.addSeparator();
-      fileMenuGroup.add(optionsMenuItem);    //menu: File | Options...    ###############################
+      fileMenuGroup.add(optionsMenuItem);    //menu: File | Options...
       fileMenuGroup.add(exitMenuItem);       //menu: File | Exit
       menuBar.add(helpMenuGroup);            //menu: Help
       helpMenuGroup.add(guideMenuItem);      //menu: Help | User Guide
@@ -308,8 +303,6 @@ public class SnapBackupFrame extends JFrame {
 
       for (JPanel flagPanel : langFlagsPanels)
          iconPanel.add(flagPanel);
-      //for (int count = 0; count < numFlagRows; count++)
-      //   iconPanel.add(langFlagsPanels[count]);
       iconPanel.add(iconLabel);
 
       // Add Profiles
@@ -554,7 +547,9 @@ public class SnapBackupFrame extends JFrame {
       // Setup Callbacks for Profiles Controls
       profilesDropDown.addItemListener(new ItemListener() {
          public void itemStateChanged(ItemEvent e) {
-            if (e.getStateChange() == ItemEvent.SELECTED) profilesSelectAction(); }
+            if (e.getStateChange() == ItemEvent.SELECTED)
+               profilesSelectAction();
+            }
          } );
       profilesAddButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { profilesNewButtonAction(); }
@@ -709,10 +704,10 @@ public class SnapBackupFrame extends JFrame {
 
    // Profiles Callbacks
    public void profilesSelectAction() {
-       setCurrentProfile((String)profilesDropDown.getSelectedItem());
-       DataModel.loadProfile(this);
-       UserPreferences.savePref(DataModel.prefCurrentProfile, getCurrentProfileName());
-       }
+      setCurrentProfile((String)profilesDropDown.getSelectedItem());
+      DataModel.loadProfile(this);
+      UserPreferences.savePref(DataModel.prefCurrentProfile, getCurrentProfileName());
+      }
    public void profilesNewButtonAction() {
       String profileName = JOptionPane.showInputDialog(this, ui.profilesAddPrompt,
          ui.profilesAddTitle, JOptionPane.PLAIN_MESSAGE);
@@ -723,7 +718,7 @@ public class SnapBackupFrame extends JFrame {
             profilesNewButtonAction();  //prompt again
             }
          else if (profileName.equalsIgnoreCase(getCurrentProfileName())) {
-            //handles edge case for very first new profile added
+            // Handles edge case for very first new profile added
             popupMsg(ui.profilesAddMsgExists, ui.profilesTitle);
             profilesNewButtonAction();  //prompt again
             }
@@ -756,6 +751,7 @@ public class SnapBackupFrame extends JFrame {
          profilesDropDown.removeItemAt(loc);
          profilesDropDown.setSelectedIndex(
             Math.min(loc, profilesDropDown.getItemCount() - 1));  //triggers callback
+         profilesSelectAction();
          profilesDeleteButton.setEnabled(profilesDropDown.getItemCount() > 1);
          }
       }
@@ -777,18 +773,18 @@ public class SnapBackupFrame extends JFrame {
       srcAddFileChooser.setFileHidingEnabled(!SystemAttributes.evilWinSys);
       // Above line enables Windows users to see the "Application Data" folder.
       // A better option would probably be to add a user set option to control this.
-      final int returnStatus =
-         //srcAddFileChooser.showDialog(this, ui.srcAddCmd);
-         srcAddFileChooser.showOpenDialog(this);
+      final int returnStatus = srcAddFileChooser.showOpenDialog(this);
       if (returnStatus == JFileChooser.APPROVE_OPTION)
-         DataModel.addZipItem(
-            srcAddFileChooser.getSelectedFile().getAbsolutePath(), this);
+         DataModel.addZipItem(srcAddFileChooser.getSelectedFile().getAbsolutePath(), this);
+      DataModel.saveSettings(this);
       }
    public void srcRemoveButtonAction() {
       DataModel.removeCurrentZipItem(this);
+      DataModel.saveSettings(this);
       }
    public void srcFilterButtonAction() {
       new FilterDialog(this);
+      DataModel.saveSettings(this);
       }
 
    // Destination Callbacks
@@ -798,6 +794,7 @@ public class SnapBackupFrame extends JFrame {
       destFileChooser.setCurrentDirectory(new File(destDirTextField.getText()));
       if (destFileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)
          destDirTextField.setText(destFileChooser.getSelectedFile().getAbsolutePath());
+      DataModel.saveSettings(this);
       }
    public void destBackupChooserButtonAction() {
       destChooserButtonAction(destBackupDirTextField, ui.destBackupCmd);
@@ -807,6 +804,7 @@ public class SnapBackupFrame extends JFrame {
       }
    public void destBackupDirTextFieldEdited() {
       DataModel.updateDestPaths(this);
+      DataModel.saveSettings(this);
       }
    public void destBackupNameTextFieldEdited() {
       int badKeyLoc = destBackupNameTextField.getText().indexOf(SystemAttributes.fileSeparator);
@@ -817,14 +815,17 @@ public class SnapBackupFrame extends JFrame {
          badKeyLoc = destBackupNameTextField.getText().indexOf(SystemAttributes.fileSeparator);
          }
       DataModel.updateDestPaths(this);
+      DataModel.saveSettings(this);
       }
    public void destArchivePromptCheckBoxToggled() {
       DataModel.updateArchiveDir(this);
+      DataModel.saveSettings(this);
       }
 
    // Button Callbacks
    public void destArchiveDirTextFieldEdited() {
       DataModel.updateDestPaths(this);
+      DataModel.saveSettings(this);
       }
    public void saveButtonAction() {
       popupMsg(DataModel.saveSettings(this), ui.buttonSave);
