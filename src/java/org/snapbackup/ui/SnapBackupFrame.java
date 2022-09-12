@@ -130,13 +130,12 @@ public class SnapBackupFrame extends JFrame {
 
    // Define Button Controls
    JPanel  buttonPanel =    new JPanel();
-   JButton saveButton =     new JButton(ui.buttonSave);
    JButton resetButton =    new JButton(ui.buttonReset);
    JButton doBackupButton = new JButton(ui.buttonDoBackup);
    JButton exitButton =     new JButton(ui.buttonExit);
 
    JButton[] buttonList = { srcAddFileButton, srcAddFolderButton, srcRemoveButton, srcFilterButton,
-      profilesAddButton, profilesDeleteButton, saveButton, resetButton, doBackupButton, exitButton };
+      profilesAddButton, profilesDeleteButton, resetButton, doBackupButton, exitButton };
 
    public static SnapBackupFrame current;
 
@@ -358,7 +357,6 @@ public class SnapBackupFrame extends JFrame {
       basePanel.add(logPanel);
 
       // Add Button Controls
-      buttonPanel.add(saveButton);
       buttonPanel.add(resetButton);
       buttonPanel.add(doBackupButton);
       buttonPanel.add(exitButton);
@@ -601,9 +599,6 @@ public class SnapBackupFrame extends JFrame {
          } );
 
       // Setup Callbacks for Button Controls
-      saveButton.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) { saveButtonAction(); }
-         } );
       resetButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { resetButtonAction(); }
          } );
@@ -827,11 +822,9 @@ public class SnapBackupFrame extends JFrame {
       DataModel.updateDestPaths(this);
       DataModel.saveSettings(this);
       }
-   public void saveButtonAction() {
-      popupMsg(DataModel.saveSettings(this), ui.buttonSave);
-      }
    public void resetButtonAction() {
       popupMsg(DataModel.restoreDefaultSettings(this), ui.buttonReset);
+      DataModel.saveSettings(this);
       }
    public void doBackupButtonAction() {
       DataModel.doBackup();

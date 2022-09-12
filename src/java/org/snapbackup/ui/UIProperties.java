@@ -85,13 +85,6 @@ public class UIProperties {
    public final String menuItemUpdates =      AppProperties.getProperty("MenuItemUpdates");
    public final String menuItemAbout =        AppProperties.getProperty("MenuItemAbout");
 
-   // Filters
-   //public final String FiltersButton =        AppProperties.getProperty("FiltersButton");
-   //public final String FiltersTitle =         AppProperties.getProperty("FiltersTitle");
-   //public final String FiltersSave =          AppProperties.getProperty("FiltersButtonSave");
-   //public final String FiltersDelete =        AppProperties.getProperty("FiltersButtonDelete");
-   //public final String FiltersCancel =        AppProperties.getProperty("ButtonCancel");
-
    // Profiles
    public final String profilesOffMsg =       AppProperties.getProperty("ProfilesOffMsg");
    public final String profilesErrMsg =       AppProperties.getProperty("ProfilesErrMsg");
@@ -153,7 +146,6 @@ public class UIProperties {
    public final String logMsgAborted =        AppProperties.getProperty("LogMsgAborted");
 
    // Buttons
-   public final String buttonSave =           AppProperties.getProperty("ButtonSave");
    public final String buttonReset =          AppProperties.getProperty("ButtonReset");
    public final String buttonDoBackup =       AppProperties.getProperty("ButtonDoBackup");
    public final String buttonExit =           AppProperties.getProperty("ButtonExit");
@@ -170,9 +162,9 @@ public class UIProperties {
    public final String fileUtilButtonAbort =        AppProperties.getProperty("FileUtilityButtonAbort");
 
    // Messages
-   public final String msgSettingsSaved =        AppProperties.getProperty("MsgSettingsSaved");
-   public final String msgSettingsRestored =     AppProperties.getProperty("MsgSettingsRestoredLine1") + newLine +
-                                                 AppProperties.getProperty("MsgSettingsRestoredLine2");
+   public final String msgSettingsRestored = AppProperties.getProperty("MsgSettingsRestored");
+
+   // Errors
    public final String errPromptTitle =          AppProperties.getProperty("ErrPromptTitle");
    public final String errPromptContinue =       AppProperties.getProperty("ErrPromptContinue");
    public final String errPromptAbort =          AppProperties.getProperty("ErrPromptAbort");

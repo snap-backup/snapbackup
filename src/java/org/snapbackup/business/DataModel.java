@@ -88,7 +88,7 @@ public abstract class DataModel {
       return names;
       }
 
-   public static String saveSettings(SnapBackupFrame f) {
+   public static void saveSettings(SnapBackupFrame f) {
       UserPreferences.savePref(prefAppVersion,     SystemAttributes.appVersion);
       UserPreferences.savePref(prefCurrentProfile, f.getCurrentProfileName());
       UserPreferences.saveProfilePref(prefProfileName,              f.getCurrentProfileName());
@@ -101,7 +101,6 @@ public abstract class DataModel {
       UserPreferences.saveProfilePref(prefBackupName,               f.getDestBackupNameTextField().getText());
       UserPreferences.saveProfilePref(prefArchiveChecked,           f.getDestArchivePromptCheckBox().isSelected());
       UserPreferences.saveProfilePref(prefArchiveDir,               f.getDestArchiveDirTextField().getText());
-      return UIProperties.current.msgSettingsSaved;
       }
 
    public static void saveShowLanguagesSetting(SnapBackupFrame f) {
