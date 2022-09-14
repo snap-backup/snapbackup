@@ -21,15 +21,16 @@
 :: ImageMagick
 :: ===========
 :: Download ImageMagick and install with the default settings:
-::    https://imagemagick.org/script/download.php#windows  (use the first download listed)
+::    https://imagemagick.org/script/download.php#windows  (use first download listed)
 ::
 :: WiX Toolset
 :: ===========
 :: Enable .NET Framework:
-::    Start --> Windows System --> Control Panel --> Programs -->
-::    Turn Windows features on or off --> check ".NET Framework 3.5" --> OK
-:: Download and run the "WiX Toolset build tools" installer:
-::   https://wixtoolset.org/releases  (use latest v3 download)
+::    Start --> Windows System (right column) --> Control Panel --> Programs -->
+::    Turn Windows features on or off --> check ".NET Framework 3.5" --> OK -->
+::    Let Windows Update download the files for you  -->  Close
+:: Download and run the latest "WiX Toolset build tools" installer:
+::    https://github.com/wixtoolset/wix3/releases  (example: wix311.exe)
 
 ::::::::::::::::::::::::::::::::
 echo Snap Backup Build
@@ -45,6 +46,7 @@ for /d %%i in ("\Apps\Ant\apache-ant-*") do set antHome=%%i
 echo %antHome%
 call "%antHome%\bin\ant" -version
 call "%antHome%\bin\ant" build
+if not exist "%antHome%\bin\ant" pause & exit
 echo.
 
 ::::::::::::::::::::::::::::::::
@@ -75,10 +77,14 @@ jpackage --name SnapBackup --input . --license-file ../LICENSE.txt ^
    --win-menu --win-menu-group "Snap Backup" ^
    --resource-dir package/windows --type msi
 move SnapBackup-%version%.msi snap-backup-installer-v%version%.msi
-del ..\releases\*.msi
-copy snap-backup-installer-v%version%.msi ..\releases\snap-backup-installer-v%version%.msi
-copy snap-backup-installer-v%version%.msi ..\releases\archive\snap-backup-installer-v%version%.msi
-dir ..\releases
+cd ..
+del releases\*.msi
+copy build\snap-backup-installer-v%version%.msi releases\snap-backup-installer-v%version%.msi
+copy build\snap-backup-installer-v%version%.msi releases\archive\snap-backup-installer-v%version%.msi
+dir releases
+echo.
+echo To launch:
+echo    java -jar %CD%\releases\snapbackup-v%version%.jar
 echo.
 
 ::::::::::::::::::::::::::::::::
