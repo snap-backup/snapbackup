@@ -37,15 +37,15 @@
    },
    "scripts": {
       "step:01": "rimraf websites-target **/.DS_Store",
-      "step:02": "jshint . --exclude node_modules",
+      "step:02": "jshint . --exclude-path .gitignore",
       "step:03": "gulp web",
       "pretest": "npm-run-all step:*",
-      "test": "w3c-html-validator websites-target",
+      "test": "html-validator websites-target",
       "interactive": "browser-sync websites-target --watch"
    },
    "cdnVersion": {
       "dnajs": "2.0",
-      "fontAwesome": "6.1",
+      "fontAwesome": "6.2",
       "hamburgerMenu": "0.3",
       "jQuery": "3.6",
       "webIgnition": "1.5"
