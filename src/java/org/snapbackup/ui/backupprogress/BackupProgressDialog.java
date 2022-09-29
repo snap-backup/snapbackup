@@ -25,7 +25,8 @@ public class BackupProgressDialog extends JDialog {
    public static BackupProgressDialog current;
    ZipEngine zip;
    final int progressMax = BackupProgressUIProperties.progressMax;
-   NumberFormat nfp = NumberFormat.getPercentInstance(new Locale(UserPreferences.readLocalePref()));
+   Locale locale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
+   NumberFormat nfp = NumberFormat.getPercentInstance(locale);
    JLabel progressLabel;
    JProgressBar backupPB;
    JLabel memFreeLabel;

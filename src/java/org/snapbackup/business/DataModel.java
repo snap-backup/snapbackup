@@ -393,7 +393,7 @@ public abstract class DataModel {
    public static void logTimeEnd() {
       long elapsedMills = Calendar.getInstance().getTimeInMillis() - startBackup.getTimeInMillis();
       long minutes = elapsedMills/60000;
-      Locale locale = new Locale(UserPreferences.readLocalePref());
+      Locale locale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
       NumberFormat nf = NumberFormat.getNumberInstance(locale);
       NumberFormat nfp = NumberFormat.getPercentInstance(locale);
       NumberFormat nfkb = NumberFormat.getNumberInstance(locale);

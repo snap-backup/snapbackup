@@ -26,8 +26,8 @@ public abstract class AppProperties {
    static ResourceBundle applicationResources = getLocalizedBundle();
 
    static ResourceBundle getLocalizedBundle() {
-      return ResourceBundle.getBundle(SystemAttributes.appName,
-         new Locale(UserPreferences.readLocalePref()));
+      Locale locale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
+      return ResourceBundle.getBundle(SystemAttributes.appName, locale);
       }
 
    public static String getProperty(String propertyName) {

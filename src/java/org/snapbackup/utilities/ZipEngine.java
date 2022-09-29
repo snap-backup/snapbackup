@@ -57,7 +57,8 @@ public class ZipEngine {
    final String sizePre =            space + space + "[";
    final String sizePost =           space + AppProperties.getProperty("FilterMarkerUnits") + "]";
    final String outline =            ")" + space;
-   NumberFormat nf = NumberFormat.getNumberInstance(new Locale(UserPreferences.readLocalePref()));
+   Locale locale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
+   NumberFormat nf = NumberFormat.getNumberInstance(locale);
    int numLargestFiles;
    TopMap<Long, String> largestFiles;
    boolean useRelativePaths = true;
@@ -245,7 +246,7 @@ public class ZipEngine {
                   updateFilterInfo(filterInfo, iter.nextIndex());
                zipItem(iter.next());
                }
-            Locale locale = new Locale(UserPreferences.readLocalePref());
+            Locale locale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
             NumberFormat zipNF = NumberFormat.getNumberInstance(locale);
             zipNF.setMaximumFractionDigits(0);  //whole numbers only
             Logger.logMsg(UIProperties.current.logMsgFilesZipped + space +

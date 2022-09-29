@@ -274,10 +274,10 @@ public class SnapBackupFrame extends JFrame {
       ////////////////////////
       // Configure Language Flags
       final String localeCodeKey = SystemAttributes.userName;  //actual value not important
-      Locale currentLocale = new Locale(UserPreferences.readLocalePref());
+      Locale currentLocale = new Locale.Builder().setLanguage(UserPreferences.readLocalePref()).build();
       for (int count = 0; count < SystemAttributes.localeCodes.length; count++) {
          String localeCode = SystemAttributes.localeCodes[count];
-         Locale locale = new Locale(localeCode);
+         Locale locale = new Locale.Builder().setLanguage(localeCode).build();
          JLabel langLabel = new JLabel(Icons.langIcon(localeCode));
          String language = locale.getDisplayLanguage(currentLocale);
          String toolTip = language + SystemAttributes.dividerStr + locale.getDisplayLanguage(locale);
