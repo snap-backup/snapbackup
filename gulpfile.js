@@ -12,7 +12,7 @@ import zip         from 'gulp-zip';
 import { readFileSync } from 'fs';
 
 // Setup
-const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
+const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
 const releaseUrl = pkg.homepage + '/raw/main/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',

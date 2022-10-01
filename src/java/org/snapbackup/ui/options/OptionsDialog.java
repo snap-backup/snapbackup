@@ -35,7 +35,7 @@ public class OptionsDialog extends JDialog {
 
    // Define Options Controls
    String coreBackupName;
-   OptionsUIProperties ui = new OptionsUIProperties();   //make singleton for performance????
+   OptionsUIProperties ui = new OptionsUIProperties();
 
    JPanel       optionsPanel =         new JPanel();
 

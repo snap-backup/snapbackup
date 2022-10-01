@@ -26,7 +26,7 @@ public class FilterDialog extends JDialog {
 
    SnapBackupFrame f = SnapBackupFrame.current;
    String nullStr = SystemAttributes.nullStr;
-   FilterUIProperties ui = new FilterUIProperties();   //make singleton for performance????
+   FilterUIProperties ui = new FilterUIProperties();
 
    // Define Controls
    JPanel     filterPanel =               new JPanel();

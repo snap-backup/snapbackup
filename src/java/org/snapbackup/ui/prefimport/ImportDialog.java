@@ -115,8 +115,7 @@ public class ImportDialog extends JDialog {
       locationFileChooser.setFileFilter(new ExportPrefs().xmlFilter);
       int returnStatus = locationFileChooser.showOpenDialog(this);
       if (returnStatus == JFileChooser.APPROVE_OPTION)
-         locationTextField.setText(
-               locationFileChooser.getSelectedFile().getAbsolutePath());
+         locationTextField.setText(locationFileChooser.getSelectedFile().getAbsolutePath());
       }
 
    void actionCancel() {
@@ -127,7 +126,7 @@ public class ImportDialog extends JDialog {
       String errMsg = new ImportPrefs().doImport(locationTextField.getText());
       if (errMsg == null) {
          JOptionPane.showMessageDialog(this, ui.msgSuccess, new Export().Settings,
-               JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.PLAIN_MESSAGE);
          SnapBackupFrame oldFrame = SnapBackupFrame.current;
          AppProperties.reload();
          new Application();
@@ -137,7 +136,7 @@ public class ImportDialog extends JDialog {
          }
       else
          JOptionPane.showMessageDialog(this, errMsg, ui.locationCmd,
-               JOptionPane.ERROR_MESSAGE);
+            JOptionPane.ERROR_MESSAGE);
       }
 
 }

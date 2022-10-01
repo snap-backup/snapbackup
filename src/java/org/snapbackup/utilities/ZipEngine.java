@@ -173,7 +173,9 @@ public class ZipEngine {
                Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
             isJunctionPoint = attrs.isOther();
             }
-         catch(java.io.IOException e) { }
+         catch(IOException e) {
+            Logger.logMsg(e.toString());
+            }
       if (filterFolderOn && filterFolderP.matcher(dir.getName()).matches())
          logSkippedMsg(displayPath + fileSeparator + exclusionNote);
       else if (extraneousFolders.contains(dir.getName()) || isJunctionPoint)
