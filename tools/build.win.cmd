@@ -35,6 +35,7 @@
 ::::::::::::::::::::::::::::::::
 echo Snap Backup Build
 echo =================
+cd /d "%~dp0"
 cd
 java --version
 echo.
