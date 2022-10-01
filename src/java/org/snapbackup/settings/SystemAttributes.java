@@ -103,7 +103,7 @@ public class SystemAttributes {
    public static final String errMsgMissingResource = "' property not found in: ";
    public static final String prefLocale =            "locale";
    public static final String prefChar =              ".";
-   public static final String prefPrefix =            appName.toLowerCase() + prefChar;
+   public static final String prefPrefix =            appName.toLowerCase(Locale.ROOT) + prefChar;
    public static final String prefProfilePrefix =     prefPrefix + "~";
    public static final String prefProfilePostfix =    "~" + prefChar;
    public static final String splitStr =              "~@~";  //delimiter for multi-line data

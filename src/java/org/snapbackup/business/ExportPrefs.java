@@ -11,6 +11,7 @@
 package org.snapbackup.business;
 
 import java.io.File;
+import java.util.Locale;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -44,7 +45,7 @@ public class ExportPrefs {
 
    public class XmlFileFilter extends FileFilter {
       public boolean accept(File f) {
-         return f.isDirectory() || f.getName().toLowerCase().endsWith(ExportPrefs.xmlExtension);
+         return f.isDirectory() || f.getName().toLowerCase(Locale.ROOT).endsWith(ExportPrefs.xmlExtension);
          }
       public String getDescription() {
          return "XML files";

@@ -41,43 +41,43 @@ public abstract class UserPreferences {
 
    public static String readPref(String prefName) {
       // Returns user's preference.  If none, default app property is returned.
-      return prefs.get(prefix + prefName.toLowerCase(), AppProperties.getProperty(prefName));
+      return prefs.get(prefix + prefName.toLowerCase(Locale.ROOT), AppProperties.getProperty(prefName));
       }
 
    public static boolean readPref(String prefName, boolean prefDefault) {
       // Returns user's preference.  If none, the default value is returned.
-      return prefs.getBoolean(prefix + prefName.toLowerCase(), prefDefault);
+      return prefs.getBoolean(prefix + prefName.toLowerCase(Locale.ROOT), prefDefault);
       }
 
    public static void savePref(String prefName, String prefValue) {
       // Stores user's preference.
-      prefs.put(prefix + prefName.toLowerCase(), prefValue);
+      prefs.put(prefix + prefName.toLowerCase(Locale.ROOT), prefValue);
       }
 
    public static void savePref(String prefName, boolean prefValue) {
       // Stores user's preference.
-      prefs.putBoolean(prefix + prefName.toLowerCase(), prefValue);
+      prefs.putBoolean(prefix + prefName.toLowerCase(Locale.ROOT), prefValue);
       }
 
    public static void deletePref(String prefName) {
       // Erases user's preference, if it exists.
-      prefs.remove(prefix + prefName.toLowerCase());
+      prefs.remove(prefix + prefName.toLowerCase(Locale.ROOT));
       }
 
    public static boolean exists(String prefName) {
       // Returns true if the preference has a value.
       return !prefValueNotFound.equals(
-         prefs.get(prefix + prefName.toLowerCase(), prefValueNotFound));
+         prefs.get(prefix + prefName.toLowerCase(Locale.ROOT), prefValueNotFound));
       }
 
    // Profiles
 
    public static void setCmdLineProfileName(String profileName) {
-      cmdLineProfileName = profileName.toLowerCase();
+      cmdLineProfileName = profileName.toLowerCase(Locale.ROOT);
       }
 
    static String profilePrefix(String profileName) {
-      return SystemAttributes.prefProfilePrefix + profileName.toLowerCase() +
+      return SystemAttributes.prefProfilePrefix + profileName.toLowerCase(Locale.ROOT) +
          SystemAttributes.prefProfilePostfix;
       }
 
@@ -103,28 +103,28 @@ public abstract class UserPreferences {
 
    public static String readProfilePref(String prefName) {
       // Returns the string value of the user's preference.  If none, the default app property is returned.
-      return prefs.get(profilePrefix() + prefName.toLowerCase(),
+      return prefs.get(profilePrefix() + prefName.toLowerCase(Locale.ROOT),
          AppProperties.getProperty(prefName));
       }
 
    public static boolean readProfilePref(String prefName, boolean defaultValue) {
       // Returns the boolean value of the user's preference.  If none, the default value is returned.
-      return prefs.getBoolean(profilePrefix() + prefName.toLowerCase(), defaultValue);
+      return prefs.getBoolean(profilePrefix() + prefName.toLowerCase(Locale.ROOT), defaultValue);
       }
 
    public static void saveProfilePref(String prefName, String prefValue) {
        // Stores the string value of a user's preference.
-       prefs.put(profilePrefix() + prefName.toLowerCase(), prefValue);
+       prefs.put(profilePrefix() + prefName.toLowerCase(Locale.ROOT), prefValue);
        }
 
    public static void saveProfilePref(String prefName, boolean prefValue) {
        // Stores the boolean value of a user's preference.
-       prefs.putBoolean(profilePrefix() + prefName.toLowerCase(), prefValue);
+       prefs.putBoolean(profilePrefix() + prefName.toLowerCase(Locale.ROOT), prefValue);
        }
 
    public static void deleteProfilePref(String prefName) {
       // Erases user's preference, if it exists.
-      prefs.remove(profilePrefix() + prefName.toLowerCase());
+      prefs.remove(profilePrefix() + prefName.toLowerCase(Locale.ROOT));
       }
 
    public static String[] getAllKeys() {
