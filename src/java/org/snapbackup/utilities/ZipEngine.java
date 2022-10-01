@@ -11,6 +11,8 @@
 package org.snapbackup.utilities;
 
 import java.io.*;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.List;
@@ -162,9 +164,19 @@ public class ZipEngine {
 
    public void zipDirectory(String dirName, File dir) {
       String displayPath = useRelativePaths ? dirName.substring(rootPathLen) : dirName;
+      Boolean isJunctionPoint = false;
+      if (SystemAttributes.evilWinSys)
+         try {
+            Logger.logMsg(folderLogMsg + displayPath);
+            Path path = Paths.get(dir.getAbsolutePath());
+            BasicFileAttributes attrs =
+               Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+            isJunctionPoint = attrs.isOther();
+            }
+         catch(java.io.IOException e) { }
       if (filterFolderOn && filterFolderP.matcher(dir.getName()).matches())
          logSkippedMsg(displayPath + fileSeparator + exclusionNote);
-      else if (extraneousFolders.contains(dir.getName()))
+      else if (extraneousFolders.contains(dir.getName()) || isJunctionPoint)
          logSkippedMsg(displayPath);
       else {
          Logger.logMsg(folderLogMsg + displayPath);
