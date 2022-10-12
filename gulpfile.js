@@ -9,10 +9,10 @@ import mergeStream from 'merge-stream';
 import rename      from 'gulp-rename';
 import size        from 'gulp-size';
 import zip         from 'gulp-zip';
-import { readFileSync } from 'fs';
+import fs from 'fs';
 
 // Setup
-const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
+const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
 const releaseUrl = pkg.homepage + '/raw/main/releases/';
 const installer = {
    mac:  'snap-backup-installer-v' + pkg.version + '.pkg',

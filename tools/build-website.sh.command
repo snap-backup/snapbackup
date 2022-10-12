@@ -12,6 +12,8 @@ projectHome=$(cd $(dirname $0)/..; pwd)
 apacheCfg=/usr/local/etc/httpd
 apacheLog=/usr/local/var/log/httpd/error_log
 webDocRoot=$(grep ^DocumentRoot $apacheCfg/httpd.conf | awk -F'"' '{ print $2 }')
+cliFlagMsg="Use the '--no-server' flag to skip the interactive web server."
+cliFlag=$1
 
 setupTools() {
    cd $projectHome
@@ -57,12 +59,8 @@ publishWebFiles() {
    test -w $publishSite && publish
    }
 
-launchBrowser() {
-   cd $projectHome
-   npm run interactive
-   }
-
 setupTools
 buildWebFiles
 publishWebFiles
-launchBrowser
+test "$cliFlag" = "--no-server" && echo "Skipping interactive server (--no-server)." || echo $cliFlagMsg
+test "$cliFlag" != "--no-server" && npm run interactive

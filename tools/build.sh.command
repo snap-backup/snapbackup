@@ -17,14 +17,15 @@ projectHome=$(cd $(dirname $0)/..; pwd)
 iconPng=$projectHome/src/resources/graphics/application/snap-backup-icon.png
 attributesFile=$projectHome/src/java/org/snapbackup/settings/SystemAttributes.java
 version=$(grep --max-count 1 appVersion $attributesFile | awk -F'"' '{ print $2 }')
-mode=$1
+fastFlagMsg="Use the '--fast' flag to skip installer generation"
+cliFlag=$1
 
 displayIntro() {
    cd $projectHome
    echo
    echo $banner
    echo $(echo $banner | sed s/./=/g)
-   test "$mode" = "fast" && echo "Mode: fast (skip installer generation)"
+   test "$cliFlag" = "--fast" && echo "Fast mode (--fast) enabled." || echo $fastFlagMsg
    pwd
    echo
    }
@@ -93,5 +94,5 @@ displayIntro
 setupBuildTools
 buildExecutableJar
 createResources
-test "$mode" != "fast" && createMacInstaller
+test "$cliFlag" != "--fast" && createMacInstaller
 updateReleasesFolder
