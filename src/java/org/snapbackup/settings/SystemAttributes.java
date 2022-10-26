@@ -55,7 +55,6 @@ public class SystemAttributes {
       "en", "eo", "es", "de", "fr", "id", "it", "ko", "nl", "pt", "ro", "ru", "sl", "sq"
       };
       // Codes -- https://www.loc.gov/standards/iso639-2/php/code_list.php
-      // Flags -- https://www.paypal.com/be/webapps/mpp/country-worldwide
       // See build.xml for workaround to "in" bug regarding Indonesian:
       //    https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6457127
    public static final String[][] appTranslators = {
@@ -74,7 +73,7 @@ public class SystemAttributes {
       };
    public static final String appAuthors = "Dem Pilafian";  //names of code contributors
    public static final String appCopyright =
-      "Copyright &copy; individual contributors to the Snap Backup project<br>" +
+      "Copyright &copy; Individual contributors to the Snap Backup project<br>" +
       "Snap Backup&reg; is a registered trademark of Center Key";
 
    // Useful constants

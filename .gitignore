@@ -5,7 +5,7 @@
 /package-lock.json
 /build/
 /tools/static-analysis/pmd/
-/websites-target/
+/website-target/
 
 # Extraneous system files
 .DS_Store

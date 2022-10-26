@@ -1,4 +1,5 @@
-@@include("websites/web-includes/page-begin.html", { "pageTitle": "Frequently Asked Questions (FAQ)" })
+{% assign webRoot = '..' %}
+{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: 'Frequently Asked Questions (FAQ)' %}
 
 <main data-menu=faq>
 
@@ -154,7 +155,7 @@
       <h2>What languages does Snap Backup support?</h2>
       <p>
          Snap Backup supports
-         @@include("websites/web-includes/languages-text.html")
+         {% render 'website/templates/languages-text.html', webRoot: webRoot %}
          &nbsp;Snap Backup will attempt to detect your default language and
          use that if available.
       </p>
@@ -169,7 +170,7 @@
          (an executable <b>J</b>ava <b>AR</b>chive)
          and indicates the file should be opened by Java &mdash; <b>not</b> by a zip utility.&nbsp;
          The easiest way to fix this annoying problem is to just
-         <a href=https://www.java.com class=external-site>reinstall Java</a>, which automatically
+         <a href=https://openjdk.org class=external-site>reinstall Java</a>, which automatically
          resets the "<code>.jar</code>" file association back to Java.&nbsp;
          If that does not work, look to see if your zip utility has an option in its preferences to
          release the "<code>.jar</code>" file association.
@@ -214,7 +215,7 @@
       </p>
       <figure>
          <figcaption>Security Warning with "Open" Button</figcaption>
-         <img src=../graphics/unidentified-developer-warning.png alt=security>
+         <img src=../graphics/developer-warning.png alt=security>
       </figure>
       <p>
          Macs provide a simple way to allow you to run such files &ndash; just
@@ -233,4 +234,4 @@
 
 </main>
 
-@@include("websites/web-includes/page-end.html")
+{% render 'website/templates/page-end.html', webRoot: webRoot %}

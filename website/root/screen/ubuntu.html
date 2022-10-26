@@ -1,4 +1,5 @@
-@@include("websites/web-includes/page-begin.html", { "pageTitle": "Screenshot (Windows)" })
+{% assign webRoot = '..' %}
+{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: 'Screenshot (Ubuntu)' %}
 
 <main data-menu=preview>
 
@@ -14,8 +15,8 @@
          <a href=windows.html><img src=../graphics/os-icons/windows.svg alt=windows></a>
       </p>
       <figure>
-         <figcaption>Microsoft Windows look &amp; feel</figcaption>
-         <img src=../graphics/screenshots/windows.png alt=windows>
+         <figcaption>Ubuntu GTK+ look &amp; feel</figcaption>
+         <img src=../graphics/screenshots/ubuntu.png alt=ubuntu>
       </figure>
       <p class=external-site>
          Check out the manual:
@@ -25,4 +26,4 @@
 
 </main>
 
-@@include("websites/web-includes/page-end.html")
+{% render 'website/templates/page-end.html', webRoot: webRoot %}

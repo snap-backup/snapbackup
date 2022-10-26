@@ -16,7 +16,7 @@ On some systems with Java installed you can just double click the JAR file
 and Snap Backup will automatically run.  On other systems, you may have to
 enter the following command:
 
-  java -jar snapbackup-@@pkg.version.jar
+  java -jar snapbackup-{{pkg.version}}.jar
 
 Consult your Java documentation for the exact steps to launch an executable
 JAR on your system.

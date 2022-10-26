@@ -1,4 +1,8 @@
-@@include("websites/web-includes/page-begin.html", { "pageTitle": "Download" })
+{% assign webRoot = '..' %}
+{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: 'Download' %}
+{% assign releaseUrl    = pkg.homepage | append: '/raw/main/releases' %}
+{% assign macExtension  = '.pkg' %}
+{% assign winExtension  = '.msi' %}
 
 <main data-menu=download>
 
@@ -14,13 +18,13 @@
          <figure class=cake-layers>
             <figcaption>Apple macOS</figcaption>
             <div>
-               <a href="@@download.mac">@@installer.mac</a>
-               <a href="@@download.mac"><img src=../graphics/os-icons/mac.svg alt=mac></a>
-               <p><small>Updated: @@pkg.extra.updated</small></p>
+               <a href={{releaseUrl}}/snap-backup-installer-v{{pkg.version}}{{macExtension}}>snap-backup-installer-v{{pkg.version}}{{macExtension}}</a>
+               <a href={{releaseUrl}}/snap-backup-installer-v{{pkg.version}}{{macExtension}}><img src=../graphics/os-icons/mac.svg alt=mac></a>
+               <p><small>Updated: {{pkg.extra.updated}}</small></p>
             </div>
             <div>
                Once downloading is complete, go into your <code>Downloads</code> folder and locate
-               the <code>@@installer.mac</code> file.&nbsp;
+               the <code>snap-backup-installer-v{{pkg.version}}{{macExtension}}</code> file.&nbsp;
                Then <b><i>&lt;control-click&gt;</i></b> on the file and select "<b>Open</b>" to
                start the install.
             </div>
@@ -33,9 +37,9 @@
          <figure class=cake-layers>
             <figcaption>Microsoft Windows</figcaption>
             <div>
-               <a href="@@download.win">@@installer.win</a>
-               <a href="@@download.win"><img src=../graphics/os-icons/windows.svg alt=windows></a>
-               <p><small>Updated: @@pkg.extra.updated</small></p>
+               <a href={{releaseUrl}}/snap-backup-installer-v{{pkg.version}}{{winExtension}}>snap-backup-installer-v{{pkg.version}}{{winExtension}}</a>
+               <a href={{releaseUrl}}/snap-backup-installer-v{{pkg.version}}{{winExtension}}><img src=../graphics/os-icons/windows.svg alt=windows></a>
+               <p><small>Updated: {{pkg.extra.updated}}</small></p>
             </div>
             <div>
                Save the install file to a location such as your <i>Desktop</i> and
@@ -45,21 +49,21 @@
          <figure class=cake-layers>
             <figcaption>Generic executable JAR file <span>(All Java Platforms)</span></figcaption>
             <div>
-               <a href="@@download.java">@@installer.java</a>
-               <a href="@@download.java">
+               <a href={{releaseUrl}}/snapbackup.jar>snapbackup.jar</a>
+               <a href={{releaseUrl}}/snapbackup.jar>
                   <img src=../graphics/os-icons/java.svg alt=java></a>
-                  (@@pkg.extra.jarSize)<br>
+                  ({{pkg.extra.jarSize}})<br>
                <a href=ReadMe.txt>ReadMe.txt</a>
                &nbsp; &nbsp;
                <a href=../graphics/snap-backup-icon.png>Optional Icon File</a>
-               <p><small>Updated: @@pkg.extra.updated</small></p>
+               <p><small>Updated: {{pkg.extra.updated}}</small></p>
             </div>
             <div>
                <p>
                   First, download and install Java from:<br>
-                  <a href=https://www.java.com class=external-site>www.java.com</a>
+                  <a href=https://openjdk.org class=external-site>openjdk.org</a>
                   &nbsp;
-                  <a href=https://www.java.com class=external-site>
+                  <a href=https://openjdk.org class=external-site>
                      <img src=../graphics/logo-get-java.png alt=java>
                   </a>
                </p>
@@ -69,21 +73,21 @@
                   <code>~/apps/snap-backup/</code>
                </p>
                <p>
-                  Third, double-click the <code>@@installer.java</code> file to run Snap
+                  Third, double-click the <code>snapbackup.jar</code> file to run Snap
                   Backup.&nbsp;
                   On some systems, you may need to enter the following command:<br>
-                  <code>java -jar @@installer.java</code>
+                  <code>java -jar snapbackup.jar</code>
                </p>
             </div>
          </figure>
       </div>
       <p>
-         For older releases: <a href=@@download.past>Past Releases</a>
+         For older releases: <a href={{releaseUrl}}/archive class=external-site>Past Releases</a>
       </p>
       <aside>
          <b>Languages Included:</b>
          <p class=language-flags>
-            @@include("websites/web-includes/languages-icons.html")
+            {% render 'website/templates/languages-icons.html', webRoot: webRoot %}
          </p>
          <p>
             When you first run Snap<br>Backup, click the flag for<br>the language you desire.
@@ -111,4 +115,4 @@
 
 </main>
 
-@@include("websites/web-includes/page-end.html")
+{% render 'website/templates/page-end.html', webRoot: webRoot %}

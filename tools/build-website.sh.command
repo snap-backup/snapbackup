@@ -50,17 +50,25 @@ buildWebFiles() {
 publishWebFiles() {
    cd $projectHome
    publishSite=$webDocRoot/centerkey.com
+   publishFolder=$publishSite/www.snapbackup.org
    publish() {
       echo "Publishing:"
       echo $publishSite
-      cp -R websites-target/www.snapbackup.* $publishSite
-      echo
+      cp -R website-target/* $publishFolder
+      ls -o $publishSite | grep snapbackup
+      test -x "$(which tree)" && tree $publishFolder
       }
    test -w $publishSite && publish
+   }
+
+interactiveServer() {
+   cd $projectHome
+   test "$cliFlag" = "--no-server" && echo "Skipping interactive server (--no-server)." || echo $cliFlagMsg
+   test "$cliFlag" != "--no-server" && npm run interactive
+   echo
    }
 
 setupTools
 buildWebFiles
 publishWebFiles
-test "$cliFlag" = "--no-server" && echo "Skipping interactive server (--no-server)." || echo $cliFlagMsg
-test "$cliFlag" != "--no-server" && npm run interactive
+interactiveServer

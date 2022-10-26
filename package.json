@@ -22,7 +22,7 @@
       "jarSize": "232 KB"
    },
    "jshintConfig": {
-      "esversion": 9,
+      "esversion": 11,
       "strict": "implied",
       "eqeqeq": true,
       "undef": true,
@@ -35,39 +35,40 @@
          "libX": false
       }
    },
+   "runScriptsConfig": {
+      "build": [
+         "rimraf website-target **/.DS_Store",
+         "jshint . --exclude-path .gitignore",
+         "replacer website/root website-target --pkg",
+         "copy-file src/resources/snap-backup-user-guide.html --folder website-target",
+         "copy-folder src/resources/graphics/application --ext=.png website-target/graphics/flags",
+         "copy-folder website/graphics --ext=.png,.svg website-target/graphics",
+         "lessc website/snap-backup.less website-target/style.css",
+         "uglifyjs website/snap-backup.js --output website-target/app.js"
+      ]
+   },
    "scripts": {
-      "step:01": "rimraf websites-target **/.DS_Store",
-      "step:02": "jshint . --exclude-path .gitignore",
-      "step:03": "gulp web",
-      "pretest": "npm-run-all step:*",
-      "test": "html-validator websites-target",
-      "interactive": "browser-sync websites-target --watch"
+      "pretest": "run-scripts build",
+      "test": "html-validator website-target",
+      "interactive": "browser-sync website-target --watch"
    },
    "cdnVersion": {
-      "dna-engine": "2.0",
-      "fontAwesome": "6.2",
-      "hamburgerMenu": "0.3",
-      "jQuery": "3.6",
-      "webIgnition": "1.5"
-   },
-   "dependencies": {
-      "dna-engine": "~2.2",
-      "hamburger-menu": "~0.5",
-      "jquery": "~3.6",
-      "web-ignition": "~1.5"
+      "fontAwesome": "6.2"
    },
    "devDependencies": {
       "browser-sync": "~2.27",
-      "gulp": "~4.0",
-      "gulp-concat": "~2.6",
-      "gulp-file-include": "~2.3",
-      "gulp-rename": "~2.0",
-      "gulp-size": "~4.0",
-      "gulp-zip": "~5.1",
+      "copy-file-util": "~0.1.4",
+      "copy-folder-util": "~0.2.1",
+      "dna-engine": "~2.2",
+      "hamburger-menu": "~0.5",
+      "jquery": "~3.6",
       "jshint": "~2.13",
-      "merge-stream": "~2.0",
-      "npm-run-all2": "~6.0",
+      "less": "~4.1.3",
+      "replacer-util": "~0.2",
       "rimraf": "~3.0",
-      "w3c-html-validator": "~1.1"
+      "run-scripts-util": "~0.1",
+      "uglify-js": "~3.17.4",
+      "w3c-html-validator": "~1.2",
+      "web-ignition": "~1.6"
    }
 }

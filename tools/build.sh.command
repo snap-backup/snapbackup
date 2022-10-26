@@ -82,11 +82,11 @@ updateReleasesFolder() {
    rm -f releases/*.jar releases/*.pkg
    cp -v build/snap-backup-installer-*.pkg releases
    cp -v build/snap-backup-installer-*.pkg releases/archive
-   cp -v build/snapbackup.jar              releases/snapbackup-v$version.jar
+   cp -v build/snapbackup.jar              releases/snapbackup.jar
    cp -v build/snapbackup.jar              releases/archive/snapbackup-v$version.jar
    git restore releases/archive
    echo "To launch:"
-   echo "   java -jar $projectHome/releases/snapbackup-v$version.jar"
+   echo "   java -jar $projectHome/releases/snapbackup.jar"
    echo
    }
 
