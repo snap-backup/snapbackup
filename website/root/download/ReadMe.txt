@@ -23,4 +23,4 @@ JAR on your system.
 
 ============================
 https://snapbackup.org
-Copyright (c) individual contributors
+Copyright (c) Individual contributors
