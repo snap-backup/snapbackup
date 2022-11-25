@@ -39,23 +39,28 @@
       "build": [
          "rimraf website-target **/.DS_Store",
          "jshint . --exclude-path .gitignore",
-         "replacer website/root website-target --pkg",
-         "copy-file src/resources/snap-backup-user-guide.html --folder website-target",
-         "copy-folder src/resources/graphics/application --ext=.png website-target/graphics/flags",
-         "copy-folder website/graphics --ext=.png,.svg website-target/graphics",
-         "lessc website/snap-backup.less website-target/style.css",
-         "uglifyjs website/snap-backup.js --output website-target/app.js"
+         "replacer website/root website-target/1-dev --pkg",
+         "copy-file src/resources/snap-backup-user-guide.html --folder website-target/1-dev",
+         "copy-folder src/resources/graphics/application --ext=.png website-target/1-dev/graphics/flags --summary",
+         "copy-folder website/graphics --ext=.png,.svg website-target/1-dev/graphics --summary",
+         "lessc website/snap-backup.less website-target/1-dev/style.css",
+         "uglifyjs website/snap-backup.js --output website-target/1-dev/app.min.js",
+         "copy-folder website-target/1-dev website-target/2-stg --summary",
+         "add-dist-header website-target/1-dev website-target/2-stg",
+         "rev-web-assets website-target/2-stg website-target/3-rev --meta-content-base=https://snapbackup.org"
       ]
    },
    "scripts": {
       "pretest": "run-scripts build",
-      "test": "html-validator website-target",
-      "interactive": "browser-sync website-target --watch"
+      "test": "html-validator website-target/1-dev",
+      "interactive": "browser-sync website-target/1-dev --watch"
    },
    "cdnVersion": {
       "fontAwesome": "6.2"
    },
    "devDependencies": {
+      "@fortawesome/fontawesome-free": "~6.2",
+      "add-dist-header": "~0.3",
       "browser-sync": "~2.27",
       "copy-file-util": "~0.1",
       "copy-folder-util": "~0.2",
@@ -65,6 +70,7 @@
       "jshint": "~2.13",
       "less": "~4.1",
       "replacer-util": "~0.3",
+      "rev-web-assets": "~0.1",
       "rimraf": "~3.0",
       "run-scripts-util": "~0.1",
       "uglify-js": "~3.17",

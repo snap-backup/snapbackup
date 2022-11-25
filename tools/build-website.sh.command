@@ -29,7 +29,7 @@ setupTools() {
    which node || { echo "Need to install Node.js: https://nodejs.org"; exit; }
    node --version
    npm install --no-fund
-   npm update
+   npm update --no-fund
    npm outdated
    echo
    }
@@ -54,7 +54,8 @@ publishWebFiles() {
    publish() {
       echo "Publishing:"
       echo $publishSite
-      cp -R website-target/* $publishFolder
+      mkdir -p $publishFolder
+      cp -R website-target/3-rev/* $publishFolder
       ls -o $publishSite | grep snapbackup
       test -x "$(which tree)" && tree $publishFolder
       }
