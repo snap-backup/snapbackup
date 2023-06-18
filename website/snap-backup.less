@@ -132,6 +132,18 @@ body >footer {
    padding: 10px;
    }
 
+// Style
+body.macos-mode {
+   .for-non-macs {
+      display: none;
+      }
+   }
+body:not(.macos-mode) {
+   .for-macs-only {
+      display: none;
+      }
+   }
+
 /* 3rd party */
 
 /* Link colors */
@@ -172,7 +184,7 @@ nav.hamburger-menu aside ul li >a:hover {
 /******************************************************************************/
 
 // Mobile
-@media (max-width: 667px) {  //selects iPhone 6/6s/7/8/SE(2020) landscape and anything narrower
+@media (max-width: 667px) {  //selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower
    body >header {
       padding-top: 60px;
       }

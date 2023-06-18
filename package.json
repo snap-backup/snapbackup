@@ -28,7 +28,6 @@
       "undef": true,
       "unused": true,
       "browser": true,
-      "jquery": true,
       "node": true,
       "globals": {
          "dna": false,
@@ -36,8 +35,10 @@
       }
    },
    "runScriptsConfig": {
+      "clean": [
+         "rimraf website-target"
+      ],
       "build": [
-         "rimraf website-target **/.DS_Store",
          "jshint . --exclude-path .gitignore",
          "replacer website/root website-target/1-dev --pkg",
          "copy-file src/resources/snap-backup-user-guide.html --folder website-target/1-dev",
@@ -51,30 +52,29 @@
       ]
    },
    "scripts": {
-      "pretest": "run-scripts build",
+      "pretest": "run-scripts clean build",
       "test": "html-validator website-target/1-dev",
-      "interactive": "browser-sync website-target/1-dev --watch"
+      "interactive": "browser-sync . --startPath website-target/1-dev --files website-target"
    },
    "cdnVersion": {
-      "fontAwesome": "6.3"
+      "fontAwesome": "6.4"
    },
    "devDependencies": {
-      "@fortawesome/fontawesome-free": "~6.3",
+      "@fortawesome/fontawesome-free": "~6.4",
       "add-dist-header": "~1.0",
-      "browser-sync": "~2.28",
+      "browser-sync": "~2.29",
       "copy-file-util": "~1.0",
       "copy-folder-util": "~1.0",
-      "dna-engine": "~2.3",
-      "hamburger-menu": "~0.5",
-      "jquery": "~3.6",
+      "dna-engine": "~3.0",
+      "hamburger-menu": "~0.6",
       "jshint": "~2.13",
       "less": "~4.1",
       "replacer-util": "~1.0",
-      "rev-web-assets": "~1.0",
-      "rimraf": "3",
-      "run-scripts-util": "~1.0",
+      "rev-web-assets": "~1.1",
+      "rimraf": "~5.0",
+      "run-scripts-util": "~1.1",
       "uglify-js": "~3.17",
       "w3c-html-validator": "~1.3",
-      "web-ignition": "~1.6"
+      "web-ignition": "~2.0"
    }
 }

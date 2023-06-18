@@ -1,16 +1,13 @@
 // Snap Backup
 
 const app = {
-   hamburgerMenu() {
-      const menuItem = $('main').data().menu;  //use "data-menu" attribute to set current menu item
-      $('nav.hamburger-menu li[data-menu=' + menuItem + ']').addClass('current');
-      },
    setup() {
-      $('<div>').addClass('wedge').prependTo($('main'));
-      const macVersion = libX.browser.macOS() && dna.browser.getUrlParams().view !== 'all';
-      $('.for-macs-only').toggle(macVersion);
-      $('.for-non-macs').toggle(!macVersion);
+      const wedge = globalThis.document.createElement('div');
+      wedge.classList.add('wedge');
+      globalThis.document.querySelector('main').prepend(wedge);
+      const macosMode = libX.browser.macOS() && dna.browser.getUrlParams().view !== 'all';
+      dna.dom.toggleClass(globalThis.document.body, 'macos-mode', macosMode);
       },
    };
 
-$(app.setup);
+dna.dom.onReady(app.setup);
