@@ -6,7 +6,7 @@
 //    This object is for application specific settings related to the         //
 //    properites file.                                                        //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.settings;

@@ -6,7 +6,7 @@
 //    This object is the base UI frame and UI widgets for the main            //
 //    application window.                                                     //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.ui;

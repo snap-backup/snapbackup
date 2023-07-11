@@ -6,7 +6,7 @@
 //    This object controls the flow of actions necessary to start up Snap     //
 //    Backup.                                                                 //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.ui;

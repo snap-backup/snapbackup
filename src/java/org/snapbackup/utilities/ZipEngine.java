@@ -5,7 +5,7 @@
 // Zip Engine:                                                                //
 //    This object...                                                          //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.utilities;
@@ -173,7 +173,7 @@ public class ZipEngine {
                Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
             isJunctionPoint = attrs.isOther();
             }
-         catch(IOException e) {
+         catch (IOException e) {
             Logger.logMsg(e.toString());
             }
       if (filterFolderOn && filterFolderP.matcher(dir.getName()).matches())

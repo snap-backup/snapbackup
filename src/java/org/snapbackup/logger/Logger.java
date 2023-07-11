@@ -6,7 +6,7 @@
 //    This object is the text area on the UI used to display messages to the  //
 //    user while the application is running.                                  //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.logger;

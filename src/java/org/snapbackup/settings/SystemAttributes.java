@@ -6,7 +6,7 @@
 //    This object is for system level settings such as version numbers, list  //
 //    of languages, constants, and other system attributes.                   //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.settings;

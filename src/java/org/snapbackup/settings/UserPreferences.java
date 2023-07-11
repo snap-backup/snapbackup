@@ -5,7 +5,7 @@
 // User Preferences:                                                          //
 //    This object is for user specific settings related to user preferences.  //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.settings;

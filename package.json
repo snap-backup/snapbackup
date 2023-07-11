@@ -56,25 +56,22 @@
       "test": "html-validator website-target/1-dev",
       "interactive": "browser-sync . --startPath website-target/1-dev --files website-target"
    },
-   "cdnVersion": {
-      "fontAwesome": "6.4"
-   },
    "devDependencies": {
       "@fortawesome/fontawesome-free": "~6.4",
-      "add-dist-header": "~1.0",
+      "add-dist-header": "~1.1",
       "browser-sync": "~2.29",
-      "copy-file-util": "~1.0",
-      "copy-folder-util": "~1.0",
+      "copy-file-util": "~1.1",
+      "copy-folder-util": "~1.1",
       "dna-engine": "~3.0",
       "hamburger-menu": "~0.6",
       "jshint": "~2.13",
       "less": "~4.1",
-      "replacer-util": "~1.0",
-      "rev-web-assets": "~1.1",
+      "replacer-util": "~1.1",
+      "rev-web-assets": "~1.2",
       "rimraf": "~5.0",
-      "run-scripts-util": "~1.1",
+      "run-scripts-util": "~1.2",
       "uglify-js": "~3.17",
-      "w3c-html-validator": "~1.3",
+      "w3c-html-validator": "~1.4",
       "web-ignition": "~2.0"
    }
 }

@@ -5,7 +5,7 @@
 // Data Model:                                                                //
 //    This object is the business logic of MVC.                               //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup.business;

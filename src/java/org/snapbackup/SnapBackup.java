@@ -5,7 +5,7 @@
 // Main Startup:                                                              //
 //    This object launches the command line or GUI version of appliction.     //
 //                                                                            //
-// GPLv3 -- snapback.org/license -- Copyright (c) individual contributors     //
+// GPLv3 -- snapback.org/license -- Copyright (c) Individual contributors     //
 ////////////////////////////////////////////////////////////////////////////////
 
 package org.snapbackup;
