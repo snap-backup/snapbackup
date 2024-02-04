@@ -44,14 +44,16 @@
          destdir="${JavaClasses}"
          debug="on"
          includeAntRuntime="false">
+         <compilerarg value="-Xlint:all,-serial,-this-escape" />
          <!--
-         source="8"
-         target="8"
-         bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
-         [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.8
-         https://stackoverflow.com/questions/7816423
+            TODO: Remove -this-escape ignore
+
+            -this-escape
+            [javac] src/java/org/snapbackup/ui/SnapBackupFrame.java:144: warning: [this-escape]
+            possible 'this' escape before subclass is fully initialized
+            [javac] setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            https://bugs.openjdk.org/browse/JDK-8299995
          -->
-         <compilerarg value="-Xlint:all,-serial" />
       </javac>
       <echo />
 
