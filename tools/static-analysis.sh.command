@@ -4,9 +4,11 @@
 ###############
 
 banner="Snap Backup - Static Analysis of Java Code"
-pmdVersion=$(curl -s https://pmd.github.io | grep "Latest Version:" | awk '{ print $3 }')
-pmdDownload=https://github.com/pmd/pmd/releases/download/pmd_releases%2F$pmdVersion/pmd-bin-$pmdVersion.zip
 projectHome=$(cd $(dirname $0)/..; pwd)
+pmdVersion=$(curl -s https://pmd.github.io | grep "Latest Version:" | awk '{ print $3 }')
+pmdZipFile=pmd-dist-$pmdVersion-bin.zip
+pmdDownload=https://github.com/pmd/pmd/releases/download/pmd_releases%2F$pmdVersion/$pmdZipFile
+pmdFolder=$projectHome/tools/static-analysis/pmd/pmd-bin-$pmdVersion
 
 displayIntro() {
    cd $projectHome
@@ -21,7 +23,6 @@ setupPmd() {
    cd $projectHome
    echo "Setup PMD:"
    echo $pmdVersion
-   pmdFolder=$projectHome/tools/static-analysis/pmd/pmd-bin-$pmdVersion
    echo $pmdFolder
    which java || exit
    java --version
@@ -32,9 +33,9 @@ setupPmd() {
       cd tools/static-analysis/pmd
       pwd
       curl --location --remote-name $pmdDownload
-      unzip pmd-bin-$pmdVersion.zip
+      unzip $pmdZipFile
       ls -o
-      rm pmd-bin-$pmdVersion.zip
+      rm $pmdZipFile
       }
    test -d $pmdFolder || downloadPmd
    echo
@@ -45,7 +46,8 @@ runPmd() {
    echo "Run PMD:"
    pwd
    report=$projectHome/tools/static-analysis/report.html
-   $pmdFolder/bin/run.sh pmd --dir $projectHome/src/java --rulesets rule-set-good-java.xml --no-cache --format html > $report
+   $pmdFolder/bin/pmd check --dir $projectHome/src/java --rulesets rule-set-good-java.xml \
+      --no-cache --format html --report-file $report
    fixFont='s|<head>|<head><style>html { font-family: system-ui; }</style>|'
    sed -i "" "$fixFont" $report
    fixPath='s|[^>]*\/\(snapbackup\/src\/java\/\)|\1|'
