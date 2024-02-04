@@ -12,6 +12,7 @@ package org.snapbackup.business;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URL;
 import org.snapbackup.logger.Logger;
 import org.snapbackup.settings.SystemAttributes;
@@ -23,13 +24,13 @@ public abstract class CheckForUpdates {
       String version = null;
       String verification = null;
       try {
-         BufferedReader reader = new BufferedReader(
-            new InputStreamReader(new URL(SystemAttributes.updatesURL).openStream()));
+         URL url = new URI(SystemAttributes.updatesURL).toURL();
+         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
          version = reader.readLine();
          verification = reader.readLine();
          reader.close();
          }
-      catch (Exception e) {  //NoRouteToHostException or ConnectException
+      catch (Exception e) {  //catch: NoRouteToHostException or ConnectException
          Logger.logMsg(e.toString());
          }
       return verificationCheck.equals(verification) ? version : null;
