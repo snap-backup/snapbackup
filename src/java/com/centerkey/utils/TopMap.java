@@ -25,7 +25,8 @@ public class TopMap<K, V> extends TreeMap<Long, V> {
 
    @Override
    public V put(Long key, V value) {
-      while (containsKey(key)) key = key + 1;  //hack to support duplicates
+      while (containsKey(key))
+         key = key + 1;  //support duplicates
       if (size() < maxElems || key > lastKey())
          super.put(key, value);
       if (size() > maxElems)

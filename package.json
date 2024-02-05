@@ -1,6 +1,6 @@
 {
    "name": "snapbackup",
-   "version": "6.5.0",
+   "version": "6.6.0",
    "description": "The one-click backup utility",
    "license": "GPL-3.0",
    "type": "module",
@@ -21,8 +21,8 @@
       "java"
    ],
    "extra": {
-      "updated": "February 15, 2022",
-      "jarSize": "232 KB"
+      "updated": "February 4, 2024",
+      "jarSize": "234 KB"
    },
    "jshintConfig": {
       "esversion": 11,
