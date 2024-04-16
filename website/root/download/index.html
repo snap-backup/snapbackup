@@ -1,5 +1,4 @@
-{% assign webRoot = '..' %}
-{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: 'Download' %}
+{% render 'website/templates/page-begin.html', pageTitle: 'Download' %}
 {% assign releaseUrl    = pkg.homepage | append: '/raw/main/releases' %}
 {% assign macExtension  = '.pkg' %}
 {% assign winExtension  = '.msi' %}
@@ -90,7 +89,7 @@
       <aside>
          <b>Languages Included:</b>
          <p class=language-flags>
-            {% render 'website/templates/languages-icons.html', webRoot: webRoot %}
+            {% render 'website/templates/languages-icons.html' %}
          </p>
          <p>
             When you first run Snap<br>Backup, click the flag for<br>the language you desire.
@@ -118,4 +117,4 @@
 
 </main>
 
-{% render 'website/templates/page-end.html', webRoot: webRoot %}
+{% render 'website/templates/page-end.html' %}

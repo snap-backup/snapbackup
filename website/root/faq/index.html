@@ -1,5 +1,4 @@
-{% assign webRoot = '..' %}
-{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: 'Frequently Asked Questions (FAQ)' %}
+{% render 'website/templates/page-begin.html', pageTitle: 'Frequently Asked Questions (FAQ)' %}
 
 <main data-menu=faq>
 
@@ -155,7 +154,7 @@
       <h2>What languages does Snap Backup support?</h2>
       <p>
          Snap Backup supports
-         {% render 'website/templates/languages-text.html', webRoot: webRoot %}
+         {% render 'website/templates/languages-text.html' %}
          &nbsp;Snap Backup will attempt to detect your default language and
          use that if available.
       </p>
@@ -234,4 +233,4 @@
 
 </main>
 
-{% render 'website/templates/page-end.html', webRoot: webRoot %}
+{% render 'website/templates/page-end.html' %}

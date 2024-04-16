@@ -1,5 +1,4 @@
-{% assign webRoot = '.' %}
-{% render 'website/templates/page-begin.html', webRoot: webRoot, pageTitle: pkg.description %}
+{% render 'website/templates/page-begin.html', pageTitle: pkg.description %}
 
 <main data-menu=gateway>
 
@@ -28,7 +27,7 @@
          </figure>
       </aside>
       <p>
-         {% render 'website/templates/languages-icons.html', webRoot: webRoot %}
+         {% render 'website/templates/languages-icons.html' %}
       </p>
       <h3>Snap Backup:</h3>
       <ul>
@@ -54,7 +53,7 @@
    <section>
       <h2>News</h2>
       <div>
-         {% render 'website/templates/news.html', webRoot: webRoot %}
+         {% render 'website/templates/news.html' %}
       </div>
    </section>
 
@@ -91,7 +90,7 @@
       <h2>Random</h2>
       <p id=social-buttons></p>
       <div>
-         {% render 'website/templates/comments.html', webRoot: webRoot %}
+         {% render 'website/templates/comments.html' %}
       </div>
    </section>
 
@@ -105,4 +104,4 @@
 
 </main>
 
-{% render 'website/templates/page-end.html', webRoot: webRoot %}
+{% render 'website/templates/page-end.html' %}

@@ -6,7 +6,7 @@ _The one-click backup utility_
 [![License:GPLv3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/snap-backup/snapbackup/blob/main/LICENSE.txt)
 &nbsp;
 &nbsp;
-[![Build](https://github.com/snap-backup/snapbackup/workflows/build/badge.svg)](https://github.com/snap-backup/snapbackup/actions/workflows/run-spec-on-push.yaml)
+[![Build](https://github.com/snap-backup/snapbackup/actions/workflows/run-spec-on-push.yaml/badge.svg)](https://github.com/snap-backup/snapbackup/actions/workflows/run-spec-on-push.yaml)
 
 Snap Backup ([snapbackup.org](https://snapbackup.org)) is a utility for individual computer users
 who need a simple and convenient way to backup their valuable files.
