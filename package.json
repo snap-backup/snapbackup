@@ -62,21 +62,21 @@
       "interactive": "browser-sync . --startPath website-target/1-dev --files website-target"
    },
    "devDependencies": {
-      "@fortawesome/fontawesome-free": "~6.5",
+      "@fortawesome/fontawesome-free": "~6.6",
       "add-dist-header": "~1.4",
       "browser-sync": "~3.0",
       "copy-file-util": "~1.2",
       "copy-folder-util": "~1.1",
-      "dna-engine": "~3.1",
+      "dna-engine": "~3.2",
       "hamburger-menu": "~0.6",
       "jshint": "~2.13",
       "less": "~4.2",
-      "replacer-util": "~1.2",
-      "rev-web-assets": "~1.3",
-      "rimraf": "~5.0",
-      "run-scripts-util": "~1.2",
-      "uglify-js": "~3.17",
-      "w3c-html-validator": "~1.7",
-      "web-ignition": "~2.1"
+      "replacer-util": "~1.3",
+      "rev-web-assets": "~1.4",
+      "rimraf": "~6.0",
+      "run-scripts-util": "~1.3",
+      "uglify-js": "~3.19",
+      "w3c-html-validator": "~1.8",
+      "web-ignition": "~2.2"
    }
 }
