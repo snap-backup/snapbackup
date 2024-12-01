@@ -44,7 +44,7 @@
          destdir="${JavaClasses}"
          debug="on"
          includeAntRuntime="false">
-         <compilerarg value="-Xlint:all,-serial,-this-escape" />
+         <compilerarg value="-Xlint:all,-serial,-dangling-doc-comments,-this-escape" />
          <!--
             TODO: Remove -this-escape ignore
 
