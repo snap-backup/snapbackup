@@ -168,19 +168,19 @@ public class UIProperties {
    public final String errPromptTitle =          AppProperties.getProperty("ErrPromptTitle");
    public final String errPromptContinue =       AppProperties.getProperty("ErrPromptContinue");
    public final String errPromptAbort =          AppProperties.getProperty("ErrPromptAbort");
-   public final String err01CreatingBackupFile = AppProperties.getProperty("Err01CreatingBackupFile");
-   public final String err02ItemNotFound =       AppProperties.getProperty("Err02ItemNotFound");
-   public final String err03ZippingFile =        AppProperties.getProperty("Err03ZippingFile");
-   public final String err04BackupFileMissing =  AppProperties.getProperty("Err04BackupFileMissing");
-   public final String err05NoArchiveFolder =    AppProperties.getProperty("Err05NoArchiveFolder");
-   public final String err06CannotWriteArchive = AppProperties.getProperty("Err06CannotWriteArchive");
-   public final String err07ArchiveNotFile =     AppProperties.getProperty("Err07ArchiveNotFile");
-   public final String err08ArchiveCanceled =    AppProperties.getProperty("Err08ArchiveCanceled");
-   public final String err09ArchiveProblem =     AppProperties.getProperty("Err09ArchiveProblem");
-   public final String err10CannotParseFilter =  AppProperties.getProperty("Err10CannotParseFilter");
-   public final String err20BrowserFailure =     AppProperties.getProperty("Err20BrowserFailure");
-   public final String err30ProfileNotFound =    AppProperties.getProperty("Err30ProfileNotFound");
-   public final String err40BackupTooLarge =     AppProperties.getProperty("Err40BackupTooLarge");
+   public final String err01CreatingBackupFile = "*** ERROR #1: " +  AppProperties.getProperty("Err01CreatingBackupFile");
+   public final String err02ItemNotFound =       "*** ERROR #2: " +  AppProperties.getProperty("Err02ItemNotFound");
+   public final String err03ZippingFile =        "*** ERROR #3: " +  AppProperties.getProperty("Err03ZippingFile");
+   public final String err04BackupFileMissing =  "*** ERROR #4: " +  AppProperties.getProperty("Err04BackupFileMissing");
+   public final String err05NoArchiveFolder =    "*** ERROR #5: " +  AppProperties.getProperty("Err05NoArchiveFolder");
+   public final String err06CannotWriteArchive = "*** ERROR #6: " +  AppProperties.getProperty("Err06CannotWriteArchive");
+   public final String err07ArchiveNotFile =     "*** ERROR #7: " +  AppProperties.getProperty("Err07ArchiveNotFile");
+   public final String err08ArchiveCanceled =    "*** ERROR #8: " +  AppProperties.getProperty("Err08ArchiveCanceled");
+   public final String err09ArchiveProblem =     "*** ERROR #9: " +  AppProperties.getProperty("Err09ArchiveProblem");
+   public final String err10CannotParseFilter =  "*** ERROR #10: " + AppProperties.getProperty("Err10CannotParseFilter");
+   public final String err20BrowserFailure =     "*** ERROR #20: " + AppProperties.getProperty("Err20BrowserFailure");
+   public final String err30ProfileNotFound =    "*** ERROR #30: " + AppProperties.getProperty("Err30ProfileNotFound");
+   public final String err40BackupTooLarge =     "*** ERROR #40: " + AppProperties.getProperty("Err40BackupTooLarge");
 
    public static UIProperties current;
 
