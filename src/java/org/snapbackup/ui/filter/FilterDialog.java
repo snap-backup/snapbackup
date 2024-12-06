@@ -10,7 +10,6 @@
 
 package org.snapbackup.ui.filter;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -24,9 +23,9 @@ import org.snapbackup.settings.SystemAttributes;
 
 public class FilterDialog extends JDialog {
 
-   SnapBackupFrame f = SnapBackupFrame.current;
-   String nullStr = SystemAttributes.nullStr;
-   FilterUIProperties ui = new FilterUIProperties();
+   SnapBackupFrame    f =       SnapBackupFrame.current;
+   String             nullStr = SystemAttributes.nullStr;
+   FilterUIProperties ui =      new FilterUIProperties();
 
    // Define Controls
    JPanel     filterPanel =               new JPanel();
@@ -64,7 +63,7 @@ public class FilterDialog extends JDialog {
 
    public FilterDialog(Frame owner) {
       super(owner);
-      setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       setTitle(ui.filterRuleTitle);
       configureContols();
       addContols();
@@ -86,19 +85,19 @@ public class FilterDialog extends JDialog {
          BorderFactory.createTitledBorder(ui.filterRuleIncludeTitle),
          BorderFactory.createEmptyBorder(0, 5, 5, 5)));
       includeDataPanel.setLayout(new BoxLayout(includeDataPanel, BoxLayout.LINE_AXIS));
-      includeDataPanel.setAlignmentX(Component.LEFT_ALIGNMENT);  //Why???  Swing deficiency
+      includeDataPanel.setAlignmentX(LEFT_ALIGNMENT);  //Why???  Swing deficiency
       excludePanel.setLayout(new BoxLayout(excludePanel, BoxLayout.PAGE_AXIS));
       excludePanel.setBorder(BorderFactory.createCompoundBorder(
          BorderFactory.createTitledBorder(ui.filterRuleExcludeTitle),
          BorderFactory.createEmptyBorder(0, 5, 5, 5)));
       excludeDataPanel.setLayout(new BoxLayout(excludeDataPanel, BoxLayout.LINE_AXIS));
-      excludeDataPanel.setAlignmentX(Component.LEFT_ALIGNMENT);  //Why???  Swing deficiency
+      excludeDataPanel.setAlignmentX(LEFT_ALIGNMENT);  //Why???  Swing deficiency
       excludeFoldersPanel.setLayout(new BoxLayout(excludeFoldersPanel, BoxLayout.LINE_AXIS));
-      excludeFoldersPanel.setAlignmentX(Component.LEFT_ALIGNMENT);  //Why???  Swing deficiency
+      excludeFoldersPanel.setAlignmentX(LEFT_ALIGNMENT);  //Why???  Swing deficiency
       excludeSizePanel.setLayout(new BoxLayout(excludeSizePanel, BoxLayout.LINE_AXIS));
-      excludeSizePanel.setAlignmentX(Component.LEFT_ALIGNMENT);  //Why???  Swing deficiency
+      excludeSizePanel.setAlignmentX(LEFT_ALIGNMENT);  //Why???  Swing deficiency
       buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
-      buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);  //Why???  Swing deficiency
+      buttonPanel.setAlignmentX(LEFT_ALIGNMENT);  //Why???  Swing deficiency
       deleteButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { actionDelete(); } } );
       cancelButton.addActionListener(new ActionListener() {
@@ -109,10 +108,9 @@ public class FilterDialog extends JDialog {
       UIUtilities.makeBold(okButton);
       getRootPane().setDefaultButton(okButton);
       getRootPane().registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-               actionCancel(); } },
-            KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
-            JComponent.WHEN_IN_FOCUSED_WINDOW);
+         public void actionPerformed(ActionEvent e) { actionCancel(); } },
+         KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
+         JComponent.WHEN_IN_FOCUSED_WINDOW);
       }
 
    void addContols() {

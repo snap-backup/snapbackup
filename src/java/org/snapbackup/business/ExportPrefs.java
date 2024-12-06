@@ -41,11 +41,11 @@ public class ExportPrefs {
          //">", "&gt;").replace(
          //"&", "&amp;").replace(
          SystemAttributes.userHomeDir, userHomeFolderMarker);
-   }
+      }
 
    public class XmlFileFilter extends FileFilter {
       public boolean accept(File f) {
-         return f.isDirectory() || f.getName().toLowerCase(Locale.ROOT).endsWith(ExportPrefs.xmlExtension);
+         return f.isDirectory() || f.getName().toLowerCase(Locale.ROOT).endsWith(xmlExtension);
          }
       public String getDescription() {
          return "XML files";

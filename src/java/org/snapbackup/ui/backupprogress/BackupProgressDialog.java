@@ -53,10 +53,10 @@ public class BackupProgressDialog extends JDialog {
       progressLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 2, 0));
       backupPB.setBorder(BorderFactory.createEmptyBorder(0, 30, 20, 30));
       memFreeLabel.setBorder(BorderFactory.createEmptyBorder(2, 0, 20, 0));
-      progressLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-      backupPB.setAlignmentX(Component.CENTER_ALIGNMENT);
-      memFreeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-      cancelButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+      progressLabel.setAlignmentX(CENTER_ALIGNMENT);
+      backupPB.setAlignmentX(CENTER_ALIGNMENT);
+      memFreeLabel.setAlignmentX(CENTER_ALIGNMENT);
+      cancelButton.setAlignmentX(CENTER_ALIGNMENT);
 
       // Add Controls and Display
       JPanel backupProgressPanel = new JPanel();

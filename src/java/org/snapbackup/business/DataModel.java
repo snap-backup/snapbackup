@@ -471,7 +471,7 @@ public abstract class DataModel {
    public static void doCmdLineList() {
       new UIProperties();
       UIProperties ui = UIProperties.current;
-      List<String> names = DataModel.getProfilesNames();
+      List<String> names = getProfilesNames();
       Logger.initOutput();
       Logger.logMsg(ui.headerCmdLine);
       Logger.logMsg(ui.profilesTitle + ": " + names.size());

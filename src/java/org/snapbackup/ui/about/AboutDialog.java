@@ -56,7 +56,7 @@ public class AboutDialog extends JDialog {
 
    public AboutDialog(Frame owner) {
       super(owner);
-      setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       setTitle(ui.aboutTitle + UIProperties.current.appTitle);
       configureContols();
       addContols();
@@ -74,7 +74,7 @@ public class AboutDialog extends JDialog {
       for (String[] translator : translators) {
          if (count % 3 == 0) {  //three names per line
             row = new JPanel(new FlowLayout(FlowLayout.LEADING, 0, 0));
-            row.setAlignmentX(Component.LEFT_ALIGNMENT);
+            row.setAlignmentX(LEFT_ALIGNMENT);
             row.setBackground(Color.white);
             row.add(count == 0 ? translatedBy : new JLabel(tab));
             translatorsPanel.add(row);
@@ -171,9 +171,9 @@ public class AboutDialog extends JDialog {
       aboutPanel.add(Box.createRigidArea(new Dimension(0, 10)));
       aboutPanel.add(closeButton);
       for (Component component : aboutPanel.getComponents())
-         ((JComponent)component).setAlignmentX(Component.LEFT_ALIGNMENT);
+         ((JComponent)component).setAlignmentX(LEFT_ALIGNMENT);
       //for (int count = 0; count < aboutPanel.getComponentCount(); count++)
-      //   ((JComponent)aboutPanel.getComponent(count)).setAlignmentX(Component.LEFT_ALIGNMENT);
+      //   ((JComponent)aboutPanel.getComponent(count)).setAlignmentX(LEFT_ALIGNMENT);
       getContentPane().add(logo, BorderLayout.LINE_START);
       getContentPane().add(aboutPanel, BorderLayout.CENTER);
       }

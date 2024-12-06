@@ -10,7 +10,6 @@
 
 package org.snapbackup.ui.prefexport;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -46,7 +45,7 @@ public class ExportDialog extends JDialog {
       super(owner);
       AppProperties.addSupplimentalProperty(Export.prefSettingsFileName,
          new Export().defaultSettingsFileName);
-      setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       setTitle(ui.title);
       configureContols();
       addContols();
@@ -66,8 +65,8 @@ public class ExportDialog extends JDialog {
          BorderFactory.createTitledBorder(ui.locationTitle),
          BorderFactory.createEmptyBorder(0, 5, 5, 5)));
       locationInnerPanel.setLayout(new BoxLayout(locationInnerPanel, BoxLayout.LINE_AXIS));
-      locationInnerPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-      locationPanel.setAlignmentY(Component.LEFT_ALIGNMENT);
+      locationInnerPanel.setAlignmentX(LEFT_ALIGNMENT);
+      locationPanel.setAlignmentY(LEFT_ALIGNMENT);
       locationTextField.setText(UserPreferences.readPref(Export.prefSettingsFileName));
       locationChooserButton.setToolTipText(ui.locationCmd);
       locationChooserButton.addActionListener(new ActionListener() {
@@ -76,7 +75,7 @@ public class ExportDialog extends JDialog {
       resetButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { actionReset(); } } );
       buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
-      buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+      buttonPanel.setAlignmentX(LEFT_ALIGNMENT);
       cancelButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { actionCancel(); } } );
       actionButton.addActionListener(new ActionListener() {

@@ -141,7 +141,7 @@ public class SnapBackupFrame extends JFrame {
 
    public SnapBackupFrame() {
       current = this;  //todo: AssignmentToNonFinalStatic
-      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
       //setTitle(UIProperties.appTitle);
       setTitle(ui.appTitle);
       configureContols();

@@ -10,7 +10,6 @@
 
 package org.snapbackup.ui.userguide;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -39,7 +38,7 @@ public class UserGuideDialog extends JDialog {
 
    public UserGuideDialog(Frame owner) {
       super(owner);
-      setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       setTitle(ui.userGuideTitle);
       configureContols();
       addContols();
@@ -55,8 +54,8 @@ public class UserGuideDialog extends JDialog {
       headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.PAGE_AXIS));
       UIUtilities.makeBold(titleLabel);
       UIUtilities.bumpUpFontSize(titleLabel, 3);
-      titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-      versionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+      titleLabel.setAlignmentX(CENTER_ALIGNMENT);
+      versionLabel.setAlignmentX(CENTER_ALIGNMENT);
       URL url = getClass().getResource(UserGuideUIProperties.userGuideURL);
       try {
          htmlEditorPane = new JEditorPane(url);

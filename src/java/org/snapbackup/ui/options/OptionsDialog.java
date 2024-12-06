@@ -10,7 +10,6 @@
 
 package org.snapbackup.ui.options;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -34,7 +33,7 @@ public class OptionsDialog extends JDialog {
       }
 
    // Define Options Controls
-   String coreBackupName;
+   String              coreBackupName;
    OptionsUIProperties ui = new OptionsUIProperties();
 
    JPanel       optionsPanel =         new JPanel();
@@ -91,7 +90,7 @@ public class OptionsDialog extends JDialog {
    public OptionsDialog(Frame owner, String backupName) {
       super(owner);
       coreBackupName = SystemAttributes.space + backupName;
-      setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       setTitle(ui.title);
       configureContols();
       addContols();
@@ -144,7 +143,7 @@ public class OptionsDialog extends JDialog {
          BorderFactory.createEmptyBorder(0, 5, 5, 5)));
 
       buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
-      buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+      buttonPanel.setAlignmentX(LEFT_ALIGNMENT);
       cancelButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) { actionCancel(); } } );
       defaultsButton.addActionListener(new ActionListener() {
