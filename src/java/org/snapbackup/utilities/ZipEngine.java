@@ -123,8 +123,6 @@ public class ZipEngine {
       }
 
    public void zipFile(String filePath) {
-      if (zipCount % 500 == 0)  //attempt to address performance issues on large backups
-          rt.gc();  //testing not yet done to see if this improves performance
       try {
          file = new File(filePath);
          String filename = file.getName();
