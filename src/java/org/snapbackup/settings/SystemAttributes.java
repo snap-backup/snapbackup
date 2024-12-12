@@ -21,7 +21,8 @@ public class SystemAttributes {
    // Release constants
    public static final String appTitle =   "Snap Backup";
    public static final String appName =    "SnapBackup";  //".properties" name
-   public static final String appVersion = "6.6.0";  //keep in sync with package.json
+   public static final String appVersion = "6.7.0";  //keep in sync with package.json
+   // 6.7.0 - 2024/12/11 - Update Italian translation
    // 6.6.0 - 2024/02/04 - Support Apple silicon (M1, M2, and M3)
    // 6.5.0 - 2022/09/30 - Auto save settings and new --list and --current CLI flags
    // 6.4.1 - 2022/08/28 - Filter out files stored in remote clouds
@@ -71,6 +72,7 @@ public class SystemAttributes {
       { "Andy Saksono",           "https://en.wikipedia.org/wiki/Indonesian_language" },  //"id"
       { "Dany",                   "https://en.wikipedia.org/wiki/Romanian_language" },    //"ro"
       { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                       //"sq"
+      { "WVam",                   "https://github.com/WVam" },                            //"it"
       };
    public static final String appAuthors = "Dem Pilafian";  //names of code contributors
    public static final String appCopyright =
