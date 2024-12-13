@@ -44,7 +44,11 @@
          destdir="${JavaClasses}"
          debug="on"
          includeAntRuntime="false">
+         <!--
+         TODO: Fix "invalid flag" on Windows for -dangling-doc-comments (openjdk 21.0.5 2024-10-15 LTS)
          <compilerarg value="-Xlint:all,-serial,-dangling-doc-comments,-this-escape" />
+         -->
+         <compilerarg value="-Xlint:all,-serial,-this-escape" />
          <!--
             TODO: Remove -this-escape ignore
 
