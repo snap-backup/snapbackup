@@ -205,21 +205,36 @@
    </section>
 
    <section id=unidentified>
-      <h2>How do I get past the "unidentified developer" security warning?</h2>
+      <h2>How do I get past the "Not Opened" security warning?</h2>
       <p>
-         <b><i>&lt;control-click&gt;</i></b> the <code>.pkg</code> installer file.&nbsp;
-         When attempting to install an open source Mac application, such as Snap Backup, you might
-         encounter a message stating that the install file
-         <i>"can't be opened because it is from an unidentified developer"</i>.
+         If you encounter a warning attempting to run the <code>.pkg</code> installer file on a Mac,
+         click the <b>"Done"</b> button and then go into the <b>Security</b> settings to manually
+         authorize opening the installer.
+      </p>
+      <p>
+         <i>Steps:</i><br>
+         <b>Apple Menu (<i data-brand=apple></i>) &nbsp;&rarr;&nbsp;
+         System Settings...                       &nbsp;&rarr;&nbsp;
+         Privacy &amp; Security                   &nbsp;&rarr;&nbsp;
+         Security                                 &nbsp;&rarr;&nbsp;
+         "Open Anyway"</b>
       </p>
       <figure>
-         <figcaption>Security Warning with "Open" Button</figcaption>
-         <img src=../graphics/developer-warning.png alt=security>
+         <figcaption>Manually authorize opening the installer</figcaption>
+         <img src=../graphics/macos-security-open-pkg.png alt=security>
       </figure>
+      <p><i>For Macs running macOS 14 (Sonoma) and earlier:</i></p>
       <p>
-         Macs provide a simple way to allow you to run such files &ndash; just
-         <b><i>&lt;control-click&gt;</i></b> on the file and select "<b>Open</b>".
+         If you encounter a message stating that the install file
+         <i>"can't be opened because it is from an unidentified developer"</i>,
+         close the message and then <b><i>&lt;control-click&gt;</i></b> the <code>.pkg</code>
+         installer file.&nbsp;
+         Select "<b>Open</b>" on the menu and then click the "<b>Open</b>" button.
       </p>
+      <figure>
+         <figcaption>Security warning with "Open" button</figcaption>
+         <img src=../graphics/macos-developer-warning.png alt=security>
+      </figure>
    </section>
 
    <section id=upgrade>
