@@ -1,6 +1,8 @@
 /* Live in Style -- Snap Backup */
 /* Colors: teal, darkcyan, palegreen, yellow */
 
+@import "node_modules/web-ignition/dist/utility-box";
+
 // Layout
 body {
    margin: 0px;
@@ -27,7 +29,7 @@ body >header .arch {
    }
 body >header .arch >div {
    height: 200px;
-   background-color: white;
+   background-color: white;  .DarkMode({ background-color: @colorCharcoal; });
    border: 4px solid teal;
    border-right: none;
    border-bottom: none;
@@ -69,7 +71,6 @@ main >section >nav a:not(:last-child)::after {
    content: "|";
    font-size: 1.0rem;
    color: silver;
-   background-color: white;
    padding: 0px 5px 0px 8px;
    }
 main >section .language-flags img {
