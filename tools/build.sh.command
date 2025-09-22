@@ -56,7 +56,7 @@ createResources() {
    sips --resampleHeightWidth 480 480 --padToHeightWidth 512 512 $iconPng  \
       --out SnapBackup.iconset/icon_512x512.png
    iconutil --convert icns SnapBackup.iconset
-   mkdir -p package/macos
+   mkdir -pv package/macos
    mv -v SnapBackup.icns package/macos
    sips --resampleHeightWidth 120 120 --padToHeightWidth 175 175 $iconPng  \
       --out package/macos/SnapBackup-background.png

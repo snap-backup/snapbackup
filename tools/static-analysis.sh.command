@@ -29,7 +29,7 @@ setupPmd() {
    downloadPmd() {
       echo "Downloading..."
       echo $pmdDownload
-      mkdir -p tools/static-analysis/pmd
+      mkdir -pv tools/static-analysis/pmd
       cd tools/static-analysis/pmd
       pwd
       curl --location --remote-name $pmdDownload

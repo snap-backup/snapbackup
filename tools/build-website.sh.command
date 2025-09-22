@@ -55,7 +55,7 @@ publishWebFiles() {
    publish() {
       echo "Publishing:"
       echo $publishSite
-      mkdir -p $publishFolder
+      mkdir -pv $publishFolder
       cp -R website-target/3-rev/* $publishFolder
       ls -o $publishSite | grep snapbackup
       test -x "$(which tree)" && tree $publishFolder

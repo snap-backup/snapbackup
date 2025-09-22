@@ -74,7 +74,7 @@ public class SystemAttributes {
       { "Vahidin Qerimi",         "http://vahidin.wordpress.com" },                       //"sq"
       { "WVam",                   "https://github.com/WVam" },                            //"it"
       };
-   public static final String appAuthors = "Dem Pilafian";  //names of code contributors
+   public static final String appAuthors = "Pilaf T. Pilafian";  //names of code contributors
    public static final String appCopyright =
       "Copyright &copy; Individual contributors to the Snap Backup project<br>" +
       "Snap Backup&reg; is a registered trademark of Center Key";
