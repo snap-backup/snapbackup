@@ -62,13 +62,13 @@
       "interactive": "browser-sync . --startPath website-target/1-dev --files website-target"
    },
    "devDependencies": {
-      "@fortawesome/fontawesome-free": "~7.0",
+      "@fortawesome/fontawesome-free": "~7.1",
       "add-dist-header": "~1.5",
       "browser-sync": "~3.0",
       "copy-file-util": "~1.3",
       "copy-folder-util": "~1.1",
       "dna-engine": "~3.3",
-      "hamburger-menu": "~0.6",
+      "hamburger-menu": "~0.7",
       "jshint": "~2.13",
       "less": "~4.4",
       "replacer-util": "~1.4",

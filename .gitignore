@@ -1,11 +1,11 @@
 # Snap Backup
 
-# Downloaded and generated files
+# Downloaded and Generated Files
 /node_modules/
 /package-lock.json
 /build/
 /tools/static-analysis/pmd/
 /website-target/
 
-# Extraneous system files
+# Extraneous System Files
 .DS_Store
