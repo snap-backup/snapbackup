@@ -31,6 +31,7 @@
       "undef": true,
       "unused": true,
       "browser": true,
+      "mocha": true,
       "node": true,
       "globals": {
          "dna": false,
@@ -44,26 +45,33 @@
       "lint": [
          "jshint . --exclude-path .gitignore"
       ],
-      "build": [
-         "replacer website/root website-target/1-dev",
-         "copy-file src/resources/snap-backup-user-guide.html --folder website-target/1-dev",
-         "copy-folder src/resources/graphics/application --ext=.png website-target/1-dev/graphics/flags --summary",
-         "copy-folder website/graphics --ext=.png,.svg website-target/1-dev/graphics --summary",
-         "lessc website/snap-backup.less website-target/1-dev/style.css",
-         "uglifyjs website/snap-backup.js --output website-target/1-dev/app.min.js",
-         "copy-folder website-target/1-dev website-target/2-stg --summary",
-         "add-dist-header website-target/1-dev website-target/2-stg",
-         "rev-web-assets website-target/2-stg website-target/3-rev --meta-content-base=https://snapbackup.org"
+      "build-stage": [
+         "replacer website/root                                        website-target/1-stage",
+         "copy-file src/resources/snap-backup-user-guide.html --folder website-target/1-stage",
+         "copy-folder src/resources/graphics/application --ext=.png    website-target/1-stage/graphics/flags --summary",
+         "copy-folder website/graphics --ext=.png,.svg                 website-target/1-stage/graphics --summary",
+         "lessc website/snap-backup.less                               website-target/1-stage/style.css",
+         "uglifyjs website/snap-backup.js --output                     website-target/1-stage/app.min.js"
+      ],
+      "build-dev": [
+         "copy-folder     website-target/1-stage website-target/2-dev --summary",
+         "add-dist-header website-target/1-stage website-target/2-dev"
+      ],
+      "build-prod": [
+         "rev-web-assets website-target/2-dev website-target/3-prod --meta-content-base=https://snapbackup.org"
       ]
    },
    "scripts": {
-      "pretest": "run-scripts clean lint build",
-      "test": "html-validator website-target/1-dev",
-      "interactive": "browser-sync . --startPath website-target/1-dev --files website-target"
+      "pretest": "run-scripts clean lint build-stage build-dev build-prod",
+      "test": "mocha spec",
+      "validate": "npm test && html-validator website-target/3-prod",
+      "interactive": "npm test && browser-sync . --startPath website-target/1-stage --files website-target",
+      "i": "npm run interactive"
    },
    "devDependencies": {
       "@fortawesome/fontawesome-free": "~7.1",
       "add-dist-header": "~1.6",
+      "assert-deep-strict-equal": "~1.2",
       "browser-sync": "~3.0",
       "copy-file-util": "~1.3",
       "copy-folder-util": "~1.2",
@@ -71,6 +79,7 @@
       "hamburger-menu": "~0.7",
       "jshint": "~2.13",
       "less": "~4.4",
+      "mocha": "~11.7",
       "replacer-util": "~1.5",
       "rev-web-assets": "~1.5",
       "rimraf": "~6.1",

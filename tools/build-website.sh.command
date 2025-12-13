@@ -54,10 +54,11 @@ publishWebFiles() {
    publishFolder=$publishSite/www.snapbackup.org
    publish() {
       echo "Publishing:"
-      echo $publishSite
-      mkdir -pv $publishFolder
-      cp -R website-target/3-rev/* $publishFolder
-      ls -o $publishSite | grep snapbackup
+      rm -r $publishFolder
+      mkdir -v $publishFolder
+      cp -R website-target/3-prod/* $publishFolder
+      cp $publishSite/files/resources/404-source.html $publishFolder/404.html
+      ls -p $publishFolder | grep --invert-match /
       test -x "$(which tree)" && tree $publishFolder
       }
    test -w $publishSite && publish
