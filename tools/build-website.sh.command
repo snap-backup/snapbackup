@@ -22,8 +22,8 @@ setupTools() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
-   test -d .git || { echo "Project must be in a git repository."; exit; }
-   git restore dist/* &>/dev/null
+   [ -d .git ] || { echo "Project must be in a git repository."; exit; }
+   [ -d dist ] && git restore dist
    git pull --ff-only
    echo
    echo "Node.js:"
@@ -59,9 +59,9 @@ publishWebFiles() {
       cp -R website-target/3-prod/* $publishFolder
       cp $publishSite/files/resources/404-source.html $publishFolder/404.html
       ls -p $publishFolder | grep --invert-match /
-      test -x "$(which tree)" && tree $publishFolder
+      [ -x "$(which tree)" ] && tree $publishFolder
       }
-   test -w $publishSite && publish
+   [ -w $publishSite ] && publish
    }
 
 interactiveServer() {
