@@ -69,7 +69,7 @@
       "i": "npm run interactive"
    },
    "devDependencies": {
-      "@fortawesome/fontawesome-free": "~7.2",
+      "@fortawesome/fontawesome-free": "~7.3",
       "add-dist-header": "~1.6",
       "assert-deep-strict-equal": "~1.2",
       "browser-sync": "~3.0",
@@ -81,7 +81,7 @@
       "less": "~4.6",
       "mocha": "~11.7",
       "replacer-util": "~1.6",
-      "rev-web-assets": "~1.5",
+      "rev-web-assets": "~1.6",
       "rimraf": "~6.1",
       "run-scripts-util": "~1.3",
       "uglify-js": "~3.19",

@@ -4,7 +4,7 @@
 // Imports
 import { assertDeepStrictEqual } from 'assert-deep-strict-equal';
 import { revWebAssets } from 'rev-web-assets';
-import fs from 'fs';
+import fs from 'node:fs';
 
 ////////////////////////////////////////////////////////////////////////////////
 describe('The website root folder', () => {
