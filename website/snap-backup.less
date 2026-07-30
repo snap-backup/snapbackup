@@ -61,12 +61,14 @@ main >section >nav a:hover {
    color: white;
    background-color: teal;
    }
-main >section >nav a:not(:last-child)::after {
+main >section >nav >li {
    display: inline-block;
-   content: "|";
    font-size: 1.0rem;
    color: silver;
-   padding: 0px 5px 0px 8px;
+   }
+main >section >nav >li:not(:last-child)::after {
+   content: "|";
+   padding: 0px 8px 0px 12px;
    }
 main >section .language-flags img {
    width: 22px;
@@ -146,6 +148,11 @@ body:not(.macos-mode) {
    .for-macs-only {
       display: none;
       }
+   }
+
+// Pages
+main[data-menu=translate] >section >ol >li {
+   margin-bottom: 20px;
    }
 
 /* 3rd party */
